@@ -26,7 +26,7 @@
 # Вам наверняка пригодится itertools.
 # Можно свободно определять свои функции и т.п.
 # -----------------
-
+from itertools import chain
 
 def hand_rank(hand):
     """Возвращает значение определяющее ранг 'руки'"""
@@ -54,40 +54,59 @@ def hand_rank(hand):
 def card_ranks(hand):
     """Возвращает список рангов (его числовой эквивалент),
     отсортированный от большего к меньшему"""
-    return
+    hand_list = []
+    for card in hand.split():
+        if card[:-1].isdigit():
+            hand_list.append(int(card[:-1]))
+        elif card[0] == 'T':
+            hand_list.append(10)
+        elif card[0] == 'J':
+            hand_list.append(11)
+        elif card[0] == 'Q':
+            hand_list.append(12)
+        elif card[0] == 'K':
+            hand_list.append(13)
+        elif card[0] == 'A':
+            hand_list.append(14)
+    return sorted(hand_list, reverse=True)
 
 
 def flush(hand):
     """Возвращает True, если все карты одной масти"""
-    return
+    suit_list = [x[-1] for x in hand.split()]
+    return suit_list.count(suit_list[0]) == len(suit_list)
 
 
 def straight(ranks):
     """Возвращает True, если отсортированные ранги формируют последовательность 5ти,
     где у 5ти карт ранги идут по порядку (стрит)"""
-    return
+    return None
 
 
 def kind(n, ranks):
     """Возвращает первый ранг, который n раз встречается в данной руке.
     Возвращает None, если ничего не найдено"""
-    return
+    for rank in ranks:
+        if ranks.count(rank) == n:
+            return rank
+    return None
 
 
 def two_pair(ranks):
     """Если есть две пары, то возврщает два соответствующих ранга,
     иначе возвращает None"""
-    return
+    result = [rank for rank in set(ranks) if ranks.count(rank) == 2]
+    return result if len(result) == 2 else None
 
 
 def best_hand(hand):
     """Из "руки" в 7 карт возвращает лучшую "руку" в 5 карт """
-    return
+    return None
 
 
 def best_wild_hand(hand):
     """best_hand но с джокерами"""
-    return
+    return None
 
 
 def test_best_hand():
