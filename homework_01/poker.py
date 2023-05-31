@@ -26,7 +26,7 @@
 # Вам наверняка пригодится itertools.
 # Можно свободно определять свои функции и т.п.
 # -----------------
-from itertools import chain
+from itertools import combinations
 
 def hand_rank(hand):
     """Возвращает значение определяющее ранг 'руки'"""
@@ -55,7 +55,7 @@ def card_ranks(hand):
     """Возвращает список рангов (его числовой эквивалент),
     отсортированный от большего к меньшему"""
     hand_list = []
-    for card in hand.split():
+    for card in hand:
         if card[:-1].isdigit():
             hand_list.append(int(card[:-1]))
         elif card[0] == 'T':
@@ -73,14 +73,15 @@ def card_ranks(hand):
 
 def flush(hand):
     """Возвращает True, если все карты одной масти"""
-    suit_list = [x[-1] for x in hand.split()]
+    suit_list = [x[-1] for x in hand]
     return suit_list.count(suit_list[0]) == len(suit_list)
 
 
 def straight(ranks):
     """Возвращает True, если отсортированные ранги формируют последовательность 5ти,
     где у 5ти карт ранги идут по порядку (стрит)"""
-    return None
+    result = list(range(min(ranks), min(ranks)+5))
+    return True if ranks[::-1] == result else None
 
 
 def kind(n, ranks):
@@ -101,7 +102,15 @@ def two_pair(ranks):
 
 def best_hand(hand):
     """Из "руки" в 7 карт возвращает лучшую "руку" в 5 карт """
-    return None
+    result = list()
+    rank = (0, 0)
+    for comb in combinations(hand, 5):
+        hand_rank_result = hand_rank(comb)
+        if hand_rank_result[0] > rank[0]:
+            result = list(comb)
+            rank = hand_rank_result
+    print(result)
+    return result
 
 
 def best_wild_hand(hand):
