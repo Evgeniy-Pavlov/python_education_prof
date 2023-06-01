@@ -68,6 +68,8 @@ def card_ranks(hand):
             hand_list.append(13)
         elif card[0] == 'A':
             hand_list.append(14)
+        elif card[0] == '?':
+            hand_list.append(15)
     return sorted(hand_list, reverse=True)
 
 
@@ -109,7 +111,31 @@ def best_hand(hand):
         if hand_rank_result[0] > rank[0]:
             result = list(comb)
             rank = hand_rank_result
-    print(result)
+        elif hand_rank_result[0] == rank[0]:
+            if rank[0] in (4,8) and hand_rank_result[1] > rank[1]:
+                result = list(comb)
+                rank = hand_rank_result
+            elif rank[0] in (6,7):
+                if hand_rank_result[1] > rank[1]:
+                    result = list(comb)
+                    rank = hand_rank_result
+                elif hand_rank_result[1] == rank[1] and hand_rank_result[2] > rank[2]:
+                    result = list(comb)
+                    rank = hand_rank_result
+            elif rank[0] in (5,0):
+                if sum(hand_rank_result[1]) > sum(rank[1]):
+                    result = list(comb)
+                    rank = hand_rank_result
+            elif rank[0] == 4 and hand_rank_result[1] > rank[1]:
+                result = list(comb)
+                rank = hand_rank_result
+            elif rank[0] in (1,2,3):
+                if isinstance(hand_rank_result[1], list) and max(hand_rank_result[1]) > max(rank[1]):
+                    result = list(comb)
+                    rank = hand_rank_result
+                elif isinstance(hand_rank_result[1], int) and hand_rank_result[1] > rank[1]:
+                    result = list(comb)
+                    rank = hand_rank_result
     return result
 
 
@@ -141,4 +167,4 @@ def test_best_wild_hand():
 
 if __name__ == '__main__':
     test_best_hand()
-    test_best_wild_hand()
+    #test_best_wild_hand()
