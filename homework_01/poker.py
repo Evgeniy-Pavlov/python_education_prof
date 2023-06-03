@@ -68,8 +68,6 @@ def card_ranks(hand):
             hand_list.append(13)
         elif card[0] == 'A':
             hand_list.append(14)
-        elif card[0] == '?':
-            hand_list.append(15)
     return sorted(hand_list, reverse=True)
 
 
@@ -167,4 +165,3 @@ def test_best_wild_hand():
 
 if __name__ == '__main__':
     test_best_hand()
-    #test_best_wild_hand()

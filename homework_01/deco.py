@@ -1,50 +1,77 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from functools import update_wrapper
+from functools import update_wrapper, wraps
+import traceback
 
 
-def disable():
+
+
+def disable(func):
     '''
     Disable a decorator by re-assigning the decorator's name
     to this function. For example, to turn off memoization:
 
     >>> memo = disable
-
     '''
-    return
+    return func if callable(func) else lambda func: func
 
 
-def decorator():
+def decorator(func_decorator):
     '''
     Decorate a decorator so that it inherits the docstrings
     and stuff from the function it's decorating.
     '''
-    return
+    def inner_deco(func):
+        return update_wrapper(func_decorator, func)
+    return inner_deco
 
 
-def countcalls():
+def countcalls(func):
     '''Decorator that counts calls made to the function decorated.'''
-    return
+    @wraps(func)
+    def inner_countcalls(*args, **kwargs):
+        inner_countcalls.calls += 1
+        return func(*args, **kwargs)
+    inner_countcalls.calls = 0
+    return inner_countcalls
 
 
-def memo():
+def memo(func):
     '''
     Memoize a function so that it caches all return values for
     faster future lookups.
     '''
-    return
+    cache_dict = dict()
+    @wraps(func)
+    def inner_memo(*args):
+        key_args = args
+        if key_args not in cache_dict.keys():
+            cache_dict[key_args] = func(*args)
+        return cache_dict[key_args]
+
+    return inner_memo
 
 
-def n_ary():
+def n_ary(func):
     '''
     Given binary function f(x, y), return an n_ary function such
     that f(x, y, z) = f(x, f(y,z)), etc. Also allow f(x) = x.
     '''
-    return
+    @wraps(func)
+    def inner_n_ary(x, *args):
+        if not args:
+            return x
+        else:
+            result = x
+            for item in args:
+                result = func(result, item)
+            return result
+
+    return inner_n_ary
 
 
-def trace():
+def trace(fill_value):
     '''Trace calls made to function decorated.
 
     @trace("____")
@@ -64,7 +91,20 @@ def trace():
      <-- fib(3) == 3
 
     '''
-    return
+    def trace_decorator(f):
+        @wraps(f)
+        def wrapper(*args):
+            prefix = fill_value * wrapper.level
+            fargs = ", ".join(str(a) for a in args)
+            print (f"{prefix} --> {f.__name__}({fargs})")
+            wrapper.level += 1
+            result = f(*args)
+            print ("{} <-- {}({}) == {}".format(prefix, f.__name__, fargs, result))
+            wrapper.level -= 1
+            return result
+        wrapper.level = 0
+        return wrapper
+    return trace_decorator
 
 
 @memo
