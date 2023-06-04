@@ -4,9 +4,6 @@
 from functools import update_wrapper, wraps
 
 
-
-
-
 def disable(func):
     '''
     Disable a decorator by re-assigning the decorator's name
@@ -17,7 +14,6 @@ def disable(func):
     def inner(func):
         inner.__name__ = func.__name__
     return inner
-
 
 
 def decorator(func):
@@ -33,9 +29,10 @@ def decorator(func):
 
 def countcalls(func):
     '''Decorator that counts calls made to the function decorated.'''
-    def inner_countcalls(*args):
+    @wraps(func)
+    def inner_countcalls(*args, **kwargs):
         inner_countcalls.calls += 1
-        return func(*args)
+        return func(*args, **kwargs)
     inner_countcalls.calls = int()
     return inner_countcalls
 
@@ -104,6 +101,7 @@ def trace(aggregate):
         wrapper.recurse = 0
         return wrapper
     return inner_trace
+
 
 
 @memo
