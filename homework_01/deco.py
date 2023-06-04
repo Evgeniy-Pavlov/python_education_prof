@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from functools import update_wrapper, wraps
-import traceback
+
 
 
 
@@ -14,26 +14,29 @@ def disable(func):
 
     >>> memo = disable
     '''
-    return func if callable(func) else lambda func: func
+    def inner(func):
+        inner.__name__ = func.__name__
+    return inner
 
 
-def decorator(func_decorator):
+
+def decorator(func):
     '''
     Decorate a decorator so that it inherits the docstrings
     and stuff from the function it's decorating.
     '''
-    def inner_deco(func):
-        return update_wrapper(func_decorator, func)
+    @wraps(func)
+    def inner_deco(*args, **kwargs):
+        return func(*args, **kwargs)
     return inner_deco
 
 
 def countcalls(func):
     '''Decorator that counts calls made to the function decorated.'''
-    @wraps(func)
-    def inner_countcalls(*args, **kwargs):
+    def inner_countcalls(*args):
         inner_countcalls.calls += 1
-        return func(*args, **kwargs)
-    inner_countcalls.calls = 0
+        return func(*args)
+    inner_countcalls.calls = int()
     return inner_countcalls
 
 
@@ -49,7 +52,6 @@ def memo(func):
         if key_args not in cache_dict.keys():
             cache_dict[key_args] = func(*args)
         return cache_dict[key_args]
-
     return inner_memo
 
 
@@ -67,11 +69,10 @@ def n_ary(func):
             for item in args:
                 result = func(result, item)
             return result
-
     return inner_n_ary
 
 
-def trace(fill_value):
+def trace(aggregate):
     '''Trace calls made to function decorated.
 
     @trace("____")
@@ -91,20 +92,18 @@ def trace(fill_value):
      <-- fib(3) == 3
 
     '''
-    def trace_decorator(f):
-        @wraps(f)
+    def inner_trace(func):
+        @wraps(func)
         def wrapper(*args):
-            prefix = fill_value * wrapper.level
-            fargs = ", ".join(str(a) for a in args)
-            print (f"{prefix} --> {f.__name__}({fargs})")
-            wrapper.level += 1
-            result = f(*args)
-            print ("{} <-- {}({}) == {}".format(prefix, f.__name__, fargs, result))
-            wrapper.level -= 1
+            print (f"{aggregate * wrapper.recurse} --> {func.__name__}({str(*args)})")
+            wrapper.recurse += 1
+            result = func(*args)
+            print (f"{aggregate * wrapper.recurse} <-- {func.__name__}({str(*args)}) == {result}")
+            wrapper.recurse -= 1
             return result
-        wrapper.level = 0
+        wrapper.recurse = 0
         return wrapper
-    return trace_decorator
+    return inner_trace
 
 
 @memo
@@ -143,6 +142,7 @@ def main():
     print(fib.__doc__)
     fib(3)
     print(fib.calls, 'calls made')
+    
 
 
 if __name__ == '__main__':
