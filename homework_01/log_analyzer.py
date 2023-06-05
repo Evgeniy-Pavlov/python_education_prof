@@ -14,7 +14,7 @@ import datetime
 import json
 
 config = {
-    "REPORT_SIZE": 1000,
+    "REPORT_SIZE": 100,
     "REPORT_DIR": "./reports",
     "LOG_DIR": "./log"
 }
@@ -38,15 +38,25 @@ LOG_DIR = os.path.join(Path(__file__).resolve().parent, config.get("LOG_DIR"))
 
 
 def find_last_file():
-    result = [(file, datetime.datetime.strptime(file[-8:], '%Y%m%d').date()) for file in os.listdir(LOG_DIR) if  re.search(r'nginx-access-ui.log-\d{8}', file)]
+    result = [(file, datetime.datetime.strptime(file[-8:], '%Y%m%d').date()) 
+            for file in os.listdir(LOG_DIR) if  re.search(r'nginx-access-ui.log-\d{8}', file)]
     result.sort(key= lambda x: x[1], reverse=True)
     return result[0]
 
 
 
 with open(f'{LOG_DIR}/nginx-access-ui.log-20170630', 'r') as file:
+    result = {}
     for e, line in enumerate(file):
-        pass
+        if len(result) < config.get('REPORT_SIZE'):
+            line_list = line.split()
+            if line_list[6] not in result.keys():
+                result[line_list[6]] = [float(line_list[-1])]
+            else:
+                result[line_list[6]].append(float(line_list[-1]))
+        else:
+            break
+    print(result)
 
 
 
