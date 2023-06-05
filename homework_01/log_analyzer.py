@@ -9,6 +9,9 @@
 import os
 import argparse
 from pathlib import Path
+import re
+import datetime
+import json
 
 config = {
     "REPORT_SIZE": 1000,
@@ -18,26 +21,32 @@ config = {
 
 def parser():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--config', required=False, help='config')
+    parser.add_argument('--config', required=False, help='config', default='./config.json')
     return parser.parse_args()
 
-args = parser()
-print(args)
 
-
-
+def set_config():
+    if parser() != './config.json':
+        with open(parser()) as config_file:
+            data = dict(json.load(config_file))
+            for key in data.keys:
+                config[key] = data.get(key)
+    return config
 
 
 LOG_DIR = os.path.join(Path(__file__).resolve().parent, config.get("LOG_DIR"))
 
-print(os.listdir(LOG_DIR))
+
+def find_last_file():
+    result = [(file, datetime.datetime.strptime(file[-8:], '%Y%m%d').date()) for file in os.listdir(LOG_DIR) if  re.search(r'nginx-access-ui.log-\d{8}', file)]
+    result.sort(key= lambda x: x[1], reverse=True)
+    return result[0]
+
+
 
 with open(f'{LOG_DIR}/nginx-access-ui.log-20170630', 'r') as file:
     for e, line in enumerate(file):
-        if e == 0:
-            print(line)
-        else:
-            break
+        pass
 
 
 
