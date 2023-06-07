@@ -21,7 +21,8 @@ import statistics
 config = {
     "REPORT_SIZE": 100,
     "REPORT_DIR": "./reports",
-    "LOG_DIR": "./log"
+    "LOG_DIR": "./log",
+    "TEMPLATE": "report.html"
 }
 
 
@@ -34,11 +35,14 @@ def parser():
 
 def set_config(config:dict=config):
     """Функция устанавливающая для конфига параметры переданные функцией parser."""
-    if parser() != './config.json':
-        with open(parser()) as config_file:
-            data = dict(json.load(config_file))
-            for key in data.keys:
-                config[key] = data.get(key)
+    if parser() and parser() != './config.json':
+        try:
+            with open(parser().config) as config_file:
+                data = dict(json.load(config_file))
+                for key in data.keys:
+                    config[key] = data.get(key)
+        except FileNotFoundError:
+            return config
     return config
 
 
@@ -113,14 +117,16 @@ def create_data_for_report(config:dict = config):
 
 
 
-def create_dict_for_report(config:dict=config, data_for_report:dict=create_data_for_report(config)):
+def create_list_for_report(config:dict=config, data_for_report:dict=create_data_for_report(config)):
+    """Формирует результирующий список словарей которые будут загружены в отчет. Длина отчета обрезается
+    по REPORT_SIZE."""
     all_list_request_time = list(itertools.chain(*data_for_report.values()))
     len_list_request_tume = len(all_list_request_time)
     sum_request_time = sum(all_list_request_time)
     result = [{'url': url, 
             'count': len(data_for_report.get(url)),
             'count_perc': round(len(data_for_report.get(url))/len_list_request_tume, 3),
-            'time_sum': sum(data_for_report.get(url)),
+            'time_sum': round(sum(data_for_report.get(url)),3),
             'time_perc': round(sum(data_for_report.get(url))/sum_request_time, 3),
             'time_avg': round(sum(data_for_report.get(url))/len(data_for_report.get(url)), 3),
             'time_max': max(data_for_report.get(url)),
@@ -129,11 +135,33 @@ def create_dict_for_report(config:dict=config, data_for_report:dict=create_data_
     return result[:config.get('REPORT_SIZE')]
     
 
-print(create_dict_for_report(config=config, data_for_report=create_data_for_report(config)))
+
+def create_report(date:datetime.date, report_list:list, config:dict):
+    """Формирует отчет на основе полученных данных из файла."""
+    with open(config.get('TEMPLATE')) as temp:
+        template_file = Template(temp.read())
+    report = template_file.safe_substitute(table_json=json.dumps(report_list))
+    report_dir = config.get('REPORT_DIR')
+    date_for_report = date.strftime('%Y.%m.%d')
+    with open(f'{report_dir}/report-{date_for_report}.html', 'w') as file:
+        file.write(report)
 
 
-def main():
-    pass
+
+def main(config:dict=config):
+    config_for_report = set_config(config)
+    checking_ability = checking_ability_create_report(config_for_report)
+    if isinstance(checking_ability, str):
+        print(checking_ability)
+    else:
+        data_for_report = create_data_for_report(config_for_report)
+        if isinstance(data_for_report, str):
+            print(data_for_report)
+        else:
+            result_list = create_list_for_report(config=config_for_report, data_for_report=data_for_report)
+            date_for_report = find_last_file(config=config)[1]
+            create_report(date=date_for_report, report_list=result_list, config=config_for_report)
+
 
 
 if __name__ == "__main__":
