@@ -132,6 +132,7 @@ def create_list_for_report(config:dict=config, data_for_report:dict=create_data_
             'time_max': max(data_for_report.get(url)),
             'time_med': round(statistics.median(data_for_report.get(url)), 3)} 
             for url in data_for_report.keys()]
+    result.sort(key= lambda item: item['time_sum'], reverse=True)
     return result[:config.get('REPORT_SIZE')]
     
 
