@@ -7,15 +7,17 @@
 #                     '"$http_user_agent" "$http_x_forwarded_for" "$http_X_REQUEST_ID" "$http_X_RB_USER" '
 #                     '$request_time';
 import os
-import argparse
-from pathlib import Path
 import re
-import datetime
 import json
-from string import Template
 import gzip
+import argparse
+import datetime
+import logging
 import itertools
 import statistics
+from pathlib import Path
+from string import Template
+
 
 
 config = {
@@ -24,6 +26,7 @@ config = {
     "LOG_DIR": "./log",
     "TEMPLATE": "report.html"
 }
+
 
 
 def parser():
@@ -46,6 +49,12 @@ def set_config(config:dict=config):
     return config
 
 
+def set_logging(config:dict=config):
+    LOGGER = logging.getLogger()
+    logging.basicConfig(level=logging.INFO, filename=config.get('REPORT_LOG_FILE'), format="[%(asctime)s] %(levelname).1s %(message)s",
+        datefmt="%Y.%m.%d %H:%M:%S")
+    return LOGGER
+
 
 def find_last_file(config:dict=config):
     """Функция находит последний по дате в названии nginx-access-ui.log.
@@ -63,28 +72,31 @@ def find_last_file(config:dict=config):
 
 
 
-def checking_ability_create_report(config:dict=config):
+def checking_ability_create_report(config:dict=config, logger=set_logging(config=config)):
     """Проверяет возможно ли создать отчет. Отчет возможно создать только если
     последний обработанный по дате отчет меньше чем последний по дате лог. В качестве аргумента
     принимает конфиг."""
     last_file_log = find_last_file(config=config)
     if not last_file_log:
-        return 'Логов для обработки не найдено или директория не существует.'
+        logger.info(f'Логов для обработки не найдено или директория не существует.')
+        return None
     elif last_file_log:
         REPORT_DIR = os.path.join(Path(__file__).resolve().parent, config.get('REPORT_DIR'))
         try:
             last_report = [(file, datetime.datetime.strptime(file[7:-5], '%Y.%m.%d').date()) 
                 for file in os.listdir(REPORT_DIR) if re.search(r'report-\d{4}.\d{2}.\d{2}.html', file)]
         except FileNotFoundError:
-            return 'Указанная директория для создания логов не существует.'
+            logger.error(f'Указанная директория для создания логов не существует.')
+            return None
         last_report.sort(key= lambda x: x[1], reverse=True)
         if last_report[0][1] == last_file_log[1]:
-            return 'Отчет по последнему логу был выгружен. Дополнительная выгрузка не требуется.'
+            logger.info('Отчет по последнему логу был выгружен. Дополнительная выгрузка не требуется.')
+            return None
         else:
             return last_report[0][1]
 
 
-def create_data_for_report(config:dict = config):
+def create_data_for_report(config:dict = config, logger=set_logging(config=config)):
     """Функция проходит по файлу лога. Если превышен порог ошибок (20 процентов от текущей длины result),
     то возвращает сообщение об ошибке, отчет далее не сформируется. Если порог ошибок не превышен,
     то возвращает словарь с ключом (url) и значением списком request_time. В качестве аргумента принимает конфиг и
@@ -112,12 +124,14 @@ def create_data_for_report(config:dict = config):
                     except ValueError:
                         error_count+=1
             else:
-                return f'Парсинг файла невозможен, превышен порог ошибок. Ошибок зафиксировано: {error_count}.'
+                logger.error(f'Парсинг файла невозможен, превышен порог ошибок. Ошибок зафиксировано: {error_count}.')
+                return None
         return result
 
 
 
-def create_list_for_report(config:dict=config, data_for_report:dict=create_data_for_report(config)):
+def create_list_for_report(config:dict=config, data_for_report:dict=create_data_for_report(config),
+                        logger=set_logging(config=config)):
     """Формирует результирующий список словарей которые будут загружены в отчет. Длина отчета обрезается
     по REPORT_SIZE."""
     all_list_request_time = list(itertools.chain(*data_for_report.values()))
@@ -125,45 +139,50 @@ def create_list_for_report(config:dict=config, data_for_report:dict=create_data_
     sum_request_time = sum(all_list_request_time)
     result = [{'url': url, 
             'count': len(data_for_report.get(url)),
-            'count_perc': round(len(data_for_report.get(url))/len_list_request_tume, 3),
-            'time_sum': round(sum(data_for_report.get(url)),3),
-            'time_perc': round(sum(data_for_report.get(url))/sum_request_time, 3),
+            'count_perc': round((len(data_for_report.get(url))/len_list_request_tume) * 100, 3) ,
+            'time_sum': round(sum(data_for_report.get(url)), 3),
+            'time_perc': round((sum(data_for_report.get(url))/sum_request_time) * 100, 3),
             'time_avg': round(sum(data_for_report.get(url))/len(data_for_report.get(url)), 3),
-            'time_max': max(data_for_report.get(url)),
+            'time_max': round(max(data_for_report.get(url)), 3),
             'time_med': round(statistics.median(data_for_report.get(url)), 3)} 
             for url in data_for_report.keys()]
     result.sort(key= lambda item: item['time_sum'], reverse=True)
+    logger.info('Информация из лога собрана, переходим к формированию отчета.')
     return result[:config.get('REPORT_SIZE')]
     
 
 
-def create_report(date:datetime.date, report_list:list, config:dict):
+def create_report(date:datetime.date, report_list:list, config:dict, logger=set_logging(config=config)):
     """Формирует отчет на основе полученных данных из файла."""
     with open(config.get('TEMPLATE')) as temp:
         template_file = Template(temp.read())
     report = template_file.safe_substitute(table_json=json.dumps(report_list))
     report_dir = config.get('REPORT_DIR')
     date_for_report = date.strftime('%Y.%m.%d')
+    logger.info(f'Отчет будет сформирован в файле {report_dir}/report-{date_for_report}.html')
     with open(f'{report_dir}/report-{date_for_report}.html', 'w') as file:
         file.write(report)
 
 
 
-def main(config:dict=config):
-    config_for_report = set_config(config)
-    checking_ability = checking_ability_create_report(config_for_report)
-    if isinstance(checking_ability, str):
-        print(checking_ability)
-    else:
-        data_for_report = create_data_for_report(config_for_report)
-        if isinstance(data_for_report, str):
-            print(data_for_report)
-        else:
-            result_list = create_list_for_report(config=config_for_report, data_for_report=data_for_report)
-            date_for_report = find_last_file(config=config)[1]
-            create_report(date=date_for_report, report_list=result_list, config=config_for_report)
-
+def main(config:dict=config, logger=set_logging(config=config)):
+    config_for_report = set_config(config=config)
+    logger.info(f'Начинается поиск свежих логов.')
+    checking_ability = checking_ability_create_report(config=config_for_report, logger=logger)
+    if not checking_ability is None:
+        data_for_report = create_data_for_report(config=config_for_report, logger=logger)
+        if not data_for_report is None:
+            result_list = create_list_for_report(config=config_for_report, data_for_report=data_for_report, logger=logger)
+            date_for_report = find_last_file(config=config, logger=logger)[1]
+            create_report(date=date_for_report, report_list=result_list, config=config_for_report, logger=logger)
+            
+        
 
 
 if __name__ == "__main__":
-    main()
+    set_config(config=config)
+    logger = set_logging(config=config)
+    try:
+        main(config=config, logger=logger)
+    except Exception as e:
+        logger.exception(str(e))
