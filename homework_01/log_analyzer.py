@@ -99,7 +99,7 @@ def checking_ability_create_report(config:dict=config, logger=set_logging(config
 def create_data_for_report(config:dict = config, logger=set_logging(config=config)):
     """Функция проходит по файлу лога. Если превышен порог ошибок (20 процентов от текущей длины result),
     то возвращает сообщение об ошибке, отчет далее не сформируется. Если порог ошибок не превышен,
-    то возвращает словарь с ключом (url) и значением списком request_time. В качестве аргумента принимает конфиг и
+    то возвращает список словерей (словарь с ключом (url) и значением списком request_time). В качестве аргумента принимает конфиг и
     результат выполнения функции возможности создания отчета (checking_ability_create_report)."""
     LOG_DIR = config.get('LOG_DIR')
     file = find_last_file(config=config)[0]

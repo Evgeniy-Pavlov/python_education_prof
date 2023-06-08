@@ -33,7 +33,7 @@ def countcalls(func):
     def inner_countcalls(*args, **kwargs):
         inner_countcalls.calls += 1
         return func(*args, **kwargs)
-    inner_countcalls.calls = int()
+    inner_countcalls.calls = 0
     return inner_countcalls
 
 
