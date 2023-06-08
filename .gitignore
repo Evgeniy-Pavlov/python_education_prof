@@ -147,3 +147,9 @@ cython_debug/
 
 #data app
 media/
+
+#Папки для парсера логов
+log/
+reports/
+.gz
+
