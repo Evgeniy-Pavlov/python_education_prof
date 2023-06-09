@@ -19,14 +19,12 @@ from pathlib import Path
 from string import Template
 
 
-
 config = {
     "REPORT_SIZE": 100,
     "REPORT_DIR": "./reports",
     "LOG_DIR": "./log",
     "TEMPLATE": "report.html"
 }
-
 
 
 def parser():
@@ -72,14 +70,14 @@ def find_last_file(config:dict=config):
 
 
 
-def checking_ability_create_report(config:dict=config, logger=set_logging(config=config)):
+def checking_ability_create_report(logger, config:dict=config):
     """Проверяет возможно ли создать отчет. Отчет возможно создать только если
     последний обработанный по дате отчет меньше чем последний по дате лог. В качестве аргумента
     принимает конфиг."""
     last_file_log = find_last_file(config=config)
-    if not last_file_log:
+    if last_file_log is None or len(last_file_log) == 0:
         logger.info(f'Логов для обработки не найдено или директория не существует.')
-        return None
+        return False
     elif last_file_log:
         REPORT_DIR = os.path.join(Path(__file__).resolve().parent, config.get('REPORT_DIR'))
         try:
@@ -87,16 +85,16 @@ def checking_ability_create_report(config:dict=config, logger=set_logging(config
                 for file in os.listdir(REPORT_DIR) if re.search(r'report-\d{4}.\d{2}.\d{2}.html', file)]
         except FileNotFoundError:
             logger.error(f'Указанная директория для создания логов не существует.')
-            return None
+            return False
         last_report.sort(key= lambda x: x[1], reverse=True)
-        if last_report[0][1] == last_file_log[1]:
+        if not last_report or last_report[0][1] < last_file_log[1]:
+            return True
+        elif last_report[0][1] == last_file_log[1]:
             logger.info('Отчет по последнему логу был выгружен. Дополнительная выгрузка не требуется.')
-            return None
-        else:
-            return last_report[0][1]
+            return False
 
 
-def create_data_for_report(config:dict = config, logger=set_logging(config=config)):
+def create_data_for_report(logger, config:dict = config):
     """Функция проходит по файлу лога. Если превышен порог ошибок (20 процентов от текущей длины result),
     то возвращает сообщение об ошибке, отчет далее не сформируется. Если порог ошибок не превышен,
     то возвращает список словерей (словарь с ключом (url) и значением списком request_time). В качестве аргумента принимает конфиг и
@@ -130,8 +128,7 @@ def create_data_for_report(config:dict = config, logger=set_logging(config=confi
 
 
 
-def create_list_for_report(config:dict=config, data_for_report:dict=create_data_for_report(config),
-                        logger=set_logging(config=config)):
+def create_list_for_report(logger, data_for_report:dict, config:dict=config):
     """Формирует результирующий список словарей которые будут загружены в отчет. Длина отчета обрезается
     по REPORT_SIZE."""
     all_list_request_time = list(itertools.chain(*data_for_report.values()))
@@ -151,8 +148,7 @@ def create_list_for_report(config:dict=config, data_for_report:dict=create_data_
     return result[:config.get('REPORT_SIZE')]
     
 
-
-def create_report(date:datetime.date, report_list:list, config:dict, logger=set_logging(config=config)):
+def create_report(logger, date:datetime.date, report_list:list, config:dict):
     """Формирует отчет на основе полученных данных из файла."""
     with open(config.get('TEMPLATE')) as temp:
         template_file = Template(temp.read())
@@ -164,20 +160,17 @@ def create_report(date:datetime.date, report_list:list, config:dict, logger=set_
         file.write(report)
 
 
-
-def main(config:dict=config, logger=set_logging(config=config)):
+def main(logger, config:dict=config):
     config_for_report = set_config(config=config)
     logger.info(f'Начинается поиск свежих логов.')
     checking_ability = checking_ability_create_report(config=config_for_report, logger=logger)
-    if not checking_ability is None:
+    if checking_ability:
         data_for_report = create_data_for_report(config=config_for_report, logger=logger)
         if not data_for_report is None:
             result_list = create_list_for_report(config=config_for_report, data_for_report=data_for_report, logger=logger)
-            date_for_report = find_last_file(config=config, logger=logger)[1]
+            date_for_report = find_last_file(config=config)[1]
             create_report(date=date_for_report, report_list=result_list, config=config_for_report, logger=logger)
             
-        
-
 
 if __name__ == "__main__":
     set_config(config=config)

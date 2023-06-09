@@ -21,7 +21,6 @@ def decorator(func):
     Decorate a decorator so that it inherits the docstrings
     and stuff from the function it's decorating.
     '''
-    @wraps(func)
     def inner_deco(*args, **kwargs):
         return func(*args, **kwargs)
     return inner_deco
