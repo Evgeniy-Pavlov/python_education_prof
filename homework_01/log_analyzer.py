@@ -34,9 +34,10 @@ def parser():
     return parser.parse_args()
 
 
-def set_config(config:dict=config):
+def set_config(config:dict=config) -> dict:
     """Функция устанавливающая для конфига параметры переданные функцией parser."""
-    if parser() and parser() != './config.json':
+    parser_arg = parser()
+    if parser_arg and parser_arg != './config.json':
         try:
             with open(parser().config) as config_file:
                 data = dict(json.load(config_file))
@@ -54,7 +55,7 @@ def set_logging(config:dict=config):
     return LOGGER
 
 
-def find_last_file(config:dict=config):
+def find_last_file(config:dict=config) -> tuple:
     """Функция находит последний по дате в названии nginx-access-ui.log.
     Если находит хотя бы один подходящий файл возвращает последний по 
     времени создания (посление цифры в названии)."""
@@ -70,7 +71,7 @@ def find_last_file(config:dict=config):
 
 
 
-def checking_ability_create_report(logger, config:dict=config):
+def checking_ability_create_report(logger, config:dict=config) -> bool:
     """Проверяет возможно ли создать отчет. Отчет возможно создать только если
     последний обработанный по дате отчет меньше чем последний по дате лог. В качестве аргумента
     принимает конфиг."""
@@ -94,8 +95,8 @@ def checking_ability_create_report(logger, config:dict=config):
             return False
 
 
-def create_data_for_report(logger, config:dict = config):
-    """Функция проходит по файлу лога. Если превышен порог ошибок (20 процентов от текущей длины result),
+def create_data_for_report(logger, config:dict = config) -> list[dict]:
+    """Функция проходит по файлу лога. Если превышен порог ошибок,
     то возвращает сообщение об ошибке, отчет далее не сформируется. Если порог ошибок не превышен,
     то возвращает список словерей (словарь с ключом (url) и значением списком request_time). В качестве аргумента принимает конфиг и
     результат выполнения функции возможности создания отчета (checking_ability_create_report)."""
@@ -106,7 +107,7 @@ def create_data_for_report(logger, config:dict = config):
         result = {}
         error_count = 0
         for line in file:
-            if error_count < len(result) * 0.2 or len(result) < 10:
+            if error_count < len(result) or len(result) < 10:
                 line_list = line.split()
                 url, request_time = line_list[6], line_list[-1]
                 if url not in result.keys() and re.search(r'/[a-z0-9?=_-]*', url):
@@ -128,7 +129,7 @@ def create_data_for_report(logger, config:dict = config):
 
 
 
-def create_list_for_report(logger, data_for_report:dict, config:dict=config):
+def create_list_for_report(logger, data_for_report:dict, config:dict=config) -> list[dict]:
     """Формирует результирующий список словарей которые будут загружены в отчет. Длина отчета обрезается
     по REPORT_SIZE."""
     all_list_request_time = list(itertools.chain(*data_for_report.values()))
@@ -166,7 +167,7 @@ def main(logger, config:dict=config):
     checking_ability = checking_ability_create_report(config=config_for_report, logger=logger)
     if checking_ability:
         data_for_report = create_data_for_report(config=config_for_report, logger=logger)
-        if not data_for_report is None:
+        if data_for_report:
             result_list = create_list_for_report(config=config_for_report, data_for_report=data_for_report, logger=logger)
             date_for_report = find_last_file(config=config)[1]
             create_report(date=date_for_report, report_list=result_list, config=config_for_report, logger=logger)
