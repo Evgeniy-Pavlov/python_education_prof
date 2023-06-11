@@ -29,9 +29,9 @@ config = {
 
 def parser():
     """Функция парсинга, возвращает аргументы переданные при запуске парсера лога."""
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--config', required=False, help='config', default='./config.json')
-    return parser.parse_args()
+    parser_call = argparse.ArgumentParser()
+    parser_call.add_argument('--config', required=False, help='config', default='./config.json')
+    return parser_call.parse_args()
 
 
 def set_config(config:dict=config) -> dict:
@@ -39,9 +39,9 @@ def set_config(config:dict=config) -> dict:
     parser_arg = parser()
     if parser_arg and parser_arg != './config.json':
         try:
-            with open(parser().config) as config_file:
+            with open(parser_arg.config) as config_file:
                 data = dict(json.load(config_file))
-                for key in data.keys:
+                for key in data.keys():
                     config[key] = data.get(key)
         except FileNotFoundError:
             return config

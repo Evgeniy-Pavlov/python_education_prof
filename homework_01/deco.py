@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from functools import update_wrapper, wraps
+from functools import wraps
 
 
-def disable(func):
+def disable():
     '''
     Disable a decorator by re-assigning the decorator's name
     to this function. For example, to turn off memoization:
@@ -41,11 +41,13 @@ def memo(func):
     Memoize a function so that it caches all return values for
     faster future lookups.
     '''
-    cache_dict = dict()
+    cache_dict = {}
+
     @wraps(func)
     def inner_memo(*args):
         key_args = args
-        if key_args not in cache_dict.keys():
+        cache_key = cache_dict.keys()
+        if key_args not in cache_key:
             cache_dict[key_args] = func(*args)
         return cache_dict[key_args]
     return inner_memo
@@ -68,7 +70,7 @@ def n_ary(func):
     return inner_n_ary
 
 
-def trace(aggregate):
+def trace(aggte):
     '''Trace calls made to function decorated.
 
     @trace("____")
@@ -91,16 +93,16 @@ def trace(aggregate):
     def inner_trace(func):
         @wraps(func)
         def wrapper(*args):
-            print (f"{aggregate * wrapper.recurse} --> {func.__name__}({str(*args)})")
+            name = func.__name__
+            print(f"{aggte * wrapper.recurse}-->{name}({str(*args)})")
             wrapper.recurse += 1
             result = func(*args)
-            print (f"{aggregate * wrapper.recurse} <-- {func.__name__}({str(*args)}) == {result}")
+            print(f"{aggte * wrapper.recurse}<--{name}({str(*args)})=={result}")
             wrapper.recurse -= 1
             return result
         wrapper.recurse = 0
         return wrapper
     return inner_trace
-
 
 
 @memo
@@ -139,7 +141,6 @@ def main():
     print(fib.__doc__)
     fib(3)
     print(fib.calls, 'calls made')
-    
 
 
 if __name__ == '__main__':

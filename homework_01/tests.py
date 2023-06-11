@@ -1,4 +1,3 @@
-import os
 import unittest
 from log_analyzer import find_last_file, create_data_for_report, create_list_for_report
 
