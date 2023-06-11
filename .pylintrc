@@ -155,6 +155,7 @@ disable=raw-checker-failed,
         C0115,
         C0114,
         E1121,
+        E1120,
 
 # Enable the message, report, category or checker with the given id(s). You can
 # either give multiple identifier separated by comma (,) or put this option

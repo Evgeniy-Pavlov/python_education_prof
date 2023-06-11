@@ -28,6 +28,7 @@
 # -----------------
 from itertools import combinations
 
+
 def hand_rank(hand):
     """Возвращает значение определяющее ранг 'руки'"""
     ranks = card_ranks(hand)
@@ -80,7 +81,7 @@ def flush(hand):
 def straight(ranks):
     """Возвращает True, если отсортированные ранги формируют последовательность 5ти,
     где у 5ти карт ранги идут по порядку (стрит)"""
-    result = list(range(min(ranks), min(ranks)+5))
+    result = list(range(min(ranks), min(ranks) + 5))
     return True if ranks[::-1] == result else None
 
 
@@ -102,7 +103,7 @@ def two_pair(ranks):
 
 def best_hand(hand):
     """Из "руки" в 7 карт возвращает лучшую "руку" в 5 карт """
-    result = list()
+    result = []
     rank = (0, 0)
     for comb in combinations(hand, 5):
         hand_rank_result = hand_rank(comb)
@@ -110,24 +111,24 @@ def best_hand(hand):
             result = list(comb)
             rank = hand_rank_result
         elif hand_rank_result[0] == rank[0]:
-            if rank[0] in (4,8) and hand_rank_result[1] > rank[1]:
+            if rank[0] in (4, 8) and hand_rank_result[1] > rank[1]:
                 result = list(comb)
                 rank = hand_rank_result
-            elif rank[0] in (6,7):
+            elif rank[0] in (6, 7):
                 if hand_rank_result[1] > rank[1]:
                     result = list(comb)
                     rank = hand_rank_result
                 elif hand_rank_result[1] == rank[1] and hand_rank_result[2] > rank[2]:
                     result = list(comb)
                     rank = hand_rank_result
-            elif rank[0] in (5,0):
+            elif rank[0] in (5, 0):
                 if sum(hand_rank_result[1]) > sum(rank[1]):
                     result = list(comb)
                     rank = hand_rank_result
             elif rank[0] == 4 and hand_rank_result[1] > rank[1]:
                 result = list(comb)
                 rank = hand_rank_result
-            elif rank[0] in (1,2,3):
+            elif rank[0] in (1, 2, 3):
                 if isinstance(hand_rank_result[1], list) and max(hand_rank_result[1]) > max(rank[1]):
                     result = list(comb)
                     rank = hand_rank_result
@@ -162,6 +163,7 @@ def test_best_wild_hand():
     assert (sorted(best_wild_hand("JD TC TH 7C 7D 7S 7H".split()))
             == ['7C', '7D', '7H', '7S', 'JD'])
     print('OK')
+
 
 if __name__ == '__main__':
     test_best_hand()
