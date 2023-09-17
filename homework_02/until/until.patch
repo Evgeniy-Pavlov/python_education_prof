@@ -1,0 +1,425 @@
+diff --git a/Grammar/Grammar b/Grammar/Grammar
+index 4c3f33d..37055be 100644
+--- a/Grammar/Grammar
++++ b/Grammar/Grammar
+@@ -62,9 +62,10 @@ global_stmt: 'global' NAME (',' NAME)*
+ exec_stmt: 'exec' expr ['in' test [',' test]]
+ assert_stmt: 'assert' test [',' test]
+ 
+-compound_stmt: if_stmt | while_stmt | for_stmt | try_stmt | with_stmt | funcdef | classdef | decorated
++compound_stmt: if_stmt | while_stmt | until_stmt | for_stmt | try_stmt | with_stmt | funcdef | classdef | decorated
+ if_stmt: 'if' test ':' suite ('elif' test ':' suite)* ['else' ':' suite]
+ while_stmt: 'while' test ':' suite ['else' ':' suite]
++until_stmt: 'until' test ':' suite
+ for_stmt: 'for' exprlist 'in' testlist ':' suite ['else' ':' suite]
+ try_stmt: ('try' ':' suite
+            ((except_clause ':' suite)+
+diff --git a/Include/Python-ast.h b/Include/Python-ast.h
+index 3f35bbb..0e79695 100644
+--- a/Include/Python-ast.h
++++ b/Include/Python-ast.h
+@@ -61,11 +61,11 @@ struct _mod {
+ 
+ enum _stmt_kind {FunctionDef_kind=1, ClassDef_kind=2, Return_kind=3,
+                   Delete_kind=4, Assign_kind=5, AugAssign_kind=6, Print_kind=7,
+-                  For_kind=8, While_kind=9, If_kind=10, With_kind=11,
+-                  Raise_kind=12, TryExcept_kind=13, TryFinally_kind=14,
+-                  Assert_kind=15, Import_kind=16, ImportFrom_kind=17,
+-                  Exec_kind=18, Global_kind=19, Expr_kind=20, Pass_kind=21,
+-                  Break_kind=22, Continue_kind=23};
++                  For_kind=8, While_kind=9, Until_kind=10, If_kind=11, With_kind=12,
++                  Raise_kind=13, TryExcept_kind=14, TryFinally_kind=15,
++                  Assert_kind=16, Import_kind=17, ImportFrom_kind=18,
++                  Exec_kind=19, Global_kind=20, Expr_kind=21, Pass_kind=22,
++                  Break_kind=23, Continue_kind=24};
+ struct _stmt {
+         enum _stmt_kind kind;
+         union {
+@@ -120,6 +120,11 @@ struct _stmt {
+                         asdl_seq *body;
+                         asdl_seq *orelse;
+                 } While;
++
++                struct {
++                        expr_ty test;
++                        asdl_seq *body;
++                } Until;
+                 
+                 struct {
+                         expr_ty test;
+@@ -408,6 +413,8 @@ stmt_ty _Py_For(expr_ty target, expr_ty iter, asdl_seq * body, asdl_seq *
+ #define While(a0, a1, a2, a3, a4, a5) _Py_While(a0, a1, a2, a3, a4, a5)
+ stmt_ty _Py_While(expr_ty test, asdl_seq * body, asdl_seq * orelse, int lineno,
+                   int col_offset, PyArena *arena);
++#define Until(a0, a1, a2, a3, a4) _Py_Until(a0, a1, a2, a3, a4)
++stmt_ty _Py_Until(expr_ty test, asdl_seq * body, int lineno, int col_offset, PyArena *arena);
+ #define If(a0, a1, a2, a3, a4, a5) _Py_If(a0, a1, a2, a3, a4, a5)
+ stmt_ty _Py_If(expr_ty test, asdl_seq * body, asdl_seq * orelse, int lineno,
+                int col_offset, PyArena *arena);
+diff --git a/Include/graminit.h b/Include/graminit.h
+index 40d531e..a520706 100644
+--- a/Include/graminit.h
++++ b/Include/graminit.h
+@@ -39,49 +39,50 @@
+ #define compound_stmt 292
+ #define if_stmt 293
+ #define while_stmt 294
+-#define for_stmt 295
+-#define try_stmt 296
+-#define with_stmt 297
+-#define with_item 298
+-#define except_clause 299
+-#define suite 300
+-#define testlist_safe 301
+-#define old_test 302
+-#define old_lambdef 303
+-#define test 304
+-#define or_test 305
+-#define and_test 306
+-#define not_test 307
+-#define comparison 308
+-#define comp_op 309
+-#define expr 310
+-#define xor_expr 311
+-#define and_expr 312
+-#define shift_expr 313
+-#define arith_expr 314
+-#define term 315
+-#define factor 316
+-#define power 317
+-#define atom 318
+-#define listmaker 319
+-#define testlist_comp 320
+-#define lambdef 321
+-#define trailer 322
+-#define subscriptlist 323
+-#define subscript 324
+-#define sliceop 325
+-#define exprlist 326
+-#define testlist 327
+-#define dictorsetmaker 328
+-#define classdef 329
+-#define arglist 330
+-#define argument 331
+-#define list_iter 332
+-#define list_for 333
+-#define list_if 334
+-#define comp_iter 335
+-#define comp_for 336
+-#define comp_if 337
+-#define testlist1 338
+-#define encoding_decl 339
+-#define yield_expr 340
++#define until_stmt 295
++#define for_stmt 296
++#define try_stmt 297
++#define with_stmt 298
++#define with_item 299
++#define except_clause 300
++#define suite 301
++#define testlist_safe 302
++#define old_test 303
++#define old_lambdef 304
++#define test 305
++#define or_test 306
++#define and_test 307
++#define not_test 308
++#define comparison 309
++#define comp_op 310
++#define expr 311
++#define xor_expr 312
++#define and_expr 313
++#define shift_expr 314
++#define arith_expr 315
++#define term 316
++#define factor 317
++#define power 318
++#define atom 319
++#define listmaker 320
++#define testlist_comp 321
++#define lambdef 322
++#define trailer 323
++#define subscriptlist 324
++#define subscript 325
++#define sliceop 326
++#define exprlist 327
++#define testlist 328
++#define dictorsetmaker 329
++#define classdef 330
++#define arglist 331
++#define argument 332
++#define list_iter 333
++#define list_for 334
++#define list_if 335
++#define comp_iter 336
++#define comp_for 337
++#define comp_if 338
++#define testlist1 339
++#define encoding_decl 340
++#define yield_expr 341
+diff --git a/Parser/Python.asdl b/Parser/Python.asdl
+index 9a9b933..78f1b4d 100644
+--- a/Parser/Python.asdl
++++ b/Parser/Python.asdl
+@@ -24,6 +24,7 @@ module Python version "$Revision$"
+ 	      -- use 'orelse' because else is a keyword in target languages
+ 	      | For(expr target, expr iter, stmt* body, stmt* orelse)
+ 	      | While(expr test, stmt* body, stmt* orelse)
++		  | Until(expr test, stmt* body)
+ 	      | If(expr test, stmt* body, stmt* orelse)
+ 	      | With(expr context_expr, expr? optional_vars, stmt* body)
+ 
+diff --git a/Python/Python-ast.c b/Python/Python-ast.c
+index 2e7a1af..600d0f3 100644
+--- a/Python/Python-ast.c
++++ b/Python/Python-ast.c
+@@ -89,6 +89,12 @@ static char *While_fields[]={
+         "body",
+         "orelse",
+ };
++static PyTypeObject *Until_type;
++static char *Until_fields[]={
++        "test",
++        "body",
++};
++
+ static PyTypeObject *If_type;
+ static char *If_fields[]={
+         "test",
+@@ -706,6 +712,8 @@ static int init_types(void)
+         if (!For_type) return 0;
+         While_type = make_type("While", stmt_type, While_fields, 3);
+         if (!While_type) return 0;
++        Until_type = make_type("Until", stmt_type, Until_fields, 2);
++        if (!Until_type) return 0;
+         If_type = make_type("If", stmt_type, If_fields, 3);
+         if (!If_type) return 0;
+         With_type = make_type("With", stmt_type, With_fields, 3);
+@@ -1237,6 +1245,25 @@ While(expr_ty test, asdl_seq * body, asdl_seq * orelse, int lineno, int
+ }
+ 
+ stmt_ty
++Until(expr_ty test, asdl_seq * body, int lineno, int col_offset, PyArena *arena)
++{
++        stmt_ty p;
++        if (!test) {
++                PyErr_SetString(PyExc_ValueError, "field test is required for Until");
++                return NULL;
++        }
++        p = (stmt_ty)PyArena_Malloc(arena, sizeof(*p));
++        if (!p)
++                return NULL;
++        p->kind = Until_kind;
++        p->v.Until.test = test;
++        p->v.Until.body = body;
++        p->lineno = lineno;
++        p->col_offset = col_offset;
++        return p;
++}
++
++stmt_ty
+ If(expr_ty test, asdl_seq * body, asdl_seq * orelse, int lineno, int
+    col_offset, PyArena *arena)
+ {
+@@ -2361,6 +2388,21 @@ ast2obj_stmt(void* _o)
+                         goto failed;
+                 Py_DECREF(value);
+                 break;
++        case Until_kind:
++                result = PyType_GenericNew(Until_type, NULL, NULL);
++                if (!result) goto failed;
++                value = ast2obj_expr(o->v.Until.test);
++                if (!value) goto failed;
++                if (PyObject_SetAttrString(result, "test", value) == -1)
++                        goto failed;
++                Py_DECREF(value);
++                value = ast2obj_list(o->v.Until.body, ast2obj_stmt);
++                if (!value) goto failed;
++                if (PyObject_SetAttrString(result, "body", value) == -1)
++                        goto failed;
++                Py_DECREF(value);
++                break;
++
+         case If_kind:
+                 result = PyType_GenericNew(If_type, NULL, NULL);
+                 if (!result) goto failed;
+@@ -4136,6 +4178,59 @@ obj2ast_stmt(PyObject* obj, stmt_ty* out, PyArena* arena)
+                 if (*out == NULL) goto failed;
+                 return 0;
+         }
++        isinstance = PyObject_IsInstance(obj, (PyObject*)Until_type);
++if (isinstance == -1) {
++	return 1;
++	}
++if (isinstance) {
++	expr_ty test;
++	asdl_seq* body;
++
++	if (PyObject_HasAttrString(obj, "test")) {
++		int res;
++		tmp = PyObject_GetAttrString(obj, "test");
++		if (tmp == NULL) goto failed;
++		res = obj2ast_expr(tmp, &test, arena);
++		if (res != 0) goto failed;
++		Py_XDECREF(tmp);
++		tmp = NULL;
++	} else {
++		PyErr_SetString(PyExc_TypeError, "required field \"test\" missing from Until");
++		return 1;
++		}
++	if (PyObject_HasAttrString(obj, "body")) {
++		int res;
++		Py_ssize_t len;
++		Py_ssize_t i;
++		tmp = PyObject_GetAttrString(obj, "body");
++		if (tmp == NULL) goto failed;
++		if (!PyList_Check(tmp)) {
++			PyErr_Format(PyExc_TypeError, "Until field \"body\" must be a list, not a %.200s", tmp->ob_type->tp_name);
++			goto failed;
++			}
++			len = PyList_GET_SIZE(tmp);
++			body = asdl_seq_new(len, arena);
++			if (body == NULL) goto failed;
++			for (i = 0; i < len; i++) {
++				stmt_ty val;
++				res = obj2ast_stmt(PyList_GET_ITEM(tmp, i), &val, arena);
++				if (res != 0) goto failed;
++				if (len != PyList_GET_SIZE(tmp)) {
++					PyErr_SetString(PyExc_RuntimeError, "Until field \"body\" changed size during iteration");
++					goto failed;
++					}
++					asdl_seq_SET(body, i, val);
++				}
++				Py_XDECREF(tmp);
++				tmp = NULL;
++			} else {
++				PyErr_SetString(PyExc_TypeError, "required field \"body\" missing from Until");
++				return 1;
++			}
++		*out = Until(test, body, lineno, col_offset, arena);
++		if (*out == NULL) goto failed;
++		return 0;
++	}
+         isinstance = PyObject_IsInstance(obj, (PyObject*)If_type);
+         if (isinstance == -1) {
+                 return 1;
+diff --git a/Python/ast.c b/Python/ast.c
+index 10571a3..78cb11a 100644
+--- a/Python/ast.c
++++ b/Python/ast.c
+@@ -2969,6 +2969,31 @@ ast_for_while_stmt(struct compiling *c, const node *n)
+ }
+ 
+ static stmt_ty
++ast_for_until_stmt(struct compiling *c, const node *n)
++{
++    /* until_stmt: 'until' test ':' suite */
++    REQ(n, until_stmt);
++
++    if (NCH(n) == 4) {
++        expr_ty expression;
++        asdl_seq *suite_seq;
++
++        expression = ast_for_expr(c, CHILD(n, 1));
++        if (!expression)
++            return NULL;
++        suite_seq = ast_for_suite(c, CHILD(n, 3));
++        if (!suite_seq)
++            return NULL;
++        return Until(expression, suite_seq, LINENO(n), n->n_col_offset, c->c_arena);
++    }
++
++    PyErr_Format(PyExc_SystemError,
++                 "wrong number of tokens for 'until' statement: %d",
++                 NCH(n));
++    return NULL;
++}
++
++static stmt_ty
+ ast_for_for_stmt(struct compiling *c, const node *n)
+ {
+     asdl_seq *_target, *seq = NULL, *suite_seq;
+@@ -3302,6 +3327,8 @@ ast_for_stmt(struct compiling *c, const node *n)
+                 return ast_for_if_stmt(c, ch);
+             case while_stmt:
+                 return ast_for_while_stmt(c, ch);
++            case until_stmt:
++                return ast_for_until_stmt(c, ch);
+             case for_stmt:
+                 return ast_for_for_stmt(c, ch);
+             case try_stmt:
+diff --git a/Python/compile.c b/Python/compile.c
+index 6386a40..04fee68 100644
+--- a/Python/compile.c
++++ b/Python/compile.c
+@@ -1695,6 +1695,46 @@ compiler_while(struct compiler *c, stmt_ty s)
+ }
+ 
+ static int
++compiler_until(struct compiler *c, stmt_ty s)
++{
++    basicblock *loop, *end, *anchor = NULL;
++    int constant = expr_constant(s->v.Until.test);
++
++    if (constant == 1) {
++        return 1;
++    }
++    loop = compiler_new_block(c);
++    end = compiler_new_block(c);
++    if (constant == -1) {
++        anchor = compiler_new_block(c);
++        if (anchor == NULL)
++            return 0;
++    }
++    if (loop == NULL || end == NULL)
++        return 0;
++
++    ADDOP_JREL(c, SETUP_LOOP, end);
++    compiler_use_next_block(c, loop);
++    if (!compiler_push_fblock(c, LOOP, loop))
++        return 0;
++    if (constant == -1) {
++        VISIT(c, expr, s->v.Until.test);
++        ADDOP_JABS(c, POP_JUMP_IF_TRUE, anchor);
++    }
++    VISIT_SEQ(c, stmt, s->v.Until.body);
++    ADDOP_JABS(c, JUMP_ABSOLUTE, loop);
++
++    if (constant == -1) {
++        compiler_use_next_block(c, anchor);
++        ADDOP(c, POP_BLOCK);
++    }
++    compiler_pop_fblock(c, LOOP, loop);
++    compiler_use_next_block(c, end);
++
++    return 1;
++}
++
++static int
+ compiler_continue(struct compiler *c)
+ {
+     static const char LOOP_ERROR_MSG[] = "'continue' not properly in loop";
+@@ -2116,6 +2156,8 @@ compiler_visit_stmt(struct compiler *c, stmt_ty s)
+         return compiler_for(c, s);
+     case While_kind:
+         return compiler_while(c, s);
++    case Until_kind:
++        return compiler_until(c, s);
+     case If_kind:
+         return compiler_if(c, s);
+     case Raise_kind:
+diff --git a/Python/symtable.c b/Python/symtable.c
+index 23aeaaa..12767a5 100644
+--- a/Python/symtable.c
++++ b/Python/symtable.c
+@@ -1084,6 +1084,10 @@ symtable_visit_stmt(struct symtable *st, stmt_ty s)
+         if (s->v.While.orelse)
+             VISIT_SEQ(st, stmt, s->v.While.orelse);
+         break;
++    case Until_kind:
++        VISIT(st, expr, s->v.Until.test);
++        VISIT_SEQ(st, stmt, s->v.Until.body);
++        break;
+     case If_kind:
+         /* XXX if 0: and lookup_yield() hacks */
+         VISIT(st, expr, s->v.If.test);
