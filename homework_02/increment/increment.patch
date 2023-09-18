@@ -1,0 +1,120 @@
+diff --git a/Grammar/Grammar b/Grammar/Grammar
+index 4c3f33d..f54067e 100644
+--- a/Grammar/Grammar
++++ b/Grammar/Grammar
+@@ -35,13 +35,15 @@ simple_stmt: small_stmt (';' small_stmt)* [';'] NEWLINE
+ small_stmt: (expr_stmt | print_stmt  | del_stmt | pass_stmt | flow_stmt |
+              import_stmt | global_stmt | exec_stmt | assert_stmt)
+ expr_stmt: testlist (augassign (yield_expr|testlist) |
+-                     ('=' (yield_expr|testlist))*)
++                     ('=' (yield_expr|testlist))* | incr_stmt | decr_stmt)
+ augassign: ('+=' | '-=' | '*=' | '/=' | '%=' | '&=' | '|=' | '^=' |
+             '<<=' | '>>=' | '**=' | '//=')
+ # For normal assignments, additional restrictions enforced by the interpreter
+ print_stmt: 'print' ( [ test (',' test)* [','] ] |
+                       '>>' test [ (',' test)+ [','] ] )
+ del_stmt: 'del' exprlist
++incr_stmt : '++'
++decr_stmt : '--'
+ pass_stmt: 'pass'
+ flow_stmt: break_stmt | continue_stmt | return_stmt | raise_stmt | yield_stmt
+ break_stmt: 'break'
+diff --git a/Include/graminit.h b/Include/graminit.h
+index 40d531e..8622e1a 100644
+--- a/Include/graminit.h
++++ b/Include/graminit.h
+@@ -85,3 +85,5 @@
+ #define testlist1 338
+ #define encoding_decl 339
+ #define yield_expr 340
++#define incr_stmt 341
++#define decr_stmt 342
+diff --git a/Include/token.h b/Include/token.h
+index 72659ac..5c1530b 100644
+--- a/Include/token.h
++++ b/Include/token.h
+@@ -64,6 +64,8 @@ extern "C" {
+ #define OP		51
+ #define ERRORTOKEN	52
+ #define N_TOKENS	53
++#define INCREMENT   54
++#define DECREMENT   55
+ 
+ /* Special definitions for cooperation with parser */
+ 
+diff --git a/Parser/tokenizer.c b/Parser/tokenizer.c
+index 8966661..8520219 100644
+--- a/Parser/tokenizer.c
++++ b/Parser/tokenizer.c
+@@ -89,7 +89,9 @@ char *_PyParser_TokenNames[] = {
+     /* This table must match the #defines in token.h! */
+     "OP",
+     "<ERRORTOKEN>",
+-    "<N_TOKENS>"
++    "<N_TOKENS>",
++    "INCREMENT",
++    "DECREMENT"
+ };
+ 
+ /* Create and initialize a new tok_state structure */
+@@ -1107,11 +1109,13 @@ PyToken_TwoChars(int c1, int c2)
+         break;
+     case '+':
+         switch (c2) {
++        case '+':               return INCREMENT;
+         case '=':               return PLUSEQUAL;
+         }
+         break;
+     case '-':
+         switch (c2) {
++        case '-':               return DECREMENT;
+         case '=':               return MINEQUAL;
+         }
+         break;
+diff --git a/Python/ast.c b/Python/ast.c
+index 10571a3..9c0401b 100644
+--- a/Python/ast.c
++++ b/Python/ast.c
+@@ -2190,6 +2190,42 @@ ast_for_expr_stmt(struct compiling *c, const node *n)
+ 
+         return Expr(e, LINENO(n), n->n_col_offset, c->c_arena);
+     }
++    else if ((TYPE(CHILD(n, 1)) == incr_stmt) || (TYPE(CHILD(n, 1)) == decr_stmt)) {
++        expr_ty expr1, expr2;
++        node *ch = CHILD(n, 0);
++        operator_ty operator;
++        switch (TYPE(CHILD(n, 1))){
++            case incr_stmt:
++                operator = Add;
++                break;
++            case decr_stmt:
++                operator = Sub;
++                break;
++        }
++        expr1 = ast_for_testlist(c, ch);
++        if (!expr1) {
++            return NULL;
++        }
++        switch (expr1->kind) {
++            case Name_kind:
++                if (!forbidden_check(c, CHILD(ch, 0), PyBytes_AS_STRING(expr1->v.Name.id)))
++                {
++                    return NULL;
++                }
++                expr1->v.Name.ctx = Store;
++                break;
++            default:
++            ast_error(ch, "illegal target for increment/decrement");
++            return NULL;
++        }
++        PyObject *pynum = parsenumber(c, "1");
++        if (PyArena_AddPyObject(c->c_arena, pynum) < 0) {
++            Py_DECREF(pynum);
++            return NULL;
++        }
++        expr2 = Num(pynum, LINENO(n), n->n_col_offset, c->c_arena);
++        return AugAssign(expr1, operator, expr2, LINENO(n), n->n_col_offset, c->c_arena);
++    }
+     else if (TYPE(CHILD(n, 1)) == augassign) {
+         expr_ty expr1, expr2;
+         operator_ty newoperator;
