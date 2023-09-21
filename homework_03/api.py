@@ -36,11 +36,19 @@ GENDERS = {
 }
 
 
-class CharField:
+class Field:
+    __metaclass__ = abc.ABC
+
+    def __init__(self, required=False, nullable=True):
+        self.required = required
+        self.nullable = nullable
+
+
+class CharField(Field):
     pass
 
 
-class ArgumentsField:
+class ArgumentsField(Field):
     pass
 
 
@@ -48,23 +56,23 @@ class EmailField(CharField):
     pass
 
 
-class PhoneField:
+class PhoneField(Field):
     pass
 
 
-class DateField:
+class DateField(Field):
     pass
 
 
-class BirthDayField:
+class BirthDayField(Field):
     pass
 
 
-class GenderField:
+class GenderField(Field):
     pass
 
 
-class ClientIDsField:
+class ClientIDsField(Field):
     pass
 
 
@@ -134,7 +142,7 @@ class MainHTTPHandler(BaseHTTPRequestHandler):
             if path in self.router:
                 try:
                     response, code = self.router[path]({"body": request, "headers": self.headers}, context, self.store)
-                except Exception, e:
+                except Exception as e:
                     logging.exception("Unexpected error: %s" % e)
                     code = INTERNAL_ERROR
             else:
@@ -150,7 +158,7 @@ class MainHTTPHandler(BaseHTTPRequestHandler):
         context.update(r)
         logging.info(context)
         self.wfile.write(json.dumps(r))
-        return
+        return context
 
 
 if __name__ == "__main__":
