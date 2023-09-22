@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import re
 import abc
 import json
 import datetime
@@ -34,46 +35,134 @@ GENDERS = {
     MALE: "male",
     FEMALE: "female",
 }
+MAX_AGE = 70
+
+
+class InvalidValueForFieldException(Exception):
+    pass
 
 
 class Field:
     __metaclass__ = abc.ABC
 
-    def __init__(self, required=False, nullable=True):
+    def __init__(self, required=False, nullable=False):
         self.required = required
         self.nullable = nullable
 
 
+    
+    def validate_value(self, value):
+        if value:
+            self.value = value
+            return value
+        else:
+            raise ValueError
+
+
 class CharField(Field):
-    pass
+    
+    def validate_value(self, value: str):
+        if isinstance(value, str):
+            self.value = value
+            return value
+        else:
+            raise TypeError
 
 
 class ArgumentsField(Field):
-    pass
+    
+    def validate_value(self, value: dict):
+        online_score_fields = ('phone', 'email', 'first_name', 'last_name', 'birthday', 'gender')
+        clients_interests = ('client_ids', 'date')
+        if isinstance(value, dict):
+            if  x in online_score_fields or x in clients_interests:
+                self.value = value
+                return value
+            else:
+                raise KeyError
+        else:
+            raise TypeError
+            
+
 
 
 class EmailField(CharField):
-    pass
+    
+    def validate_value(self, value: str):
+        super().validate_value(value)
+        regex_email = re.compile(r'([A-Za-z0-9]+[.-_])*[A-Za-z0-9]+@[A-Za-z0-9-]+(\.[A-Z|a-z]{2,})+')
+        match_re = re.match(value, regex_email)
+        if match_re:
+            self.value = value
+            return value
+        else:
+            raise InvalidValueForFieldException('Invalid form email')
+
+
 
 
 class PhoneField(Field):
-    pass
+    
+    def validate_value(self, value):
+        if isinstance(value, int) or isinstance(value, str):
+            number = str(value)
+            if not len(number):
+                self.value = value
+                return value
+            elif len(number) == 11 and number[0] == '7':
+                self.value = value
+                return value
+            else:
+                raise InvalidValueForFieldException('Invalid value for field phone')
+        else:
+            raise TypeError
+        
+
 
 
 class DateField(Field):
-    pass
+    
+    def validate_value(self, value):
+        try:
+            self.value = datetime.datetime.strptime(value, f'%d.%m.%Y')
+            return value
+        except Exception:
+            raise InvalidValueForFieldException('invalid form write of date')
 
 
-class BirthDayField(Field):
-    pass
+
+class BirthDayField(DateField):
+
+    def validate_value(self, value):
+        super().validate_value(value)
+        birthday = datetime.datetime.strptime(value, f'%d.%m.%Y')
+        if datetime.datetime.now() - self.value > MAX_AGE:
+            raise InvalidValueForFieldException('age exceeds the maximum permissible value')
+
 
 
 class GenderField(Field):
-    pass
+    
+    def validate_value(self, value):
+        if isinstance(value, int) and value in GENDERS.keys():
+            self.value = value
+            return value
+        elif isinstance(value, int):
+            raise KeyError
+        else:
+            raise InvalidValueForFieldException('Invalid value for field gender')
 
 
 class ClientIDsField(Field):
-    pass
+    
+    def validate_value(self, value):
+        if isinstance(value, list) and len(value) == len(x for x in value if isinstance(x, int)):
+            self.value = value
+        elif isinstance(value, list):
+            raise InvalidValueForFieldException('Not valid value in list')
+        else:
+            raise TypeError
+
 
 
 class ClientsInterestsRequest:
@@ -113,7 +202,9 @@ def check_auth(request):
 
 
 def method_handler(request, ctx, store):
+    print(type(request), request, ctx, store)
     response, code = None, None
+
     return response, code
 
 
