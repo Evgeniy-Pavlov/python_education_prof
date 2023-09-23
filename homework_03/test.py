@@ -12,6 +12,7 @@ def cases(cases):
         def wrapper(*args):
             for c in cases:
                 new_args = args + (c if isinstance(c, tuple) else (c,))
+                print(args, (c if isinstance(c, tuple) else (c,)))
                 f(*new_args)
         return wrapper
     return decorator
@@ -28,10 +29,10 @@ class TestSuite(unittest.TestCase):
 
     def set_valid_auth(self, request):
         if request.get("login") == api.ADMIN_LOGIN:
-            request["token"] = hashlib.sha512(datetime.datetime.now().strftime("%Y%m%d%H") + api.ADMIN_SALT).hexdigest()
+            request["token"] = hashlib.sha512(bytes(datetime.datetime.now().strftime("%Y%m%d%H") + api.ADMIN_SALT, "utf-8")).hexdigest()
         else:
             msg = request.get("account", "") + request.get("login", "") + api.SALT
-            request["token"] = hashlib.sha512(msg).hexdigest()
+            request["token"] = hashlib.sha512(bytes(msg, "utf-8")).hexdigest()
 
     def test_empty_request(self):
         _, code = self.get_response({})

@@ -42,28 +42,24 @@ class InvalidValueForFieldException(Exception):
     pass
 
 
-class Field:
-    __metaclass__ = abc.ABC
+class Field(metaclass=abc.ABCMeta):
 
     def __init__(self, required=False, nullable=False):
         self.required = required
         self.nullable = nullable
 
+    def check_value(self, value):
+        self.validate_value(value)
+        return value
 
-    
     def validate_value(self, value):
-        if value:
-            self.value = value
-            return value
-        else:
-            raise ValueError
+        pass
 
 
 class CharField(Field):
     
     def validate_value(self, value: str):
         if isinstance(value, str):
-            self.value = value
             return value
         else:
             raise TypeError
@@ -75,11 +71,7 @@ class ArgumentsField(Field):
         online_score_fields = ('phone', 'email', 'first_name', 'last_name', 'birthday', 'gender')
         clients_interests = ('client_ids', 'date')
         if isinstance(value, dict):
-            if  x in online_score_fields or x in clients_interests:
-                self.value = value
-                return value
-            else:
-                raise KeyError
+            return value
         else:
             raise TypeError
             
@@ -93,7 +85,6 @@ class EmailField(CharField):
         regex_email = re.compile(r'([A-Za-z0-9]+[.-_])*[A-Za-z0-9]+@[A-Za-z0-9-]+(\.[A-Z|a-z]{2,})+')
         match_re = re.match(value, regex_email)
         if match_re:
-            self.value = value
             return value
         else:
             raise InvalidValueForFieldException('Invalid form email')
@@ -106,46 +97,39 @@ class PhoneField(Field):
     def validate_value(self, value):
         if isinstance(value, int) or isinstance(value, str):
             number = str(value)
-            if not len(number):
-                self.value = value
-                return value
-            elif len(number) == 11 and number[0] == '7':
-                self.value = value
+            if not len(number) or (len(number) == 11 and number[0] == '7'):
                 return value
             else:
                 raise InvalidValueForFieldException('Invalid value for field phone')
         else:
             raise TypeError
-        
-
 
 
 class DateField(Field):
     
     def validate_value(self, value):
         try:
-            self.value = datetime.datetime.strptime(value, f'%d.%m.%Y')
+            value_date = datetime.datetime.strptime(value, f'%d.%m.%Y')
             return value
         except Exception:
             raise InvalidValueForFieldException('invalid form write of date')
-
 
 
 class BirthDayField(DateField):
 
     def validate_value(self, value):
         super().validate_value(value)
-        birthday = datetime.datetime.strptime(value, f'%d.%m.%Y')
-        if datetime.datetime.now() - self.value > MAX_AGE:
+        value_date = datetime.datetime.strptime(value, f'%d.%m.%Y')
+        if datetime.datetime.now() - value_date > MAX_AGE:
             raise InvalidValueForFieldException('age exceeds the maximum permissible value')
-
+        else:
+            return value
 
 
 class GenderField(Field):
     
     def validate_value(self, value):
         if isinstance(value, int) and value in GENDERS.keys():
-            self.value = value
             return value
         elif isinstance(value, int):
             raise KeyError
@@ -156,21 +140,63 @@ class GenderField(Field):
 class ClientIDsField(Field):
     
     def validate_value(self, value):
-        if isinstance(value, list) and len(value) == len(x for x in value if isinstance(x, int)):
-            self.value = value
+        if isinstance(value, list) and len(value) == len([x for x in value if isinstance(x, int)]):
+            return value
         elif isinstance(value, list):
             raise InvalidValueForFieldException('Not valid value in list')
         else:
             raise TypeError
 
+class MetaRequest(type):
+    def __new__(cls, name, bases, namespace):
+        fields = {
+            filed_name: field
+            for filed_name, field in namespace.items()
+            if isinstance(field, Field)
+        }
+
+        new_namespace = namespace.copy()
+        for filed_name in fields:
+            del new_namespace[filed_name]
+        new_namespace["_fields"] = fields
+        return super().__new__(cls, name, bases, new_namespace)
 
 
-class ClientsInterestsRequest:
+class Request(metaclass=MetaRequest):
+
+    def __init__(self, data=None):
+        self._errors = None
+        self.data = {} if not data else data
+        self.non_empty_fields = []
+    
+    @property
+    def errors(self):
+        if self._errors is None:
+            self.validate()
+        return self._errors
+    
+    def is_valid(self):
+        return not self.errors
+    
+    def validate(self):
+        self._errors = {}
+
+        for name, field in self._fields.items():
+            try:
+                value = self.data.get(name)
+                value = field.validate_value(value)
+                setattr(self, name, value)
+            except (TypeError, KeyError, InvalidValueForFieldException) as e:
+                self._errors[name] = str(e)
+
+
+
+class ClientsInterestsRequest(Request):
     client_ids = ClientIDsField(required=True)
     date = DateField(required=False, nullable=True)
 
 
-class OnlineScoreRequest:
+class OnlineScoreRequest(Request):
     first_name = CharField(required=False, nullable=True)
     last_name = CharField(required=False, nullable=True)
     email = EmailField(required=False, nullable=True)
@@ -179,7 +205,7 @@ class OnlineScoreRequest:
     gender = GenderField(required=False, nullable=True)
 
 
-class MethodRequest:
+class MethodRequest(Request):
     account = CharField(required=False, nullable=True)
     login = CharField(required=True, nullable=True)
     token = CharField(required=True, nullable=True)
@@ -191,21 +217,58 @@ class MethodRequest:
         return self.login == ADMIN_LOGIN
 
 
+class OnlineScoreMethodHandler:
+    
+    def process_request(self, request, context, store):
+        r = OnlineScoreRequest(request.arguments)
+        if not r.is_valid():
+            return r.errors, INVALID_REQUEST
+        
+        if request.is_admin:
+            score = 42
+        else:
+            score = get_score(store, r.phone, r.email, r.birthday, r.gender, r.first_name, r.last_name)
+        context["has"] = r.non_empty_fields
+        return {"score": score}, OK
+
+
+class ClientsIterestsMethodHandler:
+
+    def process_request(self, request, context, store):
+        r = ClientsInterestsRequest(request.arguments)
+        if not r.is_valid():
+            return r.errors, INVALID_REQUEST
+        
+        context["nclients"] = len(r.client_ids)
+        response_body = {}
+        return response_body, OK
+
+
+
 def check_auth(request):
     if request.is_admin:
-        digest = hashlib.sha512(datetime.datetime.now().strftime("%Y%m%d%H") + ADMIN_SALT).hexdigest()
+        digest = hashlib.sha512(bytes(datetime.datetime.now().strftime("%Y%m%d%H") + ADMIN_SALT, "utf-8")).hexdigest()
     else:
-        digest = hashlib.sha512(request.account + request.login + SALT).hexdigest()
+        digest = hashlib.sha512(bytes(request.account + request.login + SALT, "utf-8")).hexdigest()
     if digest == request.token:
         return True
     return False
 
 
 def method_handler(request, ctx, store):
-    print(type(request), request, ctx, store)
-    response, code = None, None
+    handlers = {
+        "online_score": OnlineScoreMethodHandler,
+        "clients_interests": ClientsIterestsMethodHandler
+    }
 
-    return response, code
+    method_request = MethodRequest(request["body"])
+    if not method_request.is_valid():
+        return method_request.errors, INVALID_REQUEST
+    if not check_auth(method_request):
+        return "Forbidden", FORBIDDEN
+    
+    handler = handlers[method_request.method]()
+    return handler.process_request(method_request, ctx, store)
 
 
 class MainHTTPHandler(BaseHTTPRequestHandler):
@@ -249,7 +312,7 @@ class MainHTTPHandler(BaseHTTPRequestHandler):
         context.update(r)
         logging.info(context)
         self.wfile.write(json.dumps(r))
-        return context
+        return
 
 
 if __name__ == "__main__":
