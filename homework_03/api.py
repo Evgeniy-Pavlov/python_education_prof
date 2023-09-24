@@ -9,7 +9,9 @@ import logging
 import hashlib
 import uuid
 from optparse import OptionParser
-from http.server import BaseHTTPRequestHandler, HTTPServer
+from http.server import HTTPServer, BaseHTTPRequestHandler
+import scoring
+
 
 SALT = "Otus"
 ADMIN_LOGIN = "admin"
@@ -38,157 +40,186 @@ GENDERS = {
 MAX_AGE = 70
 
 
-class InvalidValueForFieldException(Exception):
-    pass
-
-
 class Field(metaclass=abc.ABCMeta):
 
     def __init__(self, required=False, nullable=False):
         self.required = required
         self.nullable = nullable
 
-    def check_value(self, value):
-        self.validate_value(value)
+    def validate_field(self, value):
+        """Функция проверяет заполнение поля. Если поле является обязательным,
+        но при этом не заполненно, вызывается ошибка ValueError
+        Если поле не заполнено, но параметр nullable (возможность установить пустое значение,
+        т.е. None, '', [], {}) установлено false, то вызывается ошибка ValueError"""
+        if value is None and self.required:
+            raise ValueError('Данное поле является обязательным')
+        if not value and not self.nullable:
+            raise ValueError('Поле не может быть пустым')
+
+    def check_requirements(self, k_rue):
+        """Функция проверяет соответствие требованиям для заданного поля."""
+        pass
+
+    def check_value_type(self, value):
+        """Функция проверяет соответствие типу заявленного для данного поля."""
         return value
 
-    def validate_value(self, value):
-        pass
+    def check_value(self, value):
+        """Функция проверяет соответствие требованиям и типу для заявленного поля.
+        Сначала вызывается функция валидации заполнения поля. Затем следует вызов проверки типу
+        переданных в данное поле. Если проверка на тип пройдена успешно, следует проверка
+        на заявленные требования к данным указанным в поле."""
+        self.validate_field(value)
+        value = self.check_value_type(value)
+        
+        if not value:
+            return value
+        self.check_requirements(value)
+        return value
 
 
 class CharField(Field):
     
-    def validate_value(self, value: str):
-        if isinstance(value, str):
-            return value
-        else:
-            raise TypeError
+    def check_value_type(self, value: str):
+        if value is not None and not isinstance(value, str):
+            raise TypeError('Переданное значение не является строкой')
+        return value
 
 
 class ArgumentsField(Field):
-    
-    def validate_value(self, value: dict):
-        online_score_fields = ('phone', 'email', 'first_name', 'last_name', 'birthday', 'gender')
-        clients_interests = ('client_ids', 'date')
-        if isinstance(value, dict):
-            return value
-        else:
-            raise TypeError
-            
 
+    def check_value_type(self, value: dict):
+        if value is not None and not isinstance(value, dict):
+            raise TypeError('Переданное значение не является словарем')
+        return value
 
 
 class EmailField(CharField):
+    """email - строĸа, в ĸоторой есть @, опционально, может быть пустым"""
     
-    def validate_value(self, value: str):
-        super().validate_value(value)
-        regex_email = re.compile(r'([A-Za-z0-9]+[.-_])*[A-Za-z0-9]+@[A-Za-z0-9-]+(\.[A-Z|a-z]{2,})+')
-        match_re = re.match(value, regex_email)
-        if match_re:
-            return value
-        else:
-            raise InvalidValueForFieldException('Invalid form email')
-
-
+    def check_requirements(self, value: str):
+        super().check_requirements(value)
+        pattern = re.compile(r'([A-Za-z0-9]+[.-_])*[A-Za-z0-9]+@[A-Za-z0-9-]+(\.[A-Z|a-z]{2,})+', re.IGNORECASE)
+        match_email = re.fullmatch(pattern, value)
+        if not re.fullmatch(pattern, value):
+            raise ValueError('Неверный формат адреса почты')
 
 
 class PhoneField(Field):
-    
-    def validate_value(self, value):
-        if isinstance(value, int) or isinstance(value, str):
-            number = str(value)
-            if not len(number) or (len(number) == 11 and number[0] == '7'):
-                return value
-            else:
-                raise InvalidValueForFieldException('Invalid value for field phone')
-        else:
-            raise TypeError
+    """phone - строĸа или число, длиной 11, начинается с 7, опционально, может быть пустым"""
 
-
-class DateField(Field):
-    
-    def validate_value(self, value):
-        try:
-            value_date = datetime.datetime.strptime(value, f'%d.%m.%Y')
+    def check_value_type(self, value):
+        if value is None:
             return value
-        except Exception:
-            raise InvalidValueForFieldException('invalid form write of date')
+        if not isinstance(value, (str, int)):
+            raise TypeError('Переданное значение не является строкой или целым числом')
+        return str(value)
+    
+    def check_requirements(self, value: str):
+        if not str(value).isdigit():
+            raise ValueError("Это поле должно содержать только цифры")
+        str_value = str(value)
+        if str_value[0] != '7' or len(str_value) != 11:
+            raise ValueError('Неверный формат номера телефона')
+
+
+
+
+class DateField(CharField):
+
+    def check_value_type(self, value):
+        value = super().check_value_type(value)
+        if not value:
+            return value
+        try:
+            return datetime.datetime.strptime(value, "%d.%m.%Y").date()
+        except ValueError:
+            raise ValueError('Неверный формат даты. Формат DD.MM.YYYY')
+    
 
 
 class BirthDayField(DateField):
-
-    def validate_value(self, value):
-        super().validate_value(value)
-        value_date = datetime.datetime.strptime(value, f'%d.%m.%Y')
-        if datetime.datetime.now() - value_date > MAX_AGE:
-            raise InvalidValueForFieldException('age exceeds the maximum permissible value')
-        else:
-            return value
+    
+    def check_requirements(self, value):
+        super().check_requirements(value)
+        today = datetime.date.today()
+        if (today - value).days / 365.25  > MAX_AGE:
+            raise ValueError(f'Превышено максимальное значение возраста, максимально допустимое значение = {MAX_AGE} лет')
 
 
 class GenderField(Field):
+
+    def check_value_type(self, value: int):
+        if value is not None and not isinstance(value, int):
+            raise TypeError('Переданное значение не является целым числом. Допустимые значения: 0, 1, 2')
+        return value
     
-    def validate_value(self, value):
-        if isinstance(value, int) and value in GENDERS.keys():
-            return value
-        elif isinstance(value, int):
-            raise KeyError
-        else:
-            raise InvalidValueForFieldException('Invalid value for field gender')
+    def check_requirements(self, value: int):
+        if value not in GENDERS.keys():
+            raise ValueError('Переданное значение пола не является допустимым.')
 
 
 class ClientIDsField(Field):
+    """client_ids - массив чисел, обязательно, не пустое"""
+
+    def check_value_type(self, value: list):
+        if value is not None:
+            if not isinstance(value, list):
+                raise TypeError('Переданное значение не является списком')
+            elif [x for x in value if not isinstance(x, int)]:
+                raise ValueError('В переданном списке присутствует значения не являющиеся целыми числами.')
+        return value
     
-    def validate_value(self, value):
-        if isinstance(value, list) and len(value) == len([x for x in value if isinstance(x, int)]):
-            return value
-        elif isinstance(value, list):
-            raise InvalidValueForFieldException('Not valid value in list')
-        else:
-            raise TypeError
+    def check_requirements(self, value: list):
+         if [x for x in value if x < 0]:
+             raise ValueError('В списке присутствуют недопустимые значения.')
 
-class MetaRequest(type):
+
+class RequestMeta(type):
+
+    """Метакласс в функции __new__ проходит циклом по пространству имен (namespace),
+    в них отбирает объекты являющиеся инстансами класса Field (или его потомками).
+    Создается новая копия пространства имен, с вложенным отдельным словарем fields_dict."""
+
     def __new__(cls, name, bases, namespace):
-        fields = {
-            filed_name: field
-            for filed_name, field in namespace.items()
-            if isinstance(field, Field)
-        }
-
+        fields = {}
+        for key_namespace, obj in namespace.items():
+            if isinstance(obj, Field):
+                fields[key_namespace] = obj
         new_namespace = namespace.copy()
         for filed_name in fields:
             del new_namespace[filed_name]
-        new_namespace["_fields"] = fields
+        new_namespace["fields_dict"] = fields
         return super().__new__(cls, name, bases, new_namespace)
 
 
-class Request(metaclass=MetaRequest):
+class Request(metaclass=RequestMeta):
 
     def __init__(self, data=None):
-        self._errors = None
+        self.fields_errors = None
         self.data = {} if not data else data
         self.non_empty_fields = []
     
     @property
     def errors(self):
-        if self._errors is None:
+        if self.fields_errors is None:
             self.validate()
-        return self._errors
+        return self.fields_errors
     
     def is_valid(self):
         return not self.errors
     
     def validate(self):
-        self._errors = {}
-
-        for name, field in self._fields.items():
+        self.fields_errors = {}
+        for name, field in self.fields_dict.items():
             try:
                 value = self.data.get(name)
-                value = field.validate_value(value)
+                value = field.check_value(value)
                 setattr(self, name, value)
-            except (TypeError, KeyError, InvalidValueForFieldException) as e:
-                self._errors[name] = str(e)
-
+                if value not in (None, '', [], (), {}):
+                    self.non_empty_fields.append(name)
+            except (TypeError, ValueError) as e:
+                self.fields_errors[name] = str(e)
 
 
 class ClientsInterestsRequest(Request):
@@ -197,12 +228,22 @@ class ClientsInterestsRequest(Request):
 
 
 class OnlineScoreRequest(Request):
+    """Валидация аргументов аргументы валидны, если валидны все поля по
+    отдельности и если присутсвует хоть одна пара phone-email, first name-last name,
+    gender-birthday с непустыми значениями. Проверяется в функции validate."""
     first_name = CharField(required=False, nullable=True)
     last_name = CharField(required=False, nullable=True)
     email = EmailField(required=False, nullable=True)
     phone = PhoneField(required=False, nullable=True)
     birthday = BirthDayField(required=False, nullable=True)
     gender = GenderField(required=False, nullable=True)
+
+    def validate(self):
+        super().validate()
+        if not self.fields_errors:
+            if not (self.phone and self.email) and not (self.first_name and self.last_name) and not (self.gender is not None and self.birthday):
+                self.fields_errors['arguments'] = 'Присутствуют невалидные аргументы.'
+            
 
 
 class MethodRequest(Request):
@@ -217,8 +258,11 @@ class MethodRequest(Request):
         return self.login == ADMIN_LOGIN
 
 
-class OnlineScoreMethodHandler:
-    
+class OnlineScoreHandler:
+
+    """Ответ в ответ выдается число, полученное вызовом фунĸции get_score (см.scoring.py). 
+    Но если пользователь админ (см. check_auth), то нужно всегда отдавать 42."""
+
     def process_request(self, request, context, store):
         r = OnlineScoreRequest(request.arguments)
         if not r.is_valid():
@@ -227,12 +271,12 @@ class OnlineScoreMethodHandler:
         if request.is_admin:
             score = 42
         else:
-            score = get_score(store, r.phone, r.email, r.birthday, r.gender, r.first_name, r.last_name)
-        context["has"] = r.non_empty_fields
-        return {"score": score}, OK
+            score = scoring.get_score(store, r.phone, r.email, r.birthday, r.gender, r.first_name, r.last_name)
+        context['has'] = r.non_empty_fields
+        return {'score': score}, OK
 
 
-class ClientsIterestsMethodHandler:
+class ClientsInterestsHandler:
 
     def process_request(self, request, context, store):
         r = ClientsInterestsRequest(request.arguments)
@@ -240,9 +284,8 @@ class ClientsIterestsMethodHandler:
             return r.errors, INVALID_REQUEST
         
         context["nclients"] = len(r.client_ids)
-        response_body = {}
+        response_body = {cid: scoring.get_interests(store, cid) for cid in r.client_ids}
         return response_body, OK
-
 
 
 def check_auth(request):
@@ -257,8 +300,8 @@ def check_auth(request):
 
 def method_handler(request, ctx, store):
     handlers = {
-        "online_score": OnlineScoreMethodHandler,
-        "clients_interests": ClientsIterestsMethodHandler
+        "online_score": OnlineScoreHandler,
+        "clients_interests": ClientsInterestsHandler
     }
 
     method_request = MethodRequest(request["body"])
@@ -275,7 +318,6 @@ class MainHTTPHandler(BaseHTTPRequestHandler):
     router = {
         "method": method_handler
     }
-    store = None
 
     def get_request_id(self, headers):
         return headers.get('HTTP_X_REQUEST_ID', uuid.uuid4().hex)
@@ -286,6 +328,7 @@ class MainHTTPHandler(BaseHTTPRequestHandler):
         request = None
         try:
             data_string = self.rfile.read(int(self.headers['Content-Length']))
+            data_string = data_string.decode("utf-8")
             request = json.loads(data_string)
         except:
             code = BAD_REQUEST
@@ -311,7 +354,7 @@ class MainHTTPHandler(BaseHTTPRequestHandler):
             r = {"error": response or ERRORS.get(code, "Unknown Error"), "code": code}
         context.update(r)
         logging.info(context)
-        self.wfile.write(json.dumps(r))
+        self.wfile.write(bytes(json.dumps(r), "utf-8"))
         return
 
 
