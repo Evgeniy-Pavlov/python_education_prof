@@ -1,6 +1,8 @@
 import pytest
 import datetime
-from api import Field, CharField, ArgumentsField, EmailField, PhoneField, DateField, BirthDayField, GenderField, ClientIDsField
+import random
+from dateutil.relativedelta import relativedelta
+from api import Field, CharField, ArgumentsField, EmailField, PhoneField, DateField, BirthDayField, GenderField, ClientIDsField, MAX_AGE, GENDERS
 
 empty_values = ['', None, {}, []]
 str_invalid_values = [1, 1.1, (1, 2), [1, 2], {'key': 1}, {1, 2}]
@@ -10,6 +12,25 @@ arguments_valid_values = [{'key': 1}, {'foo': 'bar', 'spam': 'eggs'}]
 email_invalid_values = ['qwerty@mail', '/*-@mail.com', '@mail.com', 'qwerty@.com', 'qwerty.com', 'кириллический@почта.рф', 'qwerty@mail.c', 'qwerty']
 email_valid_values = ['qwerty@mail.ru', 'QwErTy@Mail.Com', 'QWERTY@MAIL.COM', 'qwerty_123@mail.com', 'qwerty@99-9.com']
 date_format_invalid_values = ['%Y.%m.%d', '%d.%Y.%m', '%m.%S.%d', '%m.%d.%Y']
+gender_invalid_values = [1.1, (1, 2), [1, 2], '1', {1, 2}, {'foo': 'bar'}]
+
+
+def create_date_birthday(valid=True):
+    today = datetime.date.today()
+    range_date = range(20, MAX_AGE+1, 5) if valid else range(MAX_AGE+1, 100, 5)
+    result = [today-relativedelta(years=x) for x in range_date]
+    return result
+
+
+def create_invalid_value_gender():
+    result = []
+    while len(result) < 3:
+        genders = GENDERS.keys()
+        randint = random.randint(a=-100, b=100)
+        if randint not in genders:
+            result.append(randint)
+    return result
+
 
 
 @pytest.mark.parametrize('data', empty_values)
@@ -132,4 +153,60 @@ def test_DateField_check_value_type_valid_format():
     test_datefield = DateField()
     result = test_datefield.check_value_type(result_date)
     assert isinstance(result, datetime.date)
+
+
+@pytest.mark.parametrize('date', create_date_birthday(valid=True))
+def test_BirthdayField_check_requirements_valid(date):
+    """Тест проверяет функцию check_requirements класса BirthdayField. Функция не возвращает ошибку, если переданное значение возвраста
+    не превышает MAX_AGE."""
+    test_birthdayfield = BirthDayField()
+    test_birthdayfield.check_requirements(date)
+
+
+@pytest.mark.parametrize('date', create_date_birthday(valid=False))
+def test_BirthdayField_check_requirements_invalid(date):
+    """Тест проверяет вызов ошибки ValueError при выполнении функции check_requirements класса BirthdayField.
+    Если переданное значение даты превышает максимальный возраст, то возвщащается ошибка."""
+    test_birthdayfield = BirthDayField()
+    with pytest.raises(ValueError) as err:
+        test_birthdayfield.check_requirements(date)
+    assert err.value.args[0] == f'Превышено максимальное значение возраста, \
+            максимально допустимое значение = {MAX_AGE} лет'
+
+
+@pytest.mark.parametrize('gender', gender_invalid_values)
+def test_GenderField_check_value_type_invalid(gender):
+    """Тест проверяет функцию check_value_type класса GenderField. Если значение не является целым числом возвращается
+    ошибка TypeError."""
+    test_genderfield = GenderField()
+    with pytest.raises(TypeError) as err:
+        test_genderfield.check_value_type(gender)
+    assert err.value.args[0] == 'Переданное значение не является целым числом. Допустимые значения: 0, 1, 2'
+
+
+@pytest.mark.parametrize('gender', range(0, 3))
+def test_GenderField_check_value_type_valid(gender):
+    """Тест проверяет функцию check_value_type класса GenderField. Если значение является целым числом, возвращает
+    переданное значение."""
+    test_genderfield = GenderField()
+    result = test_genderfield.check_value_type(gender)
+    assert result == gender
+    
+    
+@pytest.mark.parametrize('gender', create_invalid_value_gender())
+def test_GenderField_check_requirements_invalid(gender):
+    """Тест проверяет функцию check_requirements класса GenderField.
+    Если значение невалидно, возвращается ошибка ValueError"""
+    test_genderfield = GenderField()
+    with pytest.raises(ValueError) as err:
+        test_genderfield.check_requirements(gender)
+    assert err.value.args[0] == 'Переданное значение пола не является допустимым.'
+
+
+@pytest.mark.parametrize('gender', GENDERS.keys())
+def test_GenderField_check_requirements_valid(gender):
+    """Тест проверяет функцию check_requirements класса GenderField.
+    Если значение входит в перечень полов (GENDERS), то ошибка вызываться не должна."""
+    test_genderfield = GenderField()
+    test_genderfield.check_requirements(gender)
 
