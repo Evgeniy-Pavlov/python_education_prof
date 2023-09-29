@@ -4,6 +4,7 @@ import random
 from dateutil.relativedelta import relativedelta
 from api import Field, CharField, ArgumentsField, EmailField, PhoneField, DateField, BirthDayField, GenderField, ClientIDsField, MAX_AGE, GENDERS
 
+
 empty_values = ['', None, {}, []]
 random_values = [1.1, (1, 2), [1, 2], '1', {1, 2}, {'foo': 'bar'}, 1]
 str_valid_values = ['Hello', 'world', 'Hello \n world!']
@@ -11,7 +12,6 @@ arguments_valid_values = [{'key': 1}, {'foo': 'bar', 'spam': 'eggs'}]
 email_invalid_values = ['qwerty@mail', '/*-@mail.com', '@mail.com', 'qwerty@.com', 'qwerty.com', 'кириллический@почта.рф', 'qwerty@mail.c', 'qwerty']
 email_valid_values = ['qwerty@mail.ru', 'QwErTy@Mail.Com', 'QWERTY@MAIL.COM', 'qwerty_123@mail.com', 'qwerty@99-9.com']
 date_format_invalid_values = ['%Y.%m.%d', '%d.%Y.%m', '%m.%S.%d', '%m.%d.%Y']
-
 
 
 def create_date_birthday(valid=True):
@@ -29,7 +29,6 @@ def create_invalid_value_gender():
         if randint not in genders:
             result.append(randint)
     return result
-
 
 
 @pytest.mark.parametrize('data', empty_values)
@@ -218,6 +217,7 @@ def test_ClientsIDsField_check_value_type_invalid_value(client):
     with pytest.raises(TypeError) as err:
         test_clientidsfield.check_value_type(client)
     assert err.value.args[0] == 'Переданное значение не является списком'
+
 
 @pytest.mark.parametrize('type_items', [float, str])
 def test_ClientsIDsField_check_value_type_invalid_value_in_list(type_items):
