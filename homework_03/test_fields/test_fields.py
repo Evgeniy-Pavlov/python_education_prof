@@ -5,14 +5,13 @@ from dateutil.relativedelta import relativedelta
 from api import Field, CharField, ArgumentsField, EmailField, PhoneField, DateField, BirthDayField, GenderField, ClientIDsField, MAX_AGE, GENDERS
 
 empty_values = ['', None, {}, []]
-str_invalid_values = [1, 1.1, (1, 2), [1, 2], {'key': 1}, {1, 2}]
+random_values = [1.1, (1, 2), [1, 2], '1', {1, 2}, {'foo': 'bar'}, 1]
 str_valid_values = ['Hello', 'world', 'Hello \n world!']
-arguments_invalid_values = [1, 1.1, (1, 2), [1, 2], '1', {1, 2}]
 arguments_valid_values = [{'key': 1}, {'foo': 'bar', 'spam': 'eggs'}]
 email_invalid_values = ['qwerty@mail', '/*-@mail.com', '@mail.com', 'qwerty@.com', 'qwerty.com', 'кириллический@почта.рф', 'qwerty@mail.c', 'qwerty']
 email_valid_values = ['qwerty@mail.ru', 'QwErTy@Mail.Com', 'QWERTY@MAIL.COM', 'qwerty_123@mail.com', 'qwerty@99-9.com']
 date_format_invalid_values = ['%Y.%m.%d', '%d.%Y.%m', '%m.%S.%d', '%m.%d.%Y']
-gender_invalid_values = [1.1, (1, 2), [1, 2], '1', {1, 2}, {'foo': 'bar'}]
+
 
 
 def create_date_birthday(valid=True):
@@ -59,7 +58,7 @@ def test_field_check_value_valid(data):
     assert result is data
 
 
-@pytest.mark.parametrize('data', str_invalid_values)
+@pytest.mark.parametrize('data', [x for x in random_values if not isinstance(x, str)])
 def test_CharField_check_value_type_invalid(data):
     """Тест проверяет вызов ошибки TypeError у класса CharField, при передаче в функцию проверки типа данных значений из невалидных типов."""
     test_charfield = CharField()
@@ -77,7 +76,7 @@ def test_CharField_check_value_type_valid(data):
     assert result == data
 
 
-@pytest.mark.parametrize('data', arguments_invalid_values)
+@pytest.mark.parametrize('data', [x for x in random_values if not isinstance(x, dict)])
 def test_ArgumentsField_check_value_type_invalid(data):
     """Тест проверяет вызов ошибки TypeError у класса ArgumentsField, при передаче в функцию проверки типа данных значений из невалидных типов."""
     test_argumentsfield = ArgumentsField()
@@ -96,7 +95,7 @@ def test_ArgumentsField_check_value_type_valid(data):
     assert result.items() == data.items()
 
 
-@pytest.mark.parametrize('data', str_invalid_values)
+@pytest.mark.parametrize('data', [x for x in random_values if not isinstance(x, str)])
 def test_EmailField_check_value_type_not_str(data):
     """Тест проверяет, что функция проверки валидности эл. почты класса EmailField не принимает не строчные значения.
     В таком случае должна вызываться ошибка TypeError."""
@@ -123,7 +122,7 @@ def test_EmailField_check_requirements_valid_value(data):
     test_emailfield.check_requirements(data)
 
 
-@pytest.mark.parametrize('data', str_invalid_values)
+@pytest.mark.parametrize('data', [x for x in random_values if not isinstance(x, str)])
 def test_DateField_check_value_type_not_str(data):
     """Тест проверяет, что при вызове функции check_value_type, класса DateField, если передано не строчное значение,
     вызывается ошибка TypeError."""
@@ -174,7 +173,7 @@ def test_BirthdayField_check_requirements_invalid(date):
             максимально допустимое значение = {MAX_AGE} лет'
 
 
-@pytest.mark.parametrize('gender', gender_invalid_values)
+@pytest.mark.parametrize('gender', [x for x in random_values if not isinstance(x, int)])
 def test_GenderField_check_value_type_invalid(gender):
     """Тест проверяет функцию check_value_type класса GenderField. Если значение не является целым числом возвращается
     ошибка TypeError."""
@@ -210,3 +209,29 @@ def test_GenderField_check_requirements_valid(gender):
     test_genderfield = GenderField()
     test_genderfield.check_requirements(gender)
 
+
+@pytest.mark.parametrize('client', [x for x in random_values if not isinstance(x, list)])
+def test_ClientsIDsField_check_value_type_invalid_value(client):
+    """Тест проверяет функцию check_value_type класса ClientIDsField.
+    Если в качестве аргумента передан не список, то возвращает ошибку TypeError."""
+    test_clientidsfield = ClientIDsField()
+    with pytest.raises(TypeError) as err:
+        test_clientidsfield.check_value_type(client)
+    assert err.value.args[0] == 'Переданное значение не является списком'
+
+@pytest.mark.parametrize('type_items', [float, str])
+def test_ClientsIDsField_check_value_type_invalid_value_in_list(type_items):
+    """Тест проверяет функцию check_value_type класса ClientIDsField.
+    Если в списке присутствуют значения не являющиеся целыми числами, возвращается ошибка ValueError."""
+    test_clientidsfield = ClientIDsField()
+    with pytest.raises(ValueError) as err:
+        test_clientidsfield.check_value_type([x if x % 2 else type_items(x) for x in range(0, 5)])
+    assert err.value.args[0] == 'В переданном списке присутствует значения не являющиеся целыми числами.'
+
+
+def test_ClientsIDsField_check_value_type_valid_value():
+    """Тест проверяет функцию check_value_type класса ClientIDsField.
+    Если это список целых чисел, то функция возвращает переданное значение."""
+    test_clientidsfield = ClientIDsField()
+    result = test_clientidsfield.check_value_type(list(range(0, 3)))
+    assert result == list(range(0, 3))
