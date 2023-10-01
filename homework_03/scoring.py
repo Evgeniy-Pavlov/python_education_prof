@@ -1,5 +1,6 @@
 import hashlib
 import json
+import datetime
 
 
 def get_score(store, phone, email, birthday=None, gender=None, first_name=None, last_name=None):
@@ -9,7 +10,7 @@ def get_score(store, phone, email, birthday=None, gender=None, first_name=None, 
         phone or "",
         birthday.strftime("%Y%m%d") if birthday is not None else "",
     ]
-    key = "uid:" + hashlib.md5("".join(key_parts)).hexdigest()
+    key = 'uid:' + hashlib.md5(''.join(key_parts).encode('utf-8')).hexdigest()
     # try get from cache,
     # fallback to heavy calculation in case of cache miss
     score = store.cache_get(key) or 0
@@ -24,7 +25,7 @@ def get_score(store, phone, email, birthday=None, gender=None, first_name=None, 
     if first_name and last_name:
         score += 0.5
     # cache for 60 minutes
-    store.cache_set(key, score, 60 * 60)
+    store.cache_set(key, score, 60*60)
     return score
 
 

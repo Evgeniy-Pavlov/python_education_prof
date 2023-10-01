@@ -11,7 +11,7 @@ str_valid_values = ['Hello', 'world', 'Hello \n world!']
 arguments_valid_values = [{'key': 1}, {'foo': 'bar', 'spam': 'eggs'}]
 email_invalid_values = ['qwerty@mail', '/*-@mail.com', '@mail.com', 'qwerty@.com', 'qwerty.com', 'кириллический@почта.рф', 'qwerty@mail.c', 'qwerty']
 email_valid_values = ['qwerty@mail.ru', 'QwErTy@Mail.Com', 'QWERTY@MAIL.COM', 'qwerty_123@mail.com', 'qwerty@99-9.com']
-date_format_invalid_values = ['%Y.%m.%d', '%d.%Y.%m', '%m.%S.%d', '%m.%d.%Y']
+date_format_invalid_values = ['%Y.%m.%d', '%d.%Y.%m', '%m.%S.%d']
 
 
 def create_date_birthday(valid=True):

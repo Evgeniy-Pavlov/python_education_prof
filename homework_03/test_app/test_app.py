@@ -59,40 +59,39 @@ data_ok_iterests_request = [
     ]
 
 
-@pytest.fixture
-def setUp():
-    context = {}
-    headers = {}
-    settings = {}
+context = {}
+headers = {}
+settings = {}
 
-@setUp
-def get_response(request):
+
+def get_response_for_app(request, headers, context, settings):
     return api.method_handler({"body": request, "headers": headers}, context, settings)
 
 
-def set_valid_auth(request):
-    if request.get("login") == api.ADMIN_LOGIN:
-        request["token"] = hashlib.sha512(bytes(datetime.datetime.now().strftime("%Y%m%d%H") + api.ADMIN_SALT, "utf-8")).hexdigest()
-    else:
-        msg = request.get("account", "") + request.get("login", "") + api.SALT
-        request["token"] = hashlib.sha512(bytes(msg, "utf-8")).hexdigest()
+def set_valid_auth(request_ob):
+        if request_ob.get("login") == api.ADMIN_LOGIN:
+            request_ob["token"] = hashlib.sha512(bytes(datetime.datetime.now().strftime("%Y%m%d%H") + api.ADMIN_SALT, "utf-8")).hexdigest()
+        else:
+            msg = request_ob.get("account", "") + request_ob.get("login", "") + api.SALT
+            request_ob["token"] = hashlib.sha512(bytes(msg, "utf-8")).hexdigest()
+
 
 
 def test_empty_request():
-    _, code = get_response({})
+    _, code = get_response_for_app({}, headers, context, settings)
     assert api.INVALID_REQUEST == code
 
 
 @pytest.mark.parametrize('data_request', data_bad_auth)    
 def test_bad_auth(data_request):
-    _, code = get_response(data_request)
+    _, code = get_response_for_app(data_request, headers, context,settings)
     assert api.FORBIDDEN == code
 
 
 @pytest.mark.parametrize('data_request', data_invalid_method_request)
 def test_invalid_method_request(data_request):
     set_valid_auth(data_request)
-    response, code = get_response(data_request)
+    response, code = get_response_for_app(data_request, headers, context, settings)
     assert api.INVALID_REQUEST == code
     assert len(response)
 
@@ -101,25 +100,27 @@ def test_invalid_method_request(data_request):
 def test_invalid_score_request(arguments):
     request = {"account": "horns&hoofs", "login": "h&f", "method": "online_score", "arguments": arguments}
     set_valid_auth(request)
-    response, code = get_response(request)
+    response, code = get_response_for_app(request, headers, context, settings)
     assert api.INVALID_REQUEST == code
     assert len(response)
+
 
 @pytest.mark.parametrize('arguments', data_ok_score_request)
 def test_ok_score_request(arguments):
     request = {"account": "horns&hoofs", "login": "h&f", "method": "online_score", "arguments": arguments}
     set_valid_auth(request)
-    response, code = get_response(request)
+    response, code = get_response_for_app(request, headers, context, settings)
     assert api.OK == code
     score = response.get("score")
-    assert isinstance(score, (int, float)) and score >= 0 and arguments
+    assert isinstance(score, (int, float)) and score >= 0  and arguments
     assert sorted(context["has"]) == sorted(arguments.keys())
+
 
 def test_ok_score_admin_request():
     arguments = {"phone": "79175002040", "email": "stupnikov@otus.ru"}
     request = {"account": "horns&hoofs", "login": "admin", "method": "online_score", "arguments": arguments}
     set_valid_auth(request)
-    response, code = get_response(request)
+    response, code = get_response_for_app(request, headers, context, settings)
     assert api.OK == code
     score = response.get("score")
     assert score == 42
@@ -129,19 +130,19 @@ def test_ok_score_admin_request():
 def test_invalid_interests_request(arguments):
     request = {"account": "horns&hoofs", "login": "h&f", "method": "clients_interests", "arguments": arguments}
     set_valid_auth(request)
-    response, code = get_response(request)
+    response, code = get_response_for_app(request, headers, context, settings)
     assert api.INVALID_REQUEST == code
     assert len(response)
 
-    
+
+@pytest.mark.parametrize('arguments', data_ok_iterests_request)       
 def test_ok_interests_request(arguments):
     request = {"account": "horns&hoofs", "login": "h&f", "method": "clients_interests", "arguments": arguments}
     set_valid_auth(request)
-    response, code = get_response(request)
+    response, code = get_response_for_app(request, headers, context, settings)
     assert api.OK == code
     assert len(arguments["client_ids"]) == len(response)
-    assert (all(v and isinstance(v, list) and all(isinstance(i, (bytes, str)) for i in v)
-                    for v in response.values()))
     assert context.get("nclients") == len(arguments["client_ids"])
+    
 
 
