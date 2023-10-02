@@ -11,6 +11,7 @@ import uuid
 from optparse import OptionParser
 from http.server import HTTPServer, BaseHTTPRequestHandler
 import scoring
+from store import Store
 
 
 SALT = "Otus"
@@ -307,6 +308,7 @@ def check_auth(request):
 
 
 def method_handler(request, ctx, store):
+    store = Store()
     handlers = {
         "online_score": OnlineScoreHandler,
         "clients_interests": ClientsInterestsHandler
