@@ -22,14 +22,8 @@ AVAILABLE_METHODS = ['GET', 'HEAD']
 RECV_STEP_SIZE = 10
 DELIMETER = '\r\n'
 
+HEADERS = {'Date': datetime.datetime.now().strftime('%a, %d %b %Y %H:%M:%S %Z'), 'Server': 'MyHTTPServer', 'Content-Length': 0, 'Content-Type': 'text/html', 'Connection': 'close'}
 
-HEADERS = {'Date': datetime.datetime.now(), 'Server': 'MyHTTPServer', 'Content-Length': 9, 'Content-Type': 'text/html', 'Connection': 'close'}
-
-def init_socket(host, port):
-        mysocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        mysocket.bind((host, port))
-        mysocket.listen(WORKERS)
-        return mysocket
 
 
 class RequestHandler:
@@ -46,32 +40,59 @@ class RequestHandler:
         self.user_headers['Request'] = request
         self.user_headers['Protocol'] = protocol
 
+    def create_headers(self, code, file=None):
+        if code == OK:
+            HEADERS['Content-Length'] = len(file)
+            join_headers = '\r\n'.join([f'{x[0]}: {x[1]}' for x in HEADERS.items()])
+            HDRS = f'HTTP/1.1 {OK} OK\r\n{join_headers}\r\n\r\n'
+            return HDRS
+        elif code == FORBIDDEN:
+            join_headers = '\r\n'.join([f'{x[0]}: {x[1]}' for x in HEADERS.items()])
+            HDRS = f'HTTP/1.1 {FORBIDDEN} FORBIDDEN\r\n{join_headers}\r\n\r\n'
+            return HDRS
+        elif code == NOT_FOUND:
+            join_headers = '\r\n'.join([f'{x[0]}: {x[1]}' for x in HEADERS.items()])
+            HDRS = f'HTTP/1.1 {NOT_FOUND} NOT FOUND\r\n{join_headers}\r\n\r\n'
+            return HDRS
+        else:
+            join_headers = '\r\n'.join([f'{x[0]}: {x[1]}' for x in HEADERS.items()])
+            HDRS = f'HTTP/1.1 {METHOD_NOT_ALLOWED} ERROR\r\n{join_headers}\r\n\r\n'
+            return HDRS
+
+
     def send_response(self):
         self.parse_data()
         print(self.user_headers)
-        HDRS = 'HTTP/1.1 200 OK\r\nContent-Type: text/html; charset=utf-8\r\n\r\n'
-        content = 'Well done'.encode('utf-8')
-        return HDRS.encode('utf-8') + content
-        
-
-
-
+        if self.user_headers['Method'] == 'GET':
+            HDRS = self.create_headers(OK, 'Well done')
+            content = 'Well done'.encode('utf-8')
+            return HDRS.encode('utf-8') + content
+        elif self.user_headers['Method'] == 'HEAD':
+            HDRS = self.create_headers(OK, 'Well done')
+            return HDRS.encode('utf-8')
+        else:
+            HDRS = self.create_headers(METHOD_NOT_ALLOWED)
+            return HDRS.encode('utf-8')
 
 
 class MyHTTPServer:
     def __init__(self, host='localhost', port=80):
         self.hostname = host
         self.port = port
-        self.mysocket = init_socket(host=host, port=port)
+        self.mysocket = self.init_socket()
         
+
+    def init_socket(self):
+        mysocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        mysocket.bind((self.hostname, self.port))
+        mysocket.listen(10)
+        return mysocket
 
 
     def server_runner(self):
         while True:
             client_socket, address = self.mysocket.accept()
             data = client_socket.recv(1024).decode('utf-8')
-            #print(data)
-            print(data.split('\r\n'))
             request_handler = RequestHandler(data)
             client_socket.send(request_handler.send_response())
             
