@@ -35,6 +35,12 @@ class RequestHandler:
         self.body = str()
         self.user_headers = {}
 
+    def check_query_params(self):
+        list_user_request = self.user_headers['Request'].split('/')
+        if '?' in list_user_request[-1]:
+            list_user_request[-1] = list_user_request[-1][:list_user_request[-1].index('?')]
+        return '/'.join(list_user_request)
+
     def parse_data(self):
         method, request, protocol = self.client_data[0].split(' ')
         self.user_headers['Method'] = method
@@ -48,8 +54,8 @@ class RequestHandler:
                 self.user_headers['Request'] += 'index.html'
             else:
                 self.user_headers['Request'] = self.user_headers['Request'][:-1]
-        
-        
+        self.user_headers['Request'] = self.check_query_params()
+
             
 
     def create_headers(self, code, path=None):
