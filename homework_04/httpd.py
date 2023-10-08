@@ -2,6 +2,8 @@ import os
 import socket
 import argparse
 import datetime
+import mimetypes
+from urllib import request
 from multiprocessing import Process
 
 def parse_arguments():
@@ -38,15 +40,28 @@ class RequestHandler:
         self.user_headers['Method'] = method
         self.user_headers['Request'] = request.replace('%20', ' ')
         self.user_headers['Protocol'] = protocol
+        self.user_headers['Request'] = os.path.normpath(self.user_headers['Request'])
+        if os.path.isdir(DOCUMENT_ROOT+ self.user_headers['Request']):
+            self.user_headers['Request'] += '/index.html'
+        if self.user_headers['Request'].endswith('/'):
+            if os.path.isdir(DOCUMENT_ROOT+ self.user_headers['Request']):
+                self.user_headers['Request'] += 'index.html'
+            else:
+                self.user_headers['Request'] = self.user_headers['Request'][:-1]
+        
+        
             
 
-    def create_headers(self, code, file=None):
+    def create_headers(self, code, path=None):
         if code == OK:
-            HEADERS['Content-Length'] = len(file)
+            HEADERS['Content-Length'] = os.path.getsize(path)
+            HEADERS['Content-Type'] = mimetypes.guess_type(request.pathname2url(path))[0]
             join_headers = '\r\n'.join([f'{x[0]}: {x[1]}' for x in HEADERS.items()])
             HDRS = f'HTTP/1.1 {OK} OK\r\n{join_headers}\r\n\r\n'
             return HDRS
         elif code == FORBIDDEN:
+            HEADERS['Content-Length'] = os.path.getsize(path)
+            HEADERS['Content-Type'] = mimetypes.guess_type(request.pathname2url(path))[0]
             join_headers = '\r\n'.join([f'{x[0]}: {x[1]}' for x in HEADERS.items()])
             HDRS = f'HTTP/1.1 {FORBIDDEN} FORBIDDEN\r\n{join_headers}\r\n\r\n'
             return HDRS
@@ -59,28 +74,34 @@ class RequestHandler:
             HDRS = f'HTTP/1.1 {METHOD_NOT_ALLOWED} ERROR\r\n{join_headers}\r\n\r\n'
             return HDRS
 
+
     def find_attachment(self):
         response = ''
+        print(DOCUMENT_ROOT + self.user_headers['Request'])
         with open(DOCUMENT_ROOT + self.user_headers['Request'], 'rb') as file:
             response = file.read()
         return response
 
 
     def send_response(self):
-        self.parse_data()
+        try:
+            self.parse_data()
+        except ValueError:
+            HDRS = self.create_headers(METHOD_NOT_ALLOWED)
+            return HDRS.encode('utf-8')
         if self.user_headers['Method'] == 'GET':
             try:
                 content = self.find_attachment()
-            except FileNotFoundError:
+            except (FileNotFoundError, NotADirectoryError):
                 HDRS = self.create_headers(NOT_FOUND)
                 return HDRS.encode('utf-8')
             except PermissionError:
                 HDRS = self.create_headers(FORBIDDEN)
                 return HDRS.encode('utf-8')
-            HDRS = self.create_headers(OK, content)
+            HDRS = self.create_headers(OK, DOCUMENT_ROOT + self.user_headers['Request'])
             return HDRS.encode('utf-8') + content
         elif self.user_headers['Method'] == 'HEAD':
-            HDRS = self.create_headers(OK, 'Well done')
+            HDRS = self.create_headers(OK, DOCUMENT_ROOT + self.user_headers['Request'])
             return HDRS.encode('utf-8')
         else:
             HDRS = self.create_headers(METHOD_NOT_ALLOWED)
@@ -120,7 +141,6 @@ if __name__ == '__main__':
         process.daemon = True
         process.start()
         process_list.append(process)
-
     try:
         for process in process_list:
             process.join()
