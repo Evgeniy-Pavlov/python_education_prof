@@ -69,7 +69,7 @@ class RequestHandler:
             HDRS = f'HTTP/1.1 {NOT_FOUND} NOT FOUND\r\n{join_headers}\r\n\r\n'
             return HDRS
         else:
-            join_headers = '\r\n'.join([f'{x[0]}: {x[1]}' for x in HEADERS.items()])
+            join_headers = '\r\n'.join([f'{x[0]}: {x[1]}' for x in HEADERS.items() if x[0] not in ('Content-Type', 'Content-Length')])
             HDRS = f'HTTP/1.1 {METHOD_NOT_ALLOWED} ERROR\r\n{join_headers}\r\n\r\n'
             return HDRS
 
@@ -96,9 +96,13 @@ class RequestHandler:
             content = self.find_attachment()
             return HDRS.encode('utf-8') + content
         elif self.user_headers['Method'] == 'HEAD':
-            HDRS = self.create_headers(code=OK, path=DOCUMENT_ROOT + self.user_headers['Request'])
+            try:
+                HDRS = self.create_headers(code=OK, path=DOCUMENT_ROOT + self.user_headers['Request'])
+            except FileNotFoundError:
+                HDRS = self.create_headers(code=NOT_FOUND)
+                return HDRS.encode('utf-8')
             return HDRS.encode('utf-8')
-        else:
+        elif self.user_headers['Method'] not in ('GET', 'HEAD'):
             HDRS = self.create_headers(code=METHOD_NOT_ALLOWED)
             return HDRS.encode('utf-8')
 
