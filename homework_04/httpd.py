@@ -46,17 +46,10 @@ class RequestHandler:
         self.user_headers['Method'] = method
         self.user_headers['Request'] = request.replace('%20', ' ')
         self.user_headers['Protocol'] = protocol
-        self.user_headers['Request'] = os.path.normpath(self.user_headers['Request'])
-        if os.path.isdir(DOCUMENT_ROOT+ self.user_headers['Request']):
-            self.user_headers['Request'] += '/index.html'
         if self.user_headers['Request'].endswith('/'):
-            if os.path.isdir(DOCUMENT_ROOT+ self.user_headers['Request']):
-                self.user_headers['Request'] += 'index.html'
-            else:
-                self.user_headers['Request'] = self.user_headers['Request'][:-1]
+            self.user_headers['Request'] += 'index.html'
         self.user_headers['Request'] = self.check_query_params()
-
-            
+        
 
     def create_headers(self, code, path=None):
         if code == OK:
@@ -93,24 +86,24 @@ class RequestHandler:
         try:
             self.parse_data()
         except ValueError:
-            HDRS = self.create_headers(METHOD_NOT_ALLOWED)
+            HDRS = self.create_headers(code=METHOD_NOT_ALLOWED)
             return HDRS.encode('utf-8')
         if self.user_headers['Method'] == 'GET':
             try:
                 content = self.find_attachment()
-            except (FileNotFoundError, NotADirectoryError):
-                HDRS = self.create_headers(NOT_FOUND)
+            except (FileNotFoundError, NotADirectoryError, OSError):
+                HDRS = self.create_headers(code=NOT_FOUND)
                 return HDRS.encode('utf-8')
             except PermissionError:
-                HDRS = self.create_headers(FORBIDDEN)
+                HDRS = self.create_headers(code=FORBIDDEN)
                 return HDRS.encode('utf-8')
-            HDRS = self.create_headers(OK, DOCUMENT_ROOT + self.user_headers['Request'])
+            HDRS = self.create_headers(code=OK, path=DOCUMENT_ROOT + self.user_headers['Request'])
             return HDRS.encode('utf-8') + content
         elif self.user_headers['Method'] == 'HEAD':
-            HDRS = self.create_headers(OK, DOCUMENT_ROOT + self.user_headers['Request'])
+            HDRS = self.create_headers(code=OK, path=DOCUMENT_ROOT + self.user_headers['Request'])
             return HDRS.encode('utf-8')
         else:
-            HDRS = self.create_headers(METHOD_NOT_ALLOWED)
+            HDRS = self.create_headers(code=METHOD_NOT_ALLOWED)
             return HDRS.encode('utf-8')
 
 
