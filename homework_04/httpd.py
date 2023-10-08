@@ -2,7 +2,7 @@ import os
 import socket
 import argparse
 import datetime
-
+from multiprocessing import Process
 
 def parse_arguments():
     parser = argparse.ArgumentParser()
@@ -74,6 +74,9 @@ class RequestHandler:
             except FileNotFoundError:
                 HDRS = self.create_headers(NOT_FOUND)
                 return HDRS.encode('utf-8')
+            except PermissionError:
+                HDRS = self.create_headers(FORBIDDEN)
+                return HDRS.encode('utf-8')
             HDRS = self.create_headers(OK, content)
             return HDRS.encode('utf-8') + content
         elif self.user_headers['Method'] == 'HEAD':
@@ -105,12 +108,23 @@ class MyHTTPServer:
             request_handler = RequestHandler(data)
             client_socket.send(request_handler.send_response())
             client_socket.shutdown(socket.SHUT_WR)
+            client_socket.close()
             
 
 
 if __name__ == '__main__':
+    server = MyHTTPServer()
+    process_list = []
+    for i in range(WORKERS):
+        process = Process(target=server.server_runner)
+        process.daemon = True
+        process.start()
+        process_list.append(process)
+
     try:
-        server = MyHTTPServer()
-        server.server_runner()
+        for process in process_list:
+            process.join()
     except KeyboardInterrupt:
-        server.mysocket.close()
+        for proc in process_list:
+            if proc.is_alive():
+                server.mysocket.close()
