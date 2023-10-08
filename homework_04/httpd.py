@@ -6,7 +6,7 @@ import datetime
 
 def parse_arguments():
     parser = argparse.ArgumentParser()
-    parser.add_argument('-r', type=str, help='Возвращать файлы по произвольному пути в DOCUMENT_ROOT', default='Evgeniy/ServerDir')
+    parser.add_argument('-r', type=str, help='Возвращать файлы по произвольному пути в DOCUMENT_ROOT', default='C:/Users/Evgeniy/ServerDir')
     parser.add_argument('-w', type=int, help='Числов worker\'ов задается аргументом ĸомандной строĸи -w', default=1)
     return parser.parse_args()
 
@@ -16,9 +16,8 @@ OK = 200
 FORBIDDEN = 403
 NOT_FOUND = 404
 METHOD_NOT_ALLOWED = 405
-DOCUMENT_ROOT = os.path.abspath(parser.r)
+DOCUMENT_ROOT = parser.r
 WORKERS = parser.w
-AVAILABLE_METHODS = ['GET', 'HEAD']
 RECV_STEP_SIZE = 10
 DELIMETER = '\r\n'
 
@@ -37,8 +36,9 @@ class RequestHandler:
     def parse_data(self):
         method, request, protocol = self.client_data[0].split(' ')
         self.user_headers['Method'] = method
-        self.user_headers['Request'] = request
+        self.user_headers['Request'] = request.replace('%20', ' ')
         self.user_headers['Protocol'] = protocol
+            
 
     def create_headers(self, code, file=None):
         if code == OK:
@@ -59,13 +59,22 @@ class RequestHandler:
             HDRS = f'HTTP/1.1 {METHOD_NOT_ALLOWED} ERROR\r\n{join_headers}\r\n\r\n'
             return HDRS
 
+    def find_attachment(self):
+        response = ''
+        with open(DOCUMENT_ROOT + self.user_headers['Request'], 'rb') as file:
+            response = file.read()
+        return response
+
 
     def send_response(self):
         self.parse_data()
-        print(self.user_headers)
         if self.user_headers['Method'] == 'GET':
-            HDRS = self.create_headers(OK, 'Well done')
-            content = 'Well done'.encode('utf-8')
+            try:
+                content = self.find_attachment()
+            except FileNotFoundError:
+                HDRS = self.create_headers(NOT_FOUND)
+                return HDRS.encode('utf-8')
+            HDRS = self.create_headers(OK, content)
             return HDRS.encode('utf-8') + content
         elif self.user_headers['Method'] == 'HEAD':
             HDRS = self.create_headers(OK, 'Well done')
@@ -95,9 +104,13 @@ class MyHTTPServer:
             data = client_socket.recv(1024).decode('utf-8')
             request_handler = RequestHandler(data)
             client_socket.send(request_handler.send_response())
+            client_socket.shutdown(socket.SHUT_WR)
             
 
 
 if __name__ == '__main__':
-    server = MyHTTPServer()
-    server.server_runner()
+    try:
+        server = MyHTTPServer()
+        server.server_runner()
+    except KeyboardInterrupt:
+        server.mysocket.close()
