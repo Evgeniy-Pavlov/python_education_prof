@@ -76,6 +76,7 @@ class RequestHandler:
 
     def find_attachment(self):
         response = ''
+        print(DOCUMENT_ROOT + self.user_headers['Request'])
         with open(DOCUMENT_ROOT + self.user_headers['Request'], 'rb') as file:
             response = file.read()
         return response
@@ -90,6 +91,9 @@ class RequestHandler:
         if self.user_headers['Method'] == 'GET':
             try:
                 content = self.find_attachment()
+            except FileNotFoundError:
+                HDRS = self.create_headers(code=NOT_FOUND)
+                return HDRS.encode('utf-8')
             except OSError:
                 HDRS = self.create_headers(code=NOT_FOUND)
                 return HDRS.encode('utf-8')
