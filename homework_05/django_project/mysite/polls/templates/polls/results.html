@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block body %}
+<h1>{{ question.question_text }}</h1>
+
+<ul class="list-group">
+{% for choice in question.choice_set.all %}
+    <li class="list-group-item">{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
+{% endfor %}
+</ul>
+
+<a href="{% url 'detail' question.id %}">Vote again?</a>
+{% endblock %}
