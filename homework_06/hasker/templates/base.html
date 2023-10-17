@@ -19,15 +19,15 @@
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent"></div>
         <form class="d-flex mt-3" role="search" action="/" method="get">
           <input class="form-control me-2" type="text" placeholder="Введите" name="search">
           <button class="btn btn-secondary" type="submit">Найти</button>
         </form>
         
-    </div>
-    <div class="d-flex mt-3">
-      <a href="/" style="margin-left: 15px; margin-right: 10px;">log in</a>
-      <a href="/" style="margin-left: 15px; margin-right: 10px;" class="btn btn-secondary">sign up</a>
+          <a href="/" class="nav-link" style="margin-left: 5px;">log in</a>
+          <a href="/signup" class="nav-link link-light btn btn-primary">sign up</a>
+        </div>
     </div>
   </nav>
   {% endblock  %}
