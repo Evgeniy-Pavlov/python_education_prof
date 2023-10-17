@@ -4,7 +4,7 @@ from .models import UserBase, Question, Tags, Reply
 # Register your models here.
 @admin.register(UserBase)
 class AdminUser(admin.ModelAdmin):
-    list_display = ('username', 'logo', 'date_create', 'email')
+    list_display = ('id', 'username', 'logo', 'date_create', 'email', 'password')
 
 @admin.register(Tags)
 class AdminTags(admin.ModelAdmin):
