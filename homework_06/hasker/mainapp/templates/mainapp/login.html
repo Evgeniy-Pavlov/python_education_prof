@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<form method="POST">
+    <div class="h2">Log In</div>
+    {% csrf_token %}
+    {{form.as_p}}
+    <button class="btn btn-primary">Enter</button>
+    <a class="btn btn-primary" style="margin-left: 5px;" href="/">Cancel</a>
+</form>
+
+{% endblock %}

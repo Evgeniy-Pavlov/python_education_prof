@@ -166,3 +166,6 @@ reports/
 
 #файлы vscode
 .vscode/
+
+#данные медиафайлов
+media/

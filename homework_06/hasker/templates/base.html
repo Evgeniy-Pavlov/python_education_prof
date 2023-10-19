@@ -24,13 +24,39 @@
           <input class="form-control me-2" type="text" placeholder="Введите" name="search">
           <button class="btn btn-secondary" type="submit">Найти</button>
         </form>
-        
-          <a href="/" class="nav-link" style="margin-left: 5px;">log in</a>
+        {% if not user.is_authenticated %}
+          <a href="/login" class="nav-link" style="margin-left: 5px;">log in</a>
           <a href="/signup" class="nav-link link-light btn btn-primary">sign up</a>
+        {% endif %}
+        {% if user.is_authenticated %}
+          <a class="nav-link" style="margin-left: 5px;" href="/settings/{{user.id}}">
+            {% if user.logo %}
+          <img src="{{user.logo.url}}" width="50" height="45">
+            {% endif %}
+            {% if not user.logo %}
+            <img src="{% static 'img/not_image_profile.jpg' %}" width="50" height="45">
+            {% endif %}
+            {{user.username}}</a>
+          <a class="nav-link" href="/logout">Exit</a>
+        {% endif %}
         </div>
     </div>
   </nav>
   {% endblock  %}
+  {% if messages %}
+  {% for message in messages %}
+  {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+  <div class="alert alert-success alert-dismissible" role="alert" style="z-index: 10; position: absolute; width: 100%;">{{message}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" ></button>
+  </div>
+  {% endif %}
+  {% if message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
+  <div class="alert alert-warning alert-dismissible" role="alert" style="z-index: 10; position: absolute; width: 100%;">{{message}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" ></button>
+  </div>
+  {% endif %}
+  {% endfor %}
+  {% endif %}
 
 <div class="container-md bd-gutter mt-3 my-md-4 bd-layout">
 
