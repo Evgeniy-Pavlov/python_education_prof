@@ -1,0 +1,8 @@
+{% if widget.is_initial %}
+<div class="container-sm"><img src="{{ widget.value.url }}" width="200" height="180"></div>
+
+{% if not widget.required %}
+<input type="checkbox" name="{{ widget.checkbox_name }}" id="{{ widget.checkbox_id }}"{% if widget.attrs.disabled %} disabled{% endif %}>
+<label for="{{ widget.checkbox_id }}">{{ widget.clear_checkbox_label }}</label>{% endif %}<br>
+{{ widget.input_text }}:{% endif %}
+<input type="{{ widget.type }}" name="{{ widget.name }}"{% include "django/forms/widgets/attrs.html" %}>

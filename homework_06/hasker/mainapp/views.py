@@ -24,7 +24,7 @@ class UserLoginView(SuccessMessageMixin, LoginView):
     success_url = '/'
     success_message = 'Login completed'
 
-class UserLogoutView(LogoutView):
+class UserLogoutView(SuccessMessageMixin, LogoutView):
     model = UserBase
 
 class UserProfileView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):

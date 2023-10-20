@@ -2,6 +2,9 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm, PasswordChangeForm, AuthenticationForm
 from .models import UserBase, Question, Tags, Reply
 
+class ModifiedClearableFileInput(forms.ClearableFileInput):
+    template_name = 'mainapp/widgets/modified_ClearableFileInput.html'
+
 class RegisterForm(UserCreationForm):
     username = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}), label='Login')
     email = forms.CharField(widget=forms.EmailInput(attrs={'class': 'form-control'}), label='Email')
@@ -23,7 +26,8 @@ class UserLoginForm(AuthenticationForm):
 
 class UserUpdateForm(forms.ModelForm):
     email = forms.EmailField(widget=forms.EmailInput(attrs={'class': 'form-control'}), label='Email')
-    logo = forms.ImageField(widget=forms.FileInput(attrs={'class': 'form-control', 'style': 'width: 500px;'}), required=False, label='Avatar')
+    logo = forms.ImageField(widget=ModifiedClearableFileInput(attrs={'class': 'form-control', 'style': 'width: 500px;'}), required=False, label='Avatar')
+    
     class Meta:
         model = UserBase
         fields = ('email', 'logo')
