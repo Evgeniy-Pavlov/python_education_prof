@@ -4,7 +4,7 @@ from django.contrib.auth.views import LoginView, LogoutView, PasswordChangeView
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import UserBase, Question, Tags, Reply
-from .forms import RegisterForm, UserLoginForm, UserUpdateForm
+from .forms import RegisterForm, UserLoginForm, UserUpdateForm, QuestionCreateForm
 
 
 class BasePageView(ListView):
@@ -36,4 +36,19 @@ class UserProfileView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     
     def get_success_url(self):
         return f'/settings/{self.request.user.id}'
+
+class QuestionCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
+    model = Question
+    form_class = QuestionCreateForm
+    template_name = 'mainapp/question_create.html'
+    login_url = '/login/'
+    success_message = 'Your question has been successfully created'
+
+    def get_success_url(self):
+        return '/'
+
+class QuetionDetailView(DetailView):
+    model = Question
+    template_name = 'mainapp/question_detail.html'
+    
 

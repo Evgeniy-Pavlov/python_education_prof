@@ -1,4 +1,14 @@
 {% extends "base.html" %}
 {% block body %}
-<p>Hello user!</p>
+<div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <p>Column question</p> 
+      </div>
+      <div class="col-6 col-md-4">
+        <p>Column trending</p>
+        <a href="/ask" class="btn btn-secondary btn-lg">Ask!</a>
+      </div>
+    </div>
+  </div>
 {% endblock %}
