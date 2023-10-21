@@ -32,7 +32,7 @@ class UserUpdateForm(forms.ModelForm):
 
 class QuestionCreateForm(forms.ModelForm):
     header = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}), label='Title', max_length=200)
-    body = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control', 'style': 'width=850px height=500px'}), label='Text', max_length=2000)
+    body = forms.CharField(widget=forms.Textarea(attrs={'class': 'form-control'}), label='Text', max_length=2000)
 
     class Meta:
         model = Question
