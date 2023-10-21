@@ -43,12 +43,14 @@ class QuestionCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     template_name = 'mainapp/question_create.html'
     login_url = '/login/'
     success_message = 'Your question has been successfully created'
+    success_url = '/'
 
-    def get_success_url(self):
-        return '/'
+    def form_valid(self, form):
+        form.instance.user_create = self.request.user
+        return super().form_valid(form)
 
 class QuetionDetailView(DetailView):
     model = Question
     template_name = 'mainapp/question_detail.html'
-    
+
 

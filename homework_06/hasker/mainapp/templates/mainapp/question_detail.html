@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block body %}
-<p class="lead">{{object.header}}</p>
-<div class="bd-example-snippet bd-code-snippet"><p>{{object.body}}</p></div>
+<div class="bd-content ps-lg-4">
+<div class="display-6">{{object.header}}</div>
+<p>{{object.body}}</p>
+</div>
 {% endblock  %}
