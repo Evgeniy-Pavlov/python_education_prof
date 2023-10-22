@@ -4,7 +4,7 @@ from django.contrib.auth.views import LoginView, LogoutView, PasswordChangeView
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import UserBase, Question, Tags, Reply
-from .forms import RegisterForm, UserLoginForm, UserUpdateForm, QuestionCreateForm
+from .forms import RegisterForm, UserLoginForm, UserUpdateForm, QuestionCreateForm, ReplyCreateForm
 
 
 class BasePageView(ListView):
@@ -53,4 +53,15 @@ class QuetionDetailView(DetailView):
     model = Question
     template_name = 'mainapp/question_detail.html'
 
+class ReplyCreateView(LoginRequiredMixin, CreateView):
+    login_url = '/'
 
+    def post(self, request, pk):
+        if request.POST['text']:
+            form = ReplyCreateForm(request.POST)
+            form.instance.user_create = self.request.user
+            form.instance.question = Question.objects.get(id=pk)
+            form.save()
+            return redirect(f'/question/{pk}')
+        else:
+            return redirect(f'/question/{pk}')

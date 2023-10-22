@@ -31,6 +31,7 @@ class Reply(models.Model):
     text = models.TextField(max_length=500)
     user_create = models.ForeignKey(UserBase, on_delete=models.SET_NULL, null=True)
     best_reply = models.BooleanField(default=False)
+    question = models.ForeignKey(Question, on_delete=models.SET_NULL, null=True)
 
     class Meta:
         verbose_name_plural = 'Reply'

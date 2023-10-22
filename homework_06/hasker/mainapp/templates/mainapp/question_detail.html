@@ -4,5 +4,39 @@
 <div class="bd-content ps-lg-4">
 <div class="display-6">{{object.header}}</div>
 <p>{{object.body}}</p>
+{% if not question.user_create.logo %}
+<p><img src="{% static 'img/not_image_profile.jpg' %}" width="50" height="45">{{question.user_create}}</p>
+{% endif %}
+{% if question.user_create.logo %}
+<p><img src="{{question.user_create.logo.url}}" width="50" height="45">{{question.user_create}}</p>
+{% endif %}
+<p>{{question.date_create}}</p>
 </div>
+<div class="mb-3">
+{% if user.is_authenticated %}
+<div class="display-6">Your answer</div>
+<form action="/reply-create/{{object.id}}" method="post">
+    {% csrf_token %}
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Input your reply here" name="text"></textarea>
+    <button class="btn btn-primary" style="margin-top: 10px;">Submit</button>
+  </form> 
+</div>
+{% endif %}
+{% for reply in object.reply_set.all reversed %}
+<div class="container border-bottom border-4 border-dark">
+<div class="row">
+    <div class="col-2">
+        Column ranked
+    </div>
+    <div class="col-8">
+    <p>{{reply.text}}</p>
+    {% if not reply.user_create.logo %}
+        <p><img src="{% static 'img/not_image_profile.jpg' %}" width="50" height="45">{{reply.user_create}}</p>
+    {% endif %}
+    {% if reply.user_create.logo %}
+        <p><img src="{{reply.user_create.logo.url}}" width="50" height="45">{{reply.user_create}}</p>
+    {% endif %}
+    </div>
+</div>
+{% endfor %}
 {% endblock  %}

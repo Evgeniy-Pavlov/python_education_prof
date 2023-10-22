@@ -37,3 +37,9 @@ class QuestionCreateForm(forms.ModelForm):
     class Meta:
         model = Question
         fields = ('header', 'body')
+
+class ReplyCreateForm(forms.ModelForm):
+
+    class Meta:
+        model = Reply
+        fields = ('text',)

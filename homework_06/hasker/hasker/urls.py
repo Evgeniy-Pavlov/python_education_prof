@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from mainapp.views import BasePageView, RegisterView, UserLoginView, UserLogoutView, UserProfileView, QuestionCreateView, QuetionDetailView
+from mainapp.views import BasePageView, RegisterView, UserLoginView, UserLogoutView, UserProfileView, QuestionCreateView, QuetionDetailView, ReplyCreateView
 from django.conf.urls.static import static
 from django.conf import settings
 
@@ -28,5 +28,6 @@ urlpatterns = [
     path('logout/', UserLogoutView.as_view()),
     path('settings/<int:pk>', UserProfileView.as_view()),
     path('ask/', QuestionCreateView.as_view()),
-    path('question/<int:pk>', QuetionDetailView.as_view())
+    path('question/<int:pk>', QuetionDetailView.as_view()),
+    path('reply-create/<int:pk>', ReplyCreateView.as_view()),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
