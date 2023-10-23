@@ -22,9 +22,12 @@
   </form> 
 </div>
 {% endif %}
+
+<ul class="list-group">
 {% for reply in object.reply_set.all reversed %}
-<div class="container border-bottom border-4 border-dark">
-<div class="row">
+<li class="list-group-item">
+<div class="container">
+<div class="row border-bottom border-4 border-dark">
     <div class="col-2">
         Column ranked
     </div>
@@ -38,5 +41,7 @@
     {% endif %}
     </div>
 </div>
+</li>
 {% endfor %}
+</ul>
 {% endblock  %}

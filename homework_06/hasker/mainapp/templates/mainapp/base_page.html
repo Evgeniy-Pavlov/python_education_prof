@@ -8,7 +8,17 @@
             <div class="container border-bottom border-4 border-dark">
                 <div class="row" style="padding: 5px;">
                 <div class="col">
-                    Column
+                    <div class="container">
+                        <div class="row">
+                          <div class="col">
+                            <p>Votes</p>
+                          </div>
+                          <div class="col">
+                            <p>{{question.reply_set.all.count}}</p>
+                            <p>Answer</p>
+                          </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="col">
                     <a href="/question/{{question.id}}"><div class="h4">{{question.header}}</div></a>
