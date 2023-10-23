@@ -12,7 +12,10 @@ class AdminTags(admin.ModelAdmin):
 
 @admin.register(Question)
 class AdminQuesttion(admin.ModelAdmin):
-    list_display = ('header', 'body', 'user_create', 'date_create')
+    def group_tags(self, question):
+        return ','.join([x.tag for x in question.tags.all()])
+
+    list_display = ('header', 'body', 'user_create', 'date_create', 'group_tags')
 
 @admin.register(Reply)
 class AdminReply(admin.ModelAdmin):

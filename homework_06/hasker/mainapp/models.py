@@ -23,6 +23,7 @@ class Question(models.Model):
     body = models.TextField(max_length=2000)
     user_create = models.ForeignKey(UserBase, on_delete=models.SET_NULL, null=True)
     date_create = models.DateTimeField(default=datetime.now)
+    tags = models.ManyToManyField(Tags)
 
     class Meta:
         verbose_name_plural = 'Question'
