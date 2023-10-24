@@ -1,21 +1,25 @@
 {% extends "base.html" %}
 {% load static %}
+{% load rated_tags %}
 {% block body %}
+
 <div class="container-xxl">
     <div class="row">
       <div class="col">
         {% for question in object_list  %}
+        {% question_rated as rated %}
             <div class="container border-bottom border-4 border-dark">
                 <div class="row" style="padding: 5px;">
                 <div class="col">
                     <div class="container">
                         <div class="row">
                           <div class="col">
+                            <p>{{question.mtmquestionrating_set.all.count}}</p>
                             <p>Votes</p>
                           </div>
                           <div class="col">
                             <p>{{question.reply_set.all.count}}</p>
-                            <p>Answer</p>
+                            <p>Answers</p>
                           </div>
                         </div>
                     </div>
@@ -42,6 +46,5 @@
             <a href="/ask" class="btn btn-secondary btn-lg">Ask!</a>
       </div>
     </div>
-
   
 {% endblock %}
