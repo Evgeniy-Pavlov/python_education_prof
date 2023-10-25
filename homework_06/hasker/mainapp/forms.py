@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, PasswordChangeForm, AuthenticationForm
-from .models import UserBase, Question, Tags, Reply
+from .models import UserBase, Question, Tags, Reply, MTMQuestionRating
 from .widgets import ModifiedClearableFileInput
 
 class RegisterForm(UserCreationForm):
@@ -43,3 +43,21 @@ class ReplyCreateForm(forms.ModelForm):
     class Meta:
         model = Reply
         fields = ('text',)
+
+class RatedQuestionUpForm(forms.ModelForm):
+
+    class Meta:
+        model = MTMQuestionRating
+        fields = ()
+
+class RatedQuestionDownForm(forms.ModelForm):
+
+    class Meta:
+        model = MTMQuestionRating
+        fields = ()
+
+class RatedQuestionCancelForm(forms.ModelForm):
+
+    class Meta:
+        model = MTMQuestionRating
+        fields = ()

@@ -3,8 +3,8 @@ from django.views.generic import CreateView, UpdateView, DetailView, ListView, V
 from django.contrib.auth.views import LoginView, LogoutView, PasswordChangeView
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .models import UserBase, Question, Tags, Reply
-from .forms import RegisterForm, UserLoginForm, UserUpdateForm, QuestionCreateForm, ReplyCreateForm
+from .models import UserBase, Question, Tags, Reply, MTMQuestionRating
+from .forms import RegisterForm, UserLoginForm, UserUpdateForm, QuestionCreateForm, ReplyCreateForm, RatedQuestionCancelForm, RatedQuestionDownForm, RatedQuestionUpForm
 
 
 class BasePageView(ListView):
@@ -54,7 +54,7 @@ class QuetionDetailView(DetailView):
     template_name = 'mainapp/question_detail.html'
 
 class ReplyCreateView(LoginRequiredMixin, CreateView):
-    login_url = '/'
+    login_url = '/login/'
 
     def post(self, request, pk):
         if request.POST['text']:
@@ -65,3 +65,37 @@ class ReplyCreateView(LoginRequiredMixin, CreateView):
             return redirect(f'/question/{pk}')
         else:
             return redirect(f'/question/{pk}')
+
+class QuestionRatedUp(LoginRequiredMixin, View):
+    login_url = '/login/'
+
+    def post(self, request, pk):
+        form = RatedQuestionUpForm(request.POST)
+        form.instance.user_rated = self.request.user
+        form.instance.question_rated = Question.objects.get(id = pk)
+        form.instance.is_positive = True
+        form.save()
+        return redirect(f'/question/{pk}')
+
+class QuestionRatedDown(LoginRequiredMixin, View):
+    login_url = '/login/'
+
+    def post(self, request, pk):
+        form = RatedQuestionDownForm(request.POST)
+        form.instance.user_rated = self.request.user
+        form.instance.question_rated = Question.objects.get(id = pk)
+        form.instance.is_positive = False
+        form.save()
+        return redirect(f'/question/{pk}')
+
+class QuestionRatedCancel(LoginRequiredMixin, View):
+    login_url = '/login/'
+    form_class = RatedQuestionDownForm
+
+    def post(self, request, pk):
+        MTMQuestionRating.objects.filter(user_rated=self.request.user, question_rated=Question.objects.get(id=pk)).delete()
+        return redirect(f'/question/{pk}')
+    
+
+
+

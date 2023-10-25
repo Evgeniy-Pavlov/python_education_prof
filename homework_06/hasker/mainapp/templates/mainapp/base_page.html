@@ -1,20 +1,20 @@
 {% extends "base.html" %}
 {% load static %}
-{% load rated_tags %}
 {% block body %}
+{% load rated_tags %}
 
 <div class="container-xxl">
     <div class="row">
       <div class="col">
         {% for question in object_list  %}
-        {% question_rated as rated %}
+        {% question_counter_rated as counter %}
             <div class="container border-bottom border-4 border-dark">
                 <div class="row" style="padding: 5px;">
                 <div class="col">
                     <div class="container">
                         <div class="row">
                           <div class="col">
-                            <p>{{question.mtmquestionrating_set.all.count}}</p>
+                            <p>{{counter}}</p>
                             <p>Votes</p>
                           </div>
                           <div class="col">

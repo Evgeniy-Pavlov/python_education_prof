@@ -38,8 +38,8 @@ class Reply(models.Model):
         verbose_name_plural = 'Reply'
 
 class MTMQuestionRating(models.Model):
-    user_rated = models.ForeignKey(UserBase, on_delete=models.CASCADE)
-    question_rated = models.ForeignKey(Question, on_delete=models.CASCADE)
+    user_rated = models.ForeignKey(UserBase, on_delete=models.CASCADE, unique=False)
+    question_rated = models.ForeignKey(Question, on_delete=models.CASCADE, unique=False)
     is_positive = models.BooleanField(default=False)
 
 

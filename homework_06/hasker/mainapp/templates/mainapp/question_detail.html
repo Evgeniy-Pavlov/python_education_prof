@@ -1,16 +1,50 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load rated_tags %}
 {% block body %}
+{% question_rated as rated %}
+{% question_counter_rated as counter %}
 <div class="bd-content ps-lg-4">
-<div class="display-6">{{object.header}}</div>
-<p>{{object.body}}</p>
-{% if not question.user_create.logo %}
-<p><img src="{% static 'img/not_image_profile.jpg' %}" width="50" height="45">{{question.user_create}}</p>
-{% endif %}
-{% if question.user_create.logo %}
-<p><img src="{{question.user_create.logo.url}}" width="50" height="45">{{question.user_create}}</p>
-{% endif %}
-<p>{{question.date_create}}</p>
+<div class="display-5">{{object.header}}</div>
+<div class="container">
+    <div class="row">
+      <div class="col-1">
+        {% if not rated %}
+        <form action="/question-up/{{question.id}}" method="POST">
+            {% csrf_token %}
+            <button><img src="{% static 'img/chevron-up.svg' %}" width="20px"></button>
+        </form> 
+            <p class="display-6">{{counter}}</p>
+        <form action="/question-down/{{question.id}}" method="POST">
+            {% csrf_token %}
+            <button><img src="{% static 'img/chevron-down.svg' %}" width="20px"></button>
+        </form> 
+        {% endif %}
+        {% if rated %}
+        <form action="/question-cancel/{{question.id}}" method="POST">
+            {% csrf_token %}
+            <button><img src="{% static 'img/chevron-up.svg' %}" width="20px"></button>
+        </form>
+            <p class="display-6">{{counter}}</p>
+            <form action="/question-cancel/{{question.id}}" method="POST">
+                {% csrf_token %}
+                <button><img src="{% static 'img/chevron-down.svg' %}" width="20px"></button>
+            </form>   
+        {% endif %}
+      </div>
+      <div class="col-8">
+        <p>{{object.body}}</p>
+        {% if not question.user_create.logo %}
+            <p><img src="{% static 'img/not_image_profile.jpg' %}" width="50" height="45">{{question.user_create}}</p>
+        {% endif %}
+        {% if question.user_create.logo %}
+            <p><img src="{{question.user_create.logo.url}}" width="50" height="45">{{question.user_create}}</p>
+        {% endif %}
+        <p>{{question.date_create}}</p>
+      </div>
+    </div>
+  </div>
+
 </div>
 <div class="mb-3">
 {% if user.is_authenticated %}
