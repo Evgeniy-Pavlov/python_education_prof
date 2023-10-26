@@ -4,7 +4,8 @@ from django.contrib.auth.views import LoginView, LogoutView, PasswordChangeView
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import UserBase, Question, Tags, Reply, MTMQuestionRating
-from .forms import RegisterForm, UserLoginForm, UserUpdateForm, QuestionCreateForm, ReplyCreateForm, RatedQuestionCancelForm, RatedQuestionDownForm, RatedQuestionUpForm
+from .forms import RegisterForm, UserLoginForm, UserUpdateForm, QuestionCreateForm, ReplyCreateForm, RatedQuestionCancelForm, RatedQuestionDownForm, RatedQuestionUpForm, \
+    RatedReplyCancelForm, RatedReplyUpForm, RatedReplyDownForm
 
 
 class BasePageView(ListView):
@@ -33,7 +34,14 @@ class UserProfileView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     template_name = 'mainapp/user_settings.html'
     login_url = '/login/'
     success_message = 'Profile successfully edited'
-    
+
+    def get(self, request, *args, **kwargs):
+        if self.request.user == UserBase.objects.get(id=kwargs.get('pk')):
+            self.object = self.get_object()
+            return super().get(request, *args, **kwargs)
+        else:
+            return redirect('/')
+
     def get_success_url(self):
         return f'/settings/{self.request.user.id}'
 
@@ -95,7 +103,4 @@ class QuestionRatedCancel(LoginRequiredMixin, View):
     def post(self, request, pk):
         MTMQuestionRating.objects.filter(user_rated=self.request.user, question_rated=Question.objects.get(id=pk)).delete()
         return redirect(f'/question/{pk}')
-    
-
-
 

@@ -43,3 +43,7 @@ class MTMQuestionRating(models.Model):
     is_positive = models.BooleanField(default=False)
 
 
+class MTMReplyRating(models.Model):
+    user_rated = models.ForeignKey(UserBase, on_delete=models.CASCADE, unique=False)
+    reply_rated = models.ForeignKey(Reply, on_delete=models.CASCADE, unique=False)
+    is_positive = models.BooleanField(default=False)
