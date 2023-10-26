@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from mainapp.views import BasePageView, RegisterView, UserLoginView, UserLogoutView, UserProfileView, QuestionCreateView, QuetionDetailView, ReplyCreateView, \
-    QuestionRatedUp, QuestionRatedDown, QuestionRatedCancel
+    QuestionRatedUpView, QuestionRatedDownView, QuestionRatedCancelView, ReplyRatedUpView, ReplyRatedDownView, ReplyRatedCancelView
 from django.conf.urls.static import static
 from django.conf import settings
 
@@ -31,7 +31,10 @@ urlpatterns = [
     path('ask/', QuestionCreateView.as_view()),
     path('question/<int:pk>', QuetionDetailView.as_view()),
     path('reply-create/<int:pk>', ReplyCreateView.as_view()),
-    path('question-up/<int:pk>', QuestionRatedUp.as_view()),
-    path('question-down/<int:pk>', QuestionRatedDown.as_view()),
-    path('question-cancel/<int:pk>', QuestionRatedCancel.as_view()),
+    path('question-up/<int:pk>', QuestionRatedUpView.as_view()),
+    path('question-down/<int:pk>', QuestionRatedDownView.as_view()),
+    path('question-cancel/<int:pk>', QuestionRatedCancelView.as_view()),
+    path('reply-up/<int:question>/<int:pk>', ReplyRatedUpView.as_view()),
+    path('reply-down/<int:question>/<int:pk>', ReplyRatedDownView.as_view()),
+    path('reply-cancel/<int:question>/<int:pk>', ReplyRatedCancelView.as_view()),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

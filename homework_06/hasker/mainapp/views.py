@@ -3,9 +3,8 @@ from django.views.generic import CreateView, UpdateView, DetailView, ListView, V
 from django.contrib.auth.views import LoginView, LogoutView, PasswordChangeView
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .models import UserBase, Question, Tags, Reply, MTMQuestionRating
-from .forms import RegisterForm, UserLoginForm, UserUpdateForm, QuestionCreateForm, ReplyCreateForm, RatedQuestionCancelForm, RatedQuestionDownForm, RatedQuestionUpForm, \
-    RatedReplyCancelForm, RatedReplyUpForm, RatedReplyDownForm
+from .models import UserBase, Question, Tags, Reply, MTMQuestionRating, MTMReplyRating
+from .forms import RegisterForm, UserLoginForm, UserUpdateForm, QuestionCreateForm, ReplyCreateForm, RatedQuestionForm, RatedReplyForm
 
 
 class BasePageView(ListView):
@@ -74,33 +73,64 @@ class ReplyCreateView(LoginRequiredMixin, CreateView):
         else:
             return redirect(f'/question/{pk}')
 
-class QuestionRatedUp(LoginRequiredMixin, View):
+class QuestionRatedUpView(LoginRequiredMixin, View):
     login_url = '/login/'
 
     def post(self, request, pk):
-        form = RatedQuestionUpForm(request.POST)
+        form = RatedQuestionForm(request.POST)
         form.instance.user_rated = self.request.user
         form.instance.question_rated = Question.objects.get(id = pk)
         form.instance.is_positive = True
         form.save()
         return redirect(f'/question/{pk}')
 
-class QuestionRatedDown(LoginRequiredMixin, View):
+class QuestionRatedDownView(LoginRequiredMixin, View):
     login_url = '/login/'
 
     def post(self, request, pk):
-        form = RatedQuestionDownForm(request.POST)
+        form = RatedQuestionForm(request.POST)
         form.instance.user_rated = self.request.user
         form.instance.question_rated = Question.objects.get(id = pk)
         form.instance.is_positive = False
         form.save()
         return redirect(f'/question/{pk}')
 
-class QuestionRatedCancel(LoginRequiredMixin, View):
+class QuestionRatedCancelView(LoginRequiredMixin, View):
     login_url = '/login/'
-    form_class = RatedQuestionDownForm
+    form_class = RatedQuestionForm
 
     def post(self, request, pk):
         MTMQuestionRating.objects.filter(user_rated=self.request.user, question_rated=Question.objects.get(id=pk)).delete()
         return redirect(f'/question/{pk}')
 
+class ReplyRatedUpView(LoginRequiredMixin, View):
+    login_url = '/login/'
+    form_class = RatedReplyForm
+
+    def post(self, request, question, pk):
+        form = RatedReplyForm(request.POST)
+        form.instance.user_rated = self.request.user
+        form.instance.reply_rated = Reply.objects.get(id=pk)
+        form.instance.is_positive = True
+        form.save()
+        return redirect(f'/question/{question}')
+
+class ReplyRatedDownView(LoginRequiredMixin, View):
+    login_url = '/login/'
+    form_class = RatedReplyForm
+
+    def post(self, request, question, pk):
+        form = RatedReplyForm(request.POST)
+        form.instance.user_rated = self.request.user
+        form.instance.reply_rated = Reply.objects.get(id=pk)
+        form.instance.is_positive = False
+        form.save()
+        return redirect(f'/question/{question}')
+
+class ReplyRatedCancelView(LoginRequiredMixin, View):
+    login_url = '/login/'
+    form_class = RatedReplyForm
+
+    def post(self, request, question, pk):
+        MTMReplyRating.objects.filter(user_rated=self.request.user, reply_rated=Reply.objects.get(id=pk)).delete()
+        return redirect(f'/question/{question}')

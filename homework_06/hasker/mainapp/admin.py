@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import UserBase, Question, Tags, Reply, MTMQuestionRating
+from .models import UserBase, Question, Tags, Reply, MTMQuestionRating, MTMReplyRating
 
 # Register your models here.
 @admin.register(UserBase)
@@ -24,3 +24,7 @@ class AdminReply(admin.ModelAdmin):
 @admin.register(MTMQuestionRating)
 class AdminMTMQuestionRating(admin.ModelAdmin):
     list_display = ('user_rated', 'question_rated', 'is_positive')
+
+@admin.register(MTMReplyRating)
+class AdminMTMReplyRating(admin.ModelAdmin):
+    list_display = ('user_rated', 'reply_rated', 'is_positive')

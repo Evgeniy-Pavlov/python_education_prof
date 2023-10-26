@@ -44,37 +44,13 @@ class ReplyCreateForm(forms.ModelForm):
         model = Reply
         fields = ('text',)
 
-class RatedQuestionUpForm(forms.ModelForm):
+class RatedQuestionForm(forms.ModelForm):
 
     class Meta:
         model = MTMQuestionRating
         fields = ()
 
-class RatedQuestionDownForm(forms.ModelForm):
-
-    class Meta:
-        model = MTMQuestionRating
-        fields = ()
-
-class RatedQuestionCancelForm(forms.ModelForm):
-
-    class Meta:
-        model = MTMQuestionRating
-        fields = ()
-
-class RatedReplyUpForm(forms.ModelForm):
-
-    class Meta:
-        model = MTMReplyRating
-        fields = ()
-
-class RatedReplyDownForm(forms.ModelForm):
-
-    class Meta:
-        model = MTMReplyRating
-        fields = ()
-
-class RatedReplyCancelForm(forms.ModelForm):
+class RatedReplyForm(forms.ModelForm):
 
     class Meta:
         model = MTMReplyRating

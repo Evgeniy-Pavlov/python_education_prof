@@ -59,11 +59,34 @@
 
 <ul class="list-group">
 {% for reply in object.reply_set.all reversed %}
+{% reply_rated as rep_rated %}
+{% reply_counter_rated as rep_counter %}
 <li class="list-group-item">
 <div class="container">
 <div class="row border-bottom border-4 border-dark">
     <div class="col-2">
-        Column ranked
+        {% if not rep_rated %}
+        <form action="/reply-up/{{question.id}}/{{reply.id}}" method="POST">
+            {% csrf_token %}
+            <button><img src="{% static 'img/chevron-up.svg' %}" width="20px"></button>
+        </form> 
+            <p class="display-6">{{rep_counter}}</p>
+        <form action="/reply-down/{{question.id}}/{{reply.id}}" method="POST">
+            {% csrf_token %}
+            <button><img src="{% static 'img/chevron-down.svg' %}" width="20px"></button>
+        </form> 
+        {% endif %}
+        {% if rep_rated %}
+        <form action="/reply-cancel/{{question.id}}/{{reply.id}}" method="POST">
+            {% csrf_token %}
+            <button><img src="{% static 'img/chevron-up.svg' %}" width="20px"></button>
+        </form>
+            <p class="display-6">{{rep_counter}}</p>
+            <form action="/reply-cancel/{{question.id}}/{{reply.id}}" method="POST">
+                {% csrf_token %}
+                <button><img src="{% static 'img/chevron-down.svg' %}" width="20px"></button>
+            </form>   
+        {% endif %}
     </div>
     <div class="col-8">
     <p>{{reply.text}}</p>
