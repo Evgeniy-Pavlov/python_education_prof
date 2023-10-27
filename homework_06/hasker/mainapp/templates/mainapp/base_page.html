@@ -42,8 +42,19 @@
             {% endfor %}
       </div>
       <div class="col col-6 col-md-4">
-            <p>Column trending</p>
-            <a href="/ask" class="btn btn-secondary btn-lg">Ask!</a>
+        <a href="/ask" class="btn btn-secondary btn-lg">Ask!</a>
+            {% question_treding as q_treding %}
+            <div class="container">
+            {% for q_tred in q_treding %}
+            <div class="row">
+              <div class="row">
+                <div class="col">
+                  <p>{{q_tred.question_rated}}</p>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+            </div>
       </div>
     </div>
   
