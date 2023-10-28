@@ -42,16 +42,23 @@
             {% endfor %}
       </div>
       <div class="col col-6 col-md-4">
-        <a href="/ask" class="btn btn-secondary btn-lg">Ask!</a>
+        
             {% question_treding as q_treding %}
             <div class="container">
-            {% for q_tred in q_treding %}
-            <div class="row">
               <div class="row">
                 <div class="col">
-                  <p>{{q_tred.question_rated}}</p>
+                  <a href="/ask" class="btn btn-secondary btn-lg" style="margin-bottom: 10px;">Ask!</a>
                 </div>
               </div>
+              <p class="h4">Treding</p>
+            {% for q_tred in q_treding %}
+            <div class="row">
+                <div class="col-2">
+                  <p class="btn btn-primary">{{q_tred.rating}}</p>
+                </div>
+                <div class="col-8">
+                  <a href="/question/{{q_tred.question_rated_id}}">{{q_tred.question_rated_id__header}}</a>
+                </div>
             </div>
             {% endfor %}
             </div>
