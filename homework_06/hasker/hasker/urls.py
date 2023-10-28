@@ -15,7 +15,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from mainapp.views import BasePageView, RegisterView, UserLoginView, UserLogoutView, UserProfileView, QuestionCreateView, QuetionDetailView, ReplyCreateView, \
     QuestionRatedUpView, QuestionRatedDownView, QuestionRatedCancelView, ReplyRatedUpView, ReplyRatedDownView, ReplyRatedCancelView
 from django.conf.urls.static import static
@@ -37,4 +37,5 @@ urlpatterns = [
     path('reply-up/<int:question>/<int:pk>', ReplyRatedUpView.as_view()),
     path('reply-down/<int:question>/<int:pk>', ReplyRatedDownView.as_view()),
     path('reply-cancel/<int:question>/<int:pk>', ReplyRatedCancelView.as_view()),
+    path('__debug__/', include('debug_toolbar.urls'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
