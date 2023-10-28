@@ -87,6 +87,7 @@
                 <button><img src="{% static 'img/chevron-down.svg' %}" width="20px"></button>
             </form>   
         {% endif %}
+        {% if question.user_create.id == user.id %}  
         {% if reply.best_reply %}
         <form action="/reply-best/{{question.id}}/{{reply.id}}" method="POST">
             {% csrf_token %}
@@ -98,6 +99,7 @@
             {% csrf_token %}
             <button><img src="{% static 'img/star.svg' %}" width="20px"></button>
         </form>
+        {% endif %}
         {% endif %}
     </div>
     <div class="col-8">
