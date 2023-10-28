@@ -87,6 +87,18 @@
                 <button><img src="{% static 'img/chevron-down.svg' %}" width="20px"></button>
             </form>   
         {% endif %}
+        {% if reply.best_reply %}
+        <form action="/reply-best/{{question.id}}/{{reply.id}}" method="POST">
+            {% csrf_token %}
+            <button><img src="{% static 'img/star-fill.svg' %}" width="20px"></button>
+        </form>
+        {% endif %}
+        {% if not reply.best_reply %}
+        <form action="/reply-best/{{question.id}}/{{reply.id}}" method="POST">
+            {% csrf_token %}
+            <button><img src="{% static 'img/star.svg' %}" width="20px"></button>
+        </form>
+        {% endif %}
     </div>
     <div class="col-8">
     <p>{{reply.text}}</p>

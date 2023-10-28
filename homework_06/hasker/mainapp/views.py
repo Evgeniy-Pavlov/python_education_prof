@@ -4,7 +4,7 @@ from django.contrib.auth.views import LoginView, LogoutView, PasswordChangeView
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import UserBase, Question, Tags, Reply, MTMQuestionRating, MTMReplyRating
-from .forms import RegisterForm, UserLoginForm, UserUpdateForm, QuestionCreateForm, ReplyCreateForm, RatedQuestionForm, RatedReplyForm
+from .forms import RegisterForm, UserLoginForm, UserUpdateForm, QuestionCreateForm, ReplyCreateForm, RatedQuestionForm, RatedReplyForm, BestReplyForm
 
 
 class BasePageView(ListView):
@@ -134,3 +134,30 @@ class ReplyRatedCancelView(LoginRequiredMixin, View):
     def post(self, request, question, pk):
         MTMReplyRating.objects.filter(user_rated=self.request.user, reply_rated=Reply.objects.get(id=pk)).delete()
         return redirect(f'/question/{question}')
+
+class BestReplySetView(LoginRequiredMixin, View):
+    login_url = '/login/'
+    form_class = BestReplyForm
+
+    def post(self, request, question, pk):
+        try:
+            find_best_reply = Reply.objects.get(question= Question.objects.get(id=question), best_reply=True)
+            if find_best_reply.id == pk:
+                find_best_reply.best_reply = False
+                find_best_reply.save()
+            else:
+                find_best_reply.best_reply = False
+                find_best_reply.save()
+                best_reply = Reply.objects.get(id=pk)
+                best_reply.best_reply = True
+                best_reply.save()
+        except Reply.DoesNotExist:
+            best_reply = Reply.objects.get(id=pk)
+            best_reply.best_reply = True
+            best_reply.save()
+        return redirect(f'/question/{question}')
+        
+
+
+
+

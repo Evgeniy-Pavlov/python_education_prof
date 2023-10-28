@@ -55,3 +55,9 @@ class RatedReplyForm(forms.ModelForm):
     class Meta:
         model = MTMReplyRating
         fields = ()
+
+class BestReplyForm(forms.ModelForm):
+
+    class Meta:
+        model = MTMReplyRating
+        fields = ()
