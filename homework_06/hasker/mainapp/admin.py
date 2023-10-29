@@ -19,7 +19,7 @@ class AdminQuesttion(admin.ModelAdmin):
 
 @admin.register(Reply)
 class AdminReply(admin.ModelAdmin):
-    list_display = ('text', 'user_create', 'best_reply')
+    list_display = ('text', 'user_create', 'best_reply', 'date_create', 'question')
 
 @admin.register(MTMQuestionRating)
 class AdminMTMQuestionRating(admin.ModelAdmin):

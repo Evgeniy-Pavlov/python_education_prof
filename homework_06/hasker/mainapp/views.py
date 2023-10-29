@@ -156,8 +156,3 @@ class BestReplySetView(LoginRequiredMixin, View):
             best_reply.best_reply = True
             best_reply.save()
         return redirect(f'/question/{question}')
-        
-
-
-
-

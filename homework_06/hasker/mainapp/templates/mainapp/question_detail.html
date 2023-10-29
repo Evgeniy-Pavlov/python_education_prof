@@ -4,6 +4,7 @@
 {% block body %}
 {% question_rated as rated %}
 {% question_counter_rated as counter %}
+{% reply_sorted as rep_sort %}
 <div class="bd-content ps-lg-4">
 <div class="display-5">{{object.header}}</div>
 <div class="container">
@@ -56,11 +57,9 @@
   </form> 
 </div>
 {% endif %}
-
 <ul class="list-group">
-{% for reply in object.reply_set.all reversed %}
+{% for reply in rep_sort %}
 {% reply_rated as rep_rated %}
-{% reply_counter_rated as rep_counter %}
 <li class="list-group-item">
 <div class="container">
 <div class="row border-bottom border-4 border-dark">
@@ -70,7 +69,7 @@
             {% csrf_token %}
             <button><img src="{% static 'img/chevron-up.svg' %}" width="20px"></button>
         </form> 
-            <p class="display-6">{{rep_counter}}</p>
+            <p class="display-6">{{reply.rating}}</p>
         <form action="/reply-down/{{question.id}}/{{reply.id}}" method="POST">
             {% csrf_token %}
             <button><img src="{% static 'img/chevron-down.svg' %}" width="20px"></button>
@@ -81,7 +80,7 @@
             {% csrf_token %}
             <button><img src="{% static 'img/chevron-up.svg' %}" width="20px"></button>
         </form>
-            <p class="display-6">{{rep_counter}}</p>
+            <p class="display-6">{{reply.rating}}</p>
             <form action="/reply-cancel/{{question.id}}/{{reply.id}}" method="POST">
                 {% csrf_token %}
                 <button><img src="{% static 'img/chevron-down.svg' %}" width="20px"></button>
@@ -104,11 +103,12 @@
     </div>
     <div class="col-8">
     <p>{{reply.text}}</p>
-    {% if not reply.user_create.logo %}
-        <p><img src="{% static 'img/not_image_profile.jpg' %}" width="50" height="45">{{reply.user_create}}</p>
+    {% if not reply.user_create_id__logo %}
+        <p><img src="{% static 'img/not_image_profile.jpg' %}" width="50" height="45">{{reply.user_create_id__username}}</p>
     {% endif %}
-    {% if reply.user_create.logo %}
-        <p><img src="{{reply.user_create.logo.url}}" width="50" height="45">{{reply.user_create}}</p>
+    {% if reply.user_create_id__logo %}
+        <p>{{reply.user_create_id__logo}}</p>
+        <p><img src="/media/{{reply.user_create_id__logo}}" width="50" height="45">{{reply.user_create_id__username}}</p>
     {% endif %}
     </div>
 </div>

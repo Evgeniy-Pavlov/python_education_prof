@@ -32,6 +32,7 @@ class Reply(models.Model):
     text = models.TextField(max_length=500)
     user_create = models.ForeignKey(UserBase, on_delete=models.SET_NULL, null=True)
     best_reply = models.BooleanField(default=False)
+    date_create = models.DateTimeField(default=datetime.now)
     question = models.ForeignKey(Question, on_delete=models.SET_NULL, null=True)
 
     class Meta:
