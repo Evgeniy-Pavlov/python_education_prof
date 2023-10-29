@@ -107,7 +107,6 @@
         <p><img src="{% static 'img/not_image_profile.jpg' %}" width="50" height="45">{{reply.user_create_id__username}}</p>
     {% endif %}
     {% if reply.user_create_id__logo %}
-        <p>{{reply.user_create_id__logo}}</p>
         <p><img src="/media/{{reply.user_create_id__logo}}" width="50" height="45">{{reply.user_create_id__username}}</p>
     {% endif %}
     </div>
