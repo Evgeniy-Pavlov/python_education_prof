@@ -1,10 +1,13 @@
 {% extends 'base.html' %}
 {% load static %}
 {% load rated_tags %}
+{% load sorted_tags %}
 {% block body %}
 {% question_rated as rated %}
 {% question_counter_rated as counter %}
 {% reply_sorted as rep_sort %}
+
+
 <div class="bd-content ps-lg-4">
 <div class="display-5">{{object.header}}</div>
 <div class="container">

@@ -2,6 +2,7 @@
 {% load static %}
 {% block body %}
 {% load rated_tags %}
+{% load sorted_tags %}
 
 <div class="container-xxl">
     <div class="row">
@@ -57,7 +58,9 @@
           </div>
           </div>
         
-        <div class="tab-pane fade" id="pills-hot" role="tabpanel" aria-labelledby="pills-hot-tab">Hot question</div>
+        <div class="tab-pane fade" id="pills-hot" role="tabpanel" aria-labelledby="pills-hot-tab">
+          {% question_hot_sorted as hot_sorted %}
+          Hot question</div>
 
         </div>
     </div>
