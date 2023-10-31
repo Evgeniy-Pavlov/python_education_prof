@@ -59,8 +59,46 @@
           </div>
         
         <div class="tab-pane fade" id="pills-hot" role="tabpanel" aria-labelledby="pills-hot-tab">
-          {% question_hot_sorted as hot_sorted %}
-          Hot question</div>
+          
+
+          <div>
+            {% question_hot_sorted as hot_sorted %}
+            {% for question in hot_sorted %}
+          <div class="container border-bottom border-4 border-dark">
+              <div class="row" style="padding: 5px;">
+              <div class="col">
+                  <div class="container">
+                      <div class="row">
+                        <div class="col">
+                          <p>{{question.votes}}</p>
+                          <p>Votes</p>
+                        </div>
+                        <div class="col">
+                          <p>{{question.question_rated_id.reply__set.all.count}}</p>
+                          <p>Answers</p>
+                        </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col">
+                  <a href="/question/{{question.id}}"><div class="h4">{{question.question_rated_id__header}}</div></a>
+              </div>
+              <div class="col">
+                  {% if not question.question_rated_id__user_create__logo %}
+                  <p><img src="{% static 'img/not_image_profile.jpg' %}" width="50" height="45">{{question.question_rated_id__user_create__username}}</p>
+                  {% endif %}
+                  {% if question.question_rated_id__user_create__logo %}
+                  <p><img src="/media/{{question.question_rated_id__user_create__logo}}" width="50" height="45">{{question.question_rated_id__user_create__username}}</p>
+                  {% endif %}
+                  
+                  <p>asked {{question.question_rated_id__date_create}}</p>
+              </div>
+              </div>
+          </div>
+          {% endfor %}
+        </div>
+          
+        </div>
 
         </div>
     </div>

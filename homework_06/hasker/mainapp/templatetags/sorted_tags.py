@@ -21,6 +21,7 @@ def reply_sorted(context):
 @register.simple_tag(takes_context=True)
 def question_hot_sorted(context):
     result = MTMQuestionRating.objects.all().select_related('question__id').values('question_rated_id', 'question_rated_id__header', 'question_rated_id__user_create__username',
-        'question_rated_id__user_create__logo', 'question_rated_id__date_create')\
-        .annotate(rating = Count('question_rated_id')).order_by('rating')[:20:-1]
+        'question_rated_id__user_create__logo', 'question_rated_id__date_create', 'question_rated_id__user_create__id')\
+        .annotate(votes= Count(Case(When(is_positive=True, then=1)))- Count(Case(When(is_positive=False, then=1)),\
+        answers = Count('question_rated_id__reply__question'))).order_by('votes')[::-1]
     return result
