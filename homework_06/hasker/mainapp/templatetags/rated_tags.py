@@ -25,3 +25,8 @@ def reply_counter_rated(context):
     result = len(MTMReplyRating.objects.filter(reply_rated=Reply.objects.get(id=context['reply'].id), is_positive=True))  - \
         len(MTMReplyRating.objects.filter(reply_rated=Reply.objects.get(id=context['reply'].id),is_positive=False))
     return result
+
+@register.simple_tag(takes_context=True)
+def reply_counter(context):
+    result = len(Reply.objects.filter(question=context['question'].get('id')))
+    return result

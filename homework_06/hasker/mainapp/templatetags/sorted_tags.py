@@ -20,8 +20,14 @@ def reply_sorted(context):
 
 @register.simple_tag(takes_context=True)
 def question_hot_sorted(context):
-    result = MTMQuestionRating.objects.all().select_related('question__id').values('question_rated_id', 'question_rated_id__header', 'question_rated_id__user_create__username',
-        'question_rated_id__user_create__logo', 'question_rated_id__date_create', 'question_rated_id__user_create__id')\
-        .annotate(votes= Count(Case(When(is_positive=True, then=1)))- Count(Case(When(is_positive=False, then=1)),\
-        answers = Count('question_rated_id__reply__question'))).order_by('votes')[::-1]
+    result = Question.objects.all().values('id', 'header', 'user_create__logo', 'user_create__username', 'date_create')\
+        .annotate(votes= Count(Case(When(mtmquestionrating__is_positive=True, then=1)))-\
+            Count(Case(When(mtmquestionrating__is_positive=False, then=1)))).order_by('votes')[::-1]
+    return result
+
+@register.simple_tag(takes_context=True)
+def question_new_sorted(context):
+    result = Question.objects.all().values('id', 'header', 'user_create__logo', 'user_create__username', 'date_create')\
+        .annotate(votes= Count(Case(When(mtmquestionrating__is_positive=True, then=1)))-\
+            Count(Case(When(mtmquestionrating__is_positive=False, then=1)))).order_by('date_create')[::-1]
     return result
