@@ -1,3 +1,4 @@
+from django.db.models import Q, Count, Case, When
 from django.shortcuts import render, redirect
 from django.views.generic import CreateView, UpdateView, DetailView, ListView, View
 from django.contrib.auth.views import LoginView, LogoutView, PasswordChangeView
@@ -156,3 +157,24 @@ class BestReplySetView(LoginRequiredMixin, View):
             best_reply.best_reply = True
             best_reply.save()
         return redirect(f'/question/{question}')
+
+class SearchQuestionView(ListView):
+    template_name = 'mainapp/search.html'
+
+    def get_queryset(self):
+        search_request = self.request.GET.get('search')
+        if search_request[:4] == 'tag:':
+            result = Question.objects.filter(tags__tag=search_request[4:]).values('id', 'header', 'user_create__logo', 'user_create__username', 'date_create')\
+                .annotate(votes= Count(Case(When(mtmquestionrating__is_positive=True, then=1)))-\
+                Count(Case(When(mtmquestionrating__is_positive=False, then=1)))).order_by('votes')[::-1]
+        else:
+            result = Question.objects.filter(Q(header__icontains = search_request) | Q(body__icontains = search_request))\
+                .values('id', 'header', 'user_create__logo', 'user_create__username', 'date_create')\
+                .annotate(votes= Count(Case(When(mtmquestionrating__is_positive=True, then=1)))-\
+                Count(Case(When(mtmquestionrating__is_positive=False, then=1)))).order_by('votes')[::-1]
+        return result
+
+        def get_context_data(self, *, object_list=None, **kwargs):
+            context = super().get_context_data(**kwargs)
+            context['search'] = self.request.GET.get('search')
+            return context
