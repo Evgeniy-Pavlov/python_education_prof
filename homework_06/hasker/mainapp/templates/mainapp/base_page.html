@@ -22,6 +22,7 @@
               {% question_new_sorted as new_sorted %}
               {% for question in new_sorted %}
               {% reply_counter as rep_count %}
+              {% get_tags_question as get_tags %}
             <div class="container border-bottom border-4 border-dark">
                 <div class="row" style="padding: 5px;">
                 <div class="col">
@@ -40,6 +41,11 @@
                 </div>
                 <div class="col">
                     <a href="/question/{{question.id}}"><div class="h4">{{question.header}}</div></a>
+                    {% for tag in get_tags %}
+                      {% if tag.tags__tag %}
+                        <div class="btn btn-primary">{{tag.tags__tag}}</div>
+                      {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="col">
                     {% if not question.user_create__logo %}
@@ -60,6 +66,7 @@
             {% question_hot_sorted as hot_sorted %}
             {% for question in hot_sorted %}
             {% reply_counter as rep_count%}
+            {% get_tags_question as get_tags %}
           <div class="container border-bottom border-4 border-dark">
               <div class="row" style="padding: 5px;">
               <div class="col">
@@ -78,6 +85,11 @@
               </div>
               <div class="col">
                   <a href="/question/{{question.id}}"><div class="h4">{{question.header}}</div></a>
+                  {% for tag in get_tags %}
+                      {% if tag.tags__tag %}
+                        <div class="btn btn-primary">{{tag.tags__tag}}</div>
+                      {% endif %}
+                    {% endfor %}
               </div>
               <div class="col">
                   {% if not question.user_create__logo %}
