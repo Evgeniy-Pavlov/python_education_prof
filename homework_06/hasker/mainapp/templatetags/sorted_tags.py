@@ -19,20 +19,6 @@ def reply_sorted(context):
     return result
 
 @register.simple_tag(takes_context=True)
-def question_hot_sorted(context):
-    result = Question.objects.all().values('id', 'header', 'user_create__logo', 'user_create__username', 'date_create')\
-        .annotate(votes= Count(Case(When(mtmquestionrating__is_positive=True, then=1)))-\
-            Count(Case(When(mtmquestionrating__is_positive=False, then=1)))).order_by('votes')[::-1]
-    return result
-
-@register.simple_tag(takes_context=True)
-def question_new_sorted(context):
-    result = Question.objects.all().values('id', 'header', 'user_create__logo', 'user_create__username', 'date_create')\
-        .annotate(votes= Count(Case(When(mtmquestionrating__is_positive=True, then=1)))-\
-            Count(Case(When(mtmquestionrating__is_positive=False, then=1)))).order_by('date_create')[::-1]
-    return result
-
-@register.simple_tag(takes_context=True)
 def get_tags_question(context):
     result = Question.objects.filter(id = context['question'].get('id')).values('tags__tag')
     return result

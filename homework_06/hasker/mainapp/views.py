@@ -1,4 +1,5 @@
 from django.db.models import Q, Count, Case, When
+from django.core.paginator import Paginator
 from django.shortcuts import render, redirect
 from django.views.generic import CreateView, UpdateView, DetailView, ListView, View
 from django.contrib.auth.views import LoginView, LogoutView, PasswordChangeView
@@ -11,6 +12,13 @@ from .forms import RegisterForm, UserLoginForm, UserUpdateForm, QuestionCreateFo
 class BasePageView(ListView):
     model = Question
     template_name = 'mainapp/base_page.html'
+    paginate_by = 20
+
+    def get_queryset(self):
+        result = Question.objects.all().values('id', 'header', 'user_create__logo', 'user_create__username', 'date_create')\
+            .annotate(votes= Count(Case(When(mtmquestionrating__is_positive=True, then=1)))-\
+            Count(Case(When(mtmquestionrating__is_positive=False, then=1))))
+        return result
 
 class RegisterView(CreateView):
     model = UserBase
@@ -160,7 +168,7 @@ class BestReplySetView(LoginRequiredMixin, View):
 
 class SearchQuestionView(ListView):
     template_name = 'mainapp/search.html'
-    paginate_by = 5
+    paginate_by = 20
 
     def get_queryset(self):
         search_request = self.request.GET.get('search')
