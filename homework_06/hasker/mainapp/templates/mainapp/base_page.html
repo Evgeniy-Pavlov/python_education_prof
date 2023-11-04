@@ -19,7 +19,7 @@
         <div class="tab-content" id="pills-tabContent">
           <div class="tab-pane fade show active" id="pills-new" role="tabpanel" aria-labelledby="pills-new-tab">
             <div>
-              {% for question in object_list|dictsort:"date_create" reversed %}
+              {% for question in page_obj|dictsort:"date_create" reversed%}
               {% reply_counter as rep_count %}
               {% get_tags_question as get_tags %}
             <div class="container border-bottom border-4 border-dark">
@@ -59,9 +59,13 @@
             </div>
             {% endfor %}
             <nav aria-label="Page navigation">
-              <ul class="pagination">
+              <ul class="pagination justify-content-center">
               {% for p in paginator.page_range %}
-                <li class="page-item"><a class="page-link" href="?page={{p}}">{{p}}</a></li>
+                {% if page_obj.number == p %}
+                  <li class="page-item active"><a class="page-link" href="?page={{p}}">{{p}}</a></li>
+                {% else %}
+                  <li class="page-item"><a class="page-link" href="?page={{p}}">{{p}}</a></li>
+                {% endif %}
               {% endfor %}
               </ul>
             </nav>
@@ -69,7 +73,7 @@
           </div>
         <div class="tab-pane fade" id="pills-hot" role="tabpanel" aria-labelledby="pills-hot-tab">
           <div>
-            {% for question in object_list|dictsort:"votes" reversed %}
+            {% for question in page_obj|dictsort:"votes" reversed %}
             {% reply_counter as rep_count%}
             {% get_tags_question as get_tags %}
           <div class="container border-bottom border-4 border-dark">
@@ -110,9 +114,13 @@
           </div>
           {% endfor %}
           <nav aria-label="Page navigation">
-            <ul class="pagination">
+            <ul class="pagination justify-content-center">
             {% for p in paginator.page_range %}
-              <li class="page-item"><a class="page-link" href="?page={{p}}">{{p}}</a></li>
+              {% if page_obj.number == p %}
+                <li class="page-item active"><a class="page-link" href="?page={{p}}">{{p}}</a></li>
+              {% else %}
+                <li class="page-item"><a class="page-link" href="?page={{p}}">{{p}}</a></li>
+              {% endif %}
             {% endfor %}
             </ul>
           </nav>
