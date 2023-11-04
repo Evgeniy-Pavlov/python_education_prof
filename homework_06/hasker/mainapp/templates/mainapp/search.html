@@ -3,12 +3,12 @@
 {% block body %}
 {% load rated_tags %}
 {% load sorted_tags %}
-
+{% load i18n %}
 <div class="container-xxl">
     <div class="row">
       <div class="col">
             <div>
-              {% for question in object_list %}
+              {% for question in page_obj %}
               {% reply_counter as rep_count %}
               {% get_tags_question as get_tags %}
             <div class="container border-bottom border-4 border-dark">
@@ -72,5 +72,13 @@
             </div>
       </div>
     </div>
+
+  <nav aria-label="Page navigation">
+    <ul class="pagination">
+    {% for p in paginator.page_range %}
+      <li class="page-item"><a class="page-link" href="{% if request.GET.search %}?search={{ request.GET.search }}{% endif %}&page={{p}}">{{p}}</a></li>
+    {% endfor %}
+    </ul>
+  </nav>
 
 {% endblock %}

@@ -160,6 +160,7 @@ class BestReplySetView(LoginRequiredMixin, View):
 
 class SearchQuestionView(ListView):
     template_name = 'mainapp/search.html'
+    paginate_by = 5
 
     def get_queryset(self):
         search_request = self.request.GET.get('search')
@@ -174,7 +175,7 @@ class SearchQuestionView(ListView):
                 Count(Case(When(mtmquestionrating__is_positive=False, then=1)))).order_by('votes')[::-1]
         return result
 
-        def get_context_data(self, *, object_list=None, **kwargs):
-            context = super().get_context_data(**kwargs)
-            context['search'] = self.request.GET.get('search')
-            return context
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['search'] = self.request.GET.get('search')
+        return context
