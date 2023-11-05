@@ -17,13 +17,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from mainapp.views import BasePageView, RegisterView, UserLoginView, UserLogoutView, UserProfileView, QuestionCreateView, QuetionDetailView, ReplyCreateView, \
-    QuestionRatedUpView, QuestionRatedDownView, QuestionRatedCancelView, ReplyRatedUpView, ReplyRatedDownView, ReplyRatedCancelView, BestReplySetView, SearchQuestionView
+    QuestionRatedUpView, QuestionRatedDownView, QuestionRatedCancelView, ReplyRatedUpView, ReplyRatedDownView, ReplyRatedCancelView, BestReplySetView,\
+        SearchQuestionView, BasePageHotView
 from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', BasePageView.as_view()),
+    path('hot-question/', BasePageHotView.as_view()),
     path('signup/', RegisterView.as_view()),
     path('login/', UserLoginView.as_view()),
     path('logout/', UserLogoutView.as_view()),

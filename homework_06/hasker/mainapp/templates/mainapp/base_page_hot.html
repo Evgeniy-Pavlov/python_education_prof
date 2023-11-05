@@ -20,7 +20,7 @@
               </a>
           </li>
         </ul>
-          {% for question in page_obj|dictsort:"date_create" reversed%}
+          {% for question in page_obj|dictsort:"votes" reversed%}
           {% reply_counter as rep_count %}
           {% get_tags_question as get_tags %}
         <div class="container border-bottom border-4 border-dark">
@@ -72,7 +72,6 @@
         </nav>
       </div>
     </div>
-
       <div class="col col-6 col-md-4">
             {% question_treding as q_treding %}
             <div class="container">
