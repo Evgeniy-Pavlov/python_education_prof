@@ -16,7 +16,7 @@ class BasePageView(ListView):
     def get_queryset(self):
         result = Question.objects.all().values('id', 'header', 'user_create__logo', 'user_create__username', 'date_create')\
             .annotate(votes= Count(Case(When(mtmquestionrating__is_positive=True, then=1)))-\
-            Count(Case(When(mtmquestionrating__is_positive=False, then=1))))
+            Count(Case(When(mtmquestionrating__is_positive=False, then=1)))).order_by('-date_create')
         return result
 
 class BasePageHotView(ListView):
@@ -27,7 +27,7 @@ class BasePageHotView(ListView):
     def get_queryset(self):
         result = Question.objects.all().values('id', 'header', 'user_create__logo', 'user_create__username', 'date_create')\
             .annotate(votes= Count(Case(When(mtmquestionrating__is_positive=True, then=1)))-\
-            Count(Case(When(mtmquestionrating__is_positive=False, then=1))))
+            Count(Case(When(mtmquestionrating__is_positive=False, then=1)))).order_by('-votes')
         return result
 
 class RegisterView(CreateView):
@@ -185,12 +185,12 @@ class SearchQuestionView(ListView):
         if search_request[:4] == 'tag:':
             result = Question.objects.filter(tags__tag=search_request[4:]).values('id', 'header', 'user_create__logo', 'user_create__username', 'date_create')\
                 .annotate(votes= Count(Case(When(mtmquestionrating__is_positive=True, then=1)))-\
-                Count(Case(When(mtmquestionrating__is_positive=False, then=1)))).order_by('votes')[::-1]
+                Count(Case(When(mtmquestionrating__is_positive=False, then=1)))).order_by('-votes')
         else:
             result = Question.objects.filter(Q(header__icontains = search_request) | Q(body__icontains = search_request))\
                 .values('id', 'header', 'user_create__logo', 'user_create__username', 'date_create')\
                 .annotate(votes= Count(Case(When(mtmquestionrating__is_positive=True, then=1)))-\
-                Count(Case(When(mtmquestionrating__is_positive=False, then=1)))).order_by('votes')[::-1]
+                Count(Case(When(mtmquestionrating__is_positive=False, then=1)))).order_by('-votes')
         return result
 
     def get_context_data(self, *, object_list=None, **kwargs):

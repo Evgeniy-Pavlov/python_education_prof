@@ -6,8 +6,9 @@ register = template.Library()
 
 @register.simple_tag(takes_context=True)
 def question_treding(context):
-    result = MTMQuestionRating.objects.all().select_related('question__id').values('question_rated_id', 'question_rated_id__header')\
-        .annotate(rating = Count(Case(When(is_positive=True, then=1)))- Count(Case(When(is_positive=False, then=1)))).order_by('rating')[:20:-1]
+    result = Question.objects.all().values('id', 'header')\
+            .annotate(votes= Count(Case(When(mtmquestionrating__is_positive=True, then=1)))-\
+            Count(Case(When(mtmquestionrating__is_positive=False, then=1)))).order_by('-votes')[:20]
     return result
 
 @register.simple_tag(takes_context=True)

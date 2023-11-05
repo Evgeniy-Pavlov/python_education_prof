@@ -20,7 +20,7 @@
               </a>
           </li>
         </ul>
-          {% for question in page_obj|dictsort:"votes" reversed%}
+          {% for question in page_obj %}
           {% reply_counter as rep_count %}
           {% get_tags_question as get_tags %}
         <div class="container border-bottom border-4 border-dark">
@@ -84,10 +84,10 @@
             {% for q_tred in q_treding %}
             <div class="row">
                 <div class="col-2">
-                  <p class="btn btn-primary">{{q_tred.rating}}</p>
+                  <p class="btn btn-primary">{{q_tred.votes}}</p>
                 </div>
                 <div class="col-8">
-                  <a href="/question/{{q_tred.question_rated_id}}">{{q_tred.question_rated_id__header}}</a>
+                  <a href="/question/{{q_tred.id}}">{{q_tred.header}}</a>
                 </div>
             </div>
             {% endfor %}
