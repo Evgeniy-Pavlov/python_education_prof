@@ -38,11 +38,16 @@
       </div>
       <div class="col-8">
         <p>{{object.body}}</p>
+        {% for tag in object.tags.all %}
+            {% if tag %}
+                <div class="btn btn-primary" style="padding: 5px;">{{tag.tag}}</div>
+            {% endif %}
+        {% endfor %}
         {% if not question.user_create.logo %}
-            <p><img src="{% static 'img/not_image_profile.jpg' %}" width="50" height="45">{{question.user_create}}</p>
+            <p style="padding: 5px;"><img src="{% static 'img/not_image_profile.jpg' %}" width="50" height="45">{{question.user_create}}</p>
         {% endif %}
         {% if question.user_create.logo %}
-            <p><img src="{{question.user_create.logo.url}}" width="50" height="45">{{question.user_create}}</p>
+            <p style="padding: 5px;"><img src="{{question.user_create.logo.url}}" width="50" height="45">{{question.user_create}}</p>
         {% endif %}
         <p>{{question.date_create}}</p>
       </div>
