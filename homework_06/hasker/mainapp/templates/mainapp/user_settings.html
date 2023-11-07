@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<form method="POST" enctype="multipart/form-data">
+    <div class="h2">Setting</div>
+    <div class="h3">Login<div class="h4">{{user.username}}</div></div>
+    {% csrf_token %}
+    {{form.as_p}}
+    <button class="btn btn-primary">Enter</button>
+    <a class="btn btn-primary" style="margin-left: 5px;" href="/">Cancel</a>
+</form>
+
+{% endblock %}

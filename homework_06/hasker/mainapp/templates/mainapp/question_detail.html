@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load rated_tags %}
+{% load sorted_tags %}
+{% block body %}
+{% question_rated as rated %}
+{% question_counter_rated as counter %}
+{% reply_sorted as rep_sort %}
+
+
+<div class="bd-content ps-lg-4">
+<div class="display-5">{{object.header}}</div>
+<div class="container">
+    <div class="row">
+      <div class="col-1">
+        {% if not rated %}
+        <form action="/question-up/{{question.id}}" method="POST">
+            {% csrf_token %}
+            <button><img src="{% static 'img/chevron-up.svg' %}" width="20px"></button>
+        </form> 
+            <p class="display-6">{{counter}}</p>
+        <form action="/question-down/{{question.id}}" method="POST">
+            {% csrf_token %}
+            <button><img src="{% static 'img/chevron-down.svg' %}" width="20px"></button>
+        </form> 
+        {% endif %}
+        {% if rated %}
+        <form action="/question-cancel/{{question.id}}" method="POST">
+            {% csrf_token %}
+            <button><img src="{% static 'img/chevron-up.svg' %}" width="20px"></button>
+        </form>
+            <p class="display-6">{{counter}}</p>
+            <form action="/question-cancel/{{question.id}}" method="POST">
+                {% csrf_token %}
+                <button><img src="{% static 'img/chevron-down.svg' %}" width="20px"></button>
+            </form>   
+        {% endif %}
+      </div>
+      <div class="col-8">
+        <p>{{object.body}}</p>
+        {% for tag in object.tags.all %}
+            {% if tag %}
+                <div class="btn btn-primary" style="padding: 5px;">{{tag.tag}}</div>
+            {% endif %}
+        {% endfor %}
+        {% if not question.user_create.logo %}
+            <p style="padding: 5px;"><img src="{% static 'img/not_image_profile.jpg' %}" width="50" height="45">{{question.user_create}}</p>
+        {% endif %}
+        {% if question.user_create.logo %}
+            <p style="padding: 5px;"><img src="{{question.user_create.logo.url}}" width="50" height="45">{{question.user_create}}</p>
+        {% endif %}
+        <p>{{question.date_create}}</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+<div class="mb-3">
+{% if user.is_authenticated %}
+<div class="display-6">Your answer</div>
+<form action="/reply-create/{{object.id}}" method="post">
+    {% csrf_token %}
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Input your reply here" name="text"></textarea>
+    <button class="btn btn-primary" style="margin-top: 10px;">Submit</button>
+  </form> 
+</div>
+{% endif %}
+<ul class="list-group">
+{% for reply in rep_sort %}
+{% reply_rated as rep_rated %}
+<li class="list-group-item">
+<div class="container">
+<div class="row border-bottom border-4 border-dark">
+    <div class="col-2">
+        {% if not rep_rated %}
+        <form action="/reply-up/{{question.id}}/{{reply.id}}" method="POST">
+            {% csrf_token %}
+            <button><img src="{% static 'img/chevron-up.svg' %}" width="20px"></button>
+        </form> 
+            <p class="display-6">{{reply.rating}}</p>
+        <form action="/reply-down/{{question.id}}/{{reply.id}}" method="POST">
+            {% csrf_token %}
+            <button><img src="{% static 'img/chevron-down.svg' %}" width="20px"></button>
+        </form> 
+        {% endif %}
+        {% if rep_rated %}
+        <form action="/reply-cancel/{{question.id}}/{{reply.id}}" method="POST">
+            {% csrf_token %}
+            <button><img src="{% static 'img/chevron-up.svg' %}" width="20px"></button>
+        </form>
+            <p class="display-6">{{reply.rating}}</p>
+            <form action="/reply-cancel/{{question.id}}/{{reply.id}}" method="POST">
+                {% csrf_token %}
+                <button><img src="{% static 'img/chevron-down.svg' %}" width="20px"></button>
+            </form>   
+        {% endif %}
+        {% if question.user_create.id == user.id %}  
+        {% if reply.best_reply %}
+        <form action="/reply-best/{{question.id}}/{{reply.id}}" method="POST">
+            {% csrf_token %}
+            <button><img src="{% static 'img/star-fill.svg' %}" width="20px"></button>
+        </form>
+        {% endif %}
+        {% if not reply.best_reply %}
+        <form action="/reply-best/{{question.id}}/{{reply.id}}" method="POST">
+            {% csrf_token %}
+            <button><img src="{% static 'img/star.svg' %}" width="20px"></button>
+        </form>
+        {% endif %}
+        {% endif %}
+    </div>
+    <div class="col-8">
+    <p>{{reply.text}}</p>
+    {% if not reply.user_create_id__logo %}
+        <p><img src="{% static 'img/not_image_profile.jpg' %}" width="50" height="45">{{reply.user_create_id__username}}</p>
+    {% endif %}
+    {% if reply.user_create_id__logo %}
+        <p><img src="/media/{{reply.user_create_id__logo}}" width="50" height="45">{{reply.user_create_id__username}}</p>
+    {% endif %}
+    </div>
+</div>
+</li>
+{% endfor %}
+</ul>
+{% endblock  %}
