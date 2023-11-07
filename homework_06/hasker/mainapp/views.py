@@ -9,6 +9,8 @@ from .forms import RegisterForm, UserLoginForm, UserUpdateForm, QuestionCreateFo
 
 
 class BasePageView(ListView):
+    """Представление базовой страницы со списком вопросов. В рамках отображения списка во вопросов по умолчанию сортируются по дате, 
+    от новых к старым. Применяется пагинация по 20 вопросов на страницу."""
     model = Question
     template_name = 'mainapp/base_page.html'
     paginate_by = 20
@@ -20,6 +22,8 @@ class BasePageView(ListView):
         return result
 
 class BasePageHotView(ListView):
+    """Предстваление базовой страницы со списком вопросов. В рамках "горячей" сортировки, вопросы сортируются, по количеству
+    голосов (votes - вычисляемое значение)."""
     model = Question
     template_name = 'mainapp/base_page_hot.html'
     paginate_by = 20
@@ -31,12 +35,14 @@ class BasePageHotView(ListView):
         return result
 
 class RegisterView(CreateView):
+    """Представление страницы регистрации нового пользователя."""
     model = UserBase
     form_class = RegisterForm
     success_url = '/'
     template_name = 'mainapp/registration_user.html'
 
 class UserLoginView(SuccessMessageMixin, LoginView):
+    """Представление страницы авторизации на сайте."""
     model = UserBase
     form_class = UserLoginForm
     template_name = 'mainapp/login.html'
@@ -44,9 +50,11 @@ class UserLoginView(SuccessMessageMixin, LoginView):
     success_message = 'Login completed'
 
 class UserLogoutView(SuccessMessageMixin, LogoutView):
+    """Представление выхода авторизаванного пользователя."""
     model = UserBase
 
 class UserProfileView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
+    """Представление страницы редактирования профиля пользователя."""
     model = UserBase
     form_class = UserUpdateForm
     template_name = 'mainapp/user_settings.html'
@@ -64,6 +72,7 @@ class UserProfileView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
         return f'/settings/{self.request.user.id}'
 
 class QuestionCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
+    """Представление создания вопроса пользователем. Пользователь должен быть авторизованным."""
     model = Question
     form_class = QuestionCreateForm
     template_name = 'mainapp/question_create.html'
@@ -77,10 +86,12 @@ class QuestionCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
         return super().form_valid(form)
 
 class QuetionDetailView(DetailView):
+    """Представление просмотра вопроса."""
     model = Question
     template_name = 'mainapp/question_detail.html'
 
 class ReplyCreateView(LoginRequiredMixin, CreateView):
+    """Представление создания комментария к вопросу. Доступно только авторизованным пользователям."""
     login_url = '/login/'
 
     def post(self, request, pk):
@@ -94,6 +105,8 @@ class ReplyCreateView(LoginRequiredMixin, CreateView):
             return redirect(f'/question/{pk}')
 
 class QuestionRatedUpView(LoginRequiredMixin, View):
+    """Предстваление положительной оценки вопроса пользователя. Вопрос можно оценить как положительно, так и отрицательно,
+    если оценка уже стоит, то при клике на элементы оценки прежняя оценка удаляется."""
     login_url = '/login/'
 
     def post(self, request, pk):
@@ -105,6 +118,8 @@ class QuestionRatedUpView(LoginRequiredMixin, View):
         return redirect(f'/question/{pk}')
 
 class QuestionRatedDownView(LoginRequiredMixin, View):
+    """Предстваление отрицательно оценки вопроса пользователя. Вопрос можно оценить как положительно, так и отрицательно,
+    если оценка уже стоит, то при клике на элементы оценки прежняя оценка удаляется."""
     login_url = '/login/'
 
     def post(self, request, pk):
@@ -116,6 +131,8 @@ class QuestionRatedDownView(LoginRequiredMixin, View):
         return redirect(f'/question/{pk}')
 
 class QuestionRatedCancelView(LoginRequiredMixin, View):
+    """Предстваление отмены оценки вопроса пользователя. Вопрос можно оценить как положительно, так и отрицательно,
+    если оценка уже стоит, то при клике на элементы оценки прежняя оценка удаляется."""
     login_url = '/login/'
     form_class = RatedQuestionForm
 
@@ -124,6 +141,8 @@ class QuestionRatedCancelView(LoginRequiredMixin, View):
         return redirect(f'/question/{pk}')
 
 class ReplyRatedUpView(LoginRequiredMixin, View):
+    """Представление положительной оценки ответа пользователя. Ответы можно оценивать положительно и отрицательно,
+    если оценка уже стоит, то при клике на элементы оценки прежняя оценка удаляется."""
     login_url = '/login/'
     form_class = RatedReplyForm
 
@@ -136,6 +155,8 @@ class ReplyRatedUpView(LoginRequiredMixin, View):
         return redirect(f'/question/{question}')
 
 class ReplyRatedDownView(LoginRequiredMixin, View):
+    """Представление отрицательной оценки ответа пользователя. Ответы можно оценивать положительно и отрицательно,
+    если оценка уже стоит, то при клике на элементы оценки прежняя оценка удаляется."""
     login_url = '/login/'
     form_class = RatedReplyForm
 
@@ -148,6 +169,8 @@ class ReplyRatedDownView(LoginRequiredMixin, View):
         return redirect(f'/question/{question}')
 
 class ReplyRatedCancelView(LoginRequiredMixin, View):
+    """Представление отмены оценки ответа пользователя. Ответы можно оценивать положительно и отрицательно,
+    если оценка уже стоит, то при клике на элементы оценки прежняя оценка удаляется."""
     login_url = '/login/'
     form_class = RatedReplyForm
 
@@ -156,6 +179,8 @@ class ReplyRatedCancelView(LoginRequiredMixin, View):
         return redirect(f'/question/{question}')
 
 class BestReplySetView(LoginRequiredMixin, View):
+    """Представление выбора лучшего ответа. В шаблоне есть проверка на соответствие оценивающего и автора,
+    если это один и тот же пользователь, то выбор оценки доступен."""
     login_url = '/login/'
     form_class = BestReplyForm
 
@@ -178,6 +203,8 @@ class BestReplySetView(LoginRequiredMixin, View):
         return redirect(f'/question/{question}')
 
 class SearchQuestionView(ListView):
+    """Представление поиска вопросов. Доступен поиск как по названию и описанию вопроса, так и по тэгу.
+    На странице применяется пагинация по 20 вопросов на страницу."""
     template_name = 'mainapp/search.html'
     paginate_by = 20
 
