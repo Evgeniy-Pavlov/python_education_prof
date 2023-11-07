@@ -73,6 +73,7 @@ class QuestionCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
 
     def form_valid(self, form):
         form.instance.user_create = self.request.user
+        print(form)
         return super().form_valid(form)
 
 class QuetionDetailView(DetailView):

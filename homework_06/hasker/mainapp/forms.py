@@ -3,6 +3,8 @@ from django.contrib.auth.forms import UserCreationForm, PasswordChangeForm, Auth
 from .models import UserBase, Question, Tags, Reply, MTMQuestionRating, MTMReplyRating
 from .widgets import ModifiedClearableFileInput
 
+CHOISES_TAGS = [(x['id'], x['tag']) for x in Tags.objects.all().values('id', 'tag')]
+
 class RegisterForm(UserCreationForm):
     username = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}), label='Login', max_length=40)
     email = forms.CharField(widget=forms.EmailInput(attrs={'class': 'form-control'}), label='Email')
@@ -33,10 +35,12 @@ class UserUpdateForm(forms.ModelForm):
 class QuestionCreateForm(forms.ModelForm):
     header = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}), label='Title', max_length=200)
     body = forms.CharField(widget=forms.Textarea(attrs={'class': 'form-control'}), label='Text', max_length=2000)
+    tags = forms.MultipleChoiceField(widget=forms.SelectMultiple(attrs={'class': 'form-control'}), choices= CHOISES_TAGS,
+    label='Tags')
 
     class Meta:
         model = Question
-        fields = ('header', 'body')
+        fields = ('header', 'body', 'tags')
 
 class ReplyCreateForm(forms.ModelForm):
 
