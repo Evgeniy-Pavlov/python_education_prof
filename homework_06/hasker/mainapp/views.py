@@ -1,3 +1,4 @@
+from rest_framework.generics import ListAPIView
 from django.db.models import Q, Count, Case, When
 from django.shortcuts import render, redirect
 from django.views.generic import CreateView, UpdateView, DetailView, ListView, View
@@ -6,6 +7,7 @@ from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import UserBase, Question, Tags, Reply, MTMQuestionRating, MTMReplyRating
 from .forms import RegisterForm, UserLoginForm, UserUpdateForm, QuestionCreateForm, ReplyCreateForm, RatedQuestionForm, RatedReplyForm, BestReplyForm
+from .serializers import QuestionSerializer
 
 
 class BasePageView(ListView):
@@ -225,3 +227,7 @@ class SearchQuestionView(ListView):
         context = super().get_context_data(**kwargs)
         context['search'] = self.request.GET.get('search')
         return context
+
+class BasePageAPIView(ListAPIView):
+    queryset = Question.objects.all()
+    serializer_class = QuestionSerializer

@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 from mainapp.views import BasePageView, RegisterView, UserLoginView, UserLogoutView, UserProfileView, QuestionCreateView, QuetionDetailView, ReplyCreateView, \
     QuestionRatedUpView, QuestionRatedDownView, QuestionRatedCancelView, ReplyRatedUpView, ReplyRatedDownView, ReplyRatedCancelView, BestReplySetView,\
-        SearchQuestionView, BasePageHotView
+        SearchQuestionView, BasePageHotView, BasePageAPIView
 from django.conf.urls.static import static
 from django.conf import settings
 
@@ -41,5 +41,6 @@ urlpatterns = [
     path('reply-cancel/<int:question>/<int:pk>', ReplyRatedCancelView.as_view()),
     path('reply-best/<int:question>/<int:pk>', BestReplySetView.as_view()),
     path('search/', SearchQuestionView.as_view()),
+    path('api/v1/questions/', BasePageAPIView.as_view()),
     path('__debug__/', include('debug_toolbar.urls'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
