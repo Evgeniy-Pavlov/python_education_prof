@@ -2,7 +2,7 @@ from django.db.models import Q, Count, Case, When
 from rest_framework.generics import ListAPIView
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from .serializers import QuestionsSerializer, QuestionSerializer
+from .serializers import QuestionsSerializer, QuestionSerializer, SearchQuestionsSerializer, ReplySerializer
 from mainapp.models import UserBase, Question, Tags, Reply, MTMQuestionRating, MTMReplyRating
 
 class BasePageAPIView(ListAPIView):
@@ -22,11 +22,59 @@ class BasePageAPIView(ListAPIView):
         return Response(result)
 
 class QuestionAPIView(APIView):
+    """Метод получения информации об вопросе. Id вопроса передается прямо в урле
+    в формате question/{id вопроса}."""
     serializer_class = QuestionSerializer
 
     def get(self, request, pk):
         result = Question.objects.filter(id=pk).annotate(votes= Count(Case(When(mtmquestionrating__is_positive=True, mtmquestionrating__question_rated= int(pk), then=1)))-\
-                Count(Case(When(mtmquestionrating__is_positive=False, mtmquestionrating__question_rated= int(pk), then=1)))).order_by('id')
-        return Response(QuestionSerializer(result, many=True).data)
+                Count(Case(When(mtmquestionrating__is_positive=False, mtmquestionrating__question_rated= int(pk), then=1))))
+        return Response(QuestionSerializer(result, many=True).data[0])
+
+class SearchAPIView(ListAPIView):
+    """Метод поиска по названию, описанию и связанному тэгу вопросов.
+    Правила указания поискового запроса.
+    Поиск принимает только один из двух квери-параметров:
+    1. strng - В поле может быть указано часть текста из описания или названия
+    2. tag - Может быть осуществлен поиск по тэгу.
+    Возвращает список вопросов подходящих под условия поиска, отсортированные по популярности."""
+    serializer_class = SearchQuestionsSerializer
+
+    def get(self, request):
+        if 'strng' in request.query_params.keys():
+            search_request = request.query_params['strng']
+            result = Question.objects.filter(Q(header__icontains = search_request) | Q(body__icontains = search_request))\
+                .values('id', 'header', 'user_create__logo', 'user_create__username', 'date_create')\
+                .annotate(votes= Count(Case(When(mtmquestionrating__is_positive=True, then=1)))-\
+                Count(Case(When(mtmquestionrating__is_positive=False, then=1)))).order_by('-votes')
+        elif 'tag' in request.query_params.keys():
+            search_request = request.query_params['tag']
+            result = Question.objects.filter(tags__tag=search_request).values('id', 'header', 'user_create__logo', 'user_create__username', 'date_create')\
+                .annotate(votes= Count(Case(When(mtmquestionrating__is_positive=True, then=1)))-\
+                Count(Case(When(mtmquestionrating__is_positive=False, then=1)))).order_by('-votes')
+        return Response(result)
+
+class ReplyAPIView(APIView):
+    """Метод получения ответов созданных на указанный вопрос.
+    Id вопроса передается прямо урле в формате question/{id вопроса}/reply."""
+    serializer_class = ReplySerializer
+    
+    def get(self, request, pk):
+        result = Reply.objects.filter(question=Question.objects.get(id=pk)).select_related('mtmreplyrating__reply_rated')\
+        .values('id', 'text', 'best_reply', 'user_create_id', 'question_id', 'date_create','user_create_id__username')\
+        .annotate(rating= Count(Case(When(mtmreplyrating__is_positive=True, then=1)))\
+        - Count(Case(When(mtmreplyrating__is_positive=False, then=1)))).order_by('rating', 'date_create')[::-1]
+        return Response(result)
+
+class TrendingAPIView(ListAPIView):
+    """Метод возвращает топ-20 самых популярных вопросов по рейтингу."""
+    serializer_class = QuestionsSerializer
+
+    def get(self, request):
+        result = Question.objects.all().values('id', 'header', 'body', 'user_create', 'user_create__username', 'date_create')\
+            .annotate(votes= Count(Case(When(mtmquestionrating__is_positive=True, then=1)))-\
+            Count(Case(When(mtmquestionrating__is_positive=False, then=1)))).order_by('-votes')[:20]
+        return Response(result)
+        
 
         

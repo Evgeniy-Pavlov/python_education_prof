@@ -19,7 +19,7 @@ from django.urls import path, include
 from mainapp.views import BasePageView, RegisterView, UserLoginView, UserLogoutView, UserProfileView, QuestionCreateView, QuetionDetailView, ReplyCreateView, \
     QuestionRatedUpView, QuestionRatedDownView, QuestionRatedCancelView, ReplyRatedUpView, ReplyRatedDownView, ReplyRatedCancelView, BestReplySetView,\
         SearchQuestionView, BasePageHotView
-from mainapp.api.views import BasePageAPIView, QuestionAPIView
+from mainapp.api.views import BasePageAPIView, QuestionAPIView, SearchAPIView, ReplyAPIView, TrendingAPIView
 from django.conf.urls.static import static
 from django.conf import settings
 
@@ -44,5 +44,8 @@ urlpatterns = [
     path('search/', SearchQuestionView.as_view()),
     path('api/v1/questions/', BasePageAPIView.as_view()),
     path('api/v1/question/<int:pk>', QuestionAPIView.as_view()),
+    path('api/v1/questions/search', SearchAPIView.as_view()),
+    path('api/v1/question/<int:pk>/reply', ReplyAPIView.as_view()),
+    path('api/v1/questions/trending', TrendingAPIView.as_view()),
     path('__debug__/', include('debug_toolbar.urls'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
