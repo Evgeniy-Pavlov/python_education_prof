@@ -11,10 +11,9 @@ class BasePageAPIView(ListAPIView):
     serializer_class = QuestionsSerializer
 
     def get(self, request):
-        sort_param = '-votes' if request.query_params['sort'] == 'votes' else '-date_create'
-        result =Question.objects.all().values('id', 'header', 'body', 'user_create__id', 'user_create__username', 'date_create')\
+        result = Question.objects.all().values('id', 'header', 'body', 'user_create__id', 'user_create__username', 'date_create')\
                 .annotate(votes= Count(Case(When(mtmquestionrating__is_positive=True, then=1)))-\
-                Count(Case(When(mtmquestionrating__is_positive=False, then=1)))).order_by(sort_param)
+                Count(Case(When(mtmquestionrating__is_positive=False, then=1)))).order_by('-votes')
         for question in result:
             tags_get = Question.objects.filter(id = question.get('id')).values('tags__id', 'tags__tag')
             if tags_get[0]['tags__id']:
@@ -29,7 +28,7 @@ class QuestionAPIView(APIView):
     def get(self, request, pk):
         result = Question.objects.filter(id=pk).annotate(votes= Count(Case(When(mtmquestionrating__is_positive=True, mtmquestionrating__question_rated= int(pk), then=1)))-\
                 Count(Case(When(mtmquestionrating__is_positive=False, mtmquestionrating__question_rated= int(pk), then=1))))
-        return Response(QuestionSerializer(result, many=True).data[0])
+        return Response(QuestionSerializer(result, many=True).data[0]) if len(QuestionSerializer(result, many=True).data) else Response({})
 
 class SearchAPIView(ListAPIView):
     """Метод поиска по названию, описанию и связанному тэгу вопросов.

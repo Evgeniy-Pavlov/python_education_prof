@@ -47,5 +47,6 @@ urlpatterns = [
     path('api/v1/questions/search', SearchAPIView.as_view()),
     path('api/v1/question/<int:pk>/reply', ReplyAPIView.as_view()),
     path('api/v1/questions/trending', TrendingAPIView.as_view()),
+    path('api/v1/drf-auth/', include('rest_framework.urls')),
     path('__debug__/', include('debug_toolbar.urls'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
