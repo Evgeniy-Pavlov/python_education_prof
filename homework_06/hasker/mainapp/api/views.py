@@ -4,21 +4,16 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from .serializers import QuestionsSerializer, QuestionSerializer, SearchQuestionsSerializer, ReplySerializer
 from mainapp.models import UserBase, Question, Tags, Reply, MTMQuestionRating, MTMReplyRating
+from .paginators import MyPagination
 
 class BasePageAPIView(ListAPIView):
-    """Получение списка вопросов. Имеет только 1 query-параметр sort. При передаче значения sort='votes'
-    сортирует по голосам, при иных значениях параметра сортирует по дате создания."""
+    """Получение списка вопросов. Метод имеет пагинацию по 20 вопросов на страницу."""
     serializer_class = QuestionsSerializer
-
-    def get(self, request):
-        result = Question.objects.all().values('id', 'header', 'body', 'user_create__id', 'user_create__username', 'date_create')\
+    queryset = Question.objects.all().values('id', 'header', 'body', 'date_create', 'user_create__id', 'user_create__username')\
                 .annotate(votes= Count(Case(When(mtmquestionrating__is_positive=True, then=1)))-\
                 Count(Case(When(mtmquestionrating__is_positive=False, then=1)))).order_by('-votes')
-        for question in result:
-            tags_get = Question.objects.filter(id = question.get('id')).values('tags__id', 'tags__tag')
-            if tags_get[0]['tags__id']:
-                question['tags_list'] = tags_get
-        return Response(result)
+    pagination_class = MyPagination
+
 
 class QuestionAPIView(APIView):
     """Метод получения информации об вопросе. Id вопроса передается прямо в урле
