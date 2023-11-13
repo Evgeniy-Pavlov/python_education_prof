@@ -18,7 +18,7 @@ class QuestionGetAPITests(APITestCase):
             Question.objects.create(user_create=self.user_2, header=f'test header {i+1}', body=f'test body {i+1}')
         
     def test_get_questions(self):
-        response = self.client.get('http://127.0.0.1:8000/api/v1/questions/')
+        response = self.client.get('/api/v1/questions/')
         self.assertEqual(response.status_code, HTTPStatus.OK)
         response_content = json.loads(response.content)
         self.assertEqual(list(response_content), ['count', 'next', 'previous', 'results'])
@@ -33,7 +33,7 @@ class QuestionGetAPITests(APITestCase):
         self.assertTrue(isinstance(response_content['results'][0]['date_create'], str))
     
     def test_get_success_question(self):
-        results = [self.client.get(f'http://127.0.0.1:8000/api/v1/question/{x+1}') for x in range(10)]
+        results = [self.client.get(f'/api/v1/question/{x+1}') for x in range(10)]
         for response in results:
             self.assertEqual(response.status_code, HTTPStatus.OK)
             response_content = json.loads(response.content)
@@ -48,13 +48,13 @@ class QuestionGetAPITests(APITestCase):
             self.assertTrue(isinstance(response_content['tags'], list))
 
     def test_get_failed_question(self):
-        response = self.client.get(f'http://127.0.0.1:8000/api/v1/question/0')
+        response = self.client.get(f'/api/v1/question/0')
         self.assertEqual(response.status_code, HTTPStatus.NOT_FOUND)
         response_content = json.loads(response.content)
         self.assertEqual(response_content, {"error": "Question not found."})
 
     def test_get_search_question(self):
-        response = self.client.get(f'http://127.0.0.1:8000/api/v1/questions/search?strng=test body')
+        response = self.client.get(f'/api/v1/questions/search?strng=test body')
         response_content = json.loads(response.content)
         self.assertEqual(len(response_content), 10)
         for question in response_content:
@@ -67,7 +67,7 @@ class QuestionGetAPITests(APITestCase):
             self.assertTrue(isinstance(question['votes'], int))
 
     def test_get_questions_trending(self):
-        response = self.client.get(f'http://127.0.0.1:8000/api/v1/questions/trending')
+        response = self.client.get(f'/api/v1/questions/trending')
         response_content = json.loads(response.content)
         self.assertEqual(len(response_content), 10)
         for question in response_content:
@@ -93,7 +93,7 @@ class ReplyGetAPITests(APITestCase):
             Reply.objects.create(question=self.question_2, user_create=self.user_1, text=f'text comment {i}')
 
     def test_get_reply(self):
-        results = [self.client.get(f'http://127.0.0.1:8000/api/v1/question/{x+1}/reply') for x in range(2)]
+        results = [self.client.get(f'/api/v1/question/{x+1}/reply') for x in range(2)]
         for response in results:
             self.assertEqual(response.status_code, HTTPStatus.OK)
             response_content = json.loads(response.content)
