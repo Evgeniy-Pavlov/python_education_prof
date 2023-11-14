@@ -2,9 +2,11 @@ from django.db.models import Q, Count, Case, When
 from rest_framework.generics import ListAPIView
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from .serializers import QuestionsSerializer, QuestionSerializer, SearchQuestionsSerializer, ReplySerializer
+from .serializers import QuestionsSerializer, QuestionSerializer, SearchQuestionsSerializer, ReplySerializer, MyQueryParamSerializer
 from mainapp.models import UserBase, Question, Tags, Reply, MTMQuestionRating, MTMReplyRating
 from .paginators import MyPagination
+from drf_yasg import openapi
+from drf_yasg.utils import swagger_auto_schema
 
 class BasePageAPIView(ListAPIView):
     """Получение списка вопросов. Метод имеет пагинацию по 20 вопросов на страницу."""
@@ -34,6 +36,14 @@ class SearchAPIView(APIView):
     Возвращает список вопросов подходящих под условия поиска, отсортированные по популярности."""
     serializer_class = SearchQuestionsSerializer
 
+    @swagger_auto_schema(query_serializer=MyQueryParamSerializer, 
+                            manual_parameters=[openapi.Parameter(name='strng', in_=openapi.IN_QUERY,
+                            description='Substring header question or body',
+                            type=openapi.TYPE_STRING,
+                            required=False), openapi.Parameter(name='tag', in_=openapi.IN_QUERY,
+                            description='Tag related question',
+                            type=openapi.TYPE_STRING,
+                            required=False)])
     def get(self, request):
         if 'strng' in request.query_params.keys():
             search_request = request.query_params['strng']

@@ -34,3 +34,11 @@ class ReplySerializer(ModelSerializer):
     class Meta:
         model = Reply
         fields = ('id', 'text', 'best_reply', 'user_create', 'question_id', 'date_create', 'username', 'rating')
+
+class MyQueryParamSerializer(ModelSerializer):
+    strng = CharField(help_text='Substring header question or body', required=False)
+    tag = CharField(help_text='Tag related question', required=False)
+
+    class Meta:
+        model = Question
+        fields = ('strng', 'tag')
