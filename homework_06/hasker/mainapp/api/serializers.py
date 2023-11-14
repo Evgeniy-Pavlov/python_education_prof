@@ -2,13 +2,13 @@ from rest_framework.serializers import ModelSerializer, CharField, DateTimeField
 from mainapp.models import Question, UserBase, MTMQuestionRating, Tags, Reply, MTMReplyRating
 
 class QuestionsSerializer(ModelSerializer):
-    user_create_id = IntegerField(source='user_create__id')
+    user_create = IntegerField(source='user_create__id')
     username = CharField(source='user_create__username')
     votes = IntegerField()
 
     class Meta:
         model = Question
-        fields = ('id', 'header', 'body', 'date_create', 'user_create_id', 'username', 'votes')
+        fields = ('id', 'header', 'body', 'date_create', 'user_create', 'username', 'votes')
 
 class QuestionSerializer(ModelSerializer):
     username = CharField(source='user_create.username')
@@ -19,13 +19,18 @@ class QuestionSerializer(ModelSerializer):
         fields = ('id', 'header', 'body', 'date_create', 'user_create', 'username', 'votes', 'tags')
 
 class SearchQuestionsSerializer(ModelSerializer):
+    logo = CharField(source='user_create__logo')
+    username = CharField(source='user_create__username')
+
     class Meta:
         model = Question
-        fields = ('id', 'header', 'body', 'date_create', 'user_create')
+        fields = ('id', 'header', 'body',  'logo', 'username', 'date_create' )
 
 class ReplySerializer(ModelSerializer):
-    question_header = CharField(source='question.header')
+    user_create = IntegerField(source='user_create_id')
+    username = CharField(source='user_create_id__username')
+    rating = IntegerField()
     
     class Meta:
         model = Reply
-        fields = ('id', 'text', 'user_create', 'best_reply', 'date_create', 'question', 'question_header')
+        fields = ('id', 'text', 'best_reply', 'user_create', 'question_id', 'date_create', 'username', 'rating')

@@ -25,7 +25,7 @@ class QuestionAPIView(APIView):
                 Count(Case(When(mtmquestionrating__is_positive=False, mtmquestionrating__question_rated= int(pk), then=1))))
         return Response(QuestionSerializer(result, many=True).data[0]) if len(QuestionSerializer(result, many=True).data) else Response({"error": "Question not found."}, status=404)
 
-class SearchAPIView(ListAPIView):
+class SearchAPIView(APIView):
     """Метод поиска по названию, описанию и связанному тэгу вопросов.
     Правила указания поискового запроса.
     Поиск принимает только один из двух квери-параметров:
@@ -38,15 +38,16 @@ class SearchAPIView(ListAPIView):
         if 'strng' in request.query_params.keys():
             search_request = request.query_params['strng']
             result = Question.objects.filter(Q(header__icontains = search_request) | Q(body__icontains = search_request))\
-                .values('id', 'header', 'user_create__logo', 'user_create__username', 'date_create')\
+                .values('id', 'header', 'body', 'user_create', 'user_create__logo', 'user_create__username', 'date_create')\
                 .annotate(votes= Count(Case(When(mtmquestionrating__is_positive=True, then=1)))-\
                 Count(Case(When(mtmquestionrating__is_positive=False, then=1)))).order_by('-votes')
         elif 'tag' in request.query_params.keys():
             search_request = request.query_params['tag']
-            result = Question.objects.filter(tags__tag=search_request).values('id', 'header', 'user_create__logo', 'user_create__username', 'date_create')\
+            result = Question.objects.filter(tags__tag=search_request).values('id', 'header', 'body',\
+                'user_create__logo', 'user_create__username', 'date_create')\
                 .annotate(votes= Count(Case(When(mtmquestionrating__is_positive=True, then=1)))-\
                 Count(Case(When(mtmquestionrating__is_positive=False, then=1)))).order_by('-votes')
-        return Response(result)
+        return Response(SearchQuestionsSerializer(result, many=True).data)
 
 class ReplyAPIView(APIView):
     """Метод получения ответов созданных на указанный вопрос.
@@ -54,21 +55,22 @@ class ReplyAPIView(APIView):
     serializer_class = ReplySerializer
     
     def get(self, request, pk):
+        try:
+            Question.objects.get(id=pk)
+        except Question.DoesNotExist:
+            return Response({"error": "Question not found."}, status=404)
         result = Reply.objects.filter(question=Question.objects.get(id=pk)).select_related('mtmreplyrating__reply_rated')\
         .values('id', 'text', 'best_reply', 'user_create_id', 'question_id', 'date_create','user_create_id__username')\
         .annotate(rating= Count(Case(When(mtmreplyrating__is_positive=True, then=1)))\
         - Count(Case(When(mtmreplyrating__is_positive=False, then=1)))).order_by('rating', 'date_create')[::-1]
-        return Response(result)
+        return Response(ReplySerializer(result, many=True).data)
 
 class TrendingAPIView(ListAPIView):
     """Метод возвращает топ-20 самых популярных вопросов по рейтингу."""
     serializer_class = QuestionsSerializer
-
-    def get(self, request):
-        result = Question.objects.all().values('id', 'header', 'body', 'user_create', 'user_create__username', 'date_create')\
-            .annotate(votes= Count(Case(When(mtmquestionrating__is_positive=True, then=1)))-\
-            Count(Case(When(mtmquestionrating__is_positive=False, then=1)))).order_by('-votes')[:20]
-        return Response(result)
+    queryset = Question.objects.all().values('id', 'header', 'body', 'date_create', 'user_create__id', 'user_create__username')\
+                .annotate(votes= Count(Case(When(mtmquestionrating__is_positive=True, then=1)))-\
+                Count(Case(When(mtmquestionrating__is_positive=False, then=1)))).order_by('-votes')[:20]
         
 
         
