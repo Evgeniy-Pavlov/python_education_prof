@@ -1,0 +1,13 @@
+services:
+  django:
+    build: ./
+    command: sh -c "gunicorn --bind 0.0.0.0:8000 app.wsgi"
+    expose:
+      - 8000
+
+  nginx:
+    image: nginx:1.19.8-alpine
+    depends_on:
+      - django
+    ports:
+      - "80:80"
