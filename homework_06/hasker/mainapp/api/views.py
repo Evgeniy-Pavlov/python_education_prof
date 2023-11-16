@@ -1,3 +1,4 @@
+from http import HTTPStatus
 from django.db.models import Q, Count, Case, When
 from rest_framework.generics import ListAPIView
 from rest_framework.views import APIView
@@ -25,7 +26,8 @@ class QuestionAPIView(APIView):
     def get(self, request, pk):
         result = Question.objects.filter(id=pk).annotate(votes= Count(Case(When(mtmquestionrating__is_positive=True, mtmquestionrating__question_rated= int(pk), then=1)))-\
                 Count(Case(When(mtmquestionrating__is_positive=False, mtmquestionrating__question_rated= int(pk), then=1))))
-        return Response(QuestionSerializer(result, many=True).data[0]) if len(QuestionSerializer(result, many=True).data) else Response({"error": "Question not found."}, status=404)
+        return Response(QuestionSerializer(result, many=True).data[0]) if len(QuestionSerializer(result, many=True)\
+            .data) else Response({"error": "Question not found."}, status=HTTPStatus.NOT_FOUND)
 
 class SearchAPIView(APIView):
     """Метод поиска по названию, описанию и связанному тэгу вопросов.
