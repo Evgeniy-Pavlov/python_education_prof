@@ -22,8 +22,3 @@ test:
 
 user:
 	python3 manage.py createsuperuser
-
-
-
-
-.PHONY : start migrate activate install docker-start sort black test shell static
