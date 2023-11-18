@@ -9,3 +9,4 @@ Pillow==10.1.0
 django-debug-toolbar==4.2.0
 djangorestframework==3.14.0
 drf-yasg==1.21.7
+gunicorn==21.2.0
