@@ -1,13 +1,14 @@
 import numpy as np
 from scipy import sparse
 
-def sigm_value(num):
-    return 1.0 / (1.0 + np.exp(-num))
 
 class LogisticRegression:
     def __init__(self):
         self.w = None
         self.loss_history = None
+
+    def sigm_value(self, num):
+        return 1.0 / (1.0 + np.exp(-num))
 
     def train(self, X, y, learning_rate=1e-3, reg=1e-5, num_iters=100,
               batch_size=200, verbose=False):
@@ -64,7 +65,8 @@ class LogisticRegression:
             # TODO:                                                                 #
             # Update the weights using the gradient and the learning rate.          #
             #########################################################################
-            self.w += learning_rate * (-gradW)
+
+            self.w = self.w + learning_rate * -gradW
 
             #########################################################################
             #                       END OF YOUR CODE                                #
@@ -96,8 +98,8 @@ class LogisticRegression:
         # Hint: It might be helpful to use np.vstack and np.sum                   #
         ###########################################################################
 
-        probabilities = sigm_value(X.dot(self.w))
-        y_proba = np.vstack([1 - probabilities, probabilities]).T
+        probabilities  = self.sigm_value(X.dot(self.w))
+        y_proba = np.vstack([1 - probabilities , probabilities]).T
 
         ###########################################################################
         #                           END OF YOUR CODE                              #
@@ -122,7 +124,7 @@ class LogisticRegression:
         # Implement this method. Store the predicted labels in y_pred.            #
         ###########################################################################
         y_proba = self.predict_proba(X, append_bias=True)
-        y_pred = y_proba.argmax(axis = 1)
+        y_pred = y_proba.argmax(axis=1)
 
         ###########################################################################
         #                           END OF YOUR CODE                              #
@@ -141,28 +143,30 @@ class LogisticRegression:
         """
         dw = np.zeros_like(self.w)  # initialize the gradient as zero
         loss = 0
-        res, _ = X_batch.shape
+        res, n = X_batch.shape
         # Compute loss and gradient. Your code should not contain python loops.
-        sigm = sigm_value(X_batch.dot(self.w))
+        sigm = self.sigm_value(X_batch.dot(self.w))
         P1 = -y_batch * np.log(sigm)
-        P2 = (1 - y_batch) * np.log(1 - sigm)
+        P2 = (1.0 - y_batch) * np.log(1.0 - sigm)
         loss = (P1 - P2).sum()
         grad = (sigm - y_batch) * X_batch
 
         # Right now the loss is a sum over all training examples, but we want it
         # to be an average instead so we divide by num_train.
         # Note that the same thing must be done with gradient.
-        loss *= (1 / res)
-        grad *= (1 / res)
+        loss = (1.0 / res) * loss
+        grad = (1.0 / res) * grad
 
         # Add regularization to the loss and gradient.
         # Note that you have to exclude bias term in regularization.
-        loss += (reg / (2 * sigm)) * (self.w[:-1] ** 2).sum()
+        loss = loss + (reg / (2 * res)) * (self.w[:-1] ** 2).sum()
         dw[-1] = grad[-1]
-        dw[:-1] = grad[:-1] (reg / sigm) * self.w[:-1]
+        dw[:-1] = grad[:-1] + (reg / res) * self.w[:-1]
 
         return loss, dw
 
     @staticmethod
     def append_biases(X):
         return sparse.hstack((X, np.ones(X.shape[0])[:, np.newaxis])).tocsr()
+
+
