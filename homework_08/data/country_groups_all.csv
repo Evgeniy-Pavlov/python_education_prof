@@ -1,0 +1,2121 @@
+id,Country,Group,Group Type,iso2Code,capitalCity,longitude,latitude
+AFG,Afghanistan,South Asia,Region,AF,Kabul,69.1761,34.5228
+AFG,Afghanistan,Low & Middle Income,By Income,AF,Kabul,69.1761,34.5228
+AFG,Afghanistan,Low Income,By Income,AF,Kabul,69.1761,34.5228
+AFG,Afghanistan,Ida Only,By Lending,AF,Kabul,69.1761,34.5228
+AFG,Afghanistan,Fragile And Conflict Affected Situations,Other Country Groups,AF,Kabul,69.1761,34.5228
+AFG,Afghanistan,Heavily Indebted Poor Countries (Hipc),Other Country Groups,AF,Kabul,69.1761,34.5228
+AFG,Afghanistan,Least Developed Countries: Un Classification,Other Country Groups,AF,Kabul,69.1761,34.5228
+AFG,Afghanistan,World,Other Country Groups,AF,Kabul,69.1761,34.5228
+AFG,Afghanistan,Pre-Demographic Dividend,Demographic Dividend Groups,AF,Kabul,69.1761,34.5228
+AFG,Afghanistan,Ida & Ibrd Total,By Lending,AF,Kabul,69.1761,34.5228
+AFG,Afghanistan,South Asia (Ida & Ibrd),By Lending,AF,Kabul,69.1761,34.5228
+ALB,Albania,Europe & Central Asia,Region,AL,Tirane,19.8172,41.3317
+ALB,Albania,Low & Middle Income,By Income,AL,Tirane,19.8172,41.3317
+ALB,Albania,Middle Income,By Income,AL,Tirane,19.8172,41.3317
+ALB,Albania,Upper Middle Income,By Income,AL,Tirane,19.8172,41.3317
+ALB,Albania,Ibrd Only,By Lending,AL,Tirane,19.8172,41.3317
+ALB,Albania,Europe & Central Asia (Excluding High Income),Other Country Groups,AL,Tirane,19.8172,41.3317
+ALB,Albania,World,Other Country Groups,AL,Tirane,19.8172,41.3317
+ALB,Albania,Late-Demographic Dividend,Demographic Dividend Groups,AL,Tirane,19.8172,41.3317
+ALB,Albania,Europe & Central Asia (Ida & Ibrd Countries),By Lending,AL,Tirane,19.8172,41.3317
+ALB,Albania,Ida & Ibrd Total,By Lending,AL,Tirane,19.8172,41.3317
+DZA,Algeria,Middle East & North Africa,Region,DZ,Algiers,3.05097,36.7397
+DZA,Algeria,Low & Middle Income,By Income,DZ,Algiers,3.05097,36.7397
+DZA,Algeria,Lower Middle Income,By Income,DZ,Algiers,3.05097,36.7397
+DZA,Algeria,Middle Income,By Income,DZ,Algiers,3.05097,36.7397
+DZA,Algeria,Ibrd Only,By Lending,DZ,Algiers,3.05097,36.7397
+DZA,Algeria,Arab World,Other Country Groups,DZ,Algiers,3.05097,36.7397
+DZA,Algeria,Middle East & North Africa (Excluding High Income),Other Country Groups,DZ,Algiers,3.05097,36.7397
+DZA,Algeria,World,Other Country Groups,DZ,Algiers,3.05097,36.7397
+DZA,Algeria,Early-Demographic Dividend,Demographic Dividend Groups,DZ,Algiers,3.05097,36.7397
+DZA,Algeria,Ida & Ibrd Total,By Lending,DZ,Algiers,3.05097,36.7397
+DZA,Algeria,Middle East & North Africa (Ida & Ibrd Countries),By Lending,DZ,Algiers,3.05097,36.7397
+ASM,American Samoa,East Asia & Pacific,Region,AS,Pago Pago,-170.691,-14.2846
+ASM,American Samoa,High Income,By Income,AS,Pago Pago,-170.691,-14.2846
+ASM,American Samoa,World,Other Country Groups,AS,Pago Pago,-170.691,-14.2846
+AND,Andorra,Europe & Central Asia,Region,AD,Andorra la Vella,1.5218,42.5075
+AND,Andorra,High Income,By Income,AD,Andorra la Vella,1.5218,42.5075
+AND,Andorra,World,Other Country Groups,AD,Andorra la Vella,1.5218,42.5075
+AGO,Angola,Sub-Saharan Africa,Region,AO,Luanda,13.242,-8.81155
+AGO,Angola,Low & Middle Income,By Income,AO,Luanda,13.242,-8.81155
+AGO,Angola,Lower Middle Income,By Income,AO,Luanda,13.242,-8.81155
+AGO,Angola,Middle Income,By Income,AO,Luanda,13.242,-8.81155
+AGO,Angola,Ibrd Only,By Lending,AO,Luanda,13.242,-8.81155
+AGO,Angola,Least Developed Countries: Un Classification,Other Country Groups,AO,Luanda,13.242,-8.81155
+AGO,Angola,Sub-Saharan Africa (Excluding High Income),Other Country Groups,AO,Luanda,13.242,-8.81155
+AGO,Angola,World,Other Country Groups,AO,Luanda,13.242,-8.81155
+AGO,Angola,Sub-Saharan Africa ,Other country groups,AO,Luanda,13.242,-8.81155
+AGO,Angola,Sub-Saharan Africa (Ida & Ibrd Countries),By Lending,AO,Luanda,13.242,-8.81155
+AGO,Angola,Pre-Demographic Dividend,Demographic Dividend Groups,AO,Luanda,13.242,-8.81155
+AGO,Angola,Ida & Ibrd Total,By Lending,AO,Luanda,13.242,-8.81155
+AGO,Angola,Africa Eastern And Southern,Other country groups,AO,Luanda,13.242,-8.81155
+ATG,Antigua And Barbuda,Latin America & Caribbean,Region,AG,Saint John's,-61.8456,17.1175
+ATG,Antigua And Barbuda,High Income,By Income,AG,Saint John's,-61.8456,17.1175
+ATG,Antigua And Barbuda,Ibrd Only,By Lending,AG,Saint John's,-61.8456,17.1175
+ATG,Antigua And Barbuda,Caribbean Small States,Small States,AG,Saint John's,-61.8456,17.1175
+ATG,Antigua And Barbuda,Small States,Small States,AG,Saint John's,-61.8456,17.1175
+ATG,Antigua And Barbuda,World,Other Country Groups,AG,Saint John's,-61.8456,17.1175
+ATG,Antigua And Barbuda,Post-Demographic Dividend,Demographic Dividend Groups,AG,Saint John's,-61.8456,17.1175
+ATG,Antigua And Barbuda,Ida & Ibrd Total,By Lending,AG,Saint John's,-61.8456,17.1175
+ATG,Antigua And Barbuda,Latin America & The Caribbean (Ida & Ibrd Countries),By Lending,AG,Saint John's,-61.8456,17.1175
+ARG,Argentina,Latin America & Caribbean,Region,AR,Buenos Aires,-58.4173,-34.6118
+ARG,Argentina,Low & Middle Income,By Income,AR,Buenos Aires,-58.4173,-34.6118
+ARG,Argentina,Middle Income,By Income,AR,Buenos Aires,-58.4173,-34.6118
+ARG,Argentina,Upper Middle Income,By Income,AR,Buenos Aires,-58.4173,-34.6118
+ARG,Argentina,Ibrd Only,By Lending,AR,Buenos Aires,-58.4173,-34.6118
+ARG,Argentina,Latin America & Caribbean (Excluding High Income),Other Country Groups,AR,Buenos Aires,-58.4173,-34.6118
+ARG,Argentina,World,Other Country Groups,AR,Buenos Aires,-58.4173,-34.6118
+ARG,Argentina,Early-Demographic Dividend,Demographic Dividend Groups,AR,Buenos Aires,-58.4173,-34.6118
+ARG,Argentina,Ida & Ibrd Total,By Lending,AR,Buenos Aires,-58.4173,-34.6118
+ARG,Argentina,Latin America & The Caribbean (Ida & Ibrd Countries),By Lending,AR,Buenos Aires,-58.4173,-34.6118
+ARM,Armenia,Europe & Central Asia,Region,AM,Yerevan,44.509,40.1596
+ARM,Armenia,Low & Middle Income,By Income,AM,Yerevan,44.509,40.1596
+ARM,Armenia,Middle Income,By Income,AM,Yerevan,44.509,40.1596
+ARM,Armenia,Upper Middle Income,By Income,AM,Yerevan,44.509,40.1596
+ARM,Armenia,Ibrd Only,By Lending,AM,Yerevan,44.509,40.1596
+ARM,Armenia,Europe & Central Asia (Excluding High Income),Other Country Groups,AM,Yerevan,44.509,40.1596
+ARM,Armenia,World,Other Country Groups,AM,Yerevan,44.509,40.1596
+ARM,Armenia,Late-Demographic Dividend,Demographic Dividend Groups,AM,Yerevan,44.509,40.1596
+ARM,Armenia,Europe & Central Asia (Ida & Ibrd Countries),By Lending,AM,Yerevan,44.509,40.1596
+ARM,Armenia,Ida & Ibrd Total,By Lending,AM,Yerevan,44.509,40.1596
+ABW,Aruba,Latin America & Caribbean,Region,AW,Oranjestad,-70.0167,12.5167
+ABW,Aruba,High Income,By Income,AW,Oranjestad,-70.0167,12.5167
+ABW,Aruba,World,Other Country Groups,AW,Oranjestad,-70.0167,12.5167
+ABW,Aruba,Late-Demographic Dividend,Demographic Dividend Groups,AW,Oranjestad,-70.0167,12.5167
+AUS,Australia,East Asia & Pacific,Region,AU,Canberra,149.129,-35.282
+AUS,Australia,High Income,By Income,AU,Canberra,149.129,-35.282
+AUS,Australia,Oecd Members,Other Country Groups,AU,Canberra,149.129,-35.282
+AUS,Australia,World,Other Country Groups,AU,Canberra,149.129,-35.282
+AUS,Australia,Post-Demographic Dividend,Demographic Dividend Groups,AU,Canberra,149.129,-35.282
+AUT,Austria,Europe & Central Asia,Region,AT,Vienna,16.3798,48.2201
+AUT,Austria,High Income,By Income,AT,Vienna,16.3798,48.2201
+AUT,Austria,Euro Area,Other Country Groups,AT,Vienna,16.3798,48.2201
+AUT,Austria,European Union,Other Country Groups,AT,Vienna,16.3798,48.2201
+AUT,Austria,Oecd Members,Other Country Groups,AT,Vienna,16.3798,48.2201
+AUT,Austria,World,Other Country Groups,AT,Vienna,16.3798,48.2201
+AUT,Austria,Post-Demographic Dividend,Demographic Dividend Groups,AT,Vienna,16.3798,48.2201
+AZE,Azerbaijan,Europe & Central Asia,Region,AZ,Baku,49.8932,40.3834
+AZE,Azerbaijan,Low & Middle Income,By Income,AZ,Baku,49.8932,40.3834
+AZE,Azerbaijan,Middle Income,By Income,AZ,Baku,49.8932,40.3834
+AZE,Azerbaijan,Upper Middle Income,By Income,AZ,Baku,49.8932,40.3834
+AZE,Azerbaijan,Ibrd Only,By Lending,AZ,Baku,49.8932,40.3834
+AZE,Azerbaijan,Europe & Central Asia (Excluding High Income),Other Country Groups,AZ,Baku,49.8932,40.3834
+AZE,Azerbaijan,World,Other Country Groups,AZ,Baku,49.8932,40.3834
+AZE,Azerbaijan,Late-Demographic Dividend,Demographic Dividend Groups,AZ,Baku,49.8932,40.3834
+AZE,Azerbaijan,Europe & Central Asia (Ida & Ibrd Countries),By Lending,AZ,Baku,49.8932,40.3834
+AZE,Azerbaijan,Ida & Ibrd Total,By Lending,AZ,Baku,49.8932,40.3834
+BHS,"Bahamas, The",Latin America & Caribbean,Region,BS,Nassau,-77.339,25.0661
+BHS,"Bahamas, The",High Income,By Income,BS,Nassau,-77.339,25.0661
+BHS,"Bahamas, The",Caribbean Small States,Small States,BS,Nassau,-77.339,25.0661
+BHS,"Bahamas, The",Small States,Small States,BS,Nassau,-77.339,25.0661
+BHS,"Bahamas, The",World,Other Country Groups,BS,Nassau,-77.339,25.0661
+BHS,"Bahamas, The",Late-Demographic Dividend,Demographic Dividend Groups,BS,Nassau,-77.339,25.0661
+BHR,Bahrain,Middle East & North Africa,Region,BH,Manama,50.5354,26.1921
+BHR,Bahrain,High Income,By Income,BH,Manama,50.5354,26.1921
+BHR,Bahrain,Small States,Small States,BH,Manama,50.5354,26.1921
+BHR,Bahrain,Arab World,Other Country Groups,BH,Manama,50.5354,26.1921
+BHR,Bahrain,World,Other Country Groups,BH,Manama,50.5354,26.1921
+BHR,Bahrain,Early-Demographic Dividend,Demographic Dividend Groups,BH,Manama,50.5354,26.1921
+BHR,Bahrain,Other Small States,Small States,BH,Manama,50.5354,26.1921
+BGD,Bangladesh,South Asia,Region,BD,Dhaka,90.4113,23.7055
+BGD,Bangladesh,Low & Middle Income,By Income,BD,Dhaka,90.4113,23.7055
+BGD,Bangladesh,Lower Middle Income,By Income,BD,Dhaka,90.4113,23.7055
+BGD,Bangladesh,Middle Income,By Income,BD,Dhaka,90.4113,23.7055
+BGD,Bangladesh,Ida Only,By Lending,BD,Dhaka,90.4113,23.7055
+BGD,Bangladesh,Least Developed Countries: Un Classification,Other Country Groups,BD,Dhaka,90.4113,23.7055
+BGD,Bangladesh,World,Other Country Groups,BD,Dhaka,90.4113,23.7055
+BGD,Bangladesh,Early-Demographic Dividend,Demographic Dividend Groups,BD,Dhaka,90.4113,23.7055
+BGD,Bangladesh,Ida & Ibrd Total,By Lending,BD,Dhaka,90.4113,23.7055
+BGD,Bangladesh,South Asia (Ida & Ibrd),By Lending,BD,Dhaka,90.4113,23.7055
+BRB,Barbados,Latin America & Caribbean,Region,BB,Bridgetown,-59.6105,13.0935
+BRB,Barbados,High Income,By Income,BB,Bridgetown,-59.6105,13.0935
+BRB,Barbados,Caribbean Small States,Small States,BB,Bridgetown,-59.6105,13.0935
+BRB,Barbados,Small States,Small States,BB,Bridgetown,-59.6105,13.0935
+BRB,Barbados,World,Other Country Groups,BB,Bridgetown,-59.6105,13.0935
+BRB,Barbados,Post-Demographic Dividend,Demographic Dividend Groups,BB,Bridgetown,-59.6105,13.0935
+BLR,Belarus,Europe & Central Asia,Region,BY,Minsk,27.5766,53.9678
+BLR,Belarus,Low & Middle Income,By Income,BY,Minsk,27.5766,53.9678
+BLR,Belarus,Middle Income,By Income,BY,Minsk,27.5766,53.9678
+BLR,Belarus,Upper Middle Income,By Income,BY,Minsk,27.5766,53.9678
+BLR,Belarus,Ibrd Only,By Lending,BY,Minsk,27.5766,53.9678
+BLR,Belarus,Europe & Central Asia (Excluding High Income),Other Country Groups,BY,Minsk,27.5766,53.9678
+BLR,Belarus,World,Other Country Groups,BY,Minsk,27.5766,53.9678
+BLR,Belarus,Post-Demographic Dividend,Demographic Dividend Groups,BY,Minsk,27.5766,53.9678
+BLR,Belarus,Europe & Central Asia (Ida & Ibrd Countries),By Lending,BY,Minsk,27.5766,53.9678
+BLR,Belarus,Ida & Ibrd Total,By Lending,BY,Minsk,27.5766,53.9678
+BEL,Belgium,Europe & Central Asia,Region,BE,Brussels,4.36761,50.8371
+BEL,Belgium,High Income,By Income,BE,Brussels,4.36761,50.8371
+BEL,Belgium,Euro Area,Other Country Groups,BE,Brussels,4.36761,50.8371
+BEL,Belgium,European Union,Other Country Groups,BE,Brussels,4.36761,50.8371
+BEL,Belgium,Oecd Members,Other Country Groups,BE,Brussels,4.36761,50.8371
+BEL,Belgium,World,Other Country Groups,BE,Brussels,4.36761,50.8371
+BEL,Belgium,Post-Demographic Dividend,Demographic Dividend Groups,BE,Brussels,4.36761,50.8371
+BLZ,Belize,Latin America & Caribbean,Region,BZ,Belmopan,-88.7713,17.2534
+BLZ,Belize,Low & Middle Income,By Income,BZ,Belmopan,-88.7713,17.2534
+BLZ,Belize,Middle Income,By Income,BZ,Belmopan,-88.7713,17.2534
+BLZ,Belize,Upper Middle Income,By Income,BZ,Belmopan,-88.7713,17.2534
+BLZ,Belize,Ibrd Only,By Lending,BZ,Belmopan,-88.7713,17.2534
+BLZ,Belize,Caribbean Small States,Small States,BZ,Belmopan,-88.7713,17.2534
+BLZ,Belize,Small States,Small States,BZ,Belmopan,-88.7713,17.2534
+BLZ,Belize,Latin America & Caribbean (Excluding High Income),Other Country Groups,BZ,Belmopan,-88.7713,17.2534
+BLZ,Belize,World,Other Country Groups,BZ,Belmopan,-88.7713,17.2534
+BLZ,Belize,Early-Demographic Dividend,Demographic Dividend Groups,BZ,Belmopan,-88.7713,17.2534
+BLZ,Belize,Ida & Ibrd Total,By Lending,BZ,Belmopan,-88.7713,17.2534
+BLZ,Belize,Latin America & The Caribbean (Ida & Ibrd Countries),By Lending,BZ,Belmopan,-88.7713,17.2534
+BEN,Benin,Sub-Saharan Africa,Region,BJ,Porto-Novo,2.6323,6.4779
+BEN,Benin,Low & Middle Income,By Income,BJ,Porto-Novo,2.6323,6.4779
+BEN,Benin,Lower Middle Income,By Income,BJ,Porto-Novo,2.6323,6.4779
+BEN,Benin,Middle Income,By Income,BJ,Porto-Novo,2.6323,6.4779
+BEN,Benin,Ida Only,By Lending,BJ,Porto-Novo,2.6323,6.4779
+BEN,Benin,Heavily Indebted Poor Countries (Hipc),Other Country Groups,BJ,Porto-Novo,2.6323,6.4779
+BEN,Benin,Least Developed Countries: Un Classification,Other Country Groups,BJ,Porto-Novo,2.6323,6.4779
+BEN,Benin,Sub-Saharan Africa (Excluding High Income),Other Country Groups,BJ,Porto-Novo,2.6323,6.4779
+BEN,Benin,World,Other Country Groups,BJ,Porto-Novo,2.6323,6.4779
+BEN,Benin,Sub-Saharan Africa ,Other country groups,BJ,Porto-Novo,2.6323,6.4779
+BEN,Benin,Sub-Saharan Africa (Ida & Ibrd Countries),By Lending,BJ,Porto-Novo,2.6323,6.4779
+BEN,Benin,Pre-Demographic Dividend,Demographic Dividend Groups,BJ,Porto-Novo,2.6323,6.4779
+BEN,Benin,Ida & Ibrd Total,By Lending,BJ,Porto-Novo,2.6323,6.4779
+BEN,Benin,Africa Western And Central,Other country groups,BJ,Porto-Novo,2.6323,6.4779
+BMU,Bermuda,North America,Region,BM,Hamilton,-64.706,32.3293
+BMU,Bermuda,High Income,By Income,BM,Hamilton,-64.706,32.3293
+BMU,Bermuda,World,Other Country Groups,BM,Hamilton,-64.706,32.3293
+BTN,Bhutan,South Asia,Region,BT,Thimphu,89.6177,27.5768
+BTN,Bhutan,Low & Middle Income,By Income,BT,Thimphu,89.6177,27.5768
+BTN,Bhutan,Lower Middle Income,By Income,BT,Thimphu,89.6177,27.5768
+BTN,Bhutan,Middle Income,By Income,BT,Thimphu,89.6177,27.5768
+BTN,Bhutan,Ida Only,By Lending,BT,Thimphu,89.6177,27.5768
+BTN,Bhutan,Small States,Small States,BT,Thimphu,89.6177,27.5768
+BTN,Bhutan,Least Developed Countries: Un Classification,Other Country Groups,BT,Thimphu,89.6177,27.5768
+BTN,Bhutan,World,Other Country Groups,BT,Thimphu,89.6177,27.5768
+BTN,Bhutan,Early-Demographic Dividend,Demographic Dividend Groups,BT,Thimphu,89.6177,27.5768
+BTN,Bhutan,Ida & Ibrd Total,By Lending,BT,Thimphu,89.6177,27.5768
+BTN,Bhutan,South Asia (Ida & Ibrd),By Lending,BT,Thimphu,89.6177,27.5768
+BTN,Bhutan,Other Small States,Small States,BT,Thimphu,89.6177,27.5768
+BOL,Bolivia,Latin America & Caribbean,Region,BO,La Paz,-66.1936,-13.9908
+BOL,Bolivia,Low & Middle Income,By Income,BO,La Paz,-66.1936,-13.9908
+BOL,Bolivia,Lower Middle Income,By Income,BO,La Paz,-66.1936,-13.9908
+BOL,Bolivia,Middle Income,By Income,BO,La Paz,-66.1936,-13.9908
+BOL,Bolivia,Ibrd Only,By Lending,BO,La Paz,-66.1936,-13.9908
+BOL,Bolivia,Heavily Indebted Poor Countries (Hipc),Other Country Groups,BO,La Paz,-66.1936,-13.9908
+BOL,Bolivia,Latin America & Caribbean (Excluding High Income),Other Country Groups,BO,La Paz,-66.1936,-13.9908
+BOL,Bolivia,World,Other Country Groups,BO,La Paz,-66.1936,-13.9908
+BOL,Bolivia,Early-Demographic Dividend,Demographic Dividend Groups,BO,La Paz,-66.1936,-13.9908
+BOL,Bolivia,Ida & Ibrd Total,By Lending,BO,La Paz,-66.1936,-13.9908
+BOL,Bolivia,Latin America & The Caribbean (Ida & Ibrd Countries),By Lending,BO,La Paz,-66.1936,-13.9908
+BIH,Bosnia And Herzegovina,Europe & Central Asia,Region,BA,Sarajevo,18.4214,43.8607
+BIH,Bosnia And Herzegovina,Low & Middle Income,By Income,BA,Sarajevo,18.4214,43.8607
+BIH,Bosnia And Herzegovina,Middle Income,By Income,BA,Sarajevo,18.4214,43.8607
+BIH,Bosnia And Herzegovina,Upper Middle Income,By Income,BA,Sarajevo,18.4214,43.8607
+BIH,Bosnia And Herzegovina,Ibrd Only,By Lending,BA,Sarajevo,18.4214,43.8607
+BIH,Bosnia And Herzegovina,Europe & Central Asia (Excluding High Income),Other Country Groups,BA,Sarajevo,18.4214,43.8607
+BIH,Bosnia And Herzegovina,World,Other Country Groups,BA,Sarajevo,18.4214,43.8607
+BIH,Bosnia And Herzegovina,Post-Demographic Dividend,Demographic Dividend Groups,BA,Sarajevo,18.4214,43.8607
+BIH,Bosnia And Herzegovina,Europe & Central Asia (Ida & Ibrd Countries),By Lending,BA,Sarajevo,18.4214,43.8607
+BIH,Bosnia And Herzegovina,Ida & Ibrd Total,By Lending,BA,Sarajevo,18.4214,43.8607
+BWA,Botswana,Sub-Saharan Africa,Region,BW,Gaborone,25.9201,-24.6544
+BWA,Botswana,Low & Middle Income,By Income,BW,Gaborone,25.9201,-24.6544
+BWA,Botswana,Middle Income,By Income,BW,Gaborone,25.9201,-24.6544
+BWA,Botswana,Upper Middle Income,By Income,BW,Gaborone,25.9201,-24.6544
+BWA,Botswana,Ibrd Only,By Lending,BW,Gaborone,25.9201,-24.6544
+BWA,Botswana,Small States,Small States,BW,Gaborone,25.9201,-24.6544
+BWA,Botswana,Sub-Saharan Africa (Excluding High Income),Other Country Groups,BW,Gaborone,25.9201,-24.6544
+BWA,Botswana,World,Other Country Groups,BW,Gaborone,25.9201,-24.6544
+BWA,Botswana,Sub-Saharan Africa ,Other country groups,BW,Gaborone,25.9201,-24.6544
+BWA,Botswana,Sub-Saharan Africa (Ida & Ibrd Countries),By Lending,BW,Gaborone,25.9201,-24.6544
+BWA,Botswana,Early-Demographic Dividend,Demographic Dividend Groups,BW,Gaborone,25.9201,-24.6544
+BWA,Botswana,Ida & Ibrd Total,By Lending,BW,Gaborone,25.9201,-24.6544
+BWA,Botswana,Other Small States,Small States,BW,Gaborone,25.9201,-24.6544
+BWA,Botswana,Africa Eastern And Southern,Other country groups,BW,Gaborone,25.9201,-24.6544
+BRA,Brazil,Latin America & Caribbean,Region,BR,Brasilia,-47.9292,-15.7801
+BRA,Brazil,Low & Middle Income,By Income,BR,Brasilia,-47.9292,-15.7801
+BRA,Brazil,Middle Income,By Income,BR,Brasilia,-47.9292,-15.7801
+BRA,Brazil,Upper Middle Income,By Income,BR,Brasilia,-47.9292,-15.7801
+BRA,Brazil,Ibrd Only,By Lending,BR,Brasilia,-47.9292,-15.7801
+BRA,Brazil,Latin America & Caribbean (Excluding High Income),Other Country Groups,BR,Brasilia,-47.9292,-15.7801
+BRA,Brazil,World,Other Country Groups,BR,Brasilia,-47.9292,-15.7801
+BRA,Brazil,Late-Demographic Dividend,Demographic Dividend Groups,BR,Brasilia,-47.9292,-15.7801
+BRA,Brazil,Ida & Ibrd Total,By Lending,BR,Brasilia,-47.9292,-15.7801
+BRA,Brazil,Latin America & The Caribbean (Ida & Ibrd Countries),By Lending,BR,Brasilia,-47.9292,-15.7801
+VGB,British Virgin Islands,Latin America & Caribbean,Region,VG,Road Town,-64.623056,18.431389
+VGB,British Virgin Islands,High Income,By Income,VG,Road Town,-64.623056,18.431389
+VGB,British Virgin Islands,World,Other Country Groups,VG,Road Town,-64.623056,18.431389
+BRN,Brunei Darussalam,East Asia & Pacific,Region,BN,Bandar Seri Begawan,114.946,4.94199
+BRN,Brunei Darussalam,High Income,By Income,BN,Bandar Seri Begawan,114.946,4.94199
+BRN,Brunei Darussalam,Small States,Small States,BN,Bandar Seri Begawan,114.946,4.94199
+BRN,Brunei Darussalam,World,Other Country Groups,BN,Bandar Seri Begawan,114.946,4.94199
+BRN,Brunei Darussalam,Late-Demographic Dividend,Demographic Dividend Groups,BN,Bandar Seri Begawan,114.946,4.94199
+BRN,Brunei Darussalam,Other Small States,Small States,BN,Bandar Seri Begawan,114.946,4.94199
+BGR,Bulgaria,Europe & Central Asia,Region,BG,Sofia,23.3238,42.7105
+BGR,Bulgaria,Low & Middle Income,By Income,BG,Sofia,23.3238,42.7105
+BGR,Bulgaria,Middle Income,By Income,BG,Sofia,23.3238,42.7105
+BGR,Bulgaria,Upper Middle Income,By Income,BG,Sofia,23.3238,42.7105
+BGR,Bulgaria,Ibrd Only,By Lending,BG,Sofia,23.3238,42.7105
+BGR,Bulgaria,Central Europe And The Baltics,Other Country Groups,BG,Sofia,23.3238,42.7105
+BGR,Bulgaria,Europe & Central Asia (Excluding High Income),Other Country Groups,BG,Sofia,23.3238,42.7105
+BGR,Bulgaria,European Union,Other Country Groups,BG,Sofia,23.3238,42.7105
+BGR,Bulgaria,World,Other Country Groups,BG,Sofia,23.3238,42.7105
+BGR,Bulgaria,Post-Demographic Dividend,Demographic Dividend Groups,BG,Sofia,23.3238,42.7105
+BGR,Bulgaria,Europe & Central Asia (Ida & Ibrd Countries),By Lending,BG,Sofia,23.3238,42.7105
+BGR,Bulgaria,Ida & Ibrd Total,By Lending,BG,Sofia,23.3238,42.7105
+BFA,Burkina Faso,Sub-Saharan Africa,Region,BF,Ouagadougou,-1.53395,12.3605
+BFA,Burkina Faso,Low & Middle Income,By Income,BF,Ouagadougou,-1.53395,12.3605
+BFA,Burkina Faso,Low Income,By Income,BF,Ouagadougou,-1.53395,12.3605
+BFA,Burkina Faso,Ida Only,By Lending,BF,Ouagadougou,-1.53395,12.3605
+BFA,Burkina Faso,Fragile And Conflict Affected Situations,Other Country Groups,BF,Ouagadougou,-1.53395,12.3605
+BFA,Burkina Faso,Heavily Indebted Poor Countries (Hipc),Other Country Groups,BF,Ouagadougou,-1.53395,12.3605
+BFA,Burkina Faso,Least Developed Countries: Un Classification,Other Country Groups,BF,Ouagadougou,-1.53395,12.3605
+BFA,Burkina Faso,Sub-Saharan Africa (Excluding High Income),Other Country Groups,BF,Ouagadougou,-1.53395,12.3605
+BFA,Burkina Faso,World,Other Country Groups,BF,Ouagadougou,-1.53395,12.3605
+BFA,Burkina Faso,Sub-Saharan Africa ,Other country groups,BF,Ouagadougou,-1.53395,12.3605
+BFA,Burkina Faso,Sub-Saharan Africa (Ida & Ibrd Countries),By Lending,BF,Ouagadougou,-1.53395,12.3605
+BFA,Burkina Faso,Pre-Demographic Dividend,Demographic Dividend Groups,BF,Ouagadougou,-1.53395,12.3605
+BFA,Burkina Faso,Ida & Ibrd Total,By Lending,BF,Ouagadougou,-1.53395,12.3605
+BFA,Burkina Faso,Africa Western And Central,Other country groups,BF,Ouagadougou,-1.53395,12.3605
+BDI,Burundi,Sub-Saharan Africa,Region,BI,Bujumbura,29.3639,-3.3784
+BDI,Burundi,Low & Middle Income,By Income,BI,Bujumbura,29.3639,-3.3784
+BDI,Burundi,Low Income,By Income,BI,Bujumbura,29.3639,-3.3784
+BDI,Burundi,Ida Only,By Lending,BI,Bujumbura,29.3639,-3.3784
+BDI,Burundi,Fragile And Conflict Affected Situations,Other Country Groups,BI,Bujumbura,29.3639,-3.3784
+BDI,Burundi,Heavily Indebted Poor Countries (Hipc),Other Country Groups,BI,Bujumbura,29.3639,-3.3784
+BDI,Burundi,Least Developed Countries: Un Classification,Other Country Groups,BI,Bujumbura,29.3639,-3.3784
+BDI,Burundi,Sub-Saharan Africa (Excluding High Income),Other Country Groups,BI,Bujumbura,29.3639,-3.3784
+BDI,Burundi,World,Other Country Groups,BI,Bujumbura,29.3639,-3.3784
+BDI,Burundi,Sub-Saharan Africa ,Other country groups,BI,Bujumbura,29.3639,-3.3784
+BDI,Burundi,Sub-Saharan Africa (Ida & Ibrd Countries),By Lending,BI,Bujumbura,29.3639,-3.3784
+BDI,Burundi,Pre-Demographic Dividend,Demographic Dividend Groups,BI,Bujumbura,29.3639,-3.3784
+BDI,Burundi,Ida & Ibrd Total,By Lending,BI,Bujumbura,29.3639,-3.3784
+BDI,Burundi,Africa Eastern And Southern,Other country groups,BI,Bujumbura,29.3639,-3.3784
+CPV,Cabo Verde,Sub-Saharan Africa,Region,CV,Praia,-23.5087,14.9218
+CPV,Cabo Verde,Low & Middle Income,By Income,CV,Praia,-23.5087,14.9218
+CPV,Cabo Verde,Lower Middle Income,By Income,CV,Praia,-23.5087,14.9218
+CPV,Cabo Verde,Middle Income,By Income,CV,Praia,-23.5087,14.9218
+CPV,Cabo Verde,Ida Blend,By Lending,CV,Praia,-23.5087,14.9218
+CPV,Cabo Verde,Small States,Small States,CV,Praia,-23.5087,14.9218
+CPV,Cabo Verde,Sub-Saharan Africa (Excluding High Income),Other Country Groups,CV,Praia,-23.5087,14.9218
+CPV,Cabo Verde,World,Other Country Groups,CV,Praia,-23.5087,14.9218
+CPV,Cabo Verde,Sub-Saharan Africa ,Other country groups,CV,Praia,-23.5087,14.9218
+CPV,Cabo Verde,Early-Demographic Dividend,Demographic Dividend Groups,CV,Praia,-23.5087,14.9218
+CPV,Cabo Verde,Other Small States,Small States,CV,Praia,-23.5087,14.9218
+CPV,Cabo Verde,Africa Western And Central,Other country groups,CV,Praia,-23.5087,14.9218
+KHM,Cambodia,East Asia & Pacific,Region,KH,Phnom Penh,104.874,11.5556
+KHM,Cambodia,Low & Middle Income,By Income,KH,Phnom Penh,104.874,11.5556
+KHM,Cambodia,Lower Middle Income,By Income,KH,Phnom Penh,104.874,11.5556
+KHM,Cambodia,Middle Income,By Income,KH,Phnom Penh,104.874,11.5556
+KHM,Cambodia,Ida Only,By Lending,KH,Phnom Penh,104.874,11.5556
+KHM,Cambodia,East Asia & Pacific (Excluding High Income),Other Country Groups,KH,Phnom Penh,104.874,11.5556
+KHM,Cambodia,Least Developed Countries: Un Classification,Other Country Groups,KH,Phnom Penh,104.874,11.5556
+KHM,Cambodia,World,Other Country Groups,KH,Phnom Penh,104.874,11.5556
+KHM,Cambodia,Early-Demographic Dividend,Demographic Dividend Groups,KH,Phnom Penh,104.874,11.5556
+KHM,Cambodia,East Asia & Pacific (Ida & Ibrd Countries),By Lending,KH,Phnom Penh,104.874,11.5556
+KHM,Cambodia,Ida & Ibrd Total,By Lending,KH,Phnom Penh,104.874,11.5556
+CMR,Cameroon,Sub-Saharan Africa,Region,CM,Yaounde,11.5174,3.8721
+CMR,Cameroon,Low & Middle Income,By Income,CM,Yaounde,11.5174,3.8721
+CMR,Cameroon,Lower Middle Income,By Income,CM,Yaounde,11.5174,3.8721
+CMR,Cameroon,Middle Income,By Income,CM,Yaounde,11.5174,3.8721
+CMR,Cameroon,Ida Blend,By Lending,CM,Yaounde,11.5174,3.8721
+CMR,Cameroon,Fragile And Conflict Affected Situations,Other Country Groups,CM,Yaounde,11.5174,3.8721
+CMR,Cameroon,Heavily Indebted Poor Countries (Hipc),Other Country Groups,CM,Yaounde,11.5174,3.8721
+CMR,Cameroon,Sub-Saharan Africa (Excluding High Income),Other Country Groups,CM,Yaounde,11.5174,3.8721
+CMR,Cameroon,World,Other Country Groups,CM,Yaounde,11.5174,3.8721
+CMR,Cameroon,Sub-Saharan Africa ,Other country groups,CM,Yaounde,11.5174,3.8721
+CMR,Cameroon,Pre-Demographic Dividend,Demographic Dividend Groups,CM,Yaounde,11.5174,3.8721
+CMR,Cameroon,Africa Western And Central,Other country groups,CM,Yaounde,11.5174,3.8721
+CAN,Canada,North America,Region,CA,Ottawa,-75.6919,45.4215
+CAN,Canada,High Income,By Income,CA,Ottawa,-75.6919,45.4215
+CAN,Canada,Oecd Members,Other Country Groups,CA,Ottawa,-75.6919,45.4215
+CAN,Canada,World,Other Country Groups,CA,Ottawa,-75.6919,45.4215
+CAN,Canada,Post-Demographic Dividend,Demographic Dividend Groups,CA,Ottawa,-75.6919,45.4215
+CYM,Cayman Islands,Latin America & Caribbean,Region,KY,George Town,-81.3857,19.3022
+CYM,Cayman Islands,High Income,By Income,KY,George Town,-81.3857,19.3022
+CYM,Cayman Islands,World,Other Country Groups,KY,George Town,-81.3857,19.3022
+CAF,Central African Republic,Sub-Saharan Africa,Region,CF,Bangui,21.6407,5.63056
+CAF,Central African Republic,Low & Middle Income,By Income,CF,Bangui,21.6407,5.63056
+CAF,Central African Republic,Low Income,By Income,CF,Bangui,21.6407,5.63056
+CAF,Central African Republic,Ida Only,By Lending,CF,Bangui,21.6407,5.63056
+CAF,Central African Republic,Fragile And Conflict Affected Situations,Other Country Groups,CF,Bangui,21.6407,5.63056
+CAF,Central African Republic,Heavily Indebted Poor Countries (Hipc),Other Country Groups,CF,Bangui,21.6407,5.63056
+CAF,Central African Republic,Least Developed Countries: Un Classification,Other Country Groups,CF,Bangui,21.6407,5.63056
+CAF,Central African Republic,Sub-Saharan Africa (Excluding High Income),Other Country Groups,CF,Bangui,21.6407,5.63056
+CAF,Central African Republic,World,Other Country Groups,CF,Bangui,21.6407,5.63056
+CAF,Central African Republic,Sub-Saharan Africa ,Other country groups,CF,Bangui,21.6407,5.63056
+CAF,Central African Republic,Sub-Saharan Africa (Ida & Ibrd Countries),By Lending,CF,Bangui,21.6407,5.63056
+CAF,Central African Republic,Pre-Demographic Dividend,Demographic Dividend Groups,CF,Bangui,21.6407,5.63056
+CAF,Central African Republic,Ida & Ibrd Total,By Lending,CF,Bangui,21.6407,5.63056
+CAF,Central African Republic,Africa Western And Central,Other country groups,CF,Bangui,21.6407,5.63056
+TCD,Chad,Sub-Saharan Africa,Region,TD,N'Djamena,15.0445,12.1048
+TCD,Chad,Low & Middle Income,By Income,TD,N'Djamena,15.0445,12.1048
+TCD,Chad,Low Income,By Income,TD,N'Djamena,15.0445,12.1048
+TCD,Chad,Ida Only,By Lending,TD,N'Djamena,15.0445,12.1048
+TCD,Chad,Fragile And Conflict Affected Situations,Other Country Groups,TD,N'Djamena,15.0445,12.1048
+TCD,Chad,Heavily Indebted Poor Countries (Hipc),Other Country Groups,TD,N'Djamena,15.0445,12.1048
+TCD,Chad,Least Developed Countries: Un Classification,Other Country Groups,TD,N'Djamena,15.0445,12.1048
+TCD,Chad,Sub-Saharan Africa (Excluding High Income),Other Country Groups,TD,N'Djamena,15.0445,12.1048
+TCD,Chad,World,Other Country Groups,TD,N'Djamena,15.0445,12.1048
+TCD,Chad,Sub-Saharan Africa ,Other country groups,TD,N'Djamena,15.0445,12.1048
+TCD,Chad,Sub-Saharan Africa (Ida & Ibrd Countries),By Lending,TD,N'Djamena,15.0445,12.1048
+TCD,Chad,Pre-Demographic Dividend,Demographic Dividend Groups,TD,N'Djamena,15.0445,12.1048
+TCD,Chad,Ida & Ibrd Total,By Lending,TD,N'Djamena,15.0445,12.1048
+TCD,Chad,Africa Western And Central,Other country groups,TD,N'Djamena,15.0445,12.1048
+CHI,Channel Islands,Europe & Central Asia,Region,JG,,,
+CHI,Channel Islands,High Income,By Income,JG,,,
+CHI,Channel Islands,World,Other Country Groups,JG,,,
+CHL,Chile,Latin America & Caribbean,Region,CL,Santiago,-70.6475,-33.475
+CHL,Chile,High Income,By Income,CL,Santiago,-70.6475,-33.475
+CHL,Chile,Ibrd Only,By Lending,CL,Santiago,-70.6475,-33.475
+CHL,Chile,Oecd Members,Other Country Groups,CL,Santiago,-70.6475,-33.475
+CHL,Chile,World,Other Country Groups,CL,Santiago,-70.6475,-33.475
+CHL,Chile,Late-Demographic Dividend,Demographic Dividend Groups,CL,Santiago,-70.6475,-33.475
+CHL,Chile,Ida & Ibrd Total,By Lending,CL,Santiago,-70.6475,-33.475
+CHL,Chile,Latin America & The Caribbean (Ida & Ibrd Countries),By Lending,CL,Santiago,-70.6475,-33.475
+CHN,China,East Asia & Pacific,Region,CN,Beijing,116.286,40.0495
+CHN,China,Low & Middle Income,By Income,CN,Beijing,116.286,40.0495
+CHN,China,Middle Income,By Income,CN,Beijing,116.286,40.0495
+CHN,China,Upper Middle Income,By Income,CN,Beijing,116.286,40.0495
+CHN,China,Ibrd Only,By Lending,CN,Beijing,116.286,40.0495
+CHN,China,East Asia & Pacific (Excluding High Income),Other Country Groups,CN,Beijing,116.286,40.0495
+CHN,China,World,Other Country Groups,CN,Beijing,116.286,40.0495
+CHN,China,Late-Demographic Dividend,Demographic Dividend Groups,CN,Beijing,116.286,40.0495
+CHN,China,East Asia & Pacific (Ida & Ibrd Countries),By Lending,CN,Beijing,116.286,40.0495
+CHN,China,Ida & Ibrd Total,By Lending,CN,Beijing,116.286,40.0495
+COL,Colombia,Latin America & Caribbean,Region,CO,Bogota,-74.082,4.60987
+COL,Colombia,Low & Middle Income,By Income,CO,Bogota,-74.082,4.60987
+COL,Colombia,Middle Income,By Income,CO,Bogota,-74.082,4.60987
+COL,Colombia,Upper Middle Income,By Income,CO,Bogota,-74.082,4.60987
+COL,Colombia,Ibrd Only,By Lending,CO,Bogota,-74.082,4.60987
+COL,Colombia,Latin America & Caribbean (Excluding High Income),Other Country Groups,CO,Bogota,-74.082,4.60987
+COL,Colombia,Oecd Members,Other Country Groups,CO,Bogota,-74.082,4.60987
+COL,Colombia,World,Other Country Groups,CO,Bogota,-74.082,4.60987
+COL,Colombia,Late-Demographic Dividend,Demographic Dividend Groups,CO,Bogota,-74.082,4.60987
+COL,Colombia,Ida & Ibrd Total,By Lending,CO,Bogota,-74.082,4.60987
+COL,Colombia,Latin America & The Caribbean (Ida & Ibrd Countries),By Lending,CO,Bogota,-74.082,4.60987
+COM,Comoros,Sub-Saharan Africa,Region,KM,Moroni,43.2418,-11.6986
+COM,Comoros,Low & Middle Income,By Income,KM,Moroni,43.2418,-11.6986
+COM,Comoros,Lower Middle Income,By Income,KM,Moroni,43.2418,-11.6986
+COM,Comoros,Middle Income,By Income,KM,Moroni,43.2418,-11.6986
+COM,Comoros,Ida Only,By Lending,KM,Moroni,43.2418,-11.6986
+COM,Comoros,Small States,Small States,KM,Moroni,43.2418,-11.6986
+COM,Comoros,Arab World,Other Country Groups,KM,Moroni,43.2418,-11.6986
+COM,Comoros,Fragile And Conflict Affected Situations,Other Country Groups,KM,Moroni,43.2418,-11.6986
+COM,Comoros,Heavily Indebted Poor Countries (Hipc),Other Country Groups,KM,Moroni,43.2418,-11.6986
+COM,Comoros,Least Developed Countries: Un Classification,Other Country Groups,KM,Moroni,43.2418,-11.6986
+COM,Comoros,Sub-Saharan Africa (Excluding High Income),Other Country Groups,KM,Moroni,43.2418,-11.6986
+COM,Comoros,World,Other Country Groups,KM,Moroni,43.2418,-11.6986
+COM,Comoros,Sub-Saharan Africa ,Other country groups,KM,Moroni,43.2418,-11.6986
+COM,Comoros,Sub-Saharan Africa (Ida & Ibrd Countries),By Lending,KM,Moroni,43.2418,-11.6986
+COM,Comoros,Pre-Demographic Dividend,Demographic Dividend Groups,KM,Moroni,43.2418,-11.6986
+COM,Comoros,Ida & Ibrd Total,By Lending,KM,Moroni,43.2418,-11.6986
+COM,Comoros,Other Small States,Small States,KM,Moroni,43.2418,-11.6986
+COM,Comoros,Africa Eastern And Southern,Other country groups,KM,Moroni,43.2418,-11.6986
+COD,"Congo, Dem. Rep.",Sub-Saharan Africa,Region,CD,Kinshasa,15.3222,-4.325
+COD,"Congo, Dem. Rep.",Low & Middle Income,By Income,CD,Kinshasa,15.3222,-4.325
+COD,"Congo, Dem. Rep.",Low Income,By Income,CD,Kinshasa,15.3222,-4.325
+COD,"Congo, Dem. Rep.",Ida Only,By Lending,CD,Kinshasa,15.3222,-4.325
+COD,"Congo, Dem. Rep.",Fragile And Conflict Affected Situations,Other Country Groups,CD,Kinshasa,15.3222,-4.325
+COD,"Congo, Dem. Rep.",Heavily Indebted Poor Countries (Hipc),Other Country Groups,CD,Kinshasa,15.3222,-4.325
+COD,"Congo, Dem. Rep.",Least Developed Countries: Un Classification,Other Country Groups,CD,Kinshasa,15.3222,-4.325
+COD,"Congo, Dem. Rep.",Sub-Saharan Africa (Excluding High Income),Other Country Groups,CD,Kinshasa,15.3222,-4.325
+COD,"Congo, Dem. Rep.",World,Other Country Groups,CD,Kinshasa,15.3222,-4.325
+COD,"Congo, Dem. Rep.",Sub-Saharan Africa ,Other country groups,CD,Kinshasa,15.3222,-4.325
+COD,"Congo, Dem. Rep.",Sub-Saharan Africa (Ida & Ibrd Countries),By Lending,CD,Kinshasa,15.3222,-4.325
+COD,"Congo, Dem. Rep.",Pre-Demographic Dividend,Demographic Dividend Groups,CD,Kinshasa,15.3222,-4.325
+COD,"Congo, Dem. Rep.",Ida & Ibrd Total,By Lending,CD,Kinshasa,15.3222,-4.325
+COG,"Congo, Rep.",Sub-Saharan Africa,Region,CG,Brazzaville,15.2662,-4.2767
+COG,"Congo, Rep.",Low & Middle Income,By Income,CG,Brazzaville,15.2662,-4.2767
+COG,"Congo, Rep.",Lower Middle Income,By Income,CG,Brazzaville,15.2662,-4.2767
+COG,"Congo, Rep.",Middle Income,By Income,CG,Brazzaville,15.2662,-4.2767
+COG,"Congo, Rep.",Ida Blend,By Lending,CG,Brazzaville,15.2662,-4.2767
+COG,"Congo, Rep.",Fragile And Conflict Affected Situations,Other Country Groups,CG,Brazzaville,15.2662,-4.2767
+COG,"Congo, Rep.",Heavily Indebted Poor Countries (Hipc),Other Country Groups,CG,Brazzaville,15.2662,-4.2767
+COG,"Congo, Rep.",Sub-Saharan Africa (Excluding High Income),Other Country Groups,CG,Brazzaville,15.2662,-4.2767
+COG,"Congo, Rep.",World,Other Country Groups,CG,Brazzaville,15.2662,-4.2767
+COG,"Congo, Rep.",Sub-Saharan Africa ,Other country groups,CG,Brazzaville,15.2662,-4.2767
+COG,"Congo, Rep.",Pre-Demographic Dividend,Demographic Dividend Groups,CG,Brazzaville,15.2662,-4.2767
+CRI,Costa Rica,Latin America & Caribbean,Region,CR,San Jose,-84.0089,9.63701
+CRI,Costa Rica,Low & Middle Income,By Income,CR,San Jose,-84.0089,9.63701
+CRI,Costa Rica,Middle Income,By Income,CR,San Jose,-84.0089,9.63701
+CRI,Costa Rica,Upper Middle Income,By Income,CR,San Jose,-84.0089,9.63701
+CRI,Costa Rica,Ibrd Only,By Lending,CR,San Jose,-84.0089,9.63701
+CRI,Costa Rica,Latin America & Caribbean (Excluding High Income),Other Country Groups,CR,San Jose,-84.0089,9.63701
+CRI,Costa Rica,Oecd Members,Other Country Groups,CR,San Jose,-84.0089,9.63701
+CRI,Costa Rica,World,Other Country Groups,CR,San Jose,-84.0089,9.63701
+CRI,Costa Rica,Late-Demographic Dividend,Demographic Dividend Groups,CR,San Jose,-84.0089,9.63701
+CRI,Costa Rica,Ida & Ibrd Total,By Lending,CR,San Jose,-84.0089,9.63701
+CRI,Costa Rica,Latin America & The Caribbean (Ida & Ibrd Countries),By Lending,CR,San Jose,-84.0089,9.63701
+CIV,Cote D'Ivoire,Sub-Saharan Africa,Region,CI,Yamoussoukro,-4.0305,5.332
+CIV,Cote D'Ivoire,Low & Middle Income,By Income,CI,Yamoussoukro,-4.0305,5.332
+CIV,Cote D'Ivoire,Lower Middle Income,By Income,CI,Yamoussoukro,-4.0305,5.332
+CIV,Cote D'Ivoire,Middle Income,By Income,CI,Yamoussoukro,-4.0305,5.332
+CIV,Cote D'Ivoire,Ida Only,By Lending,CI,Yamoussoukro,-4.0305,5.332
+CIV,Cote D'Ivoire,Heavily Indebted Poor Countries (Hipc),Other Country Groups,CI,Yamoussoukro,-4.0305,5.332
+CIV,Cote D'Ivoire,Sub-Saharan Africa (Excluding High Income),Other Country Groups,CI,Yamoussoukro,-4.0305,5.332
+CIV,Cote D'Ivoire,World,Other Country Groups,CI,Yamoussoukro,-4.0305,5.332
+CIV,Cote D'Ivoire,Sub-Saharan Africa ,Other country groups,CI,Yamoussoukro,-4.0305,5.332
+CIV,Cote D'Ivoire,Sub-Saharan Africa (Ida & Ibrd Countries),By Lending,CI,Yamoussoukro,-4.0305,5.332
+CIV,Cote D'Ivoire,Pre-Demographic Dividend,Demographic Dividend Groups,CI,Yamoussoukro,-4.0305,5.332
+CIV,Cote D'Ivoire,Ida & Ibrd Total,By Lending,CI,Yamoussoukro,-4.0305,5.332
+CIV,Cote D'Ivoire,Africa Western And Central,Other country groups,CI,Yamoussoukro,-4.0305,5.332
+HRV,Croatia,Europe & Central Asia,Region,HR,Zagreb,15.9614,45.8069
+HRV,Croatia,High Income,By Income,HR,Zagreb,15.9614,45.8069
+HRV,Croatia,Ibrd Only,By Lending,HR,Zagreb,15.9614,45.8069
+HRV,Croatia,Central Europe And The Baltics,Other Country Groups,HR,Zagreb,15.9614,45.8069
+HRV,Croatia,European Union,Other Country Groups,HR,Zagreb,15.9614,45.8069
+HRV,Croatia,World,Other Country Groups,HR,Zagreb,15.9614,45.8069
+HRV,Croatia,Post-Demographic Dividend,Demographic Dividend Groups,HR,Zagreb,15.9614,45.8069
+HRV,Croatia,Europe & Central Asia (Ida & Ibrd Countries),By Lending,HR,Zagreb,15.9614,45.8069
+HRV,Croatia,Ida & Ibrd Total,By Lending,HR,Zagreb,15.9614,45.8069
+CUB,Cuba,Latin America & Caribbean,Region,CU,Havana,-82.3667,23.1333
+CUB,Cuba,Low & Middle Income,By Income,CU,Havana,-82.3667,23.1333
+CUB,Cuba,Middle Income,By Income,CU,Havana,-82.3667,23.1333
+CUB,Cuba,Upper Middle Income,By Income,CU,Havana,-82.3667,23.1333
+CUB,Cuba,Latin America & Caribbean (Excluding High Income),Other Country Groups,CU,Havana,-82.3667,23.1333
+CUB,Cuba,World,Other Country Groups,CU,Havana,-82.3667,23.1333
+CUB,Cuba,Post-Demographic Dividend,Demographic Dividend Groups,CU,Havana,-82.3667,23.1333
+CUW,Curacao,Latin America & Caribbean,Region,CW,Willemstad,,
+CUW,Curacao,High Income,By Income,CW,Willemstad,,
+CUW,Curacao,World,Other Country Groups,CW,Willemstad,,
+CYP,Cyprus,Europe & Central Asia,Region,CY,Nicosia,33.3736,35.1676
+CYP,Cyprus,High Income,By Income,CY,Nicosia,33.3736,35.1676
+CYP,Cyprus,Small States,Small States,CY,Nicosia,33.3736,35.1676
+CYP,Cyprus,Euro Area,Other Country Groups,CY,Nicosia,33.3736,35.1676
+CYP,Cyprus,European Union,Other Country Groups,CY,Nicosia,33.3736,35.1676
+CYP,Cyprus,World,Other Country Groups,CY,Nicosia,33.3736,35.1676
+CYP,Cyprus,Late-Demographic Dividend,Demographic Dividend Groups,CY,Nicosia,33.3736,35.1676
+CYP,Cyprus,Other Small States,Small States,CY,Nicosia,33.3736,35.1676
+CZE,Czechia,Europe & Central Asia,Region,CZ,Prague,14.4205,50.0878
+CZE,Czechia,High Income,By Income,CZ,Prague,14.4205,50.0878
+CZE,Czechia,Central Europe And The Baltics,Other Country Groups,CZ,Prague,14.4205,50.0878
+CZE,Czechia,European Union,Other Country Groups,CZ,Prague,14.4205,50.0878
+CZE,Czechia,Oecd Members,Other Country Groups,CZ,Prague,14.4205,50.0878
+CZE,Czechia,World,Other Country Groups,CZ,Prague,14.4205,50.0878
+CZE,Czechia,Post-Demographic Dividend,Demographic Dividend Groups,CZ,Prague,14.4205,50.0878
+COD,"Congo, Dem. Rep.",Africa Eastern And Southern,Other country groups,CD,Kinshasa,15.3222,-4.325
+DNK,Denmark,Europe & Central Asia,Region,DK,Copenhagen,12.5681,55.6763
+DNK,Denmark,High Income,By Income,DK,Copenhagen,12.5681,55.6763
+DNK,Denmark,European Union,Other Country Groups,DK,Copenhagen,12.5681,55.6763
+DNK,Denmark,Oecd Members,Other Country Groups,DK,Copenhagen,12.5681,55.6763
+DNK,Denmark,World,Other Country Groups,DK,Copenhagen,12.5681,55.6763
+DNK,Denmark,Post-Demographic Dividend,Demographic Dividend Groups,DK,Copenhagen,12.5681,55.6763
+DJI,Djibouti,Middle East & North Africa,Region,DJ,Djibouti,43.1425,11.5806
+DJI,Djibouti,Low & Middle Income,By Income,DJ,Djibouti,43.1425,11.5806
+DJI,Djibouti,Lower Middle Income,By Income,DJ,Djibouti,43.1425,11.5806
+DJI,Djibouti,Middle Income,By Income,DJ,Djibouti,43.1425,11.5806
+DJI,Djibouti,Ida Only,By Lending,DJ,Djibouti,43.1425,11.5806
+DJI,Djibouti,Small States,Small States,DJ,Djibouti,43.1425,11.5806
+DJI,Djibouti,Arab World,Other Country Groups,DJ,Djibouti,43.1425,11.5806
+DJI,Djibouti,Least Developed Countries: Un Classification,Other Country Groups,DJ,Djibouti,43.1425,11.5806
+DJI,Djibouti,Middle East & North Africa (Excluding High Income),Other Country Groups,DJ,Djibouti,43.1425,11.5806
+DJI,Djibouti,World,Other Country Groups,DJ,Djibouti,43.1425,11.5806
+DJI,Djibouti,Early-Demographic Dividend,Demographic Dividend Groups,DJ,Djibouti,43.1425,11.5806
+DJI,Djibouti,Ida & Ibrd Total,By Lending,DJ,Djibouti,43.1425,11.5806
+DJI,Djibouti,Middle East & North Africa (Ida & Ibrd Countries),By Lending,DJ,Djibouti,43.1425,11.5806
+DJI,Djibouti,Other Small States,Small States,DJ,Djibouti,43.1425,11.5806
+DMA,Dominica,Latin America & Caribbean,Region,DM,Roseau,-61.39,15.2976
+DMA,Dominica,Low & Middle Income,By Income,DM,Roseau,-61.39,15.2976
+DMA,Dominica,Middle Income,By Income,DM,Roseau,-61.39,15.2976
+DMA,Dominica,Upper Middle Income,By Income,DM,Roseau,-61.39,15.2976
+DMA,Dominica,Ida Blend,By Lending,DM,Roseau,-61.39,15.2976
+DMA,Dominica,Caribbean Small States,Small States,DM,Roseau,-61.39,15.2976
+DMA,Dominica,Small States,Small States,DM,Roseau,-61.39,15.2976
+DMA,Dominica,Latin America & Caribbean (Excluding High Income),Other Country Groups,DM,Roseau,-61.39,15.2976
+DMA,Dominica,World,Other Country Groups,DM,Roseau,-61.39,15.2976
+DOM,Dominican Republic,Latin America & Caribbean,Region,DO,Santo Domingo,-69.8908,18.479
+DOM,Dominican Republic,Low & Middle Income,By Income,DO,Santo Domingo,-69.8908,18.479
+DOM,Dominican Republic,Middle Income,By Income,DO,Santo Domingo,-69.8908,18.479
+DOM,Dominican Republic,Upper Middle Income,By Income,DO,Santo Domingo,-69.8908,18.479
+DOM,Dominican Republic,Ibrd Only,By Lending,DO,Santo Domingo,-69.8908,18.479
+DOM,Dominican Republic,Latin America & Caribbean (Excluding High Income),Other Country Groups,DO,Santo Domingo,-69.8908,18.479
+DOM,Dominican Republic,World,Other Country Groups,DO,Santo Domingo,-69.8908,18.479
+DOM,Dominican Republic,Early-Demographic Dividend,Demographic Dividend Groups,DO,Santo Domingo,-69.8908,18.479
+DOM,Dominican Republic,Ida & Ibrd Total,By Lending,DO,Santo Domingo,-69.8908,18.479
+DOM,Dominican Republic,Latin America & The Caribbean (Ida & Ibrd Countries),By Lending,DO,Santo Domingo,-69.8908,18.479
+ECU,Ecuador,Latin America & Caribbean,Region,EC,Quito,-78.5243,-0.229498
+ECU,Ecuador,Low & Middle Income,By Income,EC,Quito,-78.5243,-0.229498
+ECU,Ecuador,Middle Income,By Income,EC,Quito,-78.5243,-0.229498
+ECU,Ecuador,Upper Middle Income,By Income,EC,Quito,-78.5243,-0.229498
+ECU,Ecuador,Ibrd Only,By Lending,EC,Quito,-78.5243,-0.229498
+ECU,Ecuador,Latin America & Caribbean (Excluding High Income),Other Country Groups,EC,Quito,-78.5243,-0.229498
+ECU,Ecuador,World,Other Country Groups,EC,Quito,-78.5243,-0.229498
+ECU,Ecuador,Early-Demographic Dividend,Demographic Dividend Groups,EC,Quito,-78.5243,-0.229498
+ECU,Ecuador,Ida & Ibrd Total,By Lending,EC,Quito,-78.5243,-0.229498
+ECU,Ecuador,Latin America & The Caribbean (Ida & Ibrd Countries),By Lending,EC,Quito,-78.5243,-0.229498
+EGY,"Egypt, Arab Rep.",Middle East & North Africa,Region,EG,Cairo,31.2461,30.0982
+EGY,"Egypt, Arab Rep.",Low & Middle Income,By Income,EG,Cairo,31.2461,30.0982
+EGY,"Egypt, Arab Rep.",Lower Middle Income,By Income,EG,Cairo,31.2461,30.0982
+EGY,"Egypt, Arab Rep.",Middle Income,By Income,EG,Cairo,31.2461,30.0982
+EGY,"Egypt, Arab Rep.",Ibrd Only,By Lending,EG,Cairo,31.2461,30.0982
+EGY,"Egypt, Arab Rep.",Arab World,Other Country Groups,EG,Cairo,31.2461,30.0982
+EGY,"Egypt, Arab Rep.",Middle East & North Africa (Excluding High Income),Other Country Groups,EG,Cairo,31.2461,30.0982
+EGY,"Egypt, Arab Rep.",World,Other Country Groups,EG,Cairo,31.2461,30.0982
+EGY,"Egypt, Arab Rep.",Early-Demographic Dividend,Demographic Dividend Groups,EG,Cairo,31.2461,30.0982
+EGY,"Egypt, Arab Rep.",Ida & Ibrd Total,By Lending,EG,Cairo,31.2461,30.0982
+EGY,"Egypt, Arab Rep.",Middle East & North Africa (Ida & Ibrd Countries),By Lending,EG,Cairo,31.2461,30.0982
+SLV,El Salvador,Latin America & Caribbean,Region,SV,San Salvador,-89.2073,13.7034
+SLV,El Salvador,Low & Middle Income,By Income,SV,San Salvador,-89.2073,13.7034
+SLV,El Salvador,Middle Income,By Income,SV,San Salvador,-89.2073,13.7034
+SLV,El Salvador,Upper Middle Income,By Income,SV,San Salvador,-89.2073,13.7034
+SLV,El Salvador,Ibrd Only,By Lending,SV,San Salvador,-89.2073,13.7034
+SLV,El Salvador,Latin America & Caribbean (Excluding High Income),Other Country Groups,SV,San Salvador,-89.2073,13.7034
+SLV,El Salvador,World,Other Country Groups,SV,San Salvador,-89.2073,13.7034
+SLV,El Salvador,Early-Demographic Dividend,Demographic Dividend Groups,SV,San Salvador,-89.2073,13.7034
+SLV,El Salvador,Ida & Ibrd Total,By Lending,SV,San Salvador,-89.2073,13.7034
+SLV,El Salvador,Latin America & The Caribbean (Ida & Ibrd Countries),By Lending,SV,San Salvador,-89.2073,13.7034
+GNQ,Equatorial Guinea,Sub-Saharan Africa,Region,GQ,Malabo,8.7741,3.7523
+GNQ,Equatorial Guinea,Low & Middle Income,By Income,GQ,Malabo,8.7741,3.7523
+GNQ,Equatorial Guinea,Middle Income,By Income,GQ,Malabo,8.7741,3.7523
+GNQ,Equatorial Guinea,Upper Middle Income,By Income,GQ,Malabo,8.7741,3.7523
+GNQ,Equatorial Guinea,Ibrd Only,By Lending,GQ,Malabo,8.7741,3.7523
+GNQ,Equatorial Guinea,Small States,Small States,GQ,Malabo,8.7741,3.7523
+GNQ,Equatorial Guinea,Sub-Saharan Africa (Excluding High Income),Other Country Groups,GQ,Malabo,8.7741,3.7523
+GNQ,Equatorial Guinea,World,Other Country Groups,GQ,Malabo,8.7741,3.7523
+GNQ,Equatorial Guinea,Sub-Saharan Africa ,Other country groups,GQ,Malabo,8.7741,3.7523
+GNQ,Equatorial Guinea,Sub-Saharan Africa (Ida & Ibrd Countries),By Lending,GQ,Malabo,8.7741,3.7523
+GNQ,Equatorial Guinea,Pre-Demographic Dividend,Demographic Dividend Groups,GQ,Malabo,8.7741,3.7523
+GNQ,Equatorial Guinea,Ida & Ibrd Total,By Lending,GQ,Malabo,8.7741,3.7523
+GNQ,Equatorial Guinea,Other Small States,Small States,GQ,Malabo,8.7741,3.7523
+GNQ,Equatorial Guinea,Africa Western And Central,Other country groups,GQ,Malabo,8.7741,3.7523
+ERI,Eritrea,Sub-Saharan Africa,Region,ER,Asmara,38.9183,15.3315
+ERI,Eritrea,Low & Middle Income,By Income,ER,Asmara,38.9183,15.3315
+ERI,Eritrea,Low Income,By Income,ER,Asmara,38.9183,15.3315
+ERI,Eritrea,Ida Only,By Lending,ER,Asmara,38.9183,15.3315
+ERI,Eritrea,Fragile And Conflict Affected Situations,Other Country Groups,ER,Asmara,38.9183,15.3315
+ERI,Eritrea,Heavily Indebted Poor Countries (Hipc),Other Country Groups,ER,Asmara,38.9183,15.3315
+ERI,Eritrea,Least Developed Countries: Un Classification,Other Country Groups,ER,Asmara,38.9183,15.3315
+ERI,Eritrea,Sub-Saharan Africa (Excluding High Income),Other Country Groups,ER,Asmara,38.9183,15.3315
+ERI,Eritrea,World,Other Country Groups,ER,Asmara,38.9183,15.3315
+ERI,Eritrea,Sub-Saharan Africa ,Other country groups,ER,Asmara,38.9183,15.3315
+ERI,Eritrea,Sub-Saharan Africa (Ida & Ibrd Countries),By Lending,ER,Asmara,38.9183,15.3315
+ERI,Eritrea,Pre-Demographic Dividend,Demographic Dividend Groups,ER,Asmara,38.9183,15.3315
+ERI,Eritrea,Ida & Ibrd Total,By Lending,ER,Asmara,38.9183,15.3315
+ERI,Eritrea,Africa Eastern And Southern,Other country groups,ER,Asmara,38.9183,15.3315
+EST,Estonia,Europe & Central Asia,Region,EE,Tallinn,24.7586,59.4392
+EST,Estonia,High Income,By Income,EE,Tallinn,24.7586,59.4392
+EST,Estonia,Small States,Small States,EE,Tallinn,24.7586,59.4392
+EST,Estonia,Central Europe And The Baltics,Other Country Groups,EE,Tallinn,24.7586,59.4392
+EST,Estonia,Euro Area,Other Country Groups,EE,Tallinn,24.7586,59.4392
+EST,Estonia,European Union,Other Country Groups,EE,Tallinn,24.7586,59.4392
+EST,Estonia,Oecd Members,Other Country Groups,EE,Tallinn,24.7586,59.4392
+EST,Estonia,World,Other Country Groups,EE,Tallinn,24.7586,59.4392
+EST,Estonia,Late-Demographic Dividend,Demographic Dividend Groups,EE,Tallinn,24.7586,59.4392
+EST,Estonia,Other Small States,Small States,EE,Tallinn,24.7586,59.4392
+SWZ,Eswatini,Sub-Saharan Africa,Region,SZ,Mbabane,31.4659,-26.5225
+SWZ,Eswatini,Low & Middle Income,By Income,SZ,Mbabane,31.4659,-26.5225
+SWZ,Eswatini,Lower Middle Income,By Income,SZ,Mbabane,31.4659,-26.5225
+SWZ,Eswatini,Middle Income,By Income,SZ,Mbabane,31.4659,-26.5225
+SWZ,Eswatini,Ibrd Only,By Lending,SZ,Mbabane,31.4659,-26.5225
+SWZ,Eswatini,Small States,Small States,SZ,Mbabane,31.4659,-26.5225
+SWZ,Eswatini,Sub-Saharan Africa (Excluding High Income),Other Country Groups,SZ,Mbabane,31.4659,-26.5225
+SWZ,Eswatini,World,Other Country Groups,SZ,Mbabane,31.4659,-26.5225
+SWZ,Eswatini,Sub-Saharan Africa ,Other country groups,SZ,Mbabane,31.4659,-26.5225
+SWZ,Eswatini,Sub-Saharan Africa (Ida & Ibrd Countries),By Lending,SZ,Mbabane,31.4659,-26.5225
+SWZ,Eswatini,Early-Demographic Dividend,Demographic Dividend Groups,SZ,Mbabane,31.4659,-26.5225
+SWZ,Eswatini,Ida & Ibrd Total,By Lending,SZ,Mbabane,31.4659,-26.5225
+SWZ,Eswatini,Other Small States,Small States,SZ,Mbabane,31.4659,-26.5225
+SWZ,Eswatini,Africa Eastern And Southern,Other country groups,SZ,Mbabane,31.4659,-26.5225
+ETH,Ethiopia,Sub-Saharan Africa,Region,ET,Addis Ababa,38.7468,9.02274
+ETH,Ethiopia,Low & Middle Income,By Income,ET,Addis Ababa,38.7468,9.02274
+ETH,Ethiopia,Low Income,By Income,ET,Addis Ababa,38.7468,9.02274
+ETH,Ethiopia,Ida Only,By Lending,ET,Addis Ababa,38.7468,9.02274
+ETH,Ethiopia,Fragile And Conflict Affected Situations,Other Country Groups,ET,Addis Ababa,38.7468,9.02274
+ETH,Ethiopia,Heavily Indebted Poor Countries (Hipc),Other Country Groups,ET,Addis Ababa,38.7468,9.02274
+ETH,Ethiopia,Least Developed Countries: Un Classification,Other Country Groups,ET,Addis Ababa,38.7468,9.02274
+ETH,Ethiopia,Sub-Saharan Africa (Excluding High Income),Other Country Groups,ET,Addis Ababa,38.7468,9.02274
+ETH,Ethiopia,World,Other Country Groups,ET,Addis Ababa,38.7468,9.02274
+ETH,Ethiopia,Sub-Saharan Africa ,Other country groups,ET,Addis Ababa,38.7468,9.02274
+ETH,Ethiopia,Sub-Saharan Africa (Ida & Ibrd Countries),By Lending,ET,Addis Ababa,38.7468,9.02274
+ETH,Ethiopia,Early-Demographic Dividend,Demographic Dividend Groups,ET,Addis Ababa,38.7468,9.02274
+ETH,Ethiopia,Ida & Ibrd Total,By Lending,ET,Addis Ababa,38.7468,9.02274
+ETH,Ethiopia,Africa Eastern And Southern,Other country groups,ET,Addis Ababa,38.7468,9.02274
+FRO,Faroe Islands,Europe & Central Asia,Region,FO,Torshavn,-6.91181,61.8926
+FRO,Faroe Islands,High Income,By Income,FO,Torshavn,-6.91181,61.8926
+FRO,Faroe Islands,World,Other Country Groups,FO,Torshavn,-6.91181,61.8926
+FJI,Fiji,East Asia & Pacific,Region,FJ,Suva,178.399,-18.1149
+FJI,Fiji,Low & Middle Income,By Income,FJ,Suva,178.399,-18.1149
+FJI,Fiji,Middle Income,By Income,FJ,Suva,178.399,-18.1149
+FJI,Fiji,Upper Middle Income,By Income,FJ,Suva,178.399,-18.1149
+FJI,Fiji,Ida Blend,By Lending,FJ,Suva,178.399,-18.1149
+FJI,Fiji,Pacific Island Small States,Small States,FJ,Suva,178.399,-18.1149
+FJI,Fiji,Small States,Small States,FJ,Suva,178.399,-18.1149
+FJI,Fiji,East Asia & Pacific (Excluding High Income),Other Country Groups,FJ,Suva,178.399,-18.1149
+FJI,Fiji,World,Other Country Groups,FJ,Suva,178.399,-18.1149
+FJI,Fiji,Late-Demographic Dividend,Demographic Dividend Groups,FJ,Suva,178.399,-18.1149
+FIN,Finland,Europe & Central Asia,Region,FI,Helsinki,24.9525,60.1608
+FIN,Finland,High Income,By Income,FI,Helsinki,24.9525,60.1608
+FIN,Finland,Euro Area,Other Country Groups,FI,Helsinki,24.9525,60.1608
+FIN,Finland,European Union,Other Country Groups,FI,Helsinki,24.9525,60.1608
+FIN,Finland,Oecd Members,Other Country Groups,FI,Helsinki,24.9525,60.1608
+FIN,Finland,World,Other Country Groups,FI,Helsinki,24.9525,60.1608
+FIN,Finland,Post-Demographic Dividend,Demographic Dividend Groups,FI,Helsinki,24.9525,60.1608
+FRA,France,Europe & Central Asia,Region,FR,Paris,2.35097,48.8566
+FRA,France,High Income,By Income,FR,Paris,2.35097,48.8566
+FRA,France,Euro Area,Other Country Groups,FR,Paris,2.35097,48.8566
+FRA,France,European Union,Other Country Groups,FR,Paris,2.35097,48.8566
+FRA,France,Oecd Members,Other Country Groups,FR,Paris,2.35097,48.8566
+FRA,France,World,Other Country Groups,FR,Paris,2.35097,48.8566
+FRA,France,Post-Demographic Dividend,Demographic Dividend Groups,FR,Paris,2.35097,48.8566
+PYF,French Polynesia,East Asia & Pacific,Region,PF,Papeete,-149.57,-17.535
+PYF,French Polynesia,High Income,By Income,PF,Papeete,-149.57,-17.535
+PYF,French Polynesia,World,Other Country Groups,PF,Papeete,-149.57,-17.535
+PYF,French Polynesia,Late-Demographic Dividend,Demographic Dividend Groups,PF,Papeete,-149.57,-17.535
+GAB,Gabon,Sub-Saharan Africa,Region,GA,Libreville,9.45162,0.38832
+GAB,Gabon,Low & Middle Income,By Income,GA,Libreville,9.45162,0.38832
+GAB,Gabon,Middle Income,By Income,GA,Libreville,9.45162,0.38832
+GAB,Gabon,Upper Middle Income,By Income,GA,Libreville,9.45162,0.38832
+GAB,Gabon,Ibrd Only,By Lending,GA,Libreville,9.45162,0.38832
+GAB,Gabon,Small States,Small States,GA,Libreville,9.45162,0.38832
+GAB,Gabon,Sub-Saharan Africa (Excluding High Income),Other Country Groups,GA,Libreville,9.45162,0.38832
+GAB,Gabon,World,Other Country Groups,GA,Libreville,9.45162,0.38832
+GAB,Gabon,Sub-Saharan Africa ,Other country groups,GA,Libreville,9.45162,0.38832
+GAB,Gabon,Sub-Saharan Africa (Ida & Ibrd Countries),By Lending,GA,Libreville,9.45162,0.38832
+GAB,Gabon,Early-Demographic Dividend,Demographic Dividend Groups,GA,Libreville,9.45162,0.38832
+GAB,Gabon,Ida & Ibrd Total,By Lending,GA,Libreville,9.45162,0.38832
+GAB,Gabon,Other Small States,Small States,GA,Libreville,9.45162,0.38832
+GAB,Gabon,Africa Western And Central,Other country groups,GA,Libreville,9.45162,0.38832
+GMB,"Gambia, The",Sub-Saharan Africa,Region,GM,Banjul,-16.5885,13.4495
+GMB,"Gambia, The",Low & Middle Income,By Income,GM,Banjul,-16.5885,13.4495
+GMB,"Gambia, The",Low Income,By Income,GM,Banjul,-16.5885,13.4495
+GMB,"Gambia, The",Ida Only,By Lending,GM,Banjul,-16.5885,13.4495
+GMB,"Gambia, The",Small States,Small States,GM,Banjul,-16.5885,13.4495
+GMB,"Gambia, The",Heavily Indebted Poor Countries (Hipc),Other Country Groups,GM,Banjul,-16.5885,13.4495
+GMB,"Gambia, The",Least Developed Countries: Un Classification,Other Country Groups,GM,Banjul,-16.5885,13.4495
+GMB,"Gambia, The",Sub-Saharan Africa (Excluding High Income),Other Country Groups,GM,Banjul,-16.5885,13.4495
+GMB,"Gambia, The",World,Other Country Groups,GM,Banjul,-16.5885,13.4495
+GMB,"Gambia, The",Sub-Saharan Africa ,Other country groups,GM,Banjul,-16.5885,13.4495
+GMB,"Gambia, The",Sub-Saharan Africa (Ida & Ibrd Countries),By Lending,GM,Banjul,-16.5885,13.4495
+GMB,"Gambia, The",Pre-Demographic Dividend,Demographic Dividend Groups,GM,Banjul,-16.5885,13.4495
+GMB,"Gambia, The",Ida & Ibrd Total,By Lending,GM,Banjul,-16.5885,13.4495
+GMB,"Gambia, The",Other Small States,Small States,GM,Banjul,-16.5885,13.4495
+GMB,"Gambia, The",Africa Western And Central,Other country groups,GM,Banjul,-16.5885,13.4495
+GEO,Georgia,Europe & Central Asia,Region,GE,Tbilisi,44.793,41.71
+GEO,Georgia,Low & Middle Income,By Income,GE,Tbilisi,44.793,41.71
+GEO,Georgia,Middle Income,By Income,GE,Tbilisi,44.793,41.71
+GEO,Georgia,Upper Middle Income,By Income,GE,Tbilisi,44.793,41.71
+GEO,Georgia,Ibrd Only,By Lending,GE,Tbilisi,44.793,41.71
+GEO,Georgia,Europe & Central Asia (Excluding High Income),Other Country Groups,GE,Tbilisi,44.793,41.71
+GEO,Georgia,World,Other Country Groups,GE,Tbilisi,44.793,41.71
+GEO,Georgia,Late-Demographic Dividend,Demographic Dividend Groups,GE,Tbilisi,44.793,41.71
+GEO,Georgia,Europe & Central Asia (Ida & Ibrd Countries),By Lending,GE,Tbilisi,44.793,41.71
+GEO,Georgia,Ida & Ibrd Total,By Lending,GE,Tbilisi,44.793,41.71
+DEU,Germany,Europe & Central Asia,Region,DE,Berlin,13.4115,52.5235
+DEU,Germany,High Income,By Income,DE,Berlin,13.4115,52.5235
+DEU,Germany,Euro Area,Other Country Groups,DE,Berlin,13.4115,52.5235
+DEU,Germany,European Union,Other Country Groups,DE,Berlin,13.4115,52.5235
+DEU,Germany,Oecd Members,Other Country Groups,DE,Berlin,13.4115,52.5235
+DEU,Germany,World,Other Country Groups,DE,Berlin,13.4115,52.5235
+DEU,Germany,Post-Demographic Dividend,Demographic Dividend Groups,DE,Berlin,13.4115,52.5235
+GHA,Ghana,Sub-Saharan Africa,Region,GH,Accra,-0.20795,5.57045
+GHA,Ghana,Low & Middle Income,By Income,GH,Accra,-0.20795,5.57045
+GHA,Ghana,Lower Middle Income,By Income,GH,Accra,-0.20795,5.57045
+GHA,Ghana,Middle Income,By Income,GH,Accra,-0.20795,5.57045
+GHA,Ghana,Ida Only,By Lending,GH,Accra,-0.20795,5.57045
+GHA,Ghana,Heavily Indebted Poor Countries (Hipc),Other Country Groups,GH,Accra,-0.20795,5.57045
+GHA,Ghana,Sub-Saharan Africa (Excluding High Income),Other Country Groups,GH,Accra,-0.20795,5.57045
+GHA,Ghana,World,Other Country Groups,GH,Accra,-0.20795,5.57045
+GHA,Ghana,Sub-Saharan Africa ,Other country groups,GH,Accra,-0.20795,5.57045
+GHA,Ghana,Sub-Saharan Africa (Ida & Ibrd Countries),By Lending,GH,Accra,-0.20795,5.57045
+GHA,Ghana,Early-Demographic Dividend,Demographic Dividend Groups,GH,Accra,-0.20795,5.57045
+GHA,Ghana,Ida & Ibrd Total,By Lending,GH,Accra,-0.20795,5.57045
+GHA,Ghana,Africa Western And Central,Other country groups,GH,Accra,-0.20795,5.57045
+GIB,Gibraltar,Europe & Central Asia,Region,GI,,,
+GIB,Gibraltar,High Income,By Income,GI,,,
+GIB,Gibraltar,World,Other Country Groups,GI,,,
+GRC,Greece,Europe & Central Asia,Region,GR,Athens,23.7166,37.9792
+GRC,Greece,High Income,By Income,GR,Athens,23.7166,37.9792
+GRC,Greece,Euro Area,Other Country Groups,GR,Athens,23.7166,37.9792
+GRC,Greece,European Union,Other Country Groups,GR,Athens,23.7166,37.9792
+GRC,Greece,Oecd Members,Other Country Groups,GR,Athens,23.7166,37.9792
+GRC,Greece,World,Other Country Groups,GR,Athens,23.7166,37.9792
+GRC,Greece,Post-Demographic Dividend,Demographic Dividend Groups,GR,Athens,23.7166,37.9792
+GRL,Greenland,Europe & Central Asia,Region,GL,Nuuk,-51.7214,64.1836
+GRL,Greenland,High Income,By Income,GL,Nuuk,-51.7214,64.1836
+GRL,Greenland,World,Other Country Groups,GL,Nuuk,-51.7214,64.1836
+GRD,Grenada,Latin America & Caribbean,Region,GD,Saint George's,-61.7449,12.0653
+GRD,Grenada,Low & Middle Income,By Income,GD,Saint George's,-61.7449,12.0653
+GRD,Grenada,Middle Income,By Income,GD,Saint George's,-61.7449,12.0653
+GRD,Grenada,Upper Middle Income,By Income,GD,Saint George's,-61.7449,12.0653
+GRD,Grenada,Ida Blend,By Lending,GD,Saint George's,-61.7449,12.0653
+GRD,Grenada,Caribbean Small States,Small States,GD,Saint George's,-61.7449,12.0653
+GRD,Grenada,Small States,Small States,GD,Saint George's,-61.7449,12.0653
+GRD,Grenada,Latin America & Caribbean (Excluding High Income),Other Country Groups,GD,Saint George's,-61.7449,12.0653
+GRD,Grenada,World,Other Country Groups,GD,Saint George's,-61.7449,12.0653
+GRD,Grenada,Early-Demographic Dividend,Demographic Dividend Groups,GD,Saint George's,-61.7449,12.0653
+GUM,Guam,East Asia & Pacific,Region,GU,Agana,144.794,13.4443
+GUM,Guam,High Income,By Income,GU,Agana,144.794,13.4443
+GUM,Guam,World,Other Country Groups,GU,Agana,144.794,13.4443
+GUM,Guam,Late-Demographic Dividend,Demographic Dividend Groups,GU,Agana,144.794,13.4443
+GTM,Guatemala,Latin America & Caribbean,Region,GT,Guatemala City,-90.5328,14.6248
+GTM,Guatemala,Low & Middle Income,By Income,GT,Guatemala City,-90.5328,14.6248
+GTM,Guatemala,Middle Income,By Income,GT,Guatemala City,-90.5328,14.6248
+GTM,Guatemala,Upper Middle Income,By Income,GT,Guatemala City,-90.5328,14.6248
+GTM,Guatemala,Ibrd Only,By Lending,GT,Guatemala City,-90.5328,14.6248
+GTM,Guatemala,Latin America & Caribbean (Excluding High Income),Other Country Groups,GT,Guatemala City,-90.5328,14.6248
+GTM,Guatemala,World,Other Country Groups,GT,Guatemala City,-90.5328,14.6248
+GTM,Guatemala,Early-Demographic Dividend,Demographic Dividend Groups,GT,Guatemala City,-90.5328,14.6248
+GTM,Guatemala,Ida & Ibrd Total,By Lending,GT,Guatemala City,-90.5328,14.6248
+GTM,Guatemala,Latin America & The Caribbean (Ida & Ibrd Countries),By Lending,GT,Guatemala City,-90.5328,14.6248
+GIN,Guinea,Sub-Saharan Africa,Region,GN,Conakry,-13.7,9.51667
+GIN,Guinea,Low & Middle Income,By Income,GN,Conakry,-13.7,9.51667
+GIN,Guinea,Lower Middle Income,By Income,GN,Conakry,-13.7,9.51667
+GIN,Guinea,Middle Income,By Income,GN,Conakry,-13.7,9.51667
+GIN,Guinea,Ida Only,By Lending,GN,Conakry,-13.7,9.51667
+GIN,Guinea,Heavily Indebted Poor Countries (Hipc),Other Country Groups,GN,Conakry,-13.7,9.51667
+GIN,Guinea,Least Developed Countries: Un Classification,Other Country Groups,GN,Conakry,-13.7,9.51667
+GIN,Guinea,Sub-Saharan Africa (Excluding High Income),Other Country Groups,GN,Conakry,-13.7,9.51667
+GIN,Guinea,World,Other Country Groups,GN,Conakry,-13.7,9.51667
+GIN,Guinea,Sub-Saharan Africa ,Other country groups,GN,Conakry,-13.7,9.51667
+GIN,Guinea,Sub-Saharan Africa (Ida & Ibrd Countries),By Lending,GN,Conakry,-13.7,9.51667
+GIN,Guinea,Pre-Demographic Dividend,Demographic Dividend Groups,GN,Conakry,-13.7,9.51667
+GIN,Guinea,Ida & Ibrd Total,By Lending,GN,Conakry,-13.7,9.51667
+GIN,Guinea,Africa Western And Central,Other country groups,GN,Conakry,-13.7,9.51667
+GNB,Guinea-Bissau,Sub-Saharan Africa,Region,GW,Bissau,-15.1804,11.8037
+GNB,Guinea-Bissau,Low & Middle Income,By Income,GW,Bissau,-15.1804,11.8037
+GNB,Guinea-Bissau,Low Income,By Income,GW,Bissau,-15.1804,11.8037
+GNB,Guinea-Bissau,Ida Only,By Lending,GW,Bissau,-15.1804,11.8037
+GNB,Guinea-Bissau,Small States,Small States,GW,Bissau,-15.1804,11.8037
+GNB,Guinea-Bissau,Fragile And Conflict Affected Situations,Other Country Groups,GW,Bissau,-15.1804,11.8037
+GNB,Guinea-Bissau,Heavily Indebted Poor Countries (Hipc),Other Country Groups,GW,Bissau,-15.1804,11.8037
+GNB,Guinea-Bissau,Least Developed Countries: Un Classification,Other Country Groups,GW,Bissau,-15.1804,11.8037
+GNB,Guinea-Bissau,Sub-Saharan Africa (Excluding High Income),Other Country Groups,GW,Bissau,-15.1804,11.8037
+GNB,Guinea-Bissau,World,Other Country Groups,GW,Bissau,-15.1804,11.8037
+GNB,Guinea-Bissau,Sub-Saharan Africa ,Other country groups,GW,Bissau,-15.1804,11.8037
+GNB,Guinea-Bissau,Sub-Saharan Africa (Ida & Ibrd Countries),By Lending,GW,Bissau,-15.1804,11.8037
+GNB,Guinea-Bissau,Pre-Demographic Dividend,Demographic Dividend Groups,GW,Bissau,-15.1804,11.8037
+GNB,Guinea-Bissau,Ida & Ibrd Total,By Lending,GW,Bissau,-15.1804,11.8037
+GNB,Guinea-Bissau,Other Small States,Small States,GW,Bissau,-15.1804,11.8037
+GNB,Guinea-Bissau,Africa Western And Central,Other country groups,GW,Bissau,-15.1804,11.8037
+GUY,Guyana,Latin America & Caribbean,Region,GY,Georgetown,-58.1548,6.80461
+GUY,Guyana,High Income,By Income,GY,Georgetown,-58.1548,6.80461
+GUY,Guyana,Ida Only,By Lending,GY,Georgetown,-58.1548,6.80461
+GUY,Guyana,Caribbean Small States,Small States,GY,Georgetown,-58.1548,6.80461
+GUY,Guyana,Small States,Small States,GY,Georgetown,-58.1548,6.80461
+GUY,Guyana,Heavily Indebted Poor Countries (Hipc),Other Country Groups,GY,Georgetown,-58.1548,6.80461
+GUY,Guyana,World,Other Country Groups,GY,Georgetown,-58.1548,6.80461
+GUY,Guyana,Late-Demographic Dividend,Demographic Dividend Groups,GY,Georgetown,-58.1548,6.80461
+GUY,Guyana,Ida & Ibrd Total,By Lending,GY,Georgetown,-58.1548,6.80461
+GUY,Guyana,Latin America & The Caribbean (Ida & Ibrd Countries),By Lending,GY,Georgetown,-58.1548,6.80461
+HTI,Haiti,Latin America & Caribbean,Region,HT,Port-au-Prince,-72.3288,18.5392
+HTI,Haiti,Low & Middle Income,By Income,HT,Port-au-Prince,-72.3288,18.5392
+HTI,Haiti,Lower Middle Income,By Income,HT,Port-au-Prince,-72.3288,18.5392
+HTI,Haiti,Middle Income,By Income,HT,Port-au-Prince,-72.3288,18.5392
+HTI,Haiti,Ida Only,By Lending,HT,Port-au-Prince,-72.3288,18.5392
+HTI,Haiti,Fragile And Conflict Affected Situations,Other Country Groups,HT,Port-au-Prince,-72.3288,18.5392
+HTI,Haiti,Heavily Indebted Poor Countries (Hipc),Other Country Groups,HT,Port-au-Prince,-72.3288,18.5392
+HTI,Haiti,Latin America & Caribbean (Excluding High Income),Other Country Groups,HT,Port-au-Prince,-72.3288,18.5392
+HTI,Haiti,Least Developed Countries: Un Classification,Other Country Groups,HT,Port-au-Prince,-72.3288,18.5392
+HTI,Haiti,World,Other Country Groups,HT,Port-au-Prince,-72.3288,18.5392
+HTI,Haiti,Early-Demographic Dividend,Demographic Dividend Groups,HT,Port-au-Prince,-72.3288,18.5392
+HTI,Haiti,Ida & Ibrd Total,By Lending,HT,Port-au-Prince,-72.3288,18.5392
+HTI,Haiti,Latin America & The Caribbean (Ida & Ibrd Countries),By Lending,HT,Port-au-Prince,-72.3288,18.5392
+HND,Honduras,Latin America & Caribbean,Region,HN,Tegucigalpa,-87.4667,15.1333
+HND,Honduras,Low & Middle Income,By Income,HN,Tegucigalpa,-87.4667,15.1333
+HND,Honduras,Lower Middle Income,By Income,HN,Tegucigalpa,-87.4667,15.1333
+HND,Honduras,Middle Income,By Income,HN,Tegucigalpa,-87.4667,15.1333
+HND,Honduras,Ida Only,By Lending,HN,Tegucigalpa,-87.4667,15.1333
+HND,Honduras,Heavily Indebted Poor Countries (Hipc),Other Country Groups,HN,Tegucigalpa,-87.4667,15.1333
+HND,Honduras,Latin America & Caribbean (Excluding High Income),Other Country Groups,HN,Tegucigalpa,-87.4667,15.1333
+HND,Honduras,World,Other Country Groups,HN,Tegucigalpa,-87.4667,15.1333
+HND,Honduras,Early-Demographic Dividend,Demographic Dividend Groups,HN,Tegucigalpa,-87.4667,15.1333
+HND,Honduras,Ida & Ibrd Total,By Lending,HN,Tegucigalpa,-87.4667,15.1333
+HND,Honduras,Latin America & The Caribbean (Ida & Ibrd Countries),By Lending,HN,Tegucigalpa,-87.4667,15.1333
+HKG,"Hong Kong Sar, China",East Asia & Pacific,Region,HK,,114.109,22.3964
+HKG,"Hong Kong Sar, China",High Income,By Income,HK,,114.109,22.3964
+HKG,"Hong Kong Sar, China",World,Other Country Groups,HK,,114.109,22.3964
+HKG,"Hong Kong Sar, China",Post-Demographic Dividend,Demographic Dividend Groups,HK,,114.109,22.3964
+HUN,Hungary,Europe & Central Asia,Region,HU,Budapest,19.0408,47.4984
+HUN,Hungary,High Income,By Income,HU,Budapest,19.0408,47.4984
+HUN,Hungary,Central Europe And The Baltics,Other Country Groups,HU,Budapest,19.0408,47.4984
+HUN,Hungary,European Union,Other Country Groups,HU,Budapest,19.0408,47.4984
+HUN,Hungary,Oecd Members,Other Country Groups,HU,Budapest,19.0408,47.4984
+HUN,Hungary,World,Other Country Groups,HU,Budapest,19.0408,47.4984
+HUN,Hungary,Post-Demographic Dividend,Demographic Dividend Groups,HU,Budapest,19.0408,47.4984
+ISL,Iceland,Europe & Central Asia,Region,IS,Reykjavik,-21.8952,64.1353
+ISL,Iceland,High Income,By Income,IS,Reykjavik,-21.8952,64.1353
+ISL,Iceland,Small States,Small States,IS,Reykjavik,-21.8952,64.1353
+ISL,Iceland,Oecd Members,Other Country Groups,IS,Reykjavik,-21.8952,64.1353
+ISL,Iceland,World,Other Country Groups,IS,Reykjavik,-21.8952,64.1353
+ISL,Iceland,Late-Demographic Dividend,Demographic Dividend Groups,IS,Reykjavik,-21.8952,64.1353
+ISL,Iceland,Other Small States,Small States,IS,Reykjavik,-21.8952,64.1353
+IND,India,South Asia,Region,IN,New Delhi,77.225,28.6353
+IND,India,Low & Middle Income,By Income,IN,New Delhi,77.225,28.6353
+IND,India,Lower Middle Income,By Income,IN,New Delhi,77.225,28.6353
+IND,India,Middle Income,By Income,IN,New Delhi,77.225,28.6353
+IND,India,Ibrd Only,By Lending,IN,New Delhi,77.225,28.6353
+IND,India,World,Other Country Groups,IN,New Delhi,77.225,28.6353
+IND,India,Early-Demographic Dividend,Demographic Dividend Groups,IN,New Delhi,77.225,28.6353
+IND,India,Ida & Ibrd Total,By Lending,IN,New Delhi,77.225,28.6353
+IND,India,South Asia (Ida & Ibrd),By Lending,IN,New Delhi,77.225,28.6353
+IDN,Indonesia,East Asia & Pacific,Region,ID,Jakarta,106.83,-6.19752
+IDN,Indonesia,Low & Middle Income,By Income,ID,Jakarta,106.83,-6.19752
+IDN,Indonesia,Middle Income,By Income,ID,Jakarta,106.83,-6.19752
+IDN,Indonesia,Upper Middle Income,By Income,ID,Jakarta,106.83,-6.19752
+IDN,Indonesia,Ibrd Only,By Lending,ID,Jakarta,106.83,-6.19752
+IDN,Indonesia,East Asia & Pacific (Excluding High Income),Other Country Groups,ID,Jakarta,106.83,-6.19752
+IDN,Indonesia,World,Other Country Groups,ID,Jakarta,106.83,-6.19752
+IDN,Indonesia,Early-Demographic Dividend,Demographic Dividend Groups,ID,Jakarta,106.83,-6.19752
+IDN,Indonesia,East Asia & Pacific (Ida & Ibrd Countries),By Lending,ID,Jakarta,106.83,-6.19752
+IDN,Indonesia,Ida & Ibrd Total,By Lending,ID,Jakarta,106.83,-6.19752
+IRN,"Iran, Islamic Rep.",Middle East & North Africa,Region,IR,Tehran,51.4447,35.6878
+IRN,"Iran, Islamic Rep.",Low & Middle Income,By Income,IR,Tehran,51.4447,35.6878
+IRN,"Iran, Islamic Rep.",Lower Middle Income,By Income,IR,Tehran,51.4447,35.6878
+IRN,"Iran, Islamic Rep.",Middle Income,By Income,IR,Tehran,51.4447,35.6878
+IRN,"Iran, Islamic Rep.",Ibrd Only,By Lending,IR,Tehran,51.4447,35.6878
+IRN,"Iran, Islamic Rep.",Middle East & North Africa (Excluding High Income),Other Country Groups,IR,Tehran,51.4447,35.6878
+IRN,"Iran, Islamic Rep.",World,Other Country Groups,IR,Tehran,51.4447,35.6878
+IRN,"Iran, Islamic Rep.",Early-Demographic Dividend,Demographic Dividend Groups,IR,Tehran,51.4447,35.6878
+IRN,"Iran, Islamic Rep.",Ida & Ibrd Total,By Lending,IR,Tehran,51.4447,35.6878
+IRN,"Iran, Islamic Rep.",Middle East & North Africa (Ida & Ibrd Countries),By Lending,IR,Tehran,51.4447,35.6878
+IRQ,Iraq,Middle East & North Africa,Region,IQ,Baghdad,44.394,33.3302
+IRQ,Iraq,Low & Middle Income,By Income,IQ,Baghdad,44.394,33.3302
+IRQ,Iraq,Middle Income,By Income,IQ,Baghdad,44.394,33.3302
+IRQ,Iraq,Upper Middle Income,By Income,IQ,Baghdad,44.394,33.3302
+IRQ,Iraq,Ibrd Only,By Lending,IQ,Baghdad,44.394,33.3302
+IRQ,Iraq,Arab World,Other Country Groups,IQ,Baghdad,44.394,33.3302
+IRQ,Iraq,Fragile And Conflict Affected Situations,Other Country Groups,IQ,Baghdad,44.394,33.3302
+IRQ,Iraq,Middle East & North Africa (Excluding High Income),Other Country Groups,IQ,Baghdad,44.394,33.3302
+IRQ,Iraq,World,Other Country Groups,IQ,Baghdad,44.394,33.3302
+IRQ,Iraq,Pre-Demographic Dividend,Demographic Dividend Groups,IQ,Baghdad,44.394,33.3302
+IRQ,Iraq,Ida & Ibrd Total,By Lending,IQ,Baghdad,44.394,33.3302
+IRQ,Iraq,Middle East & North Africa (Ida & Ibrd Countries),By Lending,IQ,Baghdad,44.394,33.3302
+IRL,Ireland,Europe & Central Asia,Region,IE,Dublin,-6.26749,53.3441
+IRL,Ireland,High Income,By Income,IE,Dublin,-6.26749,53.3441
+IRL,Ireland,Euro Area,Other Country Groups,IE,Dublin,-6.26749,53.3441
+IRL,Ireland,European Union,Other Country Groups,IE,Dublin,-6.26749,53.3441
+IRL,Ireland,Oecd Members,Other Country Groups,IE,Dublin,-6.26749,53.3441
+IRL,Ireland,World,Other Country Groups,IE,Dublin,-6.26749,53.3441
+IRL,Ireland,Late-Demographic Dividend,Demographic Dividend Groups,IE,Dublin,-6.26749,53.3441
+IMN,Isle Of Man,Europe & Central Asia,Region,IM,Douglas,-4.47928,54.1509
+IMN,Isle Of Man,High Income,By Income,IM,Douglas,-4.47928,54.1509
+IMN,Isle Of Man,World,Other Country Groups,IM,Douglas,-4.47928,54.1509
+ISR,Israel,Middle East & North Africa,Region,IL,,35.2035,31.7717
+ISR,Israel,High Income,By Income,IL,,35.2035,31.7717
+ISR,Israel,Oecd Members,Other Country Groups,IL,,35.2035,31.7717
+ISR,Israel,World,Other Country Groups,IL,,35.2035,31.7717
+ISR,Israel,Early-Demographic Dividend,Demographic Dividend Groups,IL,,35.2035,31.7717
+ITA,Italy,Europe & Central Asia,Region,IT,Rome,12.4823,41.8955
+ITA,Italy,High Income,By Income,IT,Rome,12.4823,41.8955
+ITA,Italy,Euro Area,Other Country Groups,IT,Rome,12.4823,41.8955
+ITA,Italy,European Union,Other Country Groups,IT,Rome,12.4823,41.8955
+ITA,Italy,Oecd Members,Other Country Groups,IT,Rome,12.4823,41.8955
+ITA,Italy,World,Other Country Groups,IT,Rome,12.4823,41.8955
+ITA,Italy,Post-Demographic Dividend,Demographic Dividend Groups,IT,Rome,12.4823,41.8955
+JAM,Jamaica,Latin America & Caribbean,Region,JM,Kingston,-76.792,17.9927
+JAM,Jamaica,Low & Middle Income,By Income,JM,Kingston,-76.792,17.9927
+JAM,Jamaica,Middle Income,By Income,JM,Kingston,-76.792,17.9927
+JAM,Jamaica,Upper Middle Income,By Income,JM,Kingston,-76.792,17.9927
+JAM,Jamaica,Ibrd Only,By Lending,JM,Kingston,-76.792,17.9927
+JAM,Jamaica,Caribbean Small States,Small States,JM,Kingston,-76.792,17.9927
+JAM,Jamaica,Small States,Small States,JM,Kingston,-76.792,17.9927
+JAM,Jamaica,Latin America & Caribbean (Excluding High Income),Other Country Groups,JM,Kingston,-76.792,17.9927
+JAM,Jamaica,World,Other Country Groups,JM,Kingston,-76.792,17.9927
+JAM,Jamaica,Late-Demographic Dividend,Demographic Dividend Groups,JM,Kingston,-76.792,17.9927
+JAM,Jamaica,Ida & Ibrd Total,By Lending,JM,Kingston,-76.792,17.9927
+JAM,Jamaica,Latin America & The Caribbean (Ida & Ibrd Countries),By Lending,JM,Kingston,-76.792,17.9927
+JPN,Japan,East Asia & Pacific,Region,JP,Tokyo,139.77,35.67
+JPN,Japan,High Income,By Income,JP,Tokyo,139.77,35.67
+JPN,Japan,Oecd Members,Other Country Groups,JP,Tokyo,139.77,35.67
+JPN,Japan,World,Other Country Groups,JP,Tokyo,139.77,35.67
+JPN,Japan,Post-Demographic Dividend,Demographic Dividend Groups,JP,Tokyo,139.77,35.67
+JOR,Jordan,Middle East & North Africa,Region,JO,Amman,35.9263,31.9497
+JOR,Jordan,Low & Middle Income,By Income,JO,Amman,35.9263,31.9497
+JOR,Jordan,Lower Middle Income,By Income,JO,Amman,35.9263,31.9497
+JOR,Jordan,Middle Income,By Income,JO,Amman,35.9263,31.9497
+JOR,Jordan,Ibrd Only,By Lending,JO,Amman,35.9263,31.9497
+JOR,Jordan,Arab World,Other Country Groups,JO,Amman,35.9263,31.9497
+JOR,Jordan,Middle East & North Africa (Excluding High Income),Other Country Groups,JO,Amman,35.9263,31.9497
+JOR,Jordan,World,Other Country Groups,JO,Amman,35.9263,31.9497
+JOR,Jordan,Early-Demographic Dividend,Demographic Dividend Groups,JO,Amman,35.9263,31.9497
+JOR,Jordan,Ida & Ibrd Total,By Lending,JO,Amman,35.9263,31.9497
+JOR,Jordan,Middle East & North Africa (Ida & Ibrd Countries),By Lending,JO,Amman,35.9263,31.9497
+KAZ,Kazakhstan,Europe & Central Asia,Region,KZ,Astana,71.4382,51.1879
+KAZ,Kazakhstan,Low & Middle Income,By Income,KZ,Astana,71.4382,51.1879
+KAZ,Kazakhstan,Middle Income,By Income,KZ,Astana,71.4382,51.1879
+KAZ,Kazakhstan,Upper Middle Income,By Income,KZ,Astana,71.4382,51.1879
+KAZ,Kazakhstan,Ibrd Only,By Lending,KZ,Astana,71.4382,51.1879
+KAZ,Kazakhstan,Europe & Central Asia (Excluding High Income),Other Country Groups,KZ,Astana,71.4382,51.1879
+KAZ,Kazakhstan,World,Other Country Groups,KZ,Astana,71.4382,51.1879
+KAZ,Kazakhstan,Late-Demographic Dividend,Demographic Dividend Groups,KZ,Astana,71.4382,51.1879
+KAZ,Kazakhstan,Europe & Central Asia (Ida & Ibrd Countries),By Lending,KZ,Astana,71.4382,51.1879
+KAZ,Kazakhstan,Ida & Ibrd Total,By Lending,KZ,Astana,71.4382,51.1879
+KEN,Kenya,Sub-Saharan Africa,Region,KE,Nairobi,36.8126,-1.27975
+KEN,Kenya,Low & Middle Income,By Income,KE,Nairobi,36.8126,-1.27975
+KEN,Kenya,Lower Middle Income,By Income,KE,Nairobi,36.8126,-1.27975
+KEN,Kenya,Middle Income,By Income,KE,Nairobi,36.8126,-1.27975
+KEN,Kenya,Ida Blend,By Lending,KE,Nairobi,36.8126,-1.27975
+KEN,Kenya,Sub-Saharan Africa (Excluding High Income),Other Country Groups,KE,Nairobi,36.8126,-1.27975
+KEN,Kenya,World,Other Country Groups,KE,Nairobi,36.8126,-1.27975
+KEN,Kenya,Sub-Saharan Africa ,Other country groups,KE,Nairobi,36.8126,-1.27975
+KEN,Kenya,Pre-Demographic Dividend,Demographic Dividend Groups,KE,Nairobi,36.8126,-1.27975
+KEN,Kenya,Africa Eastern And Southern,Other country groups,KE,Nairobi,36.8126,-1.27975
+KIR,Kiribati,East Asia & Pacific,Region,KI,Tarawa,172.979,1.32905
+KIR,Kiribati,Low & Middle Income,By Income,KI,Tarawa,172.979,1.32905
+KIR,Kiribati,Lower Middle Income,By Income,KI,Tarawa,172.979,1.32905
+KIR,Kiribati,Middle Income,By Income,KI,Tarawa,172.979,1.32905
+KIR,Kiribati,Ida Only,By Lending,KI,Tarawa,172.979,1.32905
+KIR,Kiribati,Pacific Island Small States,Small States,KI,Tarawa,172.979,1.32905
+KIR,Kiribati,Small States,Small States,KI,Tarawa,172.979,1.32905
+KIR,Kiribati,East Asia & Pacific (Excluding High Income),Other Country Groups,KI,Tarawa,172.979,1.32905
+KIR,Kiribati,Least Developed Countries: Un Classification,Other Country Groups,KI,Tarawa,172.979,1.32905
+KIR,Kiribati,World,Other Country Groups,KI,Tarawa,172.979,1.32905
+KIR,Kiribati,Early-Demographic Dividend,Demographic Dividend Groups,KI,Tarawa,172.979,1.32905
+KIR,Kiribati,East Asia & Pacific (Ida & Ibrd Countries),By Lending,KI,Tarawa,172.979,1.32905
+KIR,Kiribati,Ida & Ibrd Total,By Lending,KI,Tarawa,172.979,1.32905
+PRK,"Korea, Dem. People'S Rep.",East Asia & Pacific,Region,KP,Pyongyang,125.754,39.0319
+PRK,"Korea, Dem. People'S Rep.",Low & Middle Income,By Income,KP,Pyongyang,125.754,39.0319
+PRK,"Korea, Dem. People'S Rep.",Low Income,By Income,KP,Pyongyang,125.754,39.0319
+PRK,"Korea, Dem. People'S Rep.",East Asia & Pacific (Excluding High Income),Other Country Groups,KP,Pyongyang,125.754,39.0319
+PRK,"Korea, Dem. People'S Rep.",World,Other Country Groups,KP,Pyongyang,125.754,39.0319
+PRK,"Korea, Dem. People'S Rep.",Late-Demographic Dividend,Demographic Dividend Groups,KP,Pyongyang,125.754,39.0319
+KOR,"Korea, Rep.",East Asia & Pacific,Region,KR,Seoul,126.957,37.5323
+KOR,"Korea, Rep.",High Income,By Income,KR,Seoul,126.957,37.5323
+KOR,"Korea, Rep.",Oecd Members,Other Country Groups,KR,Seoul,126.957,37.5323
+KOR,"Korea, Rep.",World,Other Country Groups,KR,Seoul,126.957,37.5323
+KOR,"Korea, Rep.",Post-Demographic Dividend,Demographic Dividend Groups,KR,Seoul,126.957,37.5323
+XKX,Kosovo,Europe & Central Asia,Region,XK,Pristina,20.926,42.565
+XKX,Kosovo,Low & Middle Income,By Income,XK,Pristina,20.926,42.565
+XKX,Kosovo,Middle Income,By Income,XK,Pristina,20.926,42.565
+XKX,Kosovo,Upper Middle Income,By Income,XK,Pristina,20.926,42.565
+XKX,Kosovo,Ida Only,By Lending,XK,Pristina,20.926,42.565
+XKX,Kosovo,Europe & Central Asia (Excluding High Income),Other Country Groups,XK,Pristina,20.926,42.565
+XKX,Kosovo,Fragile And Conflict Affected Situations,Other Country Groups,XK,Pristina,20.926,42.565
+XKX,Kosovo,World,Other Country Groups,XK,Pristina,20.926,42.565
+XKX,Kosovo,Europe & Central Asia (Ida & Ibrd Countries),By Lending,XK,Pristina,20.926,42.565
+XKX,Kosovo,Ida & Ibrd Total,By Lending,XK,Pristina,20.926,42.565
+KWT,Kuwait,Middle East & North Africa,Region,KW,Kuwait City,47.9824,29.3721
+KWT,Kuwait,High Income,By Income,KW,Kuwait City,47.9824,29.3721
+KWT,Kuwait,Arab World,Other Country Groups,KW,Kuwait City,47.9824,29.3721
+KWT,Kuwait,World,Other Country Groups,KW,Kuwait City,47.9824,29.3721
+KWT,Kuwait,Late-Demographic Dividend,Demographic Dividend Groups,KW,Kuwait City,47.9824,29.3721
+KGZ,Kyrgyz Republic,Europe & Central Asia,Region,KG,Bishkek,74.6057,42.8851
+KGZ,Kyrgyz Republic,Low & Middle Income,By Income,KG,Bishkek,74.6057,42.8851
+KGZ,Kyrgyz Republic,Lower Middle Income,By Income,KG,Bishkek,74.6057,42.8851
+KGZ,Kyrgyz Republic,Middle Income,By Income,KG,Bishkek,74.6057,42.8851
+KGZ,Kyrgyz Republic,Ida Only,By Lending,KG,Bishkek,74.6057,42.8851
+KGZ,Kyrgyz Republic,Europe & Central Asia (Excluding High Income),Other Country Groups,KG,Bishkek,74.6057,42.8851
+KGZ,Kyrgyz Republic,World,Other Country Groups,KG,Bishkek,74.6057,42.8851
+KGZ,Kyrgyz Republic,Late-Demographic Dividend,Demographic Dividend Groups,KG,Bishkek,74.6057,42.8851
+KGZ,Kyrgyz Republic,Europe & Central Asia (Ida & Ibrd Countries),By Lending,KG,Bishkek,74.6057,42.8851
+KGZ,Kyrgyz Republic,Ida & Ibrd Total,By Lending,KG,Bishkek,74.6057,42.8851
+LAO,Lao Pdr,East Asia & Pacific,Region,LA,Vientiane,102.177,18.5826
+LAO,Lao Pdr,Low & Middle Income,By Income,LA,Vientiane,102.177,18.5826
+LAO,Lao Pdr,Lower Middle Income,By Income,LA,Vientiane,102.177,18.5826
+LAO,Lao Pdr,Middle Income,By Income,LA,Vientiane,102.177,18.5826
+LAO,Lao Pdr,Ida Only,By Lending,LA,Vientiane,102.177,18.5826
+LAO,Lao Pdr,East Asia & Pacific (Excluding High Income),Other Country Groups,LA,Vientiane,102.177,18.5826
+LAO,Lao Pdr,Least Developed Countries: Un Classification,Other Country Groups,LA,Vientiane,102.177,18.5826
+LAO,Lao Pdr,World,Other Country Groups,LA,Vientiane,102.177,18.5826
+LAO,Lao Pdr,Early-Demographic Dividend,Demographic Dividend Groups,LA,Vientiane,102.177,18.5826
+LAO,Lao Pdr,East Asia & Pacific (Ida & Ibrd Countries),By Lending,LA,Vientiane,102.177,18.5826
+LAO,Lao Pdr,Ida & Ibrd Total,By Lending,LA,Vientiane,102.177,18.5826
+LVA,Latvia,Europe & Central Asia,Region,LV,Riga,24.1048,56.9465
+LVA,Latvia,High Income,By Income,LV,Riga,24.1048,56.9465
+LVA,Latvia,Central Europe And The Baltics,Other Country Groups,LV,Riga,24.1048,56.9465
+LVA,Latvia,Euro Area,Other Country Groups,LV,Riga,24.1048,56.9465
+LVA,Latvia,European Union,Other Country Groups,LV,Riga,24.1048,56.9465
+LVA,Latvia,Oecd Members,Other Country Groups,LV,Riga,24.1048,56.9465
+LVA,Latvia,World,Other Country Groups,LV,Riga,24.1048,56.9465
+LVA,Latvia,Late-Demographic Dividend,Demographic Dividend Groups,LV,Riga,24.1048,56.9465
+LBN,Lebanon,Middle East & North Africa,Region,LB,Beirut,35.5134,33.8872
+LBN,Lebanon,Low & Middle Income,By Income,LB,Beirut,35.5134,33.8872
+LBN,Lebanon,Lower Middle Income,By Income,LB,Beirut,35.5134,33.8872
+LBN,Lebanon,Middle Income,By Income,LB,Beirut,35.5134,33.8872
+LBN,Lebanon,Ibrd Only,By Lending,LB,Beirut,35.5134,33.8872
+LBN,Lebanon,Arab World,Other Country Groups,LB,Beirut,35.5134,33.8872
+LBN,Lebanon,Fragile And Conflict Affected Situations,Other Country Groups,LB,Beirut,35.5134,33.8872
+LBN,Lebanon,Middle East & North Africa (Excluding High Income),Other Country Groups,LB,Beirut,35.5134,33.8872
+LBN,Lebanon,World,Other Country Groups,LB,Beirut,35.5134,33.8872
+LBN,Lebanon,Late-Demographic Dividend,Demographic Dividend Groups,LB,Beirut,35.5134,33.8872
+LBN,Lebanon,Ida & Ibrd Total,By Lending,LB,Beirut,35.5134,33.8872
+LBN,Lebanon,Middle East & North Africa (Ida & Ibrd Countries),By Lending,LB,Beirut,35.5134,33.8872
+LSO,Lesotho,Sub-Saharan Africa,Region,LS,Maseru,27.7167,-29.5208
+LSO,Lesotho,Low & Middle Income,By Income,LS,Maseru,27.7167,-29.5208
+LSO,Lesotho,Lower Middle Income,By Income,LS,Maseru,27.7167,-29.5208
+LSO,Lesotho,Middle Income,By Income,LS,Maseru,27.7167,-29.5208
+LSO,Lesotho,Ida Only,By Lending,LS,Maseru,27.7167,-29.5208
+LSO,Lesotho,Small States,Small States,LS,Maseru,27.7167,-29.5208
+LSO,Lesotho,Least Developed Countries: Un Classification,Other Country Groups,LS,Maseru,27.7167,-29.5208
+LSO,Lesotho,Sub-Saharan Africa (Excluding High Income),Other Country Groups,LS,Maseru,27.7167,-29.5208
+LSO,Lesotho,World,Other Country Groups,LS,Maseru,27.7167,-29.5208
+LSO,Lesotho,Sub-Saharan Africa ,Other country groups,LS,Maseru,27.7167,-29.5208
+LSO,Lesotho,Sub-Saharan Africa (Ida & Ibrd Countries),By Lending,LS,Maseru,27.7167,-29.5208
+LSO,Lesotho,Early-Demographic Dividend,Demographic Dividend Groups,LS,Maseru,27.7167,-29.5208
+LSO,Lesotho,Ida & Ibrd Total,By Lending,LS,Maseru,27.7167,-29.5208
+LSO,Lesotho,Other Small States,Small States,LS,Maseru,27.7167,-29.5208
+LSO,Lesotho,Africa Eastern And Southern,Other country groups,LS,Maseru,27.7167,-29.5208
+LBR,Liberia,Sub-Saharan Africa,Region,LR,Monrovia,-10.7957,6.30039
+LBR,Liberia,Low & Middle Income,By Income,LR,Monrovia,-10.7957,6.30039
+LBR,Liberia,Low Income,By Income,LR,Monrovia,-10.7957,6.30039
+LBR,Liberia,Ida Only,By Lending,LR,Monrovia,-10.7957,6.30039
+LBR,Liberia,Heavily Indebted Poor Countries (Hipc),Other Country Groups,LR,Monrovia,-10.7957,6.30039
+LBR,Liberia,Least Developed Countries: Un Classification,Other Country Groups,LR,Monrovia,-10.7957,6.30039
+LBR,Liberia,Sub-Saharan Africa (Excluding High Income),Other Country Groups,LR,Monrovia,-10.7957,6.30039
+LBR,Liberia,World,Other Country Groups,LR,Monrovia,-10.7957,6.30039
+LBR,Liberia,Sub-Saharan Africa ,Other country groups,LR,Monrovia,-10.7957,6.30039
+LBR,Liberia,Sub-Saharan Africa (Ida & Ibrd Countries),By Lending,LR,Monrovia,-10.7957,6.30039
+LBR,Liberia,Pre-Demographic Dividend,Demographic Dividend Groups,LR,Monrovia,-10.7957,6.30039
+LBR,Liberia,Ida & Ibrd Total,By Lending,LR,Monrovia,-10.7957,6.30039
+LBR,Liberia,Africa Western And Central,Other country groups,LR,Monrovia,-10.7957,6.30039
+LBY,Libya,Middle East & North Africa,Region,LY,Tripoli,13.1072,32.8578
+LBY,Libya,Low & Middle Income,By Income,LY,Tripoli,13.1072,32.8578
+LBY,Libya,Middle Income,By Income,LY,Tripoli,13.1072,32.8578
+LBY,Libya,Upper Middle Income,By Income,LY,Tripoli,13.1072,32.8578
+LBY,Libya,Ibrd Only,By Lending,LY,Tripoli,13.1072,32.8578
+LBY,Libya,Arab World,Other Country Groups,LY,Tripoli,13.1072,32.8578
+LBY,Libya,Fragile And Conflict Affected Situations,Other Country Groups,LY,Tripoli,13.1072,32.8578
+LBY,Libya,Middle East & North Africa (Excluding High Income),Other Country Groups,LY,Tripoli,13.1072,32.8578
+LBY,Libya,World,Other Country Groups,LY,Tripoli,13.1072,32.8578
+LBY,Libya,Early-Demographic Dividend,Demographic Dividend Groups,LY,Tripoli,13.1072,32.8578
+LBY,Libya,Ida & Ibrd Total,By Lending,LY,Tripoli,13.1072,32.8578
+LBY,Libya,Middle East & North Africa (Ida & Ibrd Countries),By Lending,LY,Tripoli,13.1072,32.8578
+LIE,Liechtenstein,Europe & Central Asia,Region,LI,Vaduz,9.52148,47.1411
+LIE,Liechtenstein,High Income,By Income,LI,Vaduz,9.52148,47.1411
+LIE,Liechtenstein,World,Other Country Groups,LI,Vaduz,9.52148,47.1411
+LTU,Lithuania,Europe & Central Asia,Region,LT,Vilnius,25.2799,54.6896
+LTU,Lithuania,High Income,By Income,LT,Vilnius,25.2799,54.6896
+LTU,Lithuania,Central Europe And The Baltics,Other Country Groups,LT,Vilnius,25.2799,54.6896
+LTU,Lithuania,Euro Area,Other Country Groups,LT,Vilnius,25.2799,54.6896
+LTU,Lithuania,European Union,Other Country Groups,LT,Vilnius,25.2799,54.6896
+LTU,Lithuania,Oecd Members,Other Country Groups,LT,Vilnius,25.2799,54.6896
+LTU,Lithuania,World,Other Country Groups,LT,Vilnius,25.2799,54.6896
+LTU,Lithuania,Post-Demographic Dividend,Demographic Dividend Groups,LT,Vilnius,25.2799,54.6896
+LUX,Luxembourg,Europe & Central Asia,Region,LU,Luxembourg,6.1296,49.61
+LUX,Luxembourg,High Income,By Income,LU,Luxembourg,6.1296,49.61
+LUX,Luxembourg,Euro Area,Other Country Groups,LU,Luxembourg,6.1296,49.61
+LUX,Luxembourg,European Union,Other Country Groups,LU,Luxembourg,6.1296,49.61
+LUX,Luxembourg,Oecd Members,Other Country Groups,LU,Luxembourg,6.1296,49.61
+LUX,Luxembourg,World,Other Country Groups,LU,Luxembourg,6.1296,49.61
+LUX,Luxembourg,Post-Demographic Dividend,Demographic Dividend Groups,LU,Luxembourg,6.1296,49.61
+MAC,"Macao Sar, China",East Asia & Pacific,Region,MO,,113.55,22.1667
+MAC,"Macao Sar, China",High Income,By Income,MO,,113.55,22.1667
+MAC,"Macao Sar, China",World,Other Country Groups,MO,,113.55,22.1667
+MAC,"Macao Sar, China",Post-Demographic Dividend,Demographic Dividend Groups,MO,,113.55,22.1667
+MDG,Madagascar,Sub-Saharan Africa,Region,MG,Antananarivo,45.7167,-20.4667
+MDG,Madagascar,Low & Middle Income,By Income,MG,Antananarivo,45.7167,-20.4667
+MDG,Madagascar,Low Income,By Income,MG,Antananarivo,45.7167,-20.4667
+MDG,Madagascar,Ida Only,By Lending,MG,Antananarivo,45.7167,-20.4667
+MDG,Madagascar,Heavily Indebted Poor Countries (Hipc),Other Country Groups,MG,Antananarivo,45.7167,-20.4667
+MDG,Madagascar,Least Developed Countries: Un Classification,Other Country Groups,MG,Antananarivo,45.7167,-20.4667
+MDG,Madagascar,Sub-Saharan Africa (Excluding High Income),Other Country Groups,MG,Antananarivo,45.7167,-20.4667
+MDG,Madagascar,World,Other Country Groups,MG,Antananarivo,45.7167,-20.4667
+MDG,Madagascar,Sub-Saharan Africa ,Other country groups,MG,Antananarivo,45.7167,-20.4667
+MDG,Madagascar,Sub-Saharan Africa (Ida & Ibrd Countries),By Lending,MG,Antananarivo,45.7167,-20.4667
+MDG,Madagascar,Pre-Demographic Dividend,Demographic Dividend Groups,MG,Antananarivo,45.7167,-20.4667
+MDG,Madagascar,Ida & Ibrd Total,By Lending,MG,Antananarivo,45.7167,-20.4667
+MDG,Madagascar,Africa Eastern And Southern,Other country groups,MG,Antananarivo,45.7167,-20.4667
+MWI,Malawi,Sub-Saharan Africa,Region,MW,Lilongwe,33.7703,-13.9899
+MWI,Malawi,Low & Middle Income,By Income,MW,Lilongwe,33.7703,-13.9899
+MWI,Malawi,Low Income,By Income,MW,Lilongwe,33.7703,-13.9899
+MWI,Malawi,Ida Only,By Lending,MW,Lilongwe,33.7703,-13.9899
+MWI,Malawi,Heavily Indebted Poor Countries (Hipc),Other Country Groups,MW,Lilongwe,33.7703,-13.9899
+MWI,Malawi,Least Developed Countries: Un Classification,Other Country Groups,MW,Lilongwe,33.7703,-13.9899
+MWI,Malawi,Sub-Saharan Africa (Excluding High Income),Other Country Groups,MW,Lilongwe,33.7703,-13.9899
+MWI,Malawi,World,Other Country Groups,MW,Lilongwe,33.7703,-13.9899
+MWI,Malawi,Sub-Saharan Africa ,Other country groups,MW,Lilongwe,33.7703,-13.9899
+MWI,Malawi,Sub-Saharan Africa (Ida & Ibrd Countries),By Lending,MW,Lilongwe,33.7703,-13.9899
+MWI,Malawi,Pre-Demographic Dividend,Demographic Dividend Groups,MW,Lilongwe,33.7703,-13.9899
+MWI,Malawi,Ida & Ibrd Total,By Lending,MW,Lilongwe,33.7703,-13.9899
+MWI,Malawi,Africa Eastern And Southern,Other country groups,MW,Lilongwe,33.7703,-13.9899
+MYS,Malaysia,East Asia & Pacific,Region,MY,Kuala Lumpur,101.684,3.12433
+MYS,Malaysia,Low & Middle Income,By Income,MY,Kuala Lumpur,101.684,3.12433
+MYS,Malaysia,Middle Income,By Income,MY,Kuala Lumpur,101.684,3.12433
+MYS,Malaysia,Upper Middle Income,By Income,MY,Kuala Lumpur,101.684,3.12433
+MYS,Malaysia,Ibrd Only,By Lending,MY,Kuala Lumpur,101.684,3.12433
+MYS,Malaysia,East Asia & Pacific (Excluding High Income),Other Country Groups,MY,Kuala Lumpur,101.684,3.12433
+MYS,Malaysia,World,Other Country Groups,MY,Kuala Lumpur,101.684,3.12433
+MYS,Malaysia,Late-Demographic Dividend,Demographic Dividend Groups,MY,Kuala Lumpur,101.684,3.12433
+MYS,Malaysia,East Asia & Pacific (Ida & Ibrd Countries),By Lending,MY,Kuala Lumpur,101.684,3.12433
+MYS,Malaysia,Ida & Ibrd Total,By Lending,MY,Kuala Lumpur,101.684,3.12433
+MDV,Maldives,South Asia,Region,MV,Male,73.5109,4.1742
+MDV,Maldives,Low & Middle Income,By Income,MV,Male,73.5109,4.1742
+MDV,Maldives,Middle Income,By Income,MV,Male,73.5109,4.1742
+MDV,Maldives,Upper Middle Income,By Income,MV,Male,73.5109,4.1742
+MDV,Maldives,Ida Only,By Lending,MV,Male,73.5109,4.1742
+MDV,Maldives,Small States,Small States,MV,Male,73.5109,4.1742
+MDV,Maldives,World,Other Country Groups,MV,Male,73.5109,4.1742
+MDV,Maldives,Early-Demographic Dividend,Demographic Dividend Groups,MV,Male,73.5109,4.1742
+MDV,Maldives,Ida & Ibrd Total,By Lending,MV,Male,73.5109,4.1742
+MDV,Maldives,South Asia (Ida & Ibrd),By Lending,MV,Male,73.5109,4.1742
+MDV,Maldives,Other Small States,Small States,MV,Male,73.5109,4.1742
+MLI,Mali,Sub-Saharan Africa,Region,ML,Bamako,-7.50034,13.5667
+MLI,Mali,Low & Middle Income,By Income,ML,Bamako,-7.50034,13.5667
+MLI,Mali,Low Income,By Income,ML,Bamako,-7.50034,13.5667
+MLI,Mali,Ida Only,By Lending,ML,Bamako,-7.50034,13.5667
+MLI,Mali,Fragile And Conflict Affected Situations,Other Country Groups,ML,Bamako,-7.50034,13.5667
+MLI,Mali,Heavily Indebted Poor Countries (Hipc),Other Country Groups,ML,Bamako,-7.50034,13.5667
+MLI,Mali,Least Developed Countries: Un Classification,Other Country Groups,ML,Bamako,-7.50034,13.5667
+MLI,Mali,Sub-Saharan Africa (Excluding High Income),Other Country Groups,ML,Bamako,-7.50034,13.5667
+MLI,Mali,World,Other Country Groups,ML,Bamako,-7.50034,13.5667
+MLI,Mali,Sub-Saharan Africa ,Other country groups,ML,Bamako,-7.50034,13.5667
+MLI,Mali,Sub-Saharan Africa (Ida & Ibrd Countries),By Lending,ML,Bamako,-7.50034,13.5667
+MLI,Mali,Pre-Demographic Dividend,Demographic Dividend Groups,ML,Bamako,-7.50034,13.5667
+MLI,Mali,Ida & Ibrd Total,By Lending,ML,Bamako,-7.50034,13.5667
+MLI,Mali,Africa Western And Central,Other country groups,ML,Bamako,-7.50034,13.5667
+MLT,Malta,Middle East & North Africa,Region,MT,Valletta,14.5189,35.9042
+MLT,Malta,High Income,By Income,MT,Valletta,14.5189,35.9042
+MLT,Malta,Small States,Small States,MT,Valletta,14.5189,35.9042
+MLT,Malta,Euro Area,Other Country Groups,MT,Valletta,14.5189,35.9042
+MLT,Malta,European Union,Other Country Groups,MT,Valletta,14.5189,35.9042
+MLT,Malta,World,Other Country Groups,MT,Valletta,14.5189,35.9042
+MLT,Malta,Post-Demographic Dividend,Demographic Dividend Groups,MT,Valletta,14.5189,35.9042
+MLT,Malta,Other Small States,Small States,MT,Valletta,14.5189,35.9042
+MHL,Marshall Islands,East Asia & Pacific,Region,MH,Majuro,171.135,7.11046
+MHL,Marshall Islands,Low & Middle Income,By Income,MH,Majuro,171.135,7.11046
+MHL,Marshall Islands,Middle Income,By Income,MH,Majuro,171.135,7.11046
+MHL,Marshall Islands,Upper Middle Income,By Income,MH,Majuro,171.135,7.11046
+MHL,Marshall Islands,Ida Only,By Lending,MH,Majuro,171.135,7.11046
+MHL,Marshall Islands,Pacific Island Small States,Small States,MH,Majuro,171.135,7.11046
+MHL,Marshall Islands,Small States,Small States,MH,Majuro,171.135,7.11046
+MHL,Marshall Islands,East Asia & Pacific (Excluding High Income),Other Country Groups,MH,Majuro,171.135,7.11046
+MHL,Marshall Islands,Fragile And Conflict Affected Situations,Other Country Groups,MH,Majuro,171.135,7.11046
+MHL,Marshall Islands,World,Other Country Groups,MH,Majuro,171.135,7.11046
+MHL,Marshall Islands,East Asia & Pacific (Ida & Ibrd Countries),By Lending,MH,Majuro,171.135,7.11046
+MHL,Marshall Islands,Ida & Ibrd Total,By Lending,MH,Majuro,171.135,7.11046
+MRT,Mauritania,Sub-Saharan Africa,Region,MR,Nouakchott,-15.9824,18.2367
+MRT,Mauritania,Low & Middle Income,By Income,MR,Nouakchott,-15.9824,18.2367
+MRT,Mauritania,Lower Middle Income,By Income,MR,Nouakchott,-15.9824,18.2367
+MRT,Mauritania,Middle Income,By Income,MR,Nouakchott,-15.9824,18.2367
+MRT,Mauritania,Ida Only,By Lending,MR,Nouakchott,-15.9824,18.2367
+MRT,Mauritania,Arab World,Other Country Groups,MR,Nouakchott,-15.9824,18.2367
+MRT,Mauritania,Heavily Indebted Poor Countries (Hipc),Other Country Groups,MR,Nouakchott,-15.9824,18.2367
+MRT,Mauritania,Least Developed Countries: Un Classification,Other Country Groups,MR,Nouakchott,-15.9824,18.2367
+MRT,Mauritania,Sub-Saharan Africa (Excluding High Income),Other Country Groups,MR,Nouakchott,-15.9824,18.2367
+MRT,Mauritania,World,Other Country Groups,MR,Nouakchott,-15.9824,18.2367
+MRT,Mauritania,Sub-Saharan Africa ,Other country groups,MR,Nouakchott,-15.9824,18.2367
+MRT,Mauritania,Sub-Saharan Africa (Ida & Ibrd Countries),By Lending,MR,Nouakchott,-15.9824,18.2367
+MRT,Mauritania,Pre-Demographic Dividend,Demographic Dividend Groups,MR,Nouakchott,-15.9824,18.2367
+MRT,Mauritania,Ida & Ibrd Total,By Lending,MR,Nouakchott,-15.9824,18.2367
+MRT,Mauritania,Africa Western And Central,Other country groups,MR,Nouakchott,-15.9824,18.2367
+MUS,Mauritius,Sub-Saharan Africa,Region,MU,Port Louis,57.4977,-20.1605
+MUS,Mauritius,Low & Middle Income,By Income,MU,Port Louis,57.4977,-20.1605
+MUS,Mauritius,Middle Income,By Income,MU,Port Louis,57.4977,-20.1605
+MUS,Mauritius,Upper Middle Income,By Income,MU,Port Louis,57.4977,-20.1605
+MUS,Mauritius,Ibrd Only,By Lending,MU,Port Louis,57.4977,-20.1605
+MUS,Mauritius,Small States,Small States,MU,Port Louis,57.4977,-20.1605
+MUS,Mauritius,Sub-Saharan Africa (Excluding High Income),Other Country Groups,MU,Port Louis,57.4977,-20.1605
+MUS,Mauritius,World,Other Country Groups,MU,Port Louis,57.4977,-20.1605
+MUS,Mauritius,Sub-Saharan Africa ,Other country groups,MU,Port Louis,57.4977,-20.1605
+MUS,Mauritius,Sub-Saharan Africa (Ida & Ibrd Countries),By Lending,MU,Port Louis,57.4977,-20.1605
+MUS,Mauritius,Late-Demographic Dividend,Demographic Dividend Groups,MU,Port Louis,57.4977,-20.1605
+MUS,Mauritius,Ida & Ibrd Total,By Lending,MU,Port Louis,57.4977,-20.1605
+MUS,Mauritius,Other Small States,Small States,MU,Port Louis,57.4977,-20.1605
+MUS,Mauritius,Africa Eastern And Southern,Other country groups,MU,Port Louis,57.4977,-20.1605
+MEX,Mexico,Latin America & Caribbean,Region,MX,Mexico City,-99.1276,19.427
+MEX,Mexico,Low & Middle Income,By Income,MX,Mexico City,-99.1276,19.427
+MEX,Mexico,Middle Income,By Income,MX,Mexico City,-99.1276,19.427
+MEX,Mexico,Upper Middle Income,By Income,MX,Mexico City,-99.1276,19.427
+MEX,Mexico,Ibrd Only,By Lending,MX,Mexico City,-99.1276,19.427
+MEX,Mexico,Latin America & Caribbean (Excluding High Income),Other Country Groups,MX,Mexico City,-99.1276,19.427
+MEX,Mexico,Oecd Members,Other Country Groups,MX,Mexico City,-99.1276,19.427
+MEX,Mexico,World,Other Country Groups,MX,Mexico City,-99.1276,19.427
+MEX,Mexico,Early-Demographic Dividend,Demographic Dividend Groups,MX,Mexico City,-99.1276,19.427
+MEX,Mexico,Ida & Ibrd Total,By Lending,MX,Mexico City,-99.1276,19.427
+MEX,Mexico,Latin America & The Caribbean (Ida & Ibrd Countries),By Lending,MX,Mexico City,-99.1276,19.427
+FSM,"Micronesia, Fed. Sts.",East Asia & Pacific,Region,FM,Palikir,158.185,6.91771
+FSM,"Micronesia, Fed. Sts.",Low & Middle Income,By Income,FM,Palikir,158.185,6.91771
+FSM,"Micronesia, Fed. Sts.",Lower Middle Income,By Income,FM,Palikir,158.185,6.91771
+FSM,"Micronesia, Fed. Sts.",Middle Income,By Income,FM,Palikir,158.185,6.91771
+FSM,"Micronesia, Fed. Sts.",Ida Only,By Lending,FM,Palikir,158.185,6.91771
+FSM,"Micronesia, Fed. Sts.",Pacific Island Small States,Small States,FM,Palikir,158.185,6.91771
+FSM,"Micronesia, Fed. Sts.",Small States,Small States,FM,Palikir,158.185,6.91771
+FSM,"Micronesia, Fed. Sts.",East Asia & Pacific (Excluding High Income),Other Country Groups,FM,Palikir,158.185,6.91771
+FSM,"Micronesia, Fed. Sts.",Fragile And Conflict Affected Situations,Other Country Groups,FM,Palikir,158.185,6.91771
+FSM,"Micronesia, Fed. Sts.",World,Other Country Groups,FM,Palikir,158.185,6.91771
+FSM,"Micronesia, Fed. Sts.",Early-Demographic Dividend,Demographic Dividend Groups,FM,Palikir,158.185,6.91771
+FSM,"Micronesia, Fed. Sts.",East Asia & Pacific (Ida & Ibrd Countries),By Lending,FM,Palikir,158.185,6.91771
+FSM,"Micronesia, Fed. Sts.",Ida & Ibrd Total,By Lending,FM,Palikir,158.185,6.91771
+MDA,Moldova,Europe & Central Asia,Region,MD,Chisinau,28.8497,47.0167
+MDA,Moldova,Low & Middle Income,By Income,MD,Chisinau,28.8497,47.0167
+MDA,Moldova,Middle Income,By Income,MD,Chisinau,28.8497,47.0167
+MDA,Moldova,Upper Middle Income,By Income,MD,Chisinau,28.8497,47.0167
+MDA,Moldova,Ibrd Only,By Lending,MD,Chisinau,28.8497,47.0167
+MDA,Moldova,Europe & Central Asia (Excluding High Income),Other Country Groups,MD,Chisinau,28.8497,47.0167
+MDA,Moldova,World,Other Country Groups,MD,Chisinau,28.8497,47.0167
+MDA,Moldova,Late-Demographic Dividend,Demographic Dividend Groups,MD,Chisinau,28.8497,47.0167
+MDA,Moldova,Europe & Central Asia (Ida & Ibrd Countries),By Lending,MD,Chisinau,28.8497,47.0167
+MDA,Moldova,Ida & Ibrd Total,By Lending,MD,Chisinau,28.8497,47.0167
+MCO,Monaco,Europe & Central Asia,Region,MC,Monaco,7.41891,43.7325
+MCO,Monaco,High Income,By Income,MC,Monaco,7.41891,43.7325
+MCO,Monaco,World,Other Country Groups,MC,Monaco,7.41891,43.7325
+MNG,Mongolia,East Asia & Pacific,Region,MN,Ulaanbaatar,106.937,47.9129
+MNG,Mongolia,Low & Middle Income,By Income,MN,Ulaanbaatar,106.937,47.9129
+MNG,Mongolia,Lower Middle Income,By Income,MN,Ulaanbaatar,106.937,47.9129
+MNG,Mongolia,Middle Income,By Income,MN,Ulaanbaatar,106.937,47.9129
+MNG,Mongolia,Ibrd Only,By Lending,MN,Ulaanbaatar,106.937,47.9129
+MNG,Mongolia,East Asia & Pacific (Excluding High Income),Other Country Groups,MN,Ulaanbaatar,106.937,47.9129
+MNG,Mongolia,World,Other Country Groups,MN,Ulaanbaatar,106.937,47.9129
+MNG,Mongolia,Late-Demographic Dividend,Demographic Dividend Groups,MN,Ulaanbaatar,106.937,47.9129
+MNG,Mongolia,East Asia & Pacific (Ida & Ibrd Countries),By Lending,MN,Ulaanbaatar,106.937,47.9129
+MNG,Mongolia,Ida & Ibrd Total,By Lending,MN,Ulaanbaatar,106.937,47.9129
+MNE,Montenegro,Europe & Central Asia,Region,ME,Podgorica,19.2595,42.4602
+MNE,Montenegro,Low & Middle Income,By Income,ME,Podgorica,19.2595,42.4602
+MNE,Montenegro,Middle Income,By Income,ME,Podgorica,19.2595,42.4602
+MNE,Montenegro,Upper Middle Income,By Income,ME,Podgorica,19.2595,42.4602
+MNE,Montenegro,Ibrd Only,By Lending,ME,Podgorica,19.2595,42.4602
+MNE,Montenegro,Small States,Small States,ME,Podgorica,19.2595,42.4602
+MNE,Montenegro,Europe & Central Asia (Excluding High Income),Other Country Groups,ME,Podgorica,19.2595,42.4602
+MNE,Montenegro,World,Other Country Groups,ME,Podgorica,19.2595,42.4602
+MNE,Montenegro,Late-Demographic Dividend,Demographic Dividend Groups,ME,Podgorica,19.2595,42.4602
+MNE,Montenegro,Europe & Central Asia (Ida & Ibrd Countries),By Lending,ME,Podgorica,19.2595,42.4602
+MNE,Montenegro,Ida & Ibrd Total,By Lending,ME,Podgorica,19.2595,42.4602
+MNE,Montenegro,Other Small States,Small States,ME,Podgorica,19.2595,42.4602
+MAR,Morocco,Middle East & North Africa,Region,MA,Rabat,-6.8704,33.9905
+MAR,Morocco,Low & Middle Income,By Income,MA,Rabat,-6.8704,33.9905
+MAR,Morocco,Lower Middle Income,By Income,MA,Rabat,-6.8704,33.9905
+MAR,Morocco,Middle Income,By Income,MA,Rabat,-6.8704,33.9905
+MAR,Morocco,Ibrd Only,By Lending,MA,Rabat,-6.8704,33.9905
+MAR,Morocco,Arab World,Other Country Groups,MA,Rabat,-6.8704,33.9905
+MAR,Morocco,Middle East & North Africa (Excluding High Income),Other Country Groups,MA,Rabat,-6.8704,33.9905
+MAR,Morocco,World,Other Country Groups,MA,Rabat,-6.8704,33.9905
+MAR,Morocco,Late-Demographic Dividend,Demographic Dividend Groups,MA,Rabat,-6.8704,33.9905
+MAR,Morocco,Ida & Ibrd Total,By Lending,MA,Rabat,-6.8704,33.9905
+MAR,Morocco,Middle East & North Africa (Ida & Ibrd Countries),By Lending,MA,Rabat,-6.8704,33.9905
+MOZ,Mozambique,Sub-Saharan Africa,Region,MZ,Maputo,32.5713,-25.9664
+MOZ,Mozambique,Low & Middle Income,By Income,MZ,Maputo,32.5713,-25.9664
+MOZ,Mozambique,Low Income,By Income,MZ,Maputo,32.5713,-25.9664
+MOZ,Mozambique,Ida Only,By Lending,MZ,Maputo,32.5713,-25.9664
+MOZ,Mozambique,Fragile And Conflict Affected Situations,Other Country Groups,MZ,Maputo,32.5713,-25.9664
+MOZ,Mozambique,Heavily Indebted Poor Countries (Hipc),Other Country Groups,MZ,Maputo,32.5713,-25.9664
+MOZ,Mozambique,Least Developed Countries: Un Classification,Other Country Groups,MZ,Maputo,32.5713,-25.9664
+MOZ,Mozambique,Sub-Saharan Africa (Excluding High Income),Other Country Groups,MZ,Maputo,32.5713,-25.9664
+MOZ,Mozambique,World,Other Country Groups,MZ,Maputo,32.5713,-25.9664
+MOZ,Mozambique,Sub-Saharan Africa ,Other country groups,MZ,Maputo,32.5713,-25.9664
+MOZ,Mozambique,Sub-Saharan Africa (Ida & Ibrd Countries),By Lending,MZ,Maputo,32.5713,-25.9664
+MOZ,Mozambique,Pre-Demographic Dividend,Demographic Dividend Groups,MZ,Maputo,32.5713,-25.9664
+MOZ,Mozambique,Ida & Ibrd Total,By Lending,MZ,Maputo,32.5713,-25.9664
+MOZ,Mozambique,Africa Eastern And Southern,Other country groups,MZ,Maputo,32.5713,-25.9664
+MMR,Myanmar,East Asia & Pacific,Region,MM,Naypyidaw,95.9562,21.914
+MMR,Myanmar,Low & Middle Income,By Income,MM,Naypyidaw,95.9562,21.914
+MMR,Myanmar,Lower Middle Income,By Income,MM,Naypyidaw,95.9562,21.914
+MMR,Myanmar,Middle Income,By Income,MM,Naypyidaw,95.9562,21.914
+MMR,Myanmar,Ida Only,By Lending,MM,Naypyidaw,95.9562,21.914
+MMR,Myanmar,East Asia & Pacific (Excluding High Income),Other Country Groups,MM,Naypyidaw,95.9562,21.914
+MMR,Myanmar,Fragile And Conflict Affected Situations,Other Country Groups,MM,Naypyidaw,95.9562,21.914
+MMR,Myanmar,Least Developed Countries: Un Classification,Other Country Groups,MM,Naypyidaw,95.9562,21.914
+MMR,Myanmar,World,Other Country Groups,MM,Naypyidaw,95.9562,21.914
+MMR,Myanmar,Early-Demographic Dividend,Demographic Dividend Groups,MM,Naypyidaw,95.9562,21.914
+MMR,Myanmar,East Asia & Pacific (Ida & Ibrd Countries),By Lending,MM,Naypyidaw,95.9562,21.914
+MMR,Myanmar,Ida & Ibrd Total,By Lending,MM,Naypyidaw,95.9562,21.914
+NAM,Namibia,Sub-Saharan Africa,Region,,Windhoek,17.0931,-22.5648
+NAM,Namibia,Low & Middle Income,By Income,,Windhoek,17.0931,-22.5648
+NAM,Namibia,Middle Income,By Income,,Windhoek,17.0931,-22.5648
+NAM,Namibia,Upper Middle Income,By Income,,Windhoek,17.0931,-22.5648
+NAM,Namibia,Ibrd Only,By Lending,,Windhoek,17.0931,-22.5648
+NAM,Namibia,Small States,Small States,,Windhoek,17.0931,-22.5648
+NAM,Namibia,Sub-Saharan Africa (Excluding High Income),Other Country Groups,,Windhoek,17.0931,-22.5648
+NAM,Namibia,World,Other Country Groups,,Windhoek,17.0931,-22.5648
+NAM,Namibia,Sub-Saharan Africa ,Other country groups,,Windhoek,17.0931,-22.5648
+NAM,Namibia,Sub-Saharan Africa (Ida & Ibrd Countries),By Lending,,Windhoek,17.0931,-22.5648
+NAM,Namibia,Early-Demographic Dividend,Demographic Dividend Groups,,Windhoek,17.0931,-22.5648
+NAM,Namibia,Ida & Ibrd Total,By Lending,,Windhoek,17.0931,-22.5648
+NAM,Namibia,Other Small States,Small States,,Windhoek,17.0931,-22.5648
+NAM,Namibia,Africa Eastern And Southern,Other country groups,,Windhoek,17.0931,-22.5648
+NRU,Nauru,East Asia & Pacific,Region,NR,Yaren District,166.920867,-0.5477
+NRU,Nauru,High Income,By Income,NR,Yaren District,166.920867,-0.5477
+NRU,Nauru,Ibrd Only,By Lending,NR,Yaren District,166.920867,-0.5477
+NRU,Nauru,Pacific Island Small States,Small States,NR,Yaren District,166.920867,-0.5477
+NRU,Nauru,Small States,Small States,NR,Yaren District,166.920867,-0.5477
+NRU,Nauru,World,Other Country Groups,NR,Yaren District,166.920867,-0.5477
+NRU,Nauru,East Asia & Pacific (Ida & Ibrd Countries),By Lending,NR,Yaren District,166.920867,-0.5477
+NRU,Nauru,Ida & Ibrd Total,By Lending,NR,Yaren District,166.920867,-0.5477
+NPL,Nepal,South Asia,Region,NP,Kathmandu,85.3157,27.6939
+NPL,Nepal,Low & Middle Income,By Income,NP,Kathmandu,85.3157,27.6939
+NPL,Nepal,Lower Middle Income,By Income,NP,Kathmandu,85.3157,27.6939
+NPL,Nepal,Middle Income,By Income,NP,Kathmandu,85.3157,27.6939
+NPL,Nepal,Ida Only,By Lending,NP,Kathmandu,85.3157,27.6939
+NPL,Nepal,Least Developed Countries: Un Classification,Other Country Groups,NP,Kathmandu,85.3157,27.6939
+NPL,Nepal,World,Other Country Groups,NP,Kathmandu,85.3157,27.6939
+NPL,Nepal,Early-Demographic Dividend,Demographic Dividend Groups,NP,Kathmandu,85.3157,27.6939
+NPL,Nepal,Ida & Ibrd Total,By Lending,NP,Kathmandu,85.3157,27.6939
+NPL,Nepal,South Asia (Ida & Ibrd),By Lending,NP,Kathmandu,85.3157,27.6939
+NLD,Netherlands,Europe & Central Asia,Region,NL,Amsterdam,4.89095,52.3738
+NLD,Netherlands,High Income,By Income,NL,Amsterdam,4.89095,52.3738
+NLD,Netherlands,Euro Area,Other Country Groups,NL,Amsterdam,4.89095,52.3738
+NLD,Netherlands,European Union,Other Country Groups,NL,Amsterdam,4.89095,52.3738
+NLD,Netherlands,Oecd Members,Other Country Groups,NL,Amsterdam,4.89095,52.3738
+NLD,Netherlands,World,Other Country Groups,NL,Amsterdam,4.89095,52.3738
+NLD,Netherlands,Post-Demographic Dividend,Demographic Dividend Groups,NL,Amsterdam,4.89095,52.3738
+NCL,New Caledonia,East Asia & Pacific,Region,NC,Noum'ea,166.464,-22.2677
+NCL,New Caledonia,High Income,By Income,NC,Noum'ea,166.464,-22.2677
+NCL,New Caledonia,World,Other Country Groups,NC,Noum'ea,166.464,-22.2677
+NCL,New Caledonia,Late-Demographic Dividend,Demographic Dividend Groups,NC,Noum'ea,166.464,-22.2677
+NZL,New Zealand,East Asia & Pacific,Region,NZ,Wellington,174.776,-41.2865
+NZL,New Zealand,High Income,By Income,NZ,Wellington,174.776,-41.2865
+NZL,New Zealand,Oecd Members,Other Country Groups,NZ,Wellington,174.776,-41.2865
+NZL,New Zealand,World,Other Country Groups,NZ,Wellington,174.776,-41.2865
+NZL,New Zealand,Post-Demographic Dividend,Demographic Dividend Groups,NZ,Wellington,174.776,-41.2865
+NIC,Nicaragua,Latin America & Caribbean,Region,NI,Managua,-86.2734,12.1475
+NIC,Nicaragua,Low & Middle Income,By Income,NI,Managua,-86.2734,12.1475
+NIC,Nicaragua,Lower Middle Income,By Income,NI,Managua,-86.2734,12.1475
+NIC,Nicaragua,Middle Income,By Income,NI,Managua,-86.2734,12.1475
+NIC,Nicaragua,Ida Only,By Lending,NI,Managua,-86.2734,12.1475
+NIC,Nicaragua,Heavily Indebted Poor Countries (Hipc),Other Country Groups,NI,Managua,-86.2734,12.1475
+NIC,Nicaragua,Latin America & Caribbean (Excluding High Income),Other Country Groups,NI,Managua,-86.2734,12.1475
+NIC,Nicaragua,World,Other Country Groups,NI,Managua,-86.2734,12.1475
+NIC,Nicaragua,Early-Demographic Dividend,Demographic Dividend Groups,NI,Managua,-86.2734,12.1475
+NIC,Nicaragua,Ida & Ibrd Total,By Lending,NI,Managua,-86.2734,12.1475
+NIC,Nicaragua,Latin America & The Caribbean (Ida & Ibrd Countries),By Lending,NI,Managua,-86.2734,12.1475
+NER,Niger,Sub-Saharan Africa,Region,NE,Niamey,2.1073,13.514
+NER,Niger,Low & Middle Income,By Income,NE,Niamey,2.1073,13.514
+NER,Niger,Low Income,By Income,NE,Niamey,2.1073,13.514
+NER,Niger,Ida Only,By Lending,NE,Niamey,2.1073,13.514
+NER,Niger,Fragile And Conflict Affected Situations,Other Country Groups,NE,Niamey,2.1073,13.514
+NER,Niger,Heavily Indebted Poor Countries (Hipc),Other Country Groups,NE,Niamey,2.1073,13.514
+NER,Niger,Least Developed Countries: Un Classification,Other Country Groups,NE,Niamey,2.1073,13.514
+NER,Niger,Sub-Saharan Africa (Excluding High Income),Other Country Groups,NE,Niamey,2.1073,13.514
+NER,Niger,World,Other Country Groups,NE,Niamey,2.1073,13.514
+NER,Niger,Sub-Saharan Africa ,Other country groups,NE,Niamey,2.1073,13.514
+NER,Niger,Sub-Saharan Africa (Ida & Ibrd Countries),By Lending,NE,Niamey,2.1073,13.514
+NER,Niger,Pre-Demographic Dividend,Demographic Dividend Groups,NE,Niamey,2.1073,13.514
+NER,Niger,Ida & Ibrd Total,By Lending,NE,Niamey,2.1073,13.514
+NER,Niger,Africa Western And Central,Other country groups,NE,Niamey,2.1073,13.514
+NGA,Nigeria,Sub-Saharan Africa,Region,NG,Abuja,7.48906,9.05804
+NGA,Nigeria,Low & Middle Income,By Income,NG,Abuja,7.48906,9.05804
+NGA,Nigeria,Lower Middle Income,By Income,NG,Abuja,7.48906,9.05804
+NGA,Nigeria,Middle Income,By Income,NG,Abuja,7.48906,9.05804
+NGA,Nigeria,Ida Blend,By Lending,NG,Abuja,7.48906,9.05804
+NGA,Nigeria,Fragile And Conflict Affected Situations,Other Country Groups,NG,Abuja,7.48906,9.05804
+NGA,Nigeria,Sub-Saharan Africa (Excluding High Income),Other Country Groups,NG,Abuja,7.48906,9.05804
+NGA,Nigeria,World,Other Country Groups,NG,Abuja,7.48906,9.05804
+NGA,Nigeria,Sub-Saharan Africa ,Other country groups,NG,Abuja,7.48906,9.05804
+NGA,Nigeria,Pre-Demographic Dividend,Demographic Dividend Groups,NG,Abuja,7.48906,9.05804
+NGA,Nigeria,Africa Western And Central,Other country groups,NG,Abuja,7.48906,9.05804
+MKD,North Macedonia,Europe & Central Asia,Region,MK,Skopje,21.4361,42.0024
+MKD,North Macedonia,Low & Middle Income,By Income,MK,Skopje,21.4361,42.0024
+MKD,North Macedonia,Middle Income,By Income,MK,Skopje,21.4361,42.0024
+MKD,North Macedonia,Upper Middle Income,By Income,MK,Skopje,21.4361,42.0024
+MKD,North Macedonia,Ibrd Only,By Lending,MK,Skopje,21.4361,42.0024
+MKD,North Macedonia,Europe & Central Asia (Excluding High Income),Other Country Groups,MK,Skopje,21.4361,42.0024
+MKD,North Macedonia,World,Other Country Groups,MK,Skopje,21.4361,42.0024
+MKD,North Macedonia,Late-Demographic Dividend,Demographic Dividend Groups,MK,Skopje,21.4361,42.0024
+MKD,North Macedonia,Europe & Central Asia (Ida & Ibrd Countries),By Lending,MK,Skopje,21.4361,42.0024
+MKD,North Macedonia,Ida & Ibrd Total,By Lending,MK,Skopje,21.4361,42.0024
+MNP,Northern Mariana Islands,East Asia & Pacific,Region,MP,Saipan,145.765,15.1935
+MNP,Northern Mariana Islands,High Income,By Income,MP,Saipan,145.765,15.1935
+MNP,Northern Mariana Islands,World,Other Country Groups,MP,Saipan,145.765,15.1935
+NOR,Norway,Europe & Central Asia,Region,NO,Oslo,10.7387,59.9138
+NOR,Norway,High Income,By Income,NO,Oslo,10.7387,59.9138
+NOR,Norway,Oecd Members,Other Country Groups,NO,Oslo,10.7387,59.9138
+NOR,Norway,World,Other Country Groups,NO,Oslo,10.7387,59.9138
+NOR,Norway,Post-Demographic Dividend,Demographic Dividend Groups,NO,Oslo,10.7387,59.9138
+OMN,Oman,Middle East & North Africa,Region,OM,Muscat,58.5874,23.6105
+OMN,Oman,High Income,By Income,OM,Muscat,58.5874,23.6105
+OMN,Oman,Arab World,Other Country Groups,OM,Muscat,58.5874,23.6105
+OMN,Oman,World,Other Country Groups,OM,Muscat,58.5874,23.6105
+OMN,Oman,Late-Demographic Dividend,Demographic Dividend Groups,OM,Muscat,58.5874,23.6105
+PAK,Pakistan,South Asia,Region,PK,Islamabad,72.8,30.5167
+PAK,Pakistan,Low & Middle Income,By Income,PK,Islamabad,72.8,30.5167
+PAK,Pakistan,Lower Middle Income,By Income,PK,Islamabad,72.8,30.5167
+PAK,Pakistan,Middle Income,By Income,PK,Islamabad,72.8,30.5167
+PAK,Pakistan,Ida Blend,By Lending,PK,Islamabad,72.8,30.5167
+PAK,Pakistan,World,Other Country Groups,PK,Islamabad,72.8,30.5167
+PAK,Pakistan,Early-Demographic Dividend,Demographic Dividend Groups,PK,Islamabad,72.8,30.5167
+PLW,Palau,East Asia & Pacific,Region,PW,Koror,134.479,7.34194
+PLW,Palau,Low & Middle Income,By Income,PW,Koror,134.479,7.34194
+PLW,Palau,Middle Income,By Income,PW,Koror,134.479,7.34194
+PLW,Palau,Upper Middle Income,By Income,PW,Koror,134.479,7.34194
+PLW,Palau,Ibrd Only,By Lending,PW,Koror,134.479,7.34194
+PLW,Palau,Pacific Island Small States,Small States,PW,Koror,134.479,7.34194
+PLW,Palau,Small States,Small States,PW,Koror,134.479,7.34194
+PLW,Palau,East Asia & Pacific (Excluding High Income),Other Country Groups,PW,Koror,134.479,7.34194
+PLW,Palau,World,Other Country Groups,PW,Koror,134.479,7.34194
+PLW,Palau,East Asia & Pacific (Ida & Ibrd Countries),By Lending,PW,Koror,134.479,7.34194
+PLW,Palau,Ida & Ibrd Total,By Lending,PW,Koror,134.479,7.34194
+PAN,Panama,Latin America & Caribbean,Region,PA,Panama City,-79.5188,8.99427
+PAN,Panama,High Income,By Income,PA,Panama City,-79.5188,8.99427
+PAN,Panama,Ibrd Only,By Lending,PA,Panama City,-79.5188,8.99427
+PAN,Panama,World,Other Country Groups,PA,Panama City,-79.5188,8.99427
+PAN,Panama,Early-Demographic Dividend,Demographic Dividend Groups,PA,Panama City,-79.5188,8.99427
+PAN,Panama,Ida & Ibrd Total,By Lending,PA,Panama City,-79.5188,8.99427
+PAN,Panama,Latin America & The Caribbean (Ida & Ibrd Countries),By Lending,PA,Panama City,-79.5188,8.99427
+PNG,Papua New Guinea,East Asia & Pacific,Region,PG,Port Moresby,147.194,-9.47357
+PNG,Papua New Guinea,Low & Middle Income,By Income,PG,Port Moresby,147.194,-9.47357
+PNG,Papua New Guinea,Lower Middle Income,By Income,PG,Port Moresby,147.194,-9.47357
+PNG,Papua New Guinea,Middle Income,By Income,PG,Port Moresby,147.194,-9.47357
+PNG,Papua New Guinea,Ida Blend,By Lending,PG,Port Moresby,147.194,-9.47357
+PNG,Papua New Guinea,East Asia & Pacific (Excluding High Income),Other Country Groups,PG,Port Moresby,147.194,-9.47357
+PNG,Papua New Guinea,Fragile And Conflict Affected Situations,Other Country Groups,PG,Port Moresby,147.194,-9.47357
+PNG,Papua New Guinea,World,Other Country Groups,PG,Port Moresby,147.194,-9.47357
+PNG,Papua New Guinea,Early-Demographic Dividend,Demographic Dividend Groups,PG,Port Moresby,147.194,-9.47357
+PRY,Paraguay,Latin America & Caribbean,Region,PY,Asuncion,-57.6362,-25.3005
+PRY,Paraguay,Low & Middle Income,By Income,PY,Asuncion,-57.6362,-25.3005
+PRY,Paraguay,Middle Income,By Income,PY,Asuncion,-57.6362,-25.3005
+PRY,Paraguay,Upper Middle Income,By Income,PY,Asuncion,-57.6362,-25.3005
+PRY,Paraguay,Ibrd Only,By Lending,PY,Asuncion,-57.6362,-25.3005
+PRY,Paraguay,Latin America & Caribbean (Excluding High Income),Other Country Groups,PY,Asuncion,-57.6362,-25.3005
+PRY,Paraguay,World,Other Country Groups,PY,Asuncion,-57.6362,-25.3005
+PRY,Paraguay,Early-Demographic Dividend,Demographic Dividend Groups,PY,Asuncion,-57.6362,-25.3005
+PRY,Paraguay,Ida & Ibrd Total,By Lending,PY,Asuncion,-57.6362,-25.3005
+PRY,Paraguay,Latin America & The Caribbean (Ida & Ibrd Countries),By Lending,PY,Asuncion,-57.6362,-25.3005
+PER,Peru,Latin America & Caribbean,Region,PE,Lima,-77.0465,-12.0931
+PER,Peru,Low & Middle Income,By Income,PE,Lima,-77.0465,-12.0931
+PER,Peru,Middle Income,By Income,PE,Lima,-77.0465,-12.0931
+PER,Peru,Upper Middle Income,By Income,PE,Lima,-77.0465,-12.0931
+PER,Peru,Ibrd Only,By Lending,PE,Lima,-77.0465,-12.0931
+PER,Peru,Latin America & Caribbean (Excluding High Income),Other Country Groups,PE,Lima,-77.0465,-12.0931
+PER,Peru,World,Other Country Groups,PE,Lima,-77.0465,-12.0931
+PER,Peru,Early-Demographic Dividend,Demographic Dividend Groups,PE,Lima,-77.0465,-12.0931
+PER,Peru,Ida & Ibrd Total,By Lending,PE,Lima,-77.0465,-12.0931
+PER,Peru,Latin America & The Caribbean (Ida & Ibrd Countries),By Lending,PE,Lima,-77.0465,-12.0931
+PHL,Philippines,East Asia & Pacific,Region,PH,Manila,121.035,14.5515
+PHL,Philippines,Low & Middle Income,By Income,PH,Manila,121.035,14.5515
+PHL,Philippines,Lower Middle Income,By Income,PH,Manila,121.035,14.5515
+PHL,Philippines,Middle Income,By Income,PH,Manila,121.035,14.5515
+PHL,Philippines,Ibrd Only,By Lending,PH,Manila,121.035,14.5515
+PHL,Philippines,East Asia & Pacific (Excluding High Income),Other Country Groups,PH,Manila,121.035,14.5515
+PHL,Philippines,World,Other Country Groups,PH,Manila,121.035,14.5515
+PHL,Philippines,Early-Demographic Dividend,Demographic Dividend Groups,PH,Manila,121.035,14.5515
+PHL,Philippines,East Asia & Pacific (Ida & Ibrd Countries),By Lending,PH,Manila,121.035,14.5515
+PHL,Philippines,Ida & Ibrd Total,By Lending,PH,Manila,121.035,14.5515
+POL,Poland,Europe & Central Asia,Region,PL,Warsaw,21.02,52.26
+POL,Poland,High Income,By Income,PL,Warsaw,21.02,52.26
+POL,Poland,Ibrd Only,By Lending,PL,Warsaw,21.02,52.26
+POL,Poland,Central Europe And The Baltics,Other Country Groups,PL,Warsaw,21.02,52.26
+POL,Poland,European Union,Other Country Groups,PL,Warsaw,21.02,52.26
+POL,Poland,Oecd Members,Other Country Groups,PL,Warsaw,21.02,52.26
+POL,Poland,World,Other Country Groups,PL,Warsaw,21.02,52.26
+POL,Poland,Late-Demographic Dividend,Demographic Dividend Groups,PL,Warsaw,21.02,52.26
+POL,Poland,Europe & Central Asia (Ida & Ibrd Countries),By Lending,PL,Warsaw,21.02,52.26
+POL,Poland,Ida & Ibrd Total,By Lending,PL,Warsaw,21.02,52.26
+PRT,Portugal,Europe & Central Asia,Region,PT,Lisbon,-9.13552,38.7072
+PRT,Portugal,High Income,By Income,PT,Lisbon,-9.13552,38.7072
+PRT,Portugal,Euro Area,Other Country Groups,PT,Lisbon,-9.13552,38.7072
+PRT,Portugal,European Union,Other Country Groups,PT,Lisbon,-9.13552,38.7072
+PRT,Portugal,Oecd Members,Other Country Groups,PT,Lisbon,-9.13552,38.7072
+PRT,Portugal,World,Other Country Groups,PT,Lisbon,-9.13552,38.7072
+PRT,Portugal,Post-Demographic Dividend,Demographic Dividend Groups,PT,Lisbon,-9.13552,38.7072
+PRI,Puerto Rico,Latin America & Caribbean,Region,PR,San Juan,-66.0,18.23
+PRI,Puerto Rico,High Income,By Income,PR,San Juan,-66.0,18.23
+PRI,Puerto Rico,World,Other Country Groups,PR,San Juan,-66.0,18.23
+PRI,Puerto Rico,Late-Demographic Dividend,Demographic Dividend Groups,PR,San Juan,-66.0,18.23
+QAT,Qatar,Middle East & North Africa,Region,QA,Doha,51.5082,25.2948
+QAT,Qatar,High Income,By Income,QA,Doha,51.5082,25.2948
+QAT,Qatar,Small States,Small States,QA,Doha,51.5082,25.2948
+QAT,Qatar,Arab World,Other Country Groups,QA,Doha,51.5082,25.2948
+QAT,Qatar,World,Other Country Groups,QA,Doha,51.5082,25.2948
+QAT,Qatar,Late-Demographic Dividend,Demographic Dividend Groups,QA,Doha,51.5082,25.2948
+QAT,Qatar,Other Small States,Small States,QA,Doha,51.5082,25.2948
+COG,"Congo, Rep.",Africa Western And Central,Other country groups,CG,Brazzaville,15.2662,-4.2767
+ROU,Romania,Europe & Central Asia,Region,RO,Bucharest,26.0979,44.4479
+ROU,Romania,High Income,By Income,RO,Bucharest,26.0979,44.4479
+ROU,Romania,Ibrd Only,By Lending,RO,Bucharest,26.0979,44.4479
+ROU,Romania,Central Europe And The Baltics,Other Country Groups,RO,Bucharest,26.0979,44.4479
+ROU,Romania,European Union,Other Country Groups,RO,Bucharest,26.0979,44.4479
+ROU,Romania,World,Other Country Groups,RO,Bucharest,26.0979,44.4479
+ROU,Romania,Late-Demographic Dividend,Demographic Dividend Groups,RO,Bucharest,26.0979,44.4479
+ROU,Romania,Europe & Central Asia (Ida & Ibrd Countries),By Lending,RO,Bucharest,26.0979,44.4479
+ROU,Romania,Ida & Ibrd Total,By Lending,RO,Bucharest,26.0979,44.4479
+RUS,Russian Federation,Europe & Central Asia,Region,RU,Moscow,37.6176,55.7558
+RUS,Russian Federation,Low & Middle Income,By Income,RU,Moscow,37.6176,55.7558
+RUS,Russian Federation,Middle Income,By Income,RU,Moscow,37.6176,55.7558
+RUS,Russian Federation,Upper Middle Income,By Income,RU,Moscow,37.6176,55.7558
+RUS,Russian Federation,Ibrd Only,By Lending,RU,Moscow,37.6176,55.7558
+RUS,Russian Federation,Europe & Central Asia (Excluding High Income),Other Country Groups,RU,Moscow,37.6176,55.7558
+RUS,Russian Federation,World,Other Country Groups,RU,Moscow,37.6176,55.7558
+RUS,Russian Federation,Late-Demographic Dividend,Demographic Dividend Groups,RU,Moscow,37.6176,55.7558
+RUS,Russian Federation,Europe & Central Asia (Ida & Ibrd Countries),By Lending,RU,Moscow,37.6176,55.7558
+RUS,Russian Federation,Ida & Ibrd Total,By Lending,RU,Moscow,37.6176,55.7558
+RWA,Rwanda,Sub-Saharan Africa,Region,RW,Kigali,30.0587,-1.95325
+RWA,Rwanda,Low & Middle Income,By Income,RW,Kigali,30.0587,-1.95325
+RWA,Rwanda,Low Income,By Income,RW,Kigali,30.0587,-1.95325
+RWA,Rwanda,Ida Only,By Lending,RW,Kigali,30.0587,-1.95325
+RWA,Rwanda,Heavily Indebted Poor Countries (Hipc),Other Country Groups,RW,Kigali,30.0587,-1.95325
+RWA,Rwanda,Least Developed Countries: Un Classification,Other Country Groups,RW,Kigali,30.0587,-1.95325
+RWA,Rwanda,Sub-Saharan Africa (Excluding High Income),Other Country Groups,RW,Kigali,30.0587,-1.95325
+RWA,Rwanda,World,Other Country Groups,RW,Kigali,30.0587,-1.95325
+RWA,Rwanda,Sub-Saharan Africa ,Other country groups,RW,Kigali,30.0587,-1.95325
+RWA,Rwanda,Sub-Saharan Africa (Ida & Ibrd Countries),By Lending,RW,Kigali,30.0587,-1.95325
+RWA,Rwanda,Early-Demographic Dividend,Demographic Dividend Groups,RW,Kigali,30.0587,-1.95325
+RWA,Rwanda,Ida & Ibrd Total,By Lending,RW,Kigali,30.0587,-1.95325
+RWA,Rwanda,Africa Eastern And Southern,Other country groups,RW,Kigali,30.0587,-1.95325
+WSM,Samoa,East Asia & Pacific,Region,WS,Apia,-171.752,-13.8314
+WSM,Samoa,Low & Middle Income,By Income,WS,Apia,-171.752,-13.8314
+WSM,Samoa,Lower Middle Income,By Income,WS,Apia,-171.752,-13.8314
+WSM,Samoa,Middle Income,By Income,WS,Apia,-171.752,-13.8314
+WSM,Samoa,Ida Only,By Lending,WS,Apia,-171.752,-13.8314
+WSM,Samoa,Pacific Island Small States,Small States,WS,Apia,-171.752,-13.8314
+WSM,Samoa,Small States,Small States,WS,Apia,-171.752,-13.8314
+WSM,Samoa,East Asia & Pacific (Excluding High Income),Other Country Groups,WS,Apia,-171.752,-13.8314
+WSM,Samoa,World,Other Country Groups,WS,Apia,-171.752,-13.8314
+WSM,Samoa,Early-Demographic Dividend,Demographic Dividend Groups,WS,Apia,-171.752,-13.8314
+WSM,Samoa,East Asia & Pacific (Ida & Ibrd Countries),By Lending,WS,Apia,-171.752,-13.8314
+WSM,Samoa,Ida & Ibrd Total,By Lending,WS,Apia,-171.752,-13.8314
+SMR,San Marino,Europe & Central Asia,Region,SM,San Marino,12.4486,43.9322
+SMR,San Marino,High Income,By Income,SM,San Marino,12.4486,43.9322
+SMR,San Marino,Small States,Small States,SM,San Marino,12.4486,43.9322
+SMR,San Marino,World,Other Country Groups,SM,San Marino,12.4486,43.9322
+SMR,San Marino,Other Small States,Small States,SM,San Marino,12.4486,43.9322
+STP,Sao Tome And Principe,Sub-Saharan Africa,Region,ST,Sao Tome,6.6071,0.20618
+STP,Sao Tome And Principe,Low & Middle Income,By Income,ST,Sao Tome,6.6071,0.20618
+STP,Sao Tome And Principe,Lower Middle Income,By Income,ST,Sao Tome,6.6071,0.20618
+STP,Sao Tome And Principe,Middle Income,By Income,ST,Sao Tome,6.6071,0.20618
+STP,Sao Tome And Principe,Ida Only,By Lending,ST,Sao Tome,6.6071,0.20618
+STP,Sao Tome And Principe,Small States,Small States,ST,Sao Tome,6.6071,0.20618
+STP,Sao Tome And Principe,Heavily Indebted Poor Countries (Hipc),Other Country Groups,ST,Sao Tome,6.6071,0.20618
+STP,Sao Tome And Principe,Least Developed Countries: Un Classification,Other Country Groups,ST,Sao Tome,6.6071,0.20618
+STP,Sao Tome And Principe,Sub-Saharan Africa (Excluding High Income),Other Country Groups,ST,Sao Tome,6.6071,0.20618
+STP,Sao Tome And Principe,World,Other Country Groups,ST,Sao Tome,6.6071,0.20618
+STP,Sao Tome And Principe,Sub-Saharan Africa ,Other country groups,ST,Sao Tome,6.6071,0.20618
+STP,Sao Tome And Principe,Sub-Saharan Africa (Ida & Ibrd Countries),By Lending,ST,Sao Tome,6.6071,0.20618
+STP,Sao Tome And Principe,Ida & Ibrd Total,By Lending,ST,Sao Tome,6.6071,0.20618
+STP,Sao Tome And Principe,Other Small States,Small States,ST,Sao Tome,6.6071,0.20618
+STP,Sao Tome And Principe,Africa Eastern And Southern,Other country groups,ST,Sao Tome,6.6071,0.20618
+SAU,Saudi Arabia,Middle East & North Africa,Region,SA,Riyadh,46.6977,24.6748
+SAU,Saudi Arabia,High Income,By Income,SA,Riyadh,46.6977,24.6748
+SAU,Saudi Arabia,Arab World,Other Country Groups,SA,Riyadh,46.6977,24.6748
+SAU,Saudi Arabia,World,Other Country Groups,SA,Riyadh,46.6977,24.6748
+SAU,Saudi Arabia,Early-Demographic Dividend,Demographic Dividend Groups,SA,Riyadh,46.6977,24.6748
+SEN,Senegal,Sub-Saharan Africa,Region,SN,Dakar,-17.4734,14.7247
+SEN,Senegal,Low & Middle Income,By Income,SN,Dakar,-17.4734,14.7247
+SEN,Senegal,Lower Middle Income,By Income,SN,Dakar,-17.4734,14.7247
+SEN,Senegal,Middle Income,By Income,SN,Dakar,-17.4734,14.7247
+SEN,Senegal,Ida Only,By Lending,SN,Dakar,-17.4734,14.7247
+SEN,Senegal,Heavily Indebted Poor Countries (Hipc),Other Country Groups,SN,Dakar,-17.4734,14.7247
+SEN,Senegal,Least Developed Countries: Un Classification,Other Country Groups,SN,Dakar,-17.4734,14.7247
+SEN,Senegal,Sub-Saharan Africa (Excluding High Income),Other Country Groups,SN,Dakar,-17.4734,14.7247
+SEN,Senegal,World,Other Country Groups,SN,Dakar,-17.4734,14.7247
+SEN,Senegal,Sub-Saharan Africa ,Other country groups,SN,Dakar,-17.4734,14.7247
+SEN,Senegal,Sub-Saharan Africa (Ida & Ibrd Countries),By Lending,SN,Dakar,-17.4734,14.7247
+SEN,Senegal,Pre-Demographic Dividend,Demographic Dividend Groups,SN,Dakar,-17.4734,14.7247
+SEN,Senegal,Ida & Ibrd Total,By Lending,SN,Dakar,-17.4734,14.7247
+SEN,Senegal,Africa Western And Central,Other country groups,SN,Dakar,-17.4734,14.7247
+SRB,Serbia,Europe & Central Asia,Region,RS,Belgrade,20.4656,44.8024
+SRB,Serbia,Low & Middle Income,By Income,RS,Belgrade,20.4656,44.8024
+SRB,Serbia,Middle Income,By Income,RS,Belgrade,20.4656,44.8024
+SRB,Serbia,Upper Middle Income,By Income,RS,Belgrade,20.4656,44.8024
+SRB,Serbia,Ibrd Only,By Lending,RS,Belgrade,20.4656,44.8024
+SRB,Serbia,Europe & Central Asia (Excluding High Income),Other Country Groups,RS,Belgrade,20.4656,44.8024
+SRB,Serbia,World,Other Country Groups,RS,Belgrade,20.4656,44.8024
+SRB,Serbia,Late-Demographic Dividend,Demographic Dividend Groups,RS,Belgrade,20.4656,44.8024
+SRB,Serbia,Europe & Central Asia (Ida & Ibrd Countries),By Lending,RS,Belgrade,20.4656,44.8024
+SRB,Serbia,Ida & Ibrd Total,By Lending,RS,Belgrade,20.4656,44.8024
+SYC,Seychelles,Sub-Saharan Africa,Region,SC,Victoria,55.4466,-4.6309
+SYC,Seychelles,High Income,By Income,SC,Victoria,55.4466,-4.6309
+SYC,Seychelles,Ibrd Only,By Lending,SC,Victoria,55.4466,-4.6309
+SYC,Seychelles,Small States,Small States,SC,Victoria,55.4466,-4.6309
+SYC,Seychelles,World,Other Country Groups,SC,Victoria,55.4466,-4.6309
+SYC,Seychelles,Sub-Saharan Africa ,Other country groups,SC,Victoria,55.4466,-4.6309
+SYC,Seychelles,Sub-Saharan Africa (Ida & Ibrd Countries),By Lending,SC,Victoria,55.4466,-4.6309
+SYC,Seychelles,Late-Demographic Dividend,Demographic Dividend Groups,SC,Victoria,55.4466,-4.6309
+SYC,Seychelles,Ida & Ibrd Total,By Lending,SC,Victoria,55.4466,-4.6309
+SYC,Seychelles,Other Small States,Small States,SC,Victoria,55.4466,-4.6309
+SYC,Seychelles,Africa Eastern And Southern,Other country groups,SC,Victoria,55.4466,-4.6309
+SLE,Sierra Leone,Sub-Saharan Africa,Region,SL,Freetown,-13.2134,8.4821
+SLE,Sierra Leone,Low & Middle Income,By Income,SL,Freetown,-13.2134,8.4821
+SLE,Sierra Leone,Low Income,By Income,SL,Freetown,-13.2134,8.4821
+SLE,Sierra Leone,Ida Only,By Lending,SL,Freetown,-13.2134,8.4821
+SLE,Sierra Leone,Heavily Indebted Poor Countries (Hipc),Other Country Groups,SL,Freetown,-13.2134,8.4821
+SLE,Sierra Leone,Least Developed Countries: Un Classification,Other Country Groups,SL,Freetown,-13.2134,8.4821
+SLE,Sierra Leone,Sub-Saharan Africa (Excluding High Income),Other Country Groups,SL,Freetown,-13.2134,8.4821
+SLE,Sierra Leone,World,Other Country Groups,SL,Freetown,-13.2134,8.4821
+SLE,Sierra Leone,Sub-Saharan Africa ,Other country groups,SL,Freetown,-13.2134,8.4821
+SLE,Sierra Leone,Sub-Saharan Africa (Ida & Ibrd Countries),By Lending,SL,Freetown,-13.2134,8.4821
+SLE,Sierra Leone,Pre-Demographic Dividend,Demographic Dividend Groups,SL,Freetown,-13.2134,8.4821
+SLE,Sierra Leone,Ida & Ibrd Total,By Lending,SL,Freetown,-13.2134,8.4821
+SLE,Sierra Leone,Africa Western And Central,Other country groups,SL,Freetown,-13.2134,8.4821
+SGP,Singapore,East Asia & Pacific,Region,SG,Singapore,103.85,1.28941
+SGP,Singapore,High Income,By Income,SG,Singapore,103.85,1.28941
+SGP,Singapore,World,Other Country Groups,SG,Singapore,103.85,1.28941
+SGP,Singapore,Post-Demographic Dividend,Demographic Dividend Groups,SG,Singapore,103.85,1.28941
+SXM,Sint Maarten (Dutch Part),Latin America & Caribbean,Region,SX,Philipsburg,,
+SXM,Sint Maarten (Dutch Part),High Income,By Income,SX,Philipsburg,,
+SXM,Sint Maarten (Dutch Part),World,Other Country Groups,SX,Philipsburg,,
+SVK,Slovak Republic,Europe & Central Asia,Region,SK,Bratislava,17.1073,48.1484
+SVK,Slovak Republic,High Income,By Income,SK,Bratislava,17.1073,48.1484
+SVK,Slovak Republic,Central Europe And The Baltics,Other Country Groups,SK,Bratislava,17.1073,48.1484
+SVK,Slovak Republic,Euro Area,Other Country Groups,SK,Bratislava,17.1073,48.1484
+SVK,Slovak Republic,European Union,Other Country Groups,SK,Bratislava,17.1073,48.1484
+SVK,Slovak Republic,Oecd Members,Other Country Groups,SK,Bratislava,17.1073,48.1484
+SVK,Slovak Republic,World,Other Country Groups,SK,Bratislava,17.1073,48.1484
+SVK,Slovak Republic,Late-Demographic Dividend,Demographic Dividend Groups,SK,Bratislava,17.1073,48.1484
+SVN,Slovenia,Europe & Central Asia,Region,SI,Ljubljana,14.5044,46.0546
+SVN,Slovenia,High Income,By Income,SI,Ljubljana,14.5044,46.0546
+SVN,Slovenia,Central Europe And The Baltics,Other Country Groups,SI,Ljubljana,14.5044,46.0546
+SVN,Slovenia,Euro Area,Other Country Groups,SI,Ljubljana,14.5044,46.0546
+SVN,Slovenia,European Union,Other Country Groups,SI,Ljubljana,14.5044,46.0546
+SVN,Slovenia,Oecd Members,Other Country Groups,SI,Ljubljana,14.5044,46.0546
+SVN,Slovenia,World,Other Country Groups,SI,Ljubljana,14.5044,46.0546
+SVN,Slovenia,Post-Demographic Dividend,Demographic Dividend Groups,SI,Ljubljana,14.5044,46.0546
+SLB,Solomon Islands,East Asia & Pacific,Region,SB,Honiara,159.949,-9.42676
+SLB,Solomon Islands,Low & Middle Income,By Income,SB,Honiara,159.949,-9.42676
+SLB,Solomon Islands,Lower Middle Income,By Income,SB,Honiara,159.949,-9.42676
+SLB,Solomon Islands,Middle Income,By Income,SB,Honiara,159.949,-9.42676
+SLB,Solomon Islands,Ida Only,By Lending,SB,Honiara,159.949,-9.42676
+SLB,Solomon Islands,Pacific Island Small States,Small States,SB,Honiara,159.949,-9.42676
+SLB,Solomon Islands,Small States,Small States,SB,Honiara,159.949,-9.42676
+SLB,Solomon Islands,East Asia & Pacific (Excluding High Income),Other Country Groups,SB,Honiara,159.949,-9.42676
+SLB,Solomon Islands,Fragile And Conflict Affected Situations,Other Country Groups,SB,Honiara,159.949,-9.42676
+SLB,Solomon Islands,Least Developed Countries: Un Classification,Other Country Groups,SB,Honiara,159.949,-9.42676
+SLB,Solomon Islands,World,Other Country Groups,SB,Honiara,159.949,-9.42676
+SLB,Solomon Islands,Early-Demographic Dividend,Demographic Dividend Groups,SB,Honiara,159.949,-9.42676
+SLB,Solomon Islands,East Asia & Pacific (Ida & Ibrd Countries),By Lending,SB,Honiara,159.949,-9.42676
+SLB,Solomon Islands,Ida & Ibrd Total,By Lending,SB,Honiara,159.949,-9.42676
+SOM,Somalia,Sub-Saharan Africa,Region,SO,Mogadishu,45.3254,2.07515
+SOM,Somalia,Low & Middle Income,By Income,SO,Mogadishu,45.3254,2.07515
+SOM,Somalia,Low Income,By Income,SO,Mogadishu,45.3254,2.07515
+SOM,Somalia,Ida Only,By Lending,SO,Mogadishu,45.3254,2.07515
+SOM,Somalia,Arab World,Other Country Groups,SO,Mogadishu,45.3254,2.07515
+SOM,Somalia,Fragile And Conflict Affected Situations,Other Country Groups,SO,Mogadishu,45.3254,2.07515
+SOM,Somalia,Heavily Indebted Poor Countries (Hipc),Other Country Groups,SO,Mogadishu,45.3254,2.07515
+SOM,Somalia,Least Developed Countries: Un Classification,Other Country Groups,SO,Mogadishu,45.3254,2.07515
+SOM,Somalia,Sub-Saharan Africa (Excluding High Income),Other Country Groups,SO,Mogadishu,45.3254,2.07515
+SOM,Somalia,World,Other Country Groups,SO,Mogadishu,45.3254,2.07515
+SOM,Somalia,Sub-Saharan Africa ,Other country groups,SO,Mogadishu,45.3254,2.07515
+SOM,Somalia,Sub-Saharan Africa (Ida & Ibrd Countries),By Lending,SO,Mogadishu,45.3254,2.07515
+SOM,Somalia,Pre-Demographic Dividend,Demographic Dividend Groups,SO,Mogadishu,45.3254,2.07515
+SOM,Somalia,Ida & Ibrd Total,By Lending,SO,Mogadishu,45.3254,2.07515
+SOM,Somalia,Africa Eastern And Southern,Other country groups,SO,Mogadishu,45.3254,2.07515
+ZAF,South Africa,Sub-Saharan Africa,Region,ZA,Pretoria,28.1871,-25.746
+ZAF,South Africa,Low & Middle Income,By Income,ZA,Pretoria,28.1871,-25.746
+ZAF,South Africa,Middle Income,By Income,ZA,Pretoria,28.1871,-25.746
+ZAF,South Africa,Upper Middle Income,By Income,ZA,Pretoria,28.1871,-25.746
+ZAF,South Africa,Ibrd Only,By Lending,ZA,Pretoria,28.1871,-25.746
+ZAF,South Africa,Sub-Saharan Africa (Excluding High Income),Other Country Groups,ZA,Pretoria,28.1871,-25.746
+ZAF,South Africa,World,Other Country Groups,ZA,Pretoria,28.1871,-25.746
+ZAF,South Africa,Sub-Saharan Africa ,Other country groups,ZA,Pretoria,28.1871,-25.746
+ZAF,South Africa,Sub-Saharan Africa (Ida & Ibrd Countries),By Lending,ZA,Pretoria,28.1871,-25.746
+ZAF,South Africa,Early-Demographic Dividend,Demographic Dividend Groups,ZA,Pretoria,28.1871,-25.746
+ZAF,South Africa,Ida & Ibrd Total,By Lending,ZA,Pretoria,28.1871,-25.746
+ZAF,South Africa,Africa Eastern And Southern,Other country groups,ZA,Pretoria,28.1871,-25.746
+SSD,South Sudan,Sub-Saharan Africa,Region,SS,Juba,31.6,4.85
+SSD,South Sudan,Low & Middle Income,By Income,SS,Juba,31.6,4.85
+SSD,South Sudan,Low Income,By Income,SS,Juba,31.6,4.85
+SSD,South Sudan,Ida Only,By Lending,SS,Juba,31.6,4.85
+SSD,South Sudan,Fragile And Conflict Affected Situations,Other Country Groups,SS,Juba,31.6,4.85
+SSD,South Sudan,Least Developed Countries: Un Classification,Other Country Groups,SS,Juba,31.6,4.85
+SSD,South Sudan,Sub-Saharan Africa (Excluding High Income),Other Country Groups,SS,Juba,31.6,4.85
+SSD,South Sudan,World,Other Country Groups,SS,Juba,31.6,4.85
+SSD,South Sudan,Sub-Saharan Africa ,Other country groups,SS,Juba,31.6,4.85
+SSD,South Sudan,Sub-Saharan Africa (Ida & Ibrd Countries),By Lending,SS,Juba,31.6,4.85
+SSD,South Sudan,Pre-Demographic Dividend,Demographic Dividend Groups,SS,Juba,31.6,4.85
+SSD,South Sudan,Ida & Ibrd Total,By Lending,SS,Juba,31.6,4.85
+SSD,South Sudan,Africa Eastern And Southern,Other country groups,SS,Juba,31.6,4.85
+ESP,Spain,Europe & Central Asia,Region,ES,Madrid,-3.70327,40.4167
+ESP,Spain,High Income,By Income,ES,Madrid,-3.70327,40.4167
+ESP,Spain,Euro Area,Other Country Groups,ES,Madrid,-3.70327,40.4167
+ESP,Spain,European Union,Other Country Groups,ES,Madrid,-3.70327,40.4167
+ESP,Spain,Oecd Members,Other Country Groups,ES,Madrid,-3.70327,40.4167
+ESP,Spain,World,Other Country Groups,ES,Madrid,-3.70327,40.4167
+ESP,Spain,Post-Demographic Dividend,Demographic Dividend Groups,ES,Madrid,-3.70327,40.4167
+LKA,Sri Lanka,South Asia,Region,LK,Colombo,79.8528,6.92148
+LKA,Sri Lanka,Low & Middle Income,By Income,LK,Colombo,79.8528,6.92148
+LKA,Sri Lanka,Lower Middle Income,By Income,LK,Colombo,79.8528,6.92148
+LKA,Sri Lanka,Middle Income,By Income,LK,Colombo,79.8528,6.92148
+LKA,Sri Lanka,Ida Only,By Lending,LK,Colombo,79.8528,6.92148
+LKA,Sri Lanka,World,Other Country Groups,LK,Colombo,79.8528,6.92148
+LKA,Sri Lanka,Late-Demographic Dividend,Demographic Dividend Groups,LK,Colombo,79.8528,6.92148
+LKA,Sri Lanka,Ida & Ibrd Total,By Lending,LK,Colombo,79.8528,6.92148
+LKA,Sri Lanka,South Asia (Ida & Ibrd),By Lending,LK,Colombo,79.8528,6.92148
+KNA,St. Kitts And Nevis,Latin America & Caribbean,Region,KN,Basseterre,-62.7309,17.3
+KNA,St. Kitts And Nevis,High Income,By Income,KN,Basseterre,-62.7309,17.3
+KNA,St. Kitts And Nevis,Ibrd Only,By Lending,KN,Basseterre,-62.7309,17.3
+KNA,St. Kitts And Nevis,Caribbean Small States,Small States,KN,Basseterre,-62.7309,17.3
+KNA,St. Kitts And Nevis,Small States,Small States,KN,Basseterre,-62.7309,17.3
+KNA,St. Kitts And Nevis,World,Other Country Groups,KN,Basseterre,-62.7309,17.3
+KNA,St. Kitts And Nevis,Ida & Ibrd Total,By Lending,KN,Basseterre,-62.7309,17.3
+KNA,St. Kitts And Nevis,Latin America & The Caribbean (Ida & Ibrd Countries),By Lending,KN,Basseterre,-62.7309,17.3
+LCA,St. Lucia,Latin America & Caribbean,Region,LC,Castries,-60.9832,14.0
+LCA,St. Lucia,Low & Middle Income,By Income,LC,Castries,-60.9832,14.0
+LCA,St. Lucia,Middle Income,By Income,LC,Castries,-60.9832,14.0
+LCA,St. Lucia,Upper Middle Income,By Income,LC,Castries,-60.9832,14.0
+LCA,St. Lucia,Ida Blend,By Lending,LC,Castries,-60.9832,14.0
+LCA,St. Lucia,Caribbean Small States,Small States,LC,Castries,-60.9832,14.0
+LCA,St. Lucia,Small States,Small States,LC,Castries,-60.9832,14.0
+LCA,St. Lucia,Latin America & Caribbean (Excluding High Income),Other Country Groups,LC,Castries,-60.9832,14.0
+LCA,St. Lucia,World,Other Country Groups,LC,Castries,-60.9832,14.0
+LCA,St. Lucia,Late-Demographic Dividend,Demographic Dividend Groups,LC,Castries,-60.9832,14.0
+MAF,St. Martin (French Part),Latin America & Caribbean,Region,MF,Marigot,,
+MAF,St. Martin (French Part),High Income,By Income,MF,Marigot,,
+MAF,St. Martin (French Part),World,Other Country Groups,MF,Marigot,,
+VCT,St. Vincent And The Grenadines,Latin America & Caribbean,Region,VC,Kingstown,-61.2653,13.2035
+VCT,St. Vincent And The Grenadines,Low & Middle Income,By Income,VC,Kingstown,-61.2653,13.2035
+VCT,St. Vincent And The Grenadines,Middle Income,By Income,VC,Kingstown,-61.2653,13.2035
+VCT,St. Vincent And The Grenadines,Upper Middle Income,By Income,VC,Kingstown,-61.2653,13.2035
+VCT,St. Vincent And The Grenadines,Ida Blend,By Lending,VC,Kingstown,-61.2653,13.2035
+VCT,St. Vincent And The Grenadines,Caribbean Small States,Small States,VC,Kingstown,-61.2653,13.2035
+VCT,St. Vincent And The Grenadines,Small States,Small States,VC,Kingstown,-61.2653,13.2035
+VCT,St. Vincent And The Grenadines,Latin America & Caribbean (Excluding High Income),Other Country Groups,VC,Kingstown,-61.2653,13.2035
+VCT,St. Vincent And The Grenadines,World,Other Country Groups,VC,Kingstown,-61.2653,13.2035
+VCT,St. Vincent And The Grenadines,Late-Demographic Dividend,Demographic Dividend Groups,VC,Kingstown,-61.2653,13.2035
+SDN,Sudan,Sub-Saharan Africa,Region,SD,Khartoum,32.5363,15.5932
+SDN,Sudan,Low & Middle Income,By Income,SD,Khartoum,32.5363,15.5932
+SDN,Sudan,Low Income,By Income,SD,Khartoum,32.5363,15.5932
+SDN,Sudan,Ida Only,By Lending,SD,Khartoum,32.5363,15.5932
+SDN,Sudan,Arab World,Other Country Groups,SD,Khartoum,32.5363,15.5932
+SDN,Sudan,Fragile And Conflict Affected Situations,Other Country Groups,SD,Khartoum,32.5363,15.5932
+SDN,Sudan,Heavily Indebted Poor Countries (Hipc),Other Country Groups,SD,Khartoum,32.5363,15.5932
+SDN,Sudan,Least Developed Countries: Un Classification,Other Country Groups,SD,Khartoum,32.5363,15.5932
+SDN,Sudan,Sub-Saharan Africa (Excluding High Income),Other Country Groups,SD,Khartoum,32.5363,15.5932
+SDN,Sudan,World,Other Country Groups,SD,Khartoum,32.5363,15.5932
+SDN,Sudan,Sub-Saharan Africa ,Other country groups,SD,Khartoum,32.5363,15.5932
+SDN,Sudan,Sub-Saharan Africa (Ida & Ibrd Countries),By Lending,SD,Khartoum,32.5363,15.5932
+SDN,Sudan,Pre-Demographic Dividend,Demographic Dividend Groups,SD,Khartoum,32.5363,15.5932
+SDN,Sudan,Ida & Ibrd Total,By Lending,SD,Khartoum,32.5363,15.5932
+SUR,Suriname,Latin America & Caribbean,Region,SR,Paramaribo,-55.1679,5.8232
+SUR,Suriname,Low & Middle Income,By Income,SR,Paramaribo,-55.1679,5.8232
+SUR,Suriname,Middle Income,By Income,SR,Paramaribo,-55.1679,5.8232
+SUR,Suriname,Upper Middle Income,By Income,SR,Paramaribo,-55.1679,5.8232
+SUR,Suriname,Ibrd Only,By Lending,SR,Paramaribo,-55.1679,5.8232
+SUR,Suriname,Caribbean Small States,Small States,SR,Paramaribo,-55.1679,5.8232
+SUR,Suriname,Small States,Small States,SR,Paramaribo,-55.1679,5.8232
+SUR,Suriname,Latin America & Caribbean (Excluding High Income),Other Country Groups,SR,Paramaribo,-55.1679,5.8232
+SUR,Suriname,World,Other Country Groups,SR,Paramaribo,-55.1679,5.8232
+SUR,Suriname,Early-Demographic Dividend,Demographic Dividend Groups,SR,Paramaribo,-55.1679,5.8232
+SUR,Suriname,Ida & Ibrd Total,By Lending,SR,Paramaribo,-55.1679,5.8232
+SUR,Suriname,Latin America & The Caribbean (Ida & Ibrd Countries),By Lending,SR,Paramaribo,-55.1679,5.8232
+SWE,Sweden,Europe & Central Asia,Region,SE,Stockholm,18.0645,59.3327
+SWE,Sweden,High Income,By Income,SE,Stockholm,18.0645,59.3327
+SWE,Sweden,European Union,Other Country Groups,SE,Stockholm,18.0645,59.3327
+SWE,Sweden,Oecd Members,Other Country Groups,SE,Stockholm,18.0645,59.3327
+SWE,Sweden,World,Other Country Groups,SE,Stockholm,18.0645,59.3327
+SWE,Sweden,Post-Demographic Dividend,Demographic Dividend Groups,SE,Stockholm,18.0645,59.3327
+CHE,Switzerland,Europe & Central Asia,Region,CH,Bern,7.44821,46.948
+CHE,Switzerland,High Income,By Income,CH,Bern,7.44821,46.948
+CHE,Switzerland,Oecd Members,Other Country Groups,CH,Bern,7.44821,46.948
+CHE,Switzerland,World,Other Country Groups,CH,Bern,7.44821,46.948
+CHE,Switzerland,Post-Demographic Dividend,Demographic Dividend Groups,CH,Bern,7.44821,46.948
+SYR,Syrian Arab Republic,Middle East & North Africa,Region,SY,Damascus,36.3119,33.5146
+SYR,Syrian Arab Republic,Low & Middle Income,By Income,SY,Damascus,36.3119,33.5146
+SYR,Syrian Arab Republic,Low Income,By Income,SY,Damascus,36.3119,33.5146
+SYR,Syrian Arab Republic,Ida Only,By Lending,SY,Damascus,36.3119,33.5146
+SYR,Syrian Arab Republic,Arab World,Other Country Groups,SY,Damascus,36.3119,33.5146
+SYR,Syrian Arab Republic,Fragile And Conflict Affected Situations,Other Country Groups,SY,Damascus,36.3119,33.5146
+SYR,Syrian Arab Republic,Middle East & North Africa (Excluding High Income),Other Country Groups,SY,Damascus,36.3119,33.5146
+SYR,Syrian Arab Republic,World,Other Country Groups,SY,Damascus,36.3119,33.5146
+SYR,Syrian Arab Republic,Early-Demographic Dividend,Demographic Dividend Groups,SY,Damascus,36.3119,33.5146
+SYR,Syrian Arab Republic,Ida & Ibrd Total,By Lending,SY,Damascus,36.3119,33.5146
+SYR,Syrian Arab Republic,Middle East & North Africa (Ida & Ibrd Countries),By Lending,SY,Damascus,36.3119,33.5146
+TJK,Tajikistan,Europe & Central Asia,Region,TJ,Dushanbe,68.7864,38.5878
+TJK,Tajikistan,Low & Middle Income,By Income,TJ,Dushanbe,68.7864,38.5878
+TJK,Tajikistan,Lower Middle Income,By Income,TJ,Dushanbe,68.7864,38.5878
+TJK,Tajikistan,Middle Income,By Income,TJ,Dushanbe,68.7864,38.5878
+TJK,Tajikistan,Ida Only,By Lending,TJ,Dushanbe,68.7864,38.5878
+TJK,Tajikistan,Europe & Central Asia (Excluding High Income),Other Country Groups,TJ,Dushanbe,68.7864,38.5878
+TJK,Tajikistan,World,Other Country Groups,TJ,Dushanbe,68.7864,38.5878
+TJK,Tajikistan,Early-Demographic Dividend,Demographic Dividend Groups,TJ,Dushanbe,68.7864,38.5878
+TJK,Tajikistan,Europe & Central Asia (Ida & Ibrd Countries),By Lending,TJ,Dushanbe,68.7864,38.5878
+TJK,Tajikistan,Ida & Ibrd Total,By Lending,TJ,Dushanbe,68.7864,38.5878
+TZA,Tanzania,Sub-Saharan Africa,Region,TZ,Dodoma,35.7382,-6.17486
+TZA,Tanzania,Low & Middle Income,By Income,TZ,Dodoma,35.7382,-6.17486
+TZA,Tanzania,Lower Middle Income,By Income,TZ,Dodoma,35.7382,-6.17486
+TZA,Tanzania,Middle Income,By Income,TZ,Dodoma,35.7382,-6.17486
+TZA,Tanzania,Ida Only,By Lending,TZ,Dodoma,35.7382,-6.17486
+TZA,Tanzania,Heavily Indebted Poor Countries (Hipc),Other Country Groups,TZ,Dodoma,35.7382,-6.17486
+TZA,Tanzania,Least Developed Countries: Un Classification,Other Country Groups,TZ,Dodoma,35.7382,-6.17486
+TZA,Tanzania,Sub-Saharan Africa (Excluding High Income),Other Country Groups,TZ,Dodoma,35.7382,-6.17486
+TZA,Tanzania,World,Other Country Groups,TZ,Dodoma,35.7382,-6.17486
+TZA,Tanzania,Sub-Saharan Africa ,Other country groups,TZ,Dodoma,35.7382,-6.17486
+TZA,Tanzania,Sub-Saharan Africa (Ida & Ibrd Countries),By Lending,TZ,Dodoma,35.7382,-6.17486
+TZA,Tanzania,Pre-Demographic Dividend,Demographic Dividend Groups,TZ,Dodoma,35.7382,-6.17486
+TZA,Tanzania,Ida & Ibrd Total,By Lending,TZ,Dodoma,35.7382,-6.17486
+TZA,Tanzania,Africa Eastern And Southern,Other country groups,TZ,Dodoma,35.7382,-6.17486
+THA,Thailand,East Asia & Pacific,Region,TH,Bangkok,100.521,13.7308
+THA,Thailand,Low & Middle Income,By Income,TH,Bangkok,100.521,13.7308
+THA,Thailand,Middle Income,By Income,TH,Bangkok,100.521,13.7308
+THA,Thailand,Upper Middle Income,By Income,TH,Bangkok,100.521,13.7308
+THA,Thailand,Ibrd Only,By Lending,TH,Bangkok,100.521,13.7308
+THA,Thailand,East Asia & Pacific (Excluding High Income),Other Country Groups,TH,Bangkok,100.521,13.7308
+THA,Thailand,World,Other Country Groups,TH,Bangkok,100.521,13.7308
+THA,Thailand,Late-Demographic Dividend,Demographic Dividend Groups,TH,Bangkok,100.521,13.7308
+THA,Thailand,East Asia & Pacific (Ida & Ibrd Countries),By Lending,TH,Bangkok,100.521,13.7308
+THA,Thailand,Ida & Ibrd Total,By Lending,TH,Bangkok,100.521,13.7308
+TLS,Timor-Leste,East Asia & Pacific,Region,TL,Dili,125.567,-8.56667
+TLS,Timor-Leste,Low & Middle Income,By Income,TL,Dili,125.567,-8.56667
+TLS,Timor-Leste,Lower Middle Income,By Income,TL,Dili,125.567,-8.56667
+TLS,Timor-Leste,Middle Income,By Income,TL,Dili,125.567,-8.56667
+TLS,Timor-Leste,Ida Blend,By Lending,TL,Dili,125.567,-8.56667
+TLS,Timor-Leste,Small States,Small States,TL,Dili,125.567,-8.56667
+TLS,Timor-Leste,East Asia & Pacific (Excluding High Income),Other Country Groups,TL,Dili,125.567,-8.56667
+TLS,Timor-Leste,Fragile And Conflict Affected Situations,Other Country Groups,TL,Dili,125.567,-8.56667
+TLS,Timor-Leste,Least Developed Countries: Un Classification,Other Country Groups,TL,Dili,125.567,-8.56667
+TLS,Timor-Leste,World,Other Country Groups,TL,Dili,125.567,-8.56667
+TLS,Timor-Leste,Pre-Demographic Dividend,Demographic Dividend Groups,TL,Dili,125.567,-8.56667
+TLS,Timor-Leste,Other Small States,Small States,TL,Dili,125.567,-8.56667
+TGO,Togo,Sub-Saharan Africa,Region,TG,Lome,1.2255,6.1228
+TGO,Togo,Low & Middle Income,By Income,TG,Lome,1.2255,6.1228
+TGO,Togo,Low Income,By Income,TG,Lome,1.2255,6.1228
+TGO,Togo,Ida Only,By Lending,TG,Lome,1.2255,6.1228
+TGO,Togo,Heavily Indebted Poor Countries (Hipc),Other Country Groups,TG,Lome,1.2255,6.1228
+TGO,Togo,Least Developed Countries: Un Classification,Other Country Groups,TG,Lome,1.2255,6.1228
+TGO,Togo,Sub-Saharan Africa (Excluding High Income),Other Country Groups,TG,Lome,1.2255,6.1228
+TGO,Togo,World,Other Country Groups,TG,Lome,1.2255,6.1228
+TGO,Togo,Sub-Saharan Africa ,Other country groups,TG,Lome,1.2255,6.1228
+TGO,Togo,Sub-Saharan Africa (Ida & Ibrd Countries),By Lending,TG,Lome,1.2255,6.1228
+TGO,Togo,Pre-Demographic Dividend,Demographic Dividend Groups,TG,Lome,1.2255,6.1228
+TGO,Togo,Ida & Ibrd Total,By Lending,TG,Lome,1.2255,6.1228
+TGO,Togo,Africa Western And Central,Other country groups,TG,Lome,1.2255,6.1228
+TON,Tonga,East Asia & Pacific,Region,TO,Nuku'alofa,-175.216,-21.136
+TON,Tonga,Low & Middle Income,By Income,TO,Nuku'alofa,-175.216,-21.136
+TON,Tonga,Middle Income,By Income,TO,Nuku'alofa,-175.216,-21.136
+TON,Tonga,Upper Middle Income,By Income,TO,Nuku'alofa,-175.216,-21.136
+TON,Tonga,Ida Only,By Lending,TO,Nuku'alofa,-175.216,-21.136
+TON,Tonga,Pacific Island Small States,Small States,TO,Nuku'alofa,-175.216,-21.136
+TON,Tonga,Small States,Small States,TO,Nuku'alofa,-175.216,-21.136
+TON,Tonga,East Asia & Pacific (Excluding High Income),Other Country Groups,TO,Nuku'alofa,-175.216,-21.136
+TON,Tonga,World,Other Country Groups,TO,Nuku'alofa,-175.216,-21.136
+TON,Tonga,Early-Demographic Dividend,Demographic Dividend Groups,TO,Nuku'alofa,-175.216,-21.136
+TON,Tonga,East Asia & Pacific (Ida & Ibrd Countries),By Lending,TO,Nuku'alofa,-175.216,-21.136
+TON,Tonga,Ida & Ibrd Total,By Lending,TO,Nuku'alofa,-175.216,-21.136
+TTO,Trinidad And Tobago,Latin America & Caribbean,Region,TT,Port-of-Spain,-61.4789,10.6596
+TTO,Trinidad And Tobago,High Income,By Income,TT,Port-of-Spain,-61.4789,10.6596
+TTO,Trinidad And Tobago,Ibrd Only,By Lending,TT,Port-of-Spain,-61.4789,10.6596
+TTO,Trinidad And Tobago,Caribbean Small States,Small States,TT,Port-of-Spain,-61.4789,10.6596
+TTO,Trinidad And Tobago,Small States,Small States,TT,Port-of-Spain,-61.4789,10.6596
+TTO,Trinidad And Tobago,World,Other Country Groups,TT,Port-of-Spain,-61.4789,10.6596
+TTO,Trinidad And Tobago,Late-Demographic Dividend,Demographic Dividend Groups,TT,Port-of-Spain,-61.4789,10.6596
+TTO,Trinidad And Tobago,Ida & Ibrd Total,By Lending,TT,Port-of-Spain,-61.4789,10.6596
+TTO,Trinidad And Tobago,Latin America & The Caribbean (Ida & Ibrd Countries),By Lending,TT,Port-of-Spain,-61.4789,10.6596
+TUN,Tunisia,Middle East & North Africa,Region,TN,Tunis,10.21,36.7899
+TUN,Tunisia,Low & Middle Income,By Income,TN,Tunis,10.21,36.7899
+TUN,Tunisia,Lower Middle Income,By Income,TN,Tunis,10.21,36.7899
+TUN,Tunisia,Middle Income,By Income,TN,Tunis,10.21,36.7899
+TUN,Tunisia,Ibrd Only,By Lending,TN,Tunis,10.21,36.7899
+TUN,Tunisia,Arab World,Other Country Groups,TN,Tunis,10.21,36.7899
+TUN,Tunisia,Middle East & North Africa (Excluding High Income),Other Country Groups,TN,Tunis,10.21,36.7899
+TUN,Tunisia,World,Other Country Groups,TN,Tunis,10.21,36.7899
+TUN,Tunisia,Late-Demographic Dividend,Demographic Dividend Groups,TN,Tunis,10.21,36.7899
+TUN,Tunisia,Ida & Ibrd Total,By Lending,TN,Tunis,10.21,36.7899
+TUN,Tunisia,Middle East & North Africa (Ida & Ibrd Countries),By Lending,TN,Tunis,10.21,36.7899
+TUR,Turkiye,Europe & Central Asia,Region,TR,Ankara,32.3606,39.7153
+TUR,Turkiye,Low & Middle Income,By Income,TR,Ankara,32.3606,39.7153
+TUR,Turkiye,Middle Income,By Income,TR,Ankara,32.3606,39.7153
+TUR,Turkiye,Upper Middle Income,By Income,TR,Ankara,32.3606,39.7153
+TUR,Turkiye,Ibrd Only,By Lending,TR,Ankara,32.3606,39.7153
+TUR,Turkiye,Europe & Central Asia (Excluding High Income),Other Country Groups,TR,Ankara,32.3606,39.7153
+TUR,Turkiye,Oecd Members,Other Country Groups,TR,Ankara,32.3606,39.7153
+TUR,Turkiye,World,Other Country Groups,TR,Ankara,32.3606,39.7153
+TUR,Turkiye,Early-Demographic Dividend,Demographic Dividend Groups,TR,Ankara,32.3606,39.7153
+TUR,Turkiye,Europe & Central Asia (Ida & Ibrd Countries),By Lending,TR,Ankara,32.3606,39.7153
+TUR,Turkiye,Ida & Ibrd Total,By Lending,TR,Ankara,32.3606,39.7153
+TKM,Turkmenistan,Europe & Central Asia,Region,TM,Ashgabat,58.3794,37.9509
+TKM,Turkmenistan,Low & Middle Income,By Income,TM,Ashgabat,58.3794,37.9509
+TKM,Turkmenistan,Middle Income,By Income,TM,Ashgabat,58.3794,37.9509
+TKM,Turkmenistan,Upper Middle Income,By Income,TM,Ashgabat,58.3794,37.9509
+TKM,Turkmenistan,Ibrd Only,By Lending,TM,Ashgabat,58.3794,37.9509
+TKM,Turkmenistan,Europe & Central Asia (Excluding High Income),Other Country Groups,TM,Ashgabat,58.3794,37.9509
+TKM,Turkmenistan,World,Other Country Groups,TM,Ashgabat,58.3794,37.9509
+TKM,Turkmenistan,Early-Demographic Dividend,Demographic Dividend Groups,TM,Ashgabat,58.3794,37.9509
+TKM,Turkmenistan,Europe & Central Asia (Ida & Ibrd Countries),By Lending,TM,Ashgabat,58.3794,37.9509
+TKM,Turkmenistan,Ida & Ibrd Total,By Lending,TM,Ashgabat,58.3794,37.9509
+TCA,Turks And Caicos Islands,Latin America & Caribbean,Region,TC,Grand Turk,-71.141389,21.4602778
+TCA,Turks And Caicos Islands,High Income,By Income,TC,Grand Turk,-71.141389,21.4602778
+TCA,Turks And Caicos Islands,World,Other Country Groups,TC,Grand Turk,-71.141389,21.4602778
+TUV,Tuvalu,East Asia & Pacific,Region,TV,Funafuti,179.089567,-8.6314877
+TUV,Tuvalu,Low & Middle Income,By Income,TV,Funafuti,179.089567,-8.6314877
+TUV,Tuvalu,Middle Income,By Income,TV,Funafuti,179.089567,-8.6314877
+TUV,Tuvalu,Upper Middle Income,By Income,TV,Funafuti,179.089567,-8.6314877
+TUV,Tuvalu,Ida Only,By Lending,TV,Funafuti,179.089567,-8.6314877
+TUV,Tuvalu,Pacific Island Small States,Small States,TV,Funafuti,179.089567,-8.6314877
+TUV,Tuvalu,Small States,Small States,TV,Funafuti,179.089567,-8.6314877
+TUV,Tuvalu,East Asia & Pacific (Excluding High Income),Other Country Groups,TV,Funafuti,179.089567,-8.6314877
+TUV,Tuvalu,Fragile And Conflict Affected Situations,Other Country Groups,TV,Funafuti,179.089567,-8.6314877
+TUV,Tuvalu,Least Developed Countries: Un Classification,Other Country Groups,TV,Funafuti,179.089567,-8.6314877
+TUV,Tuvalu,World,Other Country Groups,TV,Funafuti,179.089567,-8.6314877
+TUV,Tuvalu,East Asia & Pacific (Ida & Ibrd Countries),By Lending,TV,Funafuti,179.089567,-8.6314877
+TUV,Tuvalu,Ida & Ibrd Total,By Lending,TV,Funafuti,179.089567,-8.6314877
+UGA,Uganda,Sub-Saharan Africa,Region,UG,Kampala,32.5729,0.314269
+UGA,Uganda,Low & Middle Income,By Income,UG,Kampala,32.5729,0.314269
+UGA,Uganda,Low Income,By Income,UG,Kampala,32.5729,0.314269
+UGA,Uganda,Ida Only,By Lending,UG,Kampala,32.5729,0.314269
+UGA,Uganda,Heavily Indebted Poor Countries (Hipc),Other Country Groups,UG,Kampala,32.5729,0.314269
+UGA,Uganda,Least Developed Countries: Un Classification,Other Country Groups,UG,Kampala,32.5729,0.314269
+UGA,Uganda,Sub-Saharan Africa (Excluding High Income),Other Country Groups,UG,Kampala,32.5729,0.314269
+UGA,Uganda,World,Other Country Groups,UG,Kampala,32.5729,0.314269
+UGA,Uganda,Sub-Saharan Africa ,Other country groups,UG,Kampala,32.5729,0.314269
+UGA,Uganda,Sub-Saharan Africa (Ida & Ibrd Countries),By Lending,UG,Kampala,32.5729,0.314269
+UGA,Uganda,Pre-Demographic Dividend,Demographic Dividend Groups,UG,Kampala,32.5729,0.314269
+UGA,Uganda,Ida & Ibrd Total,By Lending,UG,Kampala,32.5729,0.314269
+UGA,Uganda,Africa Eastern And Southern,Other country groups,UG,Kampala,32.5729,0.314269
+UKR,Ukraine,Europe & Central Asia,Region,UA,Kiev,30.5038,50.4536
+UKR,Ukraine,Low & Middle Income,By Income,UA,Kiev,30.5038,50.4536
+UKR,Ukraine,Lower Middle Income,By Income,UA,Kiev,30.5038,50.4536
+UKR,Ukraine,Middle Income,By Income,UA,Kiev,30.5038,50.4536
+UKR,Ukraine,Ibrd Only,By Lending,UA,Kiev,30.5038,50.4536
+UKR,Ukraine,Europe & Central Asia (Excluding High Income),Other Country Groups,UA,Kiev,30.5038,50.4536
+UKR,Ukraine,Fragile And Conflict Affected Situations,Other Country Groups,UA,Kiev,30.5038,50.4536
+UKR,Ukraine,World,Other Country Groups,UA,Kiev,30.5038,50.4536
+UKR,Ukraine,Post-Demographic Dividend,Demographic Dividend Groups,UA,Kiev,30.5038,50.4536
+UKR,Ukraine,Europe & Central Asia (Ida & Ibrd Countries),By Lending,UA,Kiev,30.5038,50.4536
+UKR,Ukraine,Ida & Ibrd Total,By Lending,UA,Kiev,30.5038,50.4536
+ARE,United Arab Emirates,Middle East & North Africa,Region,AE,Abu Dhabi,54.3705,24.4764
+ARE,United Arab Emirates,High Income,By Income,AE,Abu Dhabi,54.3705,24.4764
+ARE,United Arab Emirates,Arab World,Other Country Groups,AE,Abu Dhabi,54.3705,24.4764
+ARE,United Arab Emirates,World,Other Country Groups,AE,Abu Dhabi,54.3705,24.4764
+ARE,United Arab Emirates,Late-Demographic Dividend,Demographic Dividend Groups,AE,Abu Dhabi,54.3705,24.4764
+GBR,United Kingdom,Europe & Central Asia,Region,GB,London,-0.126236,51.5002
+GBR,United Kingdom,High Income,By Income,GB,London,-0.126236,51.5002
+GBR,United Kingdom,Oecd Members,Other Country Groups,GB,London,-0.126236,51.5002
+GBR,United Kingdom,World,Other Country Groups,GB,London,-0.126236,51.5002
+GBR,United Kingdom,Post-Demographic Dividend,Demographic Dividend Groups,GB,London,-0.126236,51.5002
+USA,United States,North America,Region,US,Washington D.C.,-77.032,38.8895
+USA,United States,High Income,By Income,US,Washington D.C.,-77.032,38.8895
+USA,United States,Oecd Members,Other Country Groups,US,Washington D.C.,-77.032,38.8895
+USA,United States,World,Other Country Groups,US,Washington D.C.,-77.032,38.8895
+USA,United States,Post-Demographic Dividend,Demographic Dividend Groups,US,Washington D.C.,-77.032,38.8895
+URY,Uruguay,Latin America & Caribbean,Region,UY,Montevideo,-56.0675,-34.8941
+URY,Uruguay,High Income,By Income,UY,Montevideo,-56.0675,-34.8941
+URY,Uruguay,Ibrd Only,By Lending,UY,Montevideo,-56.0675,-34.8941
+URY,Uruguay,World,Other Country Groups,UY,Montevideo,-56.0675,-34.8941
+URY,Uruguay,Late-Demographic Dividend,Demographic Dividend Groups,UY,Montevideo,-56.0675,-34.8941
+URY,Uruguay,Ida & Ibrd Total,By Lending,UY,Montevideo,-56.0675,-34.8941
+URY,Uruguay,Latin America & The Caribbean (Ida & Ibrd Countries),By Lending,UY,Montevideo,-56.0675,-34.8941
+UZB,Uzbekistan,Europe & Central Asia,Region,UZ,Tashkent,69.269,41.3052
+UZB,Uzbekistan,Low & Middle Income,By Income,UZ,Tashkent,69.269,41.3052
+UZB,Uzbekistan,Lower Middle Income,By Income,UZ,Tashkent,69.269,41.3052
+UZB,Uzbekistan,Middle Income,By Income,UZ,Tashkent,69.269,41.3052
+UZB,Uzbekistan,Ida Blend,By Lending,UZ,Tashkent,69.269,41.3052
+UZB,Uzbekistan,Europe & Central Asia (Excluding High Income),Other Country Groups,UZ,Tashkent,69.269,41.3052
+UZB,Uzbekistan,World,Other Country Groups,UZ,Tashkent,69.269,41.3052
+UZB,Uzbekistan,Early-Demographic Dividend,Demographic Dividend Groups,UZ,Tashkent,69.269,41.3052
+VUT,Vanuatu,East Asia & Pacific,Region,VU,Port-Vila,168.321,-17.7404
+VUT,Vanuatu,Low & Middle Income,By Income,VU,Port-Vila,168.321,-17.7404
+VUT,Vanuatu,Lower Middle Income,By Income,VU,Port-Vila,168.321,-17.7404
+VUT,Vanuatu,Middle Income,By Income,VU,Port-Vila,168.321,-17.7404
+VUT,Vanuatu,Ida Only,By Lending,VU,Port-Vila,168.321,-17.7404
+VUT,Vanuatu,Pacific Island Small States,Small States,VU,Port-Vila,168.321,-17.7404
+VUT,Vanuatu,Small States,Small States,VU,Port-Vila,168.321,-17.7404
+VUT,Vanuatu,East Asia & Pacific (Excluding High Income),Other Country Groups,VU,Port-Vila,168.321,-17.7404
+VUT,Vanuatu,World,Other Country Groups,VU,Port-Vila,168.321,-17.7404
+VUT,Vanuatu,Early-Demographic Dividend,Demographic Dividend Groups,VU,Port-Vila,168.321,-17.7404
+VUT,Vanuatu,East Asia & Pacific (Ida & Ibrd Countries),By Lending,VU,Port-Vila,168.321,-17.7404
+VUT,Vanuatu,Ida & Ibrd Total,By Lending,VU,Port-Vila,168.321,-17.7404
+VEN,"Venezuela, Rb",Latin America & Caribbean,Region,VE,Caracas,-69.8371,9.08165
+VEN,"Venezuela, Rb",Ibrd Only,By Lending,VE,Caracas,-69.8371,9.08165
+VEN,"Venezuela, Rb",Fragile And Conflict Affected Situations,Other Country Groups,VE,Caracas,-69.8371,9.08165
+VEN,"Venezuela, Rb",World,Other Country Groups,VE,Caracas,-69.8371,9.08165
+VEN,"Venezuela, Rb",Early-Demographic Dividend,Demographic Dividend Groups,VE,Caracas,-69.8371,9.08165
+VEN,"Venezuela, Rb",Ida & Ibrd Total,By Lending,VE,Caracas,-69.8371,9.08165
+VEN,"Venezuela, Rb",Latin America & The Caribbean (Ida & Ibrd Countries),By Lending,VE,Caracas,-69.8371,9.08165
+VNM,Vietnam,East Asia & Pacific,Region,VN,Hanoi,105.825,21.0069
+VNM,Vietnam,Low & Middle Income,By Income,VN,Hanoi,105.825,21.0069
+VNM,Vietnam,Lower Middle Income,By Income,VN,Hanoi,105.825,21.0069
+VNM,Vietnam,Middle Income,By Income,VN,Hanoi,105.825,21.0069
+VNM,Vietnam,Ibrd Only,By Lending,VN,Hanoi,105.825,21.0069
+VNM,Vietnam,East Asia & Pacific (Excluding High Income),Other Country Groups,VN,Hanoi,105.825,21.0069
+VNM,Vietnam,World,Other Country Groups,VN,Hanoi,105.825,21.0069
+VNM,Vietnam,Late-Demographic Dividend,Demographic Dividend Groups,VN,Hanoi,105.825,21.0069
+VNM,Vietnam,East Asia & Pacific (Ida & Ibrd Countries),By Lending,VN,Hanoi,105.825,21.0069
+VNM,Vietnam,Ida & Ibrd Total,By Lending,VN,Hanoi,105.825,21.0069
+VIR,Virgin Islands (U.S.),Latin America & Caribbean,Region,VI,Charlotte Amalie,-64.8963,18.3358
+VIR,Virgin Islands (U.S.),High Income,By Income,VI,Charlotte Amalie,-64.8963,18.3358
+VIR,Virgin Islands (U.S.),World,Other Country Groups,VI,Charlotte Amalie,-64.8963,18.3358
+VIR,Virgin Islands (U.S.),Late-Demographic Dividend,Demographic Dividend Groups,VI,Charlotte Amalie,-64.8963,18.3358
+PSE,West Bank And Gaza,Middle East & North Africa,Region,PS,,,
+PSE,West Bank And Gaza,Low & Middle Income,By Income,PS,,,
+PSE,West Bank And Gaza,Middle Income,By Income,PS,,,
+PSE,West Bank And Gaza,Upper Middle Income,By Income,PS,,,
+PSE,West Bank And Gaza,Arab World,Other Country Groups,PS,,,
+PSE,West Bank And Gaza,Fragile And Conflict Affected Situations,Other Country Groups,PS,,,
+PSE,West Bank And Gaza,Middle East & North Africa (Excluding High Income),Other Country Groups,PS,,,
+PSE,West Bank And Gaza,World,Other Country Groups,PS,,,
+PSE,West Bank And Gaza,Early-Demographic Dividend,Demographic Dividend Groups,PS,,,
+YEM,"Yemen, Rep.",Middle East & North Africa,Region,YE,Sana'a,44.2075,15.352
+YEM,"Yemen, Rep.",Low & Middle Income,By Income,YE,Sana'a,44.2075,15.352
+YEM,"Yemen, Rep.",Low Income,By Income,YE,Sana'a,44.2075,15.352
+YEM,"Yemen, Rep.",Ida Only,By Lending,YE,Sana'a,44.2075,15.352
+YEM,"Yemen, Rep.",Arab World,Other Country Groups,YE,Sana'a,44.2075,15.352
+YEM,"Yemen, Rep.",Fragile And Conflict Affected Situations,Other Country Groups,YE,Sana'a,44.2075,15.352
+YEM,"Yemen, Rep.",Least Developed Countries: Un Classification,Other Country Groups,YE,Sana'a,44.2075,15.352
+YEM,"Yemen, Rep.",Middle East & North Africa (Excluding High Income),Other Country Groups,YE,Sana'a,44.2075,15.352
+YEM,"Yemen, Rep.",World,Other Country Groups,YE,Sana'a,44.2075,15.352
+YEM,"Yemen, Rep.",Early-Demographic Dividend,Demographic Dividend Groups,YE,Sana'a,44.2075,15.352
+YEM,"Yemen, Rep.",Ida & Ibrd Total,By Lending,YE,Sana'a,44.2075,15.352
+YEM,"Yemen, Rep.",Middle East & North Africa (Ida & Ibrd Countries),By Lending,YE,Sana'a,44.2075,15.352
+ZMB,Zambia,Sub-Saharan Africa,Region,ZM,Lusaka,28.2937,-15.3982
+ZMB,Zambia,Low & Middle Income,By Income,ZM,Lusaka,28.2937,-15.3982
+ZMB,Zambia,Lower Middle Income,By Income,ZM,Lusaka,28.2937,-15.3982
+ZMB,Zambia,Middle Income,By Income,ZM,Lusaka,28.2937,-15.3982
+ZMB,Zambia,Ida Only,By Lending,ZM,Lusaka,28.2937,-15.3982
+ZMB,Zambia,Heavily Indebted Poor Countries (Hipc),Other Country Groups,ZM,Lusaka,28.2937,-15.3982
+ZMB,Zambia,Least Developed Countries: Un Classification,Other Country Groups,ZM,Lusaka,28.2937,-15.3982
+ZMB,Zambia,Sub-Saharan Africa (Excluding High Income),Other Country Groups,ZM,Lusaka,28.2937,-15.3982
+ZMB,Zambia,World,Other Country Groups,ZM,Lusaka,28.2937,-15.3982
+ZMB,Zambia,Sub-Saharan Africa ,Other country groups,ZM,Lusaka,28.2937,-15.3982
+ZMB,Zambia,Sub-Saharan Africa (Ida & Ibrd Countries),By Lending,ZM,Lusaka,28.2937,-15.3982
+ZMB,Zambia,Pre-Demographic Dividend,Demographic Dividend Groups,ZM,Lusaka,28.2937,-15.3982
+ZMB,Zambia,Ida & Ibrd Total,By Lending,ZM,Lusaka,28.2937,-15.3982
+ZMB,Zambia,Africa Eastern And Southern,Other country groups,ZM,Lusaka,28.2937,-15.3982
+ZWE,Zimbabwe,Sub-Saharan Africa,Region,ZW,Harare,31.0672,-17.8312
+ZWE,Zimbabwe,Low & Middle Income,By Income,ZW,Harare,31.0672,-17.8312
+ZWE,Zimbabwe,Lower Middle Income,By Income,ZW,Harare,31.0672,-17.8312
+ZWE,Zimbabwe,Middle Income,By Income,ZW,Harare,31.0672,-17.8312
+ZWE,Zimbabwe,Ida Blend,By Lending,ZW,Harare,31.0672,-17.8312
+ZWE,Zimbabwe,Fragile And Conflict Affected Situations,Other Country Groups,ZW,Harare,31.0672,-17.8312
+ZWE,Zimbabwe,Sub-Saharan Africa (Excluding High Income),Other Country Groups,ZW,Harare,31.0672,-17.8312
+ZWE,Zimbabwe,World,Other Country Groups,ZW,Harare,31.0672,-17.8312
+ZWE,Zimbabwe,Sub-Saharan Africa ,Other country groups,ZW,Harare,31.0672,-17.8312
+ZWE,Zimbabwe,Early-Demographic Dividend,Demographic Dividend Groups,ZW,Harare,31.0672,-17.8312
+ZWE,Zimbabwe,Africa Eastern And Southern,Other country groups,ZW,Harare,31.0672,-17.8312
+AFG,Afghanistan,Ida total,By Lending,AF,Kabul,69.1761,34.5228
+BGD,Bangladesh,Ida total,By Lending,BD,Dhaka,90.4113,23.7055
+BEN,Benin,Ida total,By Lending,BJ,Porto-Novo,2.6323,6.4779
+BTN,Bhutan,Ida total,By Lending,BT,Thimphu,89.6177,27.5768
+BFA,Burkina Faso,Ida total,By Lending,BF,Ouagadougou,-1.53395,12.3605
+BDI,Burundi,Ida total,By Lending,BI,Bujumbura,29.3639,-3.3784
+CPV,Cabo Verde,Ida total,By Lending,CV,Praia,-23.5087,14.9218
+KHM,Cambodia,Ida total,By Lending,KH,Phnom Penh,104.874,11.5556
+CMR,Cameroon,Ida total,By Lending,CM,Yaounde,11.5174,3.8721
+CAF,Central African Republic,Ida total,By Lending,CF,Bangui,21.6407,5.63056
+TCD,Chad,Ida total,By Lending,TD,N'Djamena,15.0445,12.1048
+COM,Comoros,Ida total,By Lending,KM,Moroni,43.2418,-11.6986
+COD,"Congo, Dem. Rep.",Ida total,By Lending,CD,Kinshasa,15.3222,-4.325
+COG,"Congo, Rep.",Ida total,By Lending,CG,Brazzaville,15.2662,-4.2767
+CIV,Cote D'Ivoire,Ida total,By Lending,CI,Yamoussoukro,-4.0305,5.332
+DJI,Djibouti,Ida total,By Lending,DJ,Djibouti,43.1425,11.5806
+DMA,Dominica,Ida total,By Lending,DM,Roseau,-61.39,15.2976
+ERI,Eritrea,Ida total,By Lending,ER,Asmara,38.9183,15.3315
+ETH,Ethiopia,Ida total,By Lending,ET,Addis Ababa,38.7468,9.02274
+FJI,Fiji,Ida total,By Lending,FJ,Suva,178.399,-18.1149
+GMB,"Gambia, The",Ida total,By Lending,GM,Banjul,-16.5885,13.4495
+GHA,Ghana,Ida total,By Lending,GH,Accra,-0.20795,5.57045
+GRD,Grenada,Ida total,By Lending,GD,Saint George's,-61.7449,12.0653
+GIN,Guinea,Ida total,By Lending,GN,Conakry,-13.7,9.51667
+GNB,Guinea-Bissau,Ida total,By Lending,GW,Bissau,-15.1804,11.8037
+GUY,Guyana,Ida total,By Lending,GY,Georgetown,-58.1548,6.80461
+HTI,Haiti,Ida total,By Lending,HT,Port-au-Prince,-72.3288,18.5392
+HND,Honduras,Ida total,By Lending,HN,Tegucigalpa,-87.4667,15.1333
+KEN,Kenya,Ida total,By Lending,KE,Nairobi,36.8126,-1.27975
+KIR,Kiribati,Ida total,By Lending,KI,Tarawa,172.979,1.32905
+XKX,Kosovo,Ida total,By Lending,XK,Pristina,20.926,42.565
+KGZ,Kyrgyz Republic,Ida total,By Lending,KG,Bishkek,74.6057,42.8851
+LAO,Lao Pdr,Ida total,By Lending,LA,Vientiane,102.177,18.5826
+LSO,Lesotho,Ida total,By Lending,LS,Maseru,27.7167,-29.5208
+LBR,Liberia,Ida total,By Lending,LR,Monrovia,-10.7957,6.30039
+MDG,Madagascar,Ida total,By Lending,MG,Antananarivo,45.7167,-20.4667
+MWI,Malawi,Ida total,By Lending,MW,Lilongwe,33.7703,-13.9899
+MDV,Maldives,Ida total,By Lending,MV,Male,73.5109,4.1742
+MLI,Mali,Ida total,By Lending,ML,Bamako,-7.50034,13.5667
+MHL,Marshall Islands,Ida total,By Lending,MH,Majuro,171.135,7.11046
+MRT,Mauritania,Ida total,By Lending,MR,Nouakchott,-15.9824,18.2367
+FSM,"Micronesia, Fed. Sts.",Ida total,By Lending,FM,Palikir,158.185,6.91771
+MOZ,Mozambique,Ida total,By Lending,MZ,Maputo,32.5713,-25.9664
+MMR,Myanmar,Ida total,By Lending,MM,Naypyidaw,95.9562,21.914
+NPL,Nepal,Ida total,By Lending,NP,Kathmandu,85.3157,27.6939
+NIC,Nicaragua,Ida total,By Lending,NI,Managua,-86.2734,12.1475
+NER,Niger,Ida total,By Lending,NE,Niamey,2.1073,13.514
+NGA,Nigeria,Ida total,By Lending,NG,Abuja,7.48906,9.05804
+PAK,Pakistan,Ida total,By Lending,PK,Islamabad,72.8,30.5167
+PNG,Papua New Guinea,Ida total,By Lending,PG,Port Moresby,147.194,-9.47357
+RWA,Rwanda,Ida total,By Lending,RW,Kigali,30.0587,-1.95325
+WSM,Samoa,Ida total,By Lending,WS,Apia,-171.752,-13.8314
+STP,Sao Tome And Principe,Ida total,By Lending,ST,Sao Tome,6.6071,0.20618
+SEN,Senegal,Ida total,By Lending,SN,Dakar,-17.4734,14.7247
+SLE,Sierra Leone,Ida total,By Lending,SL,Freetown,-13.2134,8.4821
+SLB,Solomon Islands,Ida total,By Lending,SB,Honiara,159.949,-9.42676
+SOM,Somalia,Ida total,By Lending,SO,Mogadishu,45.3254,2.07515
+SSD,South Sudan,Ida total,By Lending,SS,Juba,31.6,4.85
+LKA,Sri Lanka,Ida total,By Lending,LK,Colombo,79.8528,6.92148
+LCA,St. Lucia,Ida total,By Lending,LC,Castries,-60.9832,14.0
+VCT,St. Vincent And The Grenadines,Ida total,By Lending,VC,Kingstown,-61.2653,13.2035
+SDN,Sudan,Ida total,By Lending,SD,Khartoum,32.5363,15.5932
+SYR,Syrian Arab Republic,Ida total,By Lending,SY,Damascus,36.3119,33.5146
+TJK,Tajikistan,Ida total,By Lending,TJ,Dushanbe,68.7864,38.5878
+TZA,Tanzania,Ida total,By Lending,TZ,Dodoma,35.7382,-6.17486
+TLS,Timor-Leste,Ida total,By Lending,TL,Dili,125.567,-8.56667
+TGO,Togo,Ida total,By Lending,TG,Lome,1.2255,6.1228
+TON,Tonga,Ida total,By Lending,TO,Nuku'alofa,-175.216,-21.136
+TUV,Tuvalu,Ida total,By Lending,TV,Funafuti,179.089567,-8.6314877
+UGA,Uganda,Ida total,By Lending,UG,Kampala,32.5729,0.314269
+UZB,Uzbekistan,Ida total,By Lending,UZ,Tashkent,69.269,41.3052
+VUT,Vanuatu,Ida total,By Lending,VU,Port-Vila,168.321,-17.7404
+YEM,"Yemen, Rep.",Ida total,By Lending,YE,Sana'a,44.2075,15.352
+ZMB,Zambia,Ida total,By Lending,ZM,Lusaka,28.2937,-15.3982
+ZWE,Zimbabwe,Ida total,By Lending,ZW,Harare,31.0672,-17.8312
