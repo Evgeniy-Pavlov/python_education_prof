@@ -39,7 +39,7 @@ def insert_appsinstalled(memc_addr, appsinstalled, dry_run=False):
         else:
             memc = memcache.Client([memc_addr])
             memc.set(key, packed)
-    except Exception, e:
+    except Exception as e:
         logging.exception("Cannot write to memc %s: %s" % (memc_addr, e))
         return False
     return True
@@ -143,6 +143,6 @@ if __name__ == '__main__':
     logging.info("Memc loader started with options: %s" % opts)
     try:
         main(opts)
-    except Exception, e:
+    except Exception as e:
         logging.exception("Unexpected error: %s" % e)
         sys.exit(1)
