@@ -71,10 +71,10 @@ def main(options):
         "adid": options.adid,
         "dvid": options.dvid,
     }
+    processed = errors = 0
     for fn in glob.iglob(options.pattern):
-        processed = errors = 0
         logging.info('Processing %s' % fn)
-        fd = gzip.open(fn)
+        fd = gzip.open(fn, "rt", encoding="UTF-8")
         for line in fd:
             line = line.strip()
             if not line:
@@ -100,7 +100,7 @@ def main(options):
 
         err_rate = float(errors) / processed
         if err_rate < NORMAL_ERR_RATE:
-            logging.info("Acceptable error rate (%s). Successfull load" % err_rate)
+                logging.info("Acceptable error rate (%s). Successfull load" % err_rate)
         else:
             logging.error("High error rate (%s > %s). Failed load" % (err_rate, NORMAL_ERR_RATE))
         fd.close()
