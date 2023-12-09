@@ -5,6 +5,7 @@ import gzip
 import sys
 import glob
 import logging
+import multiprocessing
 import collections
 from optparse import OptionParser
 # brew install protobuf
@@ -19,12 +20,15 @@ AppsInstalled = collections.namedtuple("AppsInstalled", ["dev_type", "dev_id", "
 
 
 def dot_rename(path):
+    """Функция переименовывает файл после выполнения анализа его содержимого.
+    Перед названием устанавливается точка."""
     head, fn = os.path.split(path)
     # atomic in most cases
     os.rename(path, os.path.join(head, "." + fn))
 
 
 def insert_appsinstalled(memc_addr, appsinstalled, dry_run=False):
+    """Фунция отправляет разобранную информацию из строки файла в мемкэш."""
     ua = appsinstalled_pb2.UserApps()
     ua.lat = appsinstalled.lat
     ua.lon = appsinstalled.lon
@@ -46,6 +50,8 @@ def insert_appsinstalled(memc_addr, appsinstalled, dry_run=False):
 
 
 def parse_appsinstalled(line):
+    """Функция парсинга строк файлов. Строка разбирается на составляющие
+    после чего в случае успеха возвращает именованный кортеж в качестве результата. """
     line_parts = line.strip().split("\t")
     if len(line_parts) < 5:
         return
@@ -63,51 +69,58 @@ def parse_appsinstalled(line):
         logging.info("Invalid geo coords: `%s`" % line)
     return AppsInstalled(dev_type, dev_id, lat, lon, apps)
 
-
-def main(options):
+def work_with_file(fn, options):
     device_memc = {
         "idfa": options.idfa,
         "gaid": options.gaid,
         "adid": options.adid,
         "dvid": options.dvid,
-    }
+        }
     processed = errors = 0
-    for fn in glob.iglob(options.pattern):
-        logging.info('Processing %s' % fn)
-        fd = gzip.open(fn, "rt", encoding="UTF-8")
-        for line in fd:
-            line = line.strip()
-            if not line:
-                continue
-            appsinstalled = parse_appsinstalled(line)
-            if not appsinstalled:
-                errors += 1
-                continue
-            memc_addr = device_memc.get(appsinstalled.dev_type)
-            if not memc_addr:
-                errors += 1
-                logging.error("Unknow device type: %s" % appsinstalled.dev_type)
-                continue
-            ok = insert_appsinstalled(memc_addr, appsinstalled, options.dry)
-            if ok:
-                processed += 1
-            else:
-                errors += 1
-        if not processed:
-            fd.close()
-            dot_rename(fn)
+    fd = gzip.open(fn, "rt", encoding="UTF-8")
+    for line in fd:
+        line = line.strip()
+        if not line:
             continue
-
-        err_rate = float(errors) / processed
-        if err_rate < NORMAL_ERR_RATE:
-                logging.info("Acceptable error rate (%s). Successfull load" % err_rate)
+        appsinstalled = parse_appsinstalled(line)
+        if not appsinstalled:
+            errors += 1
+            continue
+        memc_addr = device_memc.get(appsinstalled.dev_type)
+        if not memc_addr:
+            errors += 1
+            logging.error("Unknow device type: %s" % appsinstalled.dev_type)
+            continue
+        ok = insert_appsinstalled(memc_addr, appsinstalled, options.dry)
+        if ok:
+            processed += 1
         else:
-            logging.error("High error rate (%s > %s). Failed load" % (err_rate, NORMAL_ERR_RATE))
+            errors += 1
+    if not processed:
         fd.close()
         dot_rename(fn)
 
+    err_rate = float(errors) / processed
+    if err_rate < NORMAL_ERR_RATE:
+        logging.info("Acceptable error rate (%s). Successfull load" % err_rate)
+    else:
+        logging.error("High error rate (%s > %s). Failed load" % (err_rate, NORMAL_ERR_RATE))
+    fd.close()
+    dot_rename(fn)
+
+
+def main(options):
+    """Мэйн функция."""
+    for fn in glob.iglob(options.pattern):
+        logging.info('Processing %s' % fn)
+        process = multiprocessing.Process(target=work_with_file, name=f'process-{fn}', args=(fn, options))
+        #work_with_file(fn, options)
+        process.start()
+
+
 
 def prototest():
+    """Тестовая функция проверки разбора строки и работы с протобуфом."""
     sample = "idfa\t1rfw452y52g2gq4g\t55.55\t42.42\t1423,43,567,3,7,23\ngaid\t7rfw452y52g2gq4g\t55.55\t42.42\t7423,424"
     for line in sample.splitlines():
         dev_type, dev_id, lat, lon, raw_apps = line.strip().split("\t")
@@ -128,11 +141,12 @@ if __name__ == '__main__':
     op.add_option("-t", "--test", action="store_true", default=False)
     op.add_option("-l", "--log", action="store", default=None)
     op.add_option("--dry", action="store_true", default=False)
-    op.add_option("--pattern", action="store", default="/data/appsinstalled/*.tsv.gz")
+    op.add_option("--pattern", action="store", default="./data/appsinstalled/*.tsv.gz")
     op.add_option("--idfa", action="store", default="127.0.0.1:33013")
     op.add_option("--gaid", action="store", default="127.0.0.1:33014")
     op.add_option("--adid", action="store", default="127.0.0.1:33015")
     op.add_option("--dvid", action="store", default="127.0.0.1:33016")
+    op.add_option("--workers", action="store", default=2, type=int)
     (opts, args) = op.parse_args()
     logging.basicConfig(filename=opts.log, level=logging.INFO if not opts.dry else logging.DEBUG,
                         format='[%(asctime)s] %(levelname).1s %(message)s', datefmt='%Y.%m.%d %H:%M:%S')
