@@ -30,7 +30,7 @@ def dot_rename(path):
     os.rename(path, os.path.join(head, "." + fn))
 
 
-def insert_appsinstalled(memc_client, appsinstalled, dry_run=False):
+def insert_appsinstalled(appsinstalled, dry_run=False):
     """Фунция отправляет разобранную информацию из строки файла в мемкэш."""
     ua = appsinstalled_pb2.UserApps()
     ua.lat = appsinstalled.lat
@@ -40,16 +40,11 @@ def insert_appsinstalled(memc_client, appsinstalled, dry_run=False):
     packed = ua.SerializeToString()
     # @TODO persistent connection
     # @TODO retry and timeouts!
-    try:
-        if dry_run:
-            logging.debug("%s - %s -> %s" % (memc_addr, key, str(ua).replace("\n", " ")))
-        else:
-            with lock_thread:
-                memc_client.set(key, packed)
-    except Exception as e:
-        logging.exception("Cannot write to memc %s: %s" % (memc_addr, e))
-        return False
-    return True
+    if dry_run:
+        logging.debug("%s - %s -> %s" % (memc_addr, key, str(ua).replace("\n", " ")))
+    else:
+        return (key, packed)
+
 
 
 def parse_appsinstalled(line):
@@ -87,6 +82,7 @@ def work_with_file(args):
     threads_list = []
     memclients_dict = {'idfa': memcache.Client([options.idfa]), 'gaid': memcache.Client([options.gaid]), 
     'adid': memcache.Client([options.adid]), 'dvid': memcache.Client([options.dvid])}
+    insert_app_dict = {}
     def work_with_lines(lines, thread_semaphore):
         nonlocal processed, errors
         with thread_semaphore:
@@ -103,12 +99,17 @@ def work_with_file(args):
                     errors += 1
                     logging.error("Unknow device type: %s" % appsinstalled.dev_type)
                     return
-                ok = insert_appsinstalled(memclients_dict[appsinstalled.dev_type], appsinstalled, options.dry)
+                key, packed = insert_appsinstalled(appsinstalled, options.dry)
+                insert_app_dict[key] = packed
                 with lock_thread:
-                    if ok:
-                        processed += 1
-                    else:
-                        errors += 1
+                    if len(insert_app_dict) >= 4:
+                        try:
+                            ok = memclients_dict[appsinstalled.dev_type].set_multi(insert_app_dict)
+                            processed += 1
+                        except Exception as e:
+                            logging.exception("Cannot write to memc %s: %s" % (memc_addr, e))
+                            errors += 1
+                        
     for line in fd:
         lines_list.append(line)
         if len(lines_list) == 1000:
