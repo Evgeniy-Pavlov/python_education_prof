@@ -30,7 +30,7 @@ def dot_rename(path):
     os.rename(path, os.path.join(head, "." + fn))
 
 
-def insert_appsinstalled(memc_addr, appsinstalled, dry_run=False):
+def insert_appsinstalled(memc_client, appsinstalled, dry_run=False):
     """Фунция отправляет разобранную информацию из строки файла в мемкэш."""
     ua = appsinstalled_pb2.UserApps()
     ua.lat = appsinstalled.lat
@@ -44,9 +44,8 @@ def insert_appsinstalled(memc_addr, appsinstalled, dry_run=False):
         if dry_run:
             logging.debug("%s - %s -> %s" % (memc_addr, key, str(ua).replace("\n", " ")))
         else:
-            memc = memcache.Client([memc_addr])
             with lock_thread:
-                memc.set(key, packed)
+                memc_client.set(key, packed)
     except Exception as e:
         logging.exception("Cannot write to memc %s: %s" % (memc_addr, e))
         return False
@@ -86,6 +85,8 @@ def work_with_file(args):
     fd = gzip.open(fn, "rt", encoding="UTF-8")
     lines_list = []
     threads_list = []
+    memclients_dict = {'idfa': memcache.Client([options.idfa]), 'gaid': memcache.Client([options.gaid]), 
+    'adid': memcache.Client([options.adid]), 'dvid': memcache.Client([options.dvid])}
     def work_with_lines(lines, thread_semaphore):
         nonlocal processed, errors
         with thread_semaphore:
@@ -102,7 +103,7 @@ def work_with_file(args):
                     errors += 1
                     logging.error("Unknow device type: %s" % appsinstalled.dev_type)
                     return
-                ok = insert_appsinstalled(memc_addr, appsinstalled, options.dry)
+                ok = insert_appsinstalled(memclients_dict[appsinstalled.dev_type], appsinstalled, options.dry)
                 with lock_thread:
                     if ok:
                         processed += 1
