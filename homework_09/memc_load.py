@@ -1,12 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import os
-import gzip
 import sys
+import gzip
 import glob
 import logging
-import multiprocessing
+import threading
 import collections
+import multiprocessing
 from optparse import OptionParser
 # brew install protobuf
 # protoc  --python_out=. ./appsinstalled.proto
@@ -17,6 +18,8 @@ import memcache
 
 NORMAL_ERR_RATE = 0.01
 AppsInstalled = collections.namedtuple("AppsInstalled", ["dev_type", "dev_id", "lat", "lon", "apps"])
+thread_semaphore = threading.BoundedSemaphore(10)
+lock_thread = threading.RLock()
 
 
 def dot_rename(path):
@@ -42,7 +45,8 @@ def insert_appsinstalled(memc_addr, appsinstalled, dry_run=False):
             logging.debug("%s - %s -> %s" % (memc_addr, key, str(ua).replace("\n", " ")))
         else:
             memc = memcache.Client([memc_addr])
-            memc.set(key, packed)
+            with lock_thread:
+                memc.set(key, packed)
     except Exception as e:
         logging.exception("Cannot write to memc %s: %s" % (memc_addr, e))
         return False
@@ -69,37 +73,62 @@ def parse_appsinstalled(line):
         logging.info("Invalid geo coords: `%s`" % line)
     return AppsInstalled(dev_type, dev_id, lat, lon, apps)
 
-def work_with_file(fn, options):
-    device_memc = {
-        "idfa": options.idfa,
-        "gaid": options.gaid,
-        "adid": options.adid,
-        "dvid": options.dvid,
-        }
+def work_with_file(args):
+    """Функция работы с файлом. Функция принимает в качестве аргументов несколько значений.
+    fn - файловое имя, device_memc - словарь с id устройств, options - аргументы из аргпарсера,
+    queue - объект очереди.
+    Процесс открывает на чтение файл, выполняет вложенную функцию work_with_lines, 
+    На каждую 1000 строк создается новый поток обработки строк. После чего он высвобождается.
+    После выполнения вызывается функция dot_rename переименовывающая файл который был обработан."""
+    fn, device_memc, options, queue = args
     processed = errors = 0
+    logging.info('Processing %s' % fn)
     fd = gzip.open(fn, "rt", encoding="UTF-8")
+    lines_list = []
+    threads_list = []
+    def work_with_lines(lines, thread_semaphore):
+        nonlocal processed, errors
+        with thread_semaphore:
+            for line in lines:
+                line = line.strip()
+                if not line:
+                    return 
+                appsinstalled = parse_appsinstalled(line)
+                if not appsinstalled:
+                    errors += 1
+                    return 
+                memc_addr = device_memc.get(appsinstalled.dev_type)
+                if not memc_addr:
+                    errors += 1
+                    logging.error("Unknow device type: %s" % appsinstalled.dev_type)
+                    return
+                ok = insert_appsinstalled(memc_addr, appsinstalled, options.dry)
+                with lock_thread:
+                    if ok:
+                        processed += 1
+                    else:
+                        errors += 1
     for line in fd:
-        line = line.strip()
-        if not line:
-            continue
-        appsinstalled = parse_appsinstalled(line)
-        if not appsinstalled:
-            errors += 1
-            continue
-        memc_addr = device_memc.get(appsinstalled.dev_type)
-        if not memc_addr:
-            errors += 1
-            logging.error("Unknow device type: %s" % appsinstalled.dev_type)
-            continue
-        ok = insert_appsinstalled(memc_addr, appsinstalled, options.dry)
-        if ok:
-            processed += 1
-        else:
-            errors += 1
+        lines_list.append(line)
+        if len(lines_list) == 1000:
+            thread = threading.Thread(target=work_with_lines, args=(lines_list, thread_semaphore))
+            threads_list.append(thread)
+            thread.start()
+            queue.put(10)
+            if len(threads_list) >= 10:
+                [x.join() for x in threads_list]
+                threads_list.clear()
+            lines_list.clear()
+    if len(lines_list):
+        thread = threading.Thread(target=work_with_lines, args=(lines_list, thread_semaphore))
+        threads_list.append(thread)
+        thread.start()
+        queue.put(len(lines_list))
+    [x.join() for x in threads_list]
+    threads_list.clear()
     if not processed:
         fd.close()
         dot_rename(fn)
-
     err_rate = float(errors) / processed
     if err_rate < NORMAL_ERR_RATE:
         logging.info("Acceptable error rate (%s). Successfull load" % err_rate)
@@ -111,12 +140,22 @@ def work_with_file(fn, options):
 
 def main(options):
     """Мэйн функция."""
-    for fn in glob.iglob(options.pattern):
-        logging.info('Processing %s' % fn)
-        process = multiprocessing.Process(target=work_with_file, name=f'process-{fn}', args=(fn, options))
-        #work_with_file(fn, options)
-        process.start()
-
+    device_memc = {
+        "idfa": options.idfa,
+        "gaid": options.gaid,
+        "adid": options.adid,
+        "dvid": options.dvid,
+        }
+    process_pool = multiprocessing.Pool(processes=options.workers)
+    process_manager = multiprocessing.Manager()
+    queue = process_manager.Queue()
+    args_list = [(fn, device_memc, options, queue) for fn in glob.iglob(options.pattern)]
+    try:
+        process_pool.map(work_with_file, args_list)
+    finally:
+        process_pool.close()
+        process_pool.join()
+    queue.put(-1)
 
 
 def prototest():
