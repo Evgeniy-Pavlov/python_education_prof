@@ -1,5 +1,5 @@
 #include <zlib.h>
-#include <python3.6m/Python.h>
+#include <Python.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
