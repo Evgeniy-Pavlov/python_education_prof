@@ -1,4 +1,5 @@
 import os
+import re
 import argparse
 import asyncio
 import aiofiles
@@ -8,6 +9,7 @@ from bs4 import BeautifulSoup
 
 BASE_URL = 'https://news.ycombinator.com/'
 news_dict = {}
+link_list = []
 
 def parse_arguments():
     parser = argparse.ArgumentParser()
@@ -17,37 +19,50 @@ def parse_arguments():
 
 
 def parse_base_page():
-    responce = requests.get(BASE_URL)
-    bs_page = BeautifulSoup(responce.text, 'lxml')
+    response = requests.get(BASE_URL)
+    bs_page = BeautifulSoup(response.text, 'lxml')
     data = bs_page.find_all('span', class_='titleline')
     result = [x.find('a').get('href') for x in data]
     return result
 
 
-async def get_news_page(news):
+def parse_comments_page():
+    response = requests.get(BASE_URL)
+    bs_page = BeautifulSoup(response.text, 'lxml')
+    data = bs_page.find_all('a', string=re.compile('comments'))
+    result = [BASE_URL + x.get('href') for x in data[1:]]
+    return result
+
+
+async def find_href_in_comments(comments_page):
+    global link_list
     async with aiohttp.ClientSession() as session:
-        response = await session.request('GET', news)
+        response = await session.request('GET', comments_page)
         page = await response.read()
-        return page
+        bs_page = BeautifulSoup(page, 'lxml')
+        data = bs_page.find_all('div', class_='comment')
+        result = [x.find('a').get('href') for x in data if 'https' in x.find('a').get('href')]
+        if result:
+            link_list += result
+    return result
 
 
-async def download_news(news):
-    if news not in news_dict.keys():
-        page_news = await get_news_page(news)
-        news_dict[news] = True
-    return True
+def download_many(comment_links):
+    loop = asyncio.get_event_loop()
+    to_do = [find_href_in_comments(page) for page in sorted(comment_links)]
+    wait_coro = asyncio.wait(to_do)
+    res, _ = loop.run_until_complete(wait_coro)
+    loop.close()
+    return len(res)
 
 
 def main():
     parser = parse_arguments()
     if not os.path.isdir(f'./{parser.d}'):
         os.mkdir(parser.d)
-    news_list = parse_base_page()
-    loop = asyncio.get_event_loop()
-    to_do = [download_news(x) for x in sorted(news_list)]
-    wait_coro = asyncio.wait(to_do)
-    result, _ = loop.run_until_complete(wait_coro)
-    loop.close()
+    #link_list = parse_base_page()
+    comments_page_list = parse_comments_page()
+    download_many(comments_page_list)
     return 0
 
 
