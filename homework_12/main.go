@@ -78,7 +78,7 @@ func parse_lines_file(done chan struct{}, rawlines chan []byte) chan apps {
 			line := string(rawline)
 			line_split := strings.Split(line, "\t")
 			if len(line_split) < 4 {
-				log.Println("Строка пустая или не может быть использована для парсинга")
+				return
 			}
 
 			if line_split[0] != "idfa" && line_split[0] != "gaid" && line_split[0] != "adid" && line_split[0] != "dvid" {
@@ -87,7 +87,6 @@ func parse_lines_file(done chan struct{}, rawlines chan []byte) chan apps {
 				st_p.device_type = line_split[0]
 			}
 			st_p.dev_id = line_split[1]
-			fmt.Println(line_split)
 			lat, err := strconv.ParseFloat(line_split[2], 32)
 			if err != nil {
 				log.Println("Указанное значение невозможно преобразовать в lat float64")
@@ -103,12 +102,11 @@ func parse_lines_file(done chan struct{}, rawlines chan []byte) chan apps {
 			}
 			st_p.apps = line_split[4]
 			msg.device_type = st_p.device_type
-			value, err := json.Marshal(st_p)
+			value, err := json.Marshal(st_p.apps)
 			if err != nil {
 				log.Println("Невозможно сериализовать указанную структуру")
 			}
 			msg.value = value
-			msg.device_type = st_p.device_type
 
 			select {
 			case parsed_lines <- msg:
@@ -125,11 +123,13 @@ func send_to_memc(parsed_lines chan apps, connector map[string]*memcache.Client,
 	for line := range parsed_lines {
 		atomic.AddUint64(success, 1)
 		client := connector[line.device_type]
-		err := client.Set(&memcache.Item{Key: line.device_type, Value: line.value})
+		result := &memcache.Item{Key: line.device_type, Value: line.value}
+		err := client.Set(result)
 		if err != nil {
 			atomic.AddUint64(errors, 1)
 			continue
 		}
+
 	}
 }
 
