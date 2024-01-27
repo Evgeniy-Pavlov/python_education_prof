@@ -22,11 +22,11 @@ import (
 const NORMAL_ERR_RATE = 0.01
 
 type str_parse struct {
-	device_type string
-	dev_id      string
-	lat         float64
-	lon         float64
-	apps        string
+	Device_type string  `json:"Device_type"`
+	Dev_id      string  `json:"Dev_id"`
+	Lat         float64 `json:"lat"`
+	Lon         float64 `json:"lon"`
+	Apps        string  `json:"apps"`
 }
 
 type apps struct {
@@ -84,25 +84,25 @@ func parse_lines_file(done chan struct{}, rawlines chan []byte) chan apps {
 			if line_split[0] != "idfa" && line_split[0] != "gaid" && line_split[0] != "adid" && line_split[0] != "dvid" {
 				log.Println(line_split[0], " не является используемым для обработки типом устройства")
 			} else {
-				st_p.device_type = line_split[0]
+				st_p.Device_type = line_split[0]
 			}
-			st_p.dev_id = line_split[1]
+			st_p.Dev_id = line_split[1]
 			lat, err := strconv.ParseFloat(line_split[2], 32)
 			if err != nil {
 				log.Println("Указанное значение невозможно преобразовать в lat float64")
 			} else {
-				st_p.lat = lat
+				st_p.Lat = lat
 			}
 
 			lon, err := strconv.ParseFloat(line_split[3], 32)
 			if err != nil {
 				log.Println("Указанное значение невозможно преобразовать в lon float64")
 			} else {
-				st_p.lon = lon
+				st_p.Lon = lon
 			}
-			st_p.apps = line_split[4]
-			msg.device_type = st_p.device_type
-			value, err := json.Marshal(st_p.apps)
+			st_p.Apps = line_split[4]
+			msg.device_type = st_p.Device_type
+			value, err := json.Marshal(st_p)
 			if err != nil {
 				log.Println("Невозможно сериализовать указанную структуру")
 			}
