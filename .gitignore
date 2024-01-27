@@ -173,3 +173,7 @@ media/
 #архивы .gz
 *.gz
 *.tsv
+
+#golang
+*.mod
+*.sum
